@@ -6,11 +6,7 @@ import okhttp3.Headers;
 import java.time.Duration;
 
 @Data
-public class Options {
-    public interface Filler {
-        void Fill(Options options);
-    }
-
+class Options {
     private Duration timeout;
 
     private String RequestId;

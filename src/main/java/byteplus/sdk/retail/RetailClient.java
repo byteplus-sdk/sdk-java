@@ -2,7 +2,7 @@ package byteplus.sdk.retail;
 
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.NetException;
-import byteplus.sdk.core.Options;
+import byteplus.sdk.core.Option;
 
 import static byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsRequest;
 import static byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsResponse;
@@ -29,7 +29,7 @@ public interface RetailClient {
     // a rejection. One can use this to upload new users, or update existing
     // users (by providing all the fields).
     WriteUsersResponse writeUsers(
-            WriteUsersRequest request, Options.Filler... opts) throws BizException, NetException;
+            WriteUsersRequest request, Option... opts) throws BizException, NetException;
 
     // ImportUsers
     //
@@ -45,7 +45,7 @@ public interface RetailClient {
     // Note: This can also be used to update the existing data by providing the
     // existing ids. In this case, please make sure you provide all fields.
     OperationResponse importUsers(
-            ImportUsersRequest request, Options.Filler... opts) throws NetException, BizException;
+            ImportUsersRequest request, Option... opts) throws NetException, BizException;
 
     // WriteProducts
     //
@@ -56,7 +56,7 @@ public interface RetailClient {
     // update the existing product by
     // setting `product.is_recommendable` to False.
     WriteProductsResponse writeProducts(
-            WriteProductsRequest request, Options.Filler... opts) throws NetException, BizException;
+            WriteProductsRequest request, Option... opts) throws NetException, BizException;
 
     // ImportProducts
     //
@@ -72,7 +72,7 @@ public interface RetailClient {
     // Note: This can also be used to update the existing data by providing the
     // existing ids. In this case, please make sure you provide all fields.
     OperationResponse importProducts(
-            ImportProductsRequest request, Options.Filler... opts) throws NetException, BizException;
+            ImportProductsRequest request, Option... opts) throws NetException, BizException;
 
     // WriteUserEvents
     //
@@ -82,7 +82,7 @@ public interface RetailClient {
     // the requests.
     // Please make sure the requests are deduplicated before sending over.
     WriteUserEventsResponse writeUserEvents(
-            WriteUserEventsRequest request, Options.Filler... opts) throws NetException, BizException;
+            WriteUserEventsRequest request, Option... opts) throws NetException, BizException;
 
     //ImportUserEvents
     //
@@ -97,19 +97,19 @@ public interface RetailClient {
     // check the status.
     // Please make sure the requests are deduplicated before sending over.
     OperationResponse importUserEvents(
-            ImportUserEventsRequest request, Options.Filler... opts) throws NetException, BizException;
+            ImportUserEventsRequest request, Option... opts) throws NetException, BizException;
 
     // GetOperation
     //
     // Gets the operation of a previous long running call.
     OperationResponse getOperation(
-            GetOperationRequest request, Options.Filler... opts) throws NetException, BizException;
+            GetOperationRequest request, Option... opts) throws NetException, BizException;
 
     // ListOperations
     //
     // Lists operations that match the specified filter in the request.
     ListOperationsResponse listOperations(
-            ListOperationsRequest request, Options.Filler... opts) throws NetException, BizException;
+            ListOperationsRequest request, Option... opts) throws NetException, BizException;
 
     // Predict
     //
@@ -119,7 +119,7 @@ public interface RetailClient {
     // Depending how (realtime or batch) the UserEvents are sent back, it will
     // be fed into the models and take effect after that.
     PredictResponse predict(
-            PredictRequest request, String scene, Options.Filler... opts) throws NetException, BizException;
+            PredictRequest request, String scene, Option... opts) throws NetException, BizException;
 
     // AckServerImpressions
     //
@@ -137,5 +137,5 @@ public interface RetailClient {
     //   {id:3, altered_reason: "filtered", rank:0},
     // ].
     AckServerImpressionsResponse ackServerImpressions(
-            AckServerImpressionsRequest request, Options.Filler... opts) throws NetException, BizException;
+            AckServerImpressionsRequest request, Option... opts) throws NetException, BizException;
 }

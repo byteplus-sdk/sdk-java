@@ -1,7 +1,7 @@
 package byteplus.sdk.core;
 
-import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,9 +18,9 @@ public class Context {
     // It is sometimes called "secret".
     private final String token;
 
-    // A unique ID assigned by Bytedance, which is used to
-    // generate an authenticated signature when building a request
-    // It is sometimes called "appkey".
+    // A unique token assigned by bytedance, which is used to
+    // generate an authenticated signature when building a request.
+    // It is sometimes called "secret".
     private final String tenantId;
 
     // A unique identity assigned by Bytedance, which is need to fill in URL.
@@ -32,22 +32,21 @@ public class Context {
     private String schema = "https";
 
     // Server address, china use "rec-b.volcengineapi.com",
-    // other area use "tob.sgsnssdk.com"
+    // other area use "tob.sgsnssdk.com" in default
     private List<String> hosts;
 
+    // Customer-defined http headers, all requests will include these headers
     private Map<String, String> customerHeaders = Collections.emptyMap();
 
     @Slf4j
     @Accessors(chain = true)
-    @Data
+    @Setter
     public static class Param {
         private String tenant;
 
         private String tenantId;
 
         private String token;
-
-        private int retryTimes;
 
         private String schema;
 
@@ -63,38 +62,40 @@ public class Context {
         this.tenant = param.tenant;
         this.tenantId = param.tenantId;
         this.token = param.token;
-        initHosts(param.region);
+        fillHosts(param);
+
         if (Objects.nonNull(param.schema)) {
             this.schema = param.schema;
         }
-        if (Objects.nonNull(param.hosts) && !param.hosts.isEmpty()) {
-            this.hosts = param.hosts;
-        }
-        if (Objects.nonNull(param.headers) && !param.headers.isEmpty()) {
+        if (Objects.nonNull(param.headers)) {
             this.customerHeaders = param.headers;
         }
     }
 
     private void checkRequiredField(Param param) {
-        if (Objects.isNull(param.getTenant())) {
+        if (Objects.isNull(param.tenant)) {
             throw new RuntimeException("Tenant is null");
         }
-        if (Objects.isNull(param.getTenantId())) {
+        if (Objects.isNull(param.tenantId)) {
             throw new RuntimeException("Tenant id is null");
         }
-        if (Objects.isNull((param.getToken()))) {
+        if (Objects.isNull(param.token)) {
             throw new RuntimeException("Token is null");
         }
         if (Objects.isNull(param.region)) {
-            throw new RuntimeException("Area is null");
+            throw new RuntimeException("Region is null");
         }
     }
 
-    private void initHosts(Region region) {
-        if (region == Region.CN) {
-            hosts = Constant.CNHosts;
-        } else {
-            hosts = Constant.SGHosts;
+    private void fillHosts(Param param) {
+        if (Objects.nonNull(param.hosts) && !param.hosts.isEmpty()) {
+            this.hosts = param.hosts;
+            return;
         }
+        if (param.region == Region.CN) {
+            hosts = Constant.CN_HOSTS;
+            return;
+        }
+        hosts = Constant.SG_HOSTS;
     }
 }

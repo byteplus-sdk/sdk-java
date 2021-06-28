@@ -2,12 +2,13 @@ package byteplus.sdk.retail;
 
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.HostAvailabler;
+import byteplus.sdk.core.URLCenter;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Getter
-public final class RetailURL {
+public final class RetailURL implements URLCenter {
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/home
     private final static String PREDICT_URL_FORMAT = "%s://%s/predict/api/retail/%s/{}";
@@ -30,7 +31,7 @@ public final class RetailURL {
 
     public RetailURL(Context context) {
         this.context = context;
-        refreshUrl(context.getHosts().get(0));
+        refresh(context.getHosts().get(0));
         hostAvailabler = new HostAvailabler(this, context);
     }
 
@@ -75,7 +76,8 @@ public final class RetailURL {
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=list
     private String listOperationsUrl;
 
-    public void refreshUrl(String host) {
+    @Override
+    public void refresh(String host) {
         String schema = context.getSchema(), tenant = context.getTenant();
         predictUrlFormat = String.format(PREDICT_URL_FORMAT, schema, host, tenant);
         ackImpressionUrl = String.format(ACK_IMPRESSION_URL_FORMAT, schema, host, tenant);

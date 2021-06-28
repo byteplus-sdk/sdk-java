@@ -21,7 +21,7 @@ import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.HttpCaller;
 import byteplus.sdk.core.NetException;
-import byteplus.sdk.core.Options;
+import byteplus.sdk.core.Option;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,10 +31,10 @@ import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 
 @Slf4j
 class RetailClientImpl implements RetailClient {
-    private final static String TOO_MANY_WRITE_ITEMS_ERR_MSG =
+    private final static String ERR_MSG_TOO_MANY_WRITE_ITEMS =
             String.format("Only can receive %d items in one write request", MAX_WRITE_ITEM_COUNT);
 
-    private final static String TOO_MANY_IMPORT_ITEMS_ERR_MSG =
+    private final static String ERR_MSG_TOO_MANY_IMPORT_ITEMS =
             String.format("Only can receive %d items in one import request", MAX_IMPORT_ITEM_COUNT);
 
     private final RetailURL retailUrl;
@@ -49,83 +49,83 @@ class RetailClientImpl implements RetailClient {
 
     @Override
     public WriteUsersResponse writeUsers(
-            WriteUsersRequest request, Options.Filler... opts) throws NetException, BizException {
+            WriteUsersRequest request, Option... opts) throws NetException, BizException {
         if (request.getUsersCount() > MAX_WRITE_ITEM_COUNT) {
-            throw new BizException(TOO_MANY_WRITE_ITEMS_ERR_MSG);
+            throw new BizException(ERR_MSG_TOO_MANY_WRITE_ITEMS);
         }
         Parser<WriteUsersResponse> parser = WriteUsersResponse.parser();
         String url = retailUrl.getWriteUsersUrl();
         WriteUsersResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][WriteUsers] rsp: {}", response);
+        log.debug("[ByteplusSDK][WriteUsers] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public OperationResponse importUsers(
-            ImportUsersRequest request, Options.Filler... opts) throws NetException, BizException {
+            ImportUsersRequest request, Option... opts) throws NetException, BizException {
         if (request.getInputConfig().getUsersInlineSource().getUsersCount() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(TOO_MANY_IMPORT_ITEMS_ERR_MSG);
+            throw new BizException(ERR_MSG_TOO_MANY_IMPORT_ITEMS);
         }
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = retailUrl.getImportUsersUrl();
         OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][ImportUsers] rsp: {}", response);
+        log.debug("[ByteplusSDK][ImportUsers] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public WriteProductsResponse writeProducts(
-            WriteProductsRequest request, Options.Filler... opts) throws NetException, BizException {
+            WriteProductsRequest request, Option... opts) throws NetException, BizException {
         if (request.getProductsCount() > MAX_WRITE_ITEM_COUNT) {
-            throw new BizException(TOO_MANY_WRITE_ITEMS_ERR_MSG);
+            throw new BizException(ERR_MSG_TOO_MANY_WRITE_ITEMS);
         }
         Parser<WriteProductsResponse> parser = WriteProductsResponse.parser();
         String url = retailUrl.getWriteProductsUrl();
         WriteProductsResponse response =
                 httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][WriteProducts] rsp: {}", response);
+        log.debug("[ByteplusSDK][WriteProducts] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public OperationResponse importProducts(
-            ImportProductsRequest request, Options.Filler... opts) throws NetException, BizException {
+            ImportProductsRequest request, Option... opts) throws NetException, BizException {
         if (request.getInputConfig().getProductsInlineSource().getProductsCount() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(TOO_MANY_IMPORT_ITEMS_ERR_MSG);
+            throw new BizException(ERR_MSG_TOO_MANY_IMPORT_ITEMS);
         }
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = retailUrl.getImportProductsUrl();
         OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][ImportProducts] rsp: {}", response);
+        log.debug("[ByteplusSDK][ImportProducts] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public WriteUserEventsResponse writeUserEvents(
-            WriteUserEventsRequest request, Options.Filler... opts) throws NetException, BizException {
+            WriteUserEventsRequest request, Option... opts) throws NetException, BizException {
         if (request.getUserEventsCount() > MAX_WRITE_ITEM_COUNT) {
-            throw new BizException(TOO_MANY_WRITE_ITEMS_ERR_MSG);
+            throw new BizException(ERR_MSG_TOO_MANY_WRITE_ITEMS);
         }
         Parser<WriteUserEventsResponse> parser = WriteUserEventsResponse.parser();
         String url = retailUrl.getWriteUserEventsUrl();
         WriteUserEventsResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][WriteUserEvents] rsp: {}", response);
+        log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public OperationResponse importUserEvents(
-            ImportUserEventsRequest request, Options.Filler... opts) throws NetException, BizException {
+            ImportUserEventsRequest request, Option... opts) throws NetException, BizException {
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = retailUrl.getImportUserEventsUrl();
         OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][ImportUserEvents] rsp: {}", response);
+        log.debug("[ByteplusSDK][ImportUserEvents] rsp:\n{}", response);
         return response;
     }
 
     @Override
     public OperationResponse getOperation(
-            GetOperationRequest request, Options.Filler... opts) throws NetException, BizException {
+            GetOperationRequest request, Option... opts) throws NetException, BizException {
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = retailUrl.getGetOperationUrl();
         OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
@@ -135,7 +135,7 @@ class RetailClientImpl implements RetailClient {
 
     @Override
     public ListOperationsResponse listOperations(
-            ListOperationsRequest request, Options.Filler... opts) throws NetException, BizException {
+            ListOperationsRequest request, Option... opts) throws NetException, BizException {
         Parser<ListOperationsResponse> parser = ListOperationsResponse.parser();
         String url = retailUrl.getListOperationsUrl();
         ListOperationsResponse response = httpCaller.doRequest(url, request, parser, opts);
@@ -145,7 +145,7 @@ class RetailClientImpl implements RetailClient {
 
     @Override
     public PredictResponse predict(
-            PredictRequest request, String scene, Options.Filler... opts) throws NetException, BizException {
+            PredictRequest request, String scene, Option... opts) throws NetException, BizException {
         String urlFormat = retailUrl.getPredictUrlFormat();
         String url = urlFormat.replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
@@ -156,7 +156,7 @@ class RetailClientImpl implements RetailClient {
 
     @Override
     public AckServerImpressionsResponse ackServerImpressions(
-            AckServerImpressionsRequest request, Options.Filler... opts) throws NetException, BizException {
+            AckServerImpressionsRequest request, Option... opts) throws NetException, BizException {
         Parser<AckServerImpressionsResponse> parser = AckServerImpressionsResponse.parser();
         String url = retailUrl.getAckImpressionUrl();
         AckServerImpressionsResponse response = httpCaller.doRequest(url, request, parser, opts);

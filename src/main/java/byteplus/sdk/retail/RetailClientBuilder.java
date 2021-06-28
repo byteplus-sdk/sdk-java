@@ -38,7 +38,7 @@ public final class RetailClientBuilder {
         return this;
     }
 
-    public RetailClientBuilder customerHeaders(Map<String, String> headers) {
+    public RetailClientBuilder headers(Map<String, String> headers) {
         this.param.setHeaders(headers);
         return this;
     }

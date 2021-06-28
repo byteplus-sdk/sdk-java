@@ -46,71 +46,17 @@ public class HttpCaller {
             String url,
             Req request,
             Parser<Rsp> rspParser,
-            Options.Filler... optFillers) throws NetException, BizException {
+            Option... opts) throws NetException, BizException {
 
         byte[] bodyBytes = gzipCompress(request.toByteArray());
-        Options options = conv2Options(optFillers);
+        Options options = Option.conv2Options(opts);
         Headers headers = buildHeaders(options, bodyBytes);
         byte[] rspBytes = doHttpRequest(url, headers, bodyBytes, options.getTimeout());
         try {
             return rspParser.parseFrom(rspBytes);
         } catch (InvalidProtocolBufferException e) {
-            log.error("[ByteplusSDK]parse response bytes fail, parser:{} err:{}", rspParser, e.getMessage());
+            log.error("[ByteplusSDK]parse response fail, url:{} err:{} ", url, e.getMessage());
             throw new BizException("parse response fail");
-        }
-    }
-
-    private Options conv2Options(Options.Filler[] fillers) {
-        Options options = new Options();
-        if (Objects.isNull(fillers) || fillers.length == 0) {
-            return options;
-        }
-        for (Options.Filler filler : fillers) {
-            filler.Fill(options);
-        }
-        return options;
-    }
-
-    private byte[] doHttpRequest(String url,
-                         Headers headers,
-                         byte[] bodyBytes,
-                         Duration timeout) throws NetException {
-
-//        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, headers);
-        Request request = new Request.Builder()
-                .url(url)
-                .headers(headers)
-                .post(RequestBody.create(bodyBytes))
-                .build();
-        Call call = selectHttpClient(timeout).newCall(request);
-        LocalDateTime startTime = LocalDateTime.now();
-        try {
-            Response response = call.execute();
-            ResponseBody rspBody = response.body();
-            if (response.code() != SUCCESS_HTTP_CODE) {
-                if (Objects.nonNull(rspBody)) {
-                    log.error("[ByteplusSDK][HTTPCaller] http status not 200, url:{} code:{} msg:{} body:\n{}",
-                            url, response.code(), response.message(), rspBody.string());
-                } else {
-                    log.error("[ByteplusSDK][HTTPCaller] http status not 200, url:{} code:{} msg:{}",
-                            url, response.code(), response.message());
-                }
-                throw new NetException(response.code());
-            }
-//            log.debug("[ByteplusSDK][HTTPCaller] URL:{} Response Headers:\n{}", url, response.headers());
-            if (Objects.isNull(rspBody)) {
-                return null;
-            }
-            if (!Objects.equals(response.header("Content-Encoding"), "gzip")) {
-                return rspBody.bytes();
-            }
-            return gzipDecompress(rspBody.bytes());
-        } catch (IOException e) {
-            log.error("[ByteplusSDK][HTTPCaller] do http request occur io exception, msg:{}", e.getMessage());
-            throw new NetException(e.getMessage());
-        } finally {
-            log.debug("[ByteplusSDK][HTTPCaller] path:{}, cost:{}ms",
-                    url, Duration.between(startTime, LocalDateTime.now()).toMillis());
         }
     }
 
@@ -128,26 +74,6 @@ public class HttpCaller {
         } catch (IOException e) {
             log.error("[ByteplusSDK] gzip compress http request bytes error {}", e.getMessage());
         }
-        return out.toByteArray();
-    }
-
-    private byte[] gzipDecompress(byte[] bodyBytes) {
-        if (bodyBytes == null || bodyBytes.length == 0) {
-            return new byte[0];
-        }
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ByteArrayInputStream in = new ByteArrayInputStream(bodyBytes);
-        try {
-            GZIPInputStream ungzip = new GZIPInputStream(in);
-            byte[] buffer = new byte[256];
-            int n;
-            while ((n = ungzip.read(buffer)) >= 0) {
-                out.write(buffer, 0, n);
-            }
-        } catch (Exception e) {
-            log.error("[ByteplusSDK] gzip decompress http response bytes error, msg: {}", e.getMessage());
-        }
-
         return out.toByteArray();
     }
 
@@ -184,10 +110,10 @@ public class HttpCaller {
         // calculate the authentication signature
         String signature = calSignature(httpBody, ts, nonce);
 
-        headerBuilder.add("Tenant-Id", context.getTenantId());
-        headerBuilder.add("Tenant-Ts", ts);
-        headerBuilder.add("Tenant-Nonce", nonce);
-        headerBuilder.add("Tenant-Signature", signature);
+        headerBuilder.set("Tenant-Id", context.getTenantId());
+        headerBuilder.set("Tenant-Ts", ts);
+        headerBuilder.set("Tenant-Nonce", nonce);
+        headerBuilder.set("Tenant-Signature", signature);
     }
 
     private String calSignature(byte[] httpBody, String ts, String nonce) {
@@ -222,6 +148,49 @@ public class HttpCaller {
         return sb.toString();
     }
 
+
+    private byte[] doHttpRequest(String url,
+                                 Headers headers,
+                                 byte[] bodyBytes,
+                                 Duration timeout) throws NetException, BizException {
+
+//        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, headers);
+        Request request = new Request.Builder()
+                .url(url)
+                .headers(headers)
+                .post(RequestBody.create(bodyBytes))
+                .build();
+        Call call = selectHttpClient(timeout).newCall(request);
+        LocalDateTime startTime = LocalDateTime.now();
+        try {
+            Response response = call.execute();
+            ResponseBody rspBody = response.body();
+            if (response.code() != SUCCESS_HTTP_CODE) {
+                logHttpResponse(url, response);
+                throw new NetException(String.format("code:%d msg:%s", response.code(), response.message()));
+            }
+//            log.debug("[ByteplusSDK][HTTPCaller] URL:{} Response Headers:\n{}", url, response.headers());
+            if (Objects.isNull(rspBody)) {
+                return null;
+            }
+            String rspEncoding = response.header("Content-Encoding");
+            if (Objects.isNull(rspEncoding) || !rspEncoding.contains("gzip")) {
+                return rspBody.bytes();
+            }
+            return gzipDecompress(rspBody.bytes());
+        } catch (IOException e) {
+            if (e.getMessage().toLowerCase().contains("timeout")) {
+                log.error("[ByteplusSDK] do http request timeout, msg:{}", e.getMessage());
+                throw new NetException(e.getMessage());
+            }
+            log.error("[ByteplusSDK] do http request occur io exception, msg:{}", e.getMessage());
+            throw new BizException(e.getMessage());
+        } finally {
+            log.debug("[ByteplusSDK] http url:{}, cost:{}ms",
+                    url, Duration.between(startTime, LocalDateTime.now()).toMillis());
+        }
+    }
+
     private OkHttpClient selectHttpClient(Duration timeout) {
         if (Objects.isNull(timeout) || timeout.isZero()) {
             return defaultHttpCli;
@@ -246,5 +215,36 @@ public class HttpCaller {
             timeoutHttpCliMap = timeoutHttpCliMapTemp;
             return httpClient;
         }
+    }
+
+    private void logHttpResponse(String url, Response response) throws IOException {
+        ResponseBody rspBody = response.body();
+        if (Objects.nonNull(rspBody)) {
+            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} body:\n{}",
+                    url, response.code(), response.message(), rspBody.string());
+        } else {
+            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{}",
+                    url, response.code(), response.message());
+        }
+    }
+
+    private byte[] gzipDecompress(byte[] bodyBytes) {
+        if (bodyBytes == null || bodyBytes.length == 0) {
+            return new byte[0];
+        }
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        ByteArrayInputStream in = new ByteArrayInputStream(bodyBytes);
+        try {
+            GZIPInputStream ungzip = new GZIPInputStream(in);
+            byte[] buffer = new byte[256];
+            int n;
+            while ((n = ungzip.read(buffer)) >= 0) {
+                out.write(buffer, 0, n);
+            }
+        } catch (Exception e) {
+            log.error("[ByteplusSDK] gzip decompress http response error, err:{}", e.getMessage());
+        }
+
+        return out.toByteArray();
     }
 }
