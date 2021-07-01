@@ -1,6 +1,5 @@
 package byteplus.sdk.core;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -29,12 +28,4 @@ public final class Constant {
     public final static int STATUS_CODE_OPERATION_LOSS = 410;
     // The server hope slow down request frequency, and this request was rejected
     public final static int STATUS_CODE_TOO_MANY_REQUEST = 429;
-
-    /**
-     * Datetime messages sent to server should be formatted by "RCF3339" specification
-     * Reference info：https://datatracker.ietf.org/doc/html/rfc3339
-     * <p>
-     * "ISO_OFFSET_DATE_TIME" is almost equivalent to "RCF3339"
-     */
-    public static final DateTimeFormatter RCF3339 = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
 }

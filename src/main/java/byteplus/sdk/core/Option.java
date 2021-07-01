@@ -3,6 +3,7 @@ package byteplus.sdk.core;
 import okhttp3.Headers;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.Objects;
 
@@ -42,5 +43,17 @@ public interface Option {
             headers.forEach(headersBuilder::set);
             options.setHeaders(headersBuilder.build());
         };
+    }
+
+    static Option withDataDate(LocalDate date) {
+        return options -> options.setDataDate(date);
+    }
+
+    static Option withDataEnd(Boolean isEnd) {
+        return options -> options.setDataIsEnd(isEnd);
+    }
+
+    static Option withServerTimeout(Duration timeout) {
+        return options -> options.setServerTimeout(timeout);
     }
 }

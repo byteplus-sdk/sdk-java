@@ -1,27 +1,24 @@
 package byteplus.sdk.retail;
 
-import byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.GetOperationRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.ImportProductsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.ImportUserEventsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.ImportUsersRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.ListOperationsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.ListOperationsResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.OperationResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.PredictRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.PredictResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteProductsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteProductsResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteUserEventsRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteUserEventsResponse;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteUsersRequest;
-import byteplus.retail.sdk.protocol.ByteplusRetail.WriteUsersResponse;
+import byteplus.sdk.common.CommonClientImpl;
+import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
-import byteplus.sdk.core.HttpCaller;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
+import byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsResponse;
+import byteplus.sdk.retail.protocol.ByteplusRetail.ImportProductsRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.ImportUserEventsRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.ImportUsersRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.PredictRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.PredictResponse;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsResponse;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsResponse;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersRequest;
+import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersResponse;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +27,7 @@ import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 
 
 @Slf4j
-class RetailClientImpl implements RetailClient {
+class RetailClientImpl extends CommonClientImpl implements RetailClient {
     private final static String ERR_MSG_TOO_MANY_WRITE_ITEMS =
             String.format("Only can receive %d items in one write request", MAX_WRITE_ITEM_COUNT);
 
@@ -39,12 +36,9 @@ class RetailClientImpl implements RetailClient {
 
     private final RetailURL retailUrl;
 
-    private final HttpCaller httpCaller;
-
     RetailClientImpl(Context.Param param) {
-        Context context = new Context(param);
+        super(param);
         this.retailUrl = new RetailURL(context);
-        this.httpCaller = new HttpCaller(context);
     }
 
     @Override
@@ -123,25 +117,6 @@ class RetailClientImpl implements RetailClient {
         return response;
     }
 
-    @Override
-    public OperationResponse getOperation(
-            GetOperationRequest request, Option... opts) throws NetException, BizException {
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        String url = retailUrl.getGetOperationUrl();
-        OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][GetOperations] rsp:\n{}", response);
-        return response;
-    }
-
-    @Override
-    public ListOperationsResponse listOperations(
-            ListOperationsRequest request, Option... opts) throws NetException, BizException {
-        Parser<ListOperationsResponse> parser = ListOperationsResponse.parser();
-        String url = retailUrl.getListOperationsUrl();
-        ListOperationsResponse response = httpCaller.doRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][ListOperations] rsp:\n{}", response);
-        return response;
-    }
 
     @Override
     public PredictResponse predict(

@@ -46,7 +46,7 @@ public class HostAvailabler {
 
     private ScheduledExecutorService executor;
 
-    public HostAvailabler(URLCenter urlCenter, Context context) {
+    public HostAvailabler(Context context, URLCenter urlCenter) {
         this.urlCenter = urlCenter;
         this.context = context;
         if (context.getHosts().size() <= 1) {

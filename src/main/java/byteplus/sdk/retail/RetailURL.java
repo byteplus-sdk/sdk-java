@@ -1,43 +1,25 @@
 package byteplus.sdk.retail;
 
+import byteplus.sdk.common.CommonURL;
 import byteplus.sdk.core.Context;
-import byteplus.sdk.core.HostAvailabler;
 import byteplus.sdk.core.URLCenter;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Getter
-public final class RetailURL implements URLCenter {
+public final class RetailURL extends CommonURL implements URLCenter {
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/home
     private final static String PREDICT_URL_FORMAT = "%s://%s/predict/api/retail/%s/{}";
 
     // The URL format of reporting the real exposure list
-    // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/ack_impression
+    // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/ack_server_impressions
     private final static String ACK_IMPRESSION_URL_FORMAT = "%s://%s/predict/api/retail/%s/ack_server_impressions";
 
     // The URL format of data uploading
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
     private final static String UPLOAD_URL_FORMAT = "%s://%s/data/api/retail/%s/%s?method=%s";
-
-    // The URL format of operation information
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=get
-    private final static String OPERATION_URL_FORMAT = "%s://%s/data/api/retail/%s/operation?method=%s";
-
-    private final Context context;
-
-    private final HostAvailabler hostAvailabler;
-
-    public RetailURL(Context context) {
-        this.context = context;
-        refresh(context.getHosts().get(0));
-        hostAvailabler = new HostAvailabler(this, context);
-    }
-
-    void shutDown() {
-        hostAvailabler.shutdown();
-    }
 
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/home
@@ -68,17 +50,14 @@ public final class RetailURL implements URLCenter {
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=import
     private String importUserEventsUrl;
 
-    // The URL of getting operation information which is real-time
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=get
-    private String getOperationUrl;
-
-    // The URL of query operations information which is non-real-time
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=list
-    private String listOperationsUrl;
+    public RetailURL(Context context) {
+        super(context);
+        refresh(context.getHosts().get(0));
+    }
 
     @Override
     public void refresh(String host) {
-        String schema = context.getSchema(), tenant = context.getTenant();
+        super.refresh(host);
         predictUrlFormat = String.format(PREDICT_URL_FORMAT, schema, host, tenant);
         ackImpressionUrl = String.format(ACK_IMPRESSION_URL_FORMAT, schema, host, tenant);
         writeUsersUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "user", "write");
@@ -87,7 +66,6 @@ public final class RetailURL implements URLCenter {
         importProductsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "product", "import");
         writeUserEventsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "user_event", "write");
         importUserEventsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "user_event", "import");
-        getOperationUrl = String.format(OPERATION_URL_FORMAT, schema, host, tenant, "get");
-        listOperationsUrl = String.format(OPERATION_URL_FORMAT, schema, host, tenant, "list");
+
     }
 }

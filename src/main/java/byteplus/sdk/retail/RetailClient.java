@@ -1,28 +1,26 @@
 package byteplus.sdk.retail;
 
+import byteplus.sdk.common.CommonClient;
+import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 
-import static byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.AckServerImpressionsResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.GetOperationRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.ImportProductsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.ImportUserEventsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.ImportUsersRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.ListOperationsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.ListOperationsResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.OperationResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.PredictRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.PredictResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteProductsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteProductsResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteUserEventsRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteUserEventsResponse;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteUsersRequest;
-import static byteplus.retail.sdk.protocol.ByteplusRetail.WriteUsersResponse;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsResponse;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.ImportProductsRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.ImportUserEventsRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.ImportUsersRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.PredictRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.PredictResponse;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsResponse;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsResponse;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersRequest;
+import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersResponse;
 
-public interface RetailClient {
+public interface RetailClient extends CommonClient {
     // WriteUsers
     //
     // Writes at most 100 users at a time. Exceeding 100 in a request results in
@@ -98,18 +96,6 @@ public interface RetailClient {
     // Please make sure the requests are deduplicated before sending over.
     OperationResponse importUserEvents(
             ImportUserEventsRequest request, Option... opts) throws NetException, BizException;
-
-    // GetOperation
-    //
-    // Gets the operation of a previous long running call.
-    OperationResponse getOperation(
-            GetOperationRequest request, Option... opts) throws NetException, BizException;
-
-    // ListOperations
-    //
-    // Lists operations that match the specified filter in the request.
-    ListOperationsResponse listOperations(
-            ListOperationsRequest request, Option... opts) throws NetException, BizException;
 
     // Predict
     //
