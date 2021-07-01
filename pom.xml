@@ -11,7 +11,7 @@
 
     <name>byteplus-sdk</name>
     <description>SDK for byteplus</description>
-    <url>https://github.com/byte-plus</url>
+    <url>https://github.com/byteplus-sdk</url>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -173,16 +173,16 @@
     <developers>
         <developer>
             <name>Guowei Lei</name>
-            <email>leiguowei@outlook.com</email>
+            <email>leiguowei@bytedance.com</email>
             <organization>bytedance</organization>
             <url>https://github.com/greastate</url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/byte-plus/sdk-java.git</connection>
-        <developerConnection>scm:git:https://github.com/byte-plus/sdk-java.git</developerConnection>
-        <url>https://github.com/byte-plus</url>
+        <connection>scm:git:https://github.com/byteplus-sdk/sdk-java.git</connection>
+        <developerConnection>scm:git:https://github.com/byteplus-sdk/sdk-java.git</developerConnection>
+        <url>https://github.com/byteplus-sdk</url>
         <tag>1.0.2</tag>
     </scm>
 
