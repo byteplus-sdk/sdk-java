@@ -16,7 +16,6 @@ import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,8 +29,8 @@ import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 @Slf4j
 public class GeneralClientImpl extends CommonClientImpl implements GeneralClient {
 
-    private final static String ERR_MSG_TOO_MANY_IMPORT_ITEMS =
-            String.format("Only can receive %d items in one import request", MAX_IMPORT_ITEM_COUNT);
+    private final static String ERR_MSG_TOO_MANY_ITEMS =
+            String.format("Only can receive max to %d items in one request", MAX_IMPORT_ITEM_COUNT);
 
     private final GeneralURL generalURL;
 
@@ -50,7 +49,10 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     public WriteResponse writeData(List<Map<String, Object>> dataList, String topic,
                                    Option... opts) throws NetException, BizException {
         if (Objects.nonNull(dataList) && dataList.size() > MAX_WRITE_ITEM_COUNT) {
-            log.warn("[ByteplusSDK][WriteData] size more than '{}'", MAX_IMPORT_ITEM_COUNT);
+            log.warn("[ByteplusSDK][WriteData] item count more than '{}'", MAX_WRITE_ITEM_COUNT);
+            if (dataList.size() > MAX_IMPORT_ITEM_COUNT) {
+                throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
+            }
         }
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = generalURL.getWriteDataUrlFormat();
@@ -64,7 +66,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     public OperationResponse importData(List<Map<String, Object>> dataList, String topic,
                                         Option... opts) throws NetException, BizException {
         if (Objects.nonNull(dataList) && dataList.size() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(ERR_MSG_TOO_MANY_IMPORT_ITEMS);
+            throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
         }
         String urlFormat = generalURL.getImportDataUrlFormat();
         String url = urlFormat.replace("{}", topic);

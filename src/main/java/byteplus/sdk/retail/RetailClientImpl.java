@@ -29,10 +29,10 @@ import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 @Slf4j
 class RetailClientImpl extends CommonClientImpl implements RetailClient {
     private final static String ERR_MSG_TOO_MANY_WRITE_ITEMS =
-            String.format("Only can receive %d items in one write request", MAX_WRITE_ITEM_COUNT);
+            String.format("Only can receive max to %d items in one write request", MAX_WRITE_ITEM_COUNT);
 
     private final static String ERR_MSG_TOO_MANY_IMPORT_ITEMS =
-            String.format("Only can receive %d items in one import request", MAX_IMPORT_ITEM_COUNT);
+            String.format("Only can receive max to %d items in one import request", MAX_IMPORT_ITEM_COUNT);
 
     private final RetailURL retailUrl;
 

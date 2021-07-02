@@ -8,7 +8,7 @@ import lombok.Getter;
 public class CommonURL implements URLCenter {
     // The URL format of operation information
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=get
-    private final static String OPERATION_URL_FORMAT = "%s://%s/data/api/retail/%s/operation?method=%s";
+    private final static String OPERATION_URL_FORMAT = "%s://%s/data/api/%s/operation?method=%s";
 
     // The URL of getting operation information which is real-time
     // Example: https://tob.sgsnssdk.com/data/api/retail_demo/operation?method=get
