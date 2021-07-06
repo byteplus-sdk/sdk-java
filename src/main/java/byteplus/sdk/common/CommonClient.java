@@ -17,4 +17,6 @@ public interface CommonClient {
     // Lists operations that match the specified filter in the request.
     ListOperationsResponse listOperations(ListOperationsRequest request,
                                           Option... opts) throws NetException, BizException;
+
+    void release();
 }

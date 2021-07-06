@@ -12,13 +12,13 @@ import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CommonClientImpl implements CommonClient, URLCenter {
+public abstract class CommonClientImpl implements CommonClient, URLCenter {
 
     protected final Context context;
 
     protected final HttpCaller httpCaller;
 
-    private final CommonURL commonURL;
+    protected CommonURL commonURL;
 
     private final HostAvailabler hostAvailabler;
 
@@ -30,12 +30,20 @@ public class CommonClientImpl implements CommonClient, URLCenter {
     }
 
     @Override
-    public void refresh(String host) {
+    public final void refresh(String host) {
         this.commonURL.refresh(host);
+        doRefresh(host);
     }
 
-    public void release() {
+    public abstract void doRefresh(String host);
+
+    public final void release() {
         this.hostAvailabler.shutdown();
+        doRelease();
+    }
+
+    public void doRelease() {
+
     }
 
     @Override
@@ -43,7 +51,7 @@ public class CommonClientImpl implements CommonClient, URLCenter {
             GetOperationRequest request, Option... opts) throws NetException, BizException {
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = commonURL.getGetOperationUrl();
-        OperationResponse response = httpCaller.doRequest(url, request, parser, opts);
+        OperationResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][GetOperations] rsp:\n{}", response);
         return response;
     }
@@ -53,7 +61,7 @@ public class CommonClientImpl implements CommonClient, URLCenter {
             ListOperationsRequest request, Option... opts) throws NetException, BizException {
         Parser<ListOperationsResponse> parser = ListOperationsResponse.parser();
         String url = commonURL.getListOperationsUrl();
-        ListOperationsResponse response = httpCaller.doRequest(url, request, parser, opts);
+        ListOperationsResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][ListOperations] rsp:\n{}", response);
         return response;
     }

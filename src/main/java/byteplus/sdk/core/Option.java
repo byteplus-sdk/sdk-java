@@ -35,14 +35,7 @@ public interface Option {
     }
 
     static Option withHeaders(Map<String, String> headers) {
-        return options -> {
-            if (Objects.isNull(headers) || headers.isEmpty()) {
-                return;
-            }
-            Headers.Builder headersBuilder = new Headers.Builder();
-            headers.forEach(headersBuilder::set);
-            options.setHeaders(headersBuilder.build());
-        };
+        return options -> options.setHeaders(headers);
     }
 
     static Option withDataDate(LocalDate date) {

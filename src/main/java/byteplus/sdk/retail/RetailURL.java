@@ -66,6 +66,5 @@ public final class RetailURL extends CommonURL implements URLCenter {
         importProductsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "product", "import");
         writeUserEventsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "user_event", "write");
         importUserEventsUrl = String.format(UPLOAD_URL_FORMAT, schema, host, tenant, "user_event", "import");
-
     }
 }

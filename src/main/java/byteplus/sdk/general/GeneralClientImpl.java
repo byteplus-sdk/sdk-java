@@ -40,8 +40,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     }
 
     @Override
-    public void refresh(String host) {
-        super.refresh(host);
+    public void doRefresh(String host) {
         this.generalURL.refresh(host);
     }
 
@@ -96,12 +95,12 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
         return response;
     }
 
-    private String formatDoneDate(LocalDate date) {
-        return date.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-    }
-
     private void addDoneDate(List<Map<String, String>> dateMapList, LocalDate date) {
         dateMapList.add(Collections.singletonMap("partition_date", formatDoneDate(date)));
+    }
+
+    private String formatDoneDate(LocalDate date) {
+        return date.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
     }
 
     @Override
@@ -109,7 +108,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                    Option... opts) throws NetException, BizException {
         String url = generalURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doRequest(url, request, parser, opts);
+        PredictResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -119,7 +118,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                      Option... opts) throws NetException, BizException {
         Parser<CallbackResponse> parser = CallbackResponse.parser();
         String url = generalURL.getCallbackUrl();
-        CallbackResponse response = httpCaller.doRequest(url, request, parser, opts);
+        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][Callback] rsp:\n{}", response);
         return response;
     }

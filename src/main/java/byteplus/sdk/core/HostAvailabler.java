@@ -2,6 +2,7 @@ package byteplus.sdk.core;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Call;
+import okhttp3.Headers;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -25,7 +26,7 @@ public class HostAvailabler {
 
     private static final float FAILURE_RATE_THRESHOLD = (float) 0.1;
 
-    private static final String PING_URL_FORMAT = "https://%s/air/api/ping";
+    private static final String PING_URL_FORMAT = "{}://%s/predict/api/ping";
 
     private static final Duration PING_TIMEOUT = Duration.ofMillis(200);
 
@@ -44,11 +45,14 @@ public class HostAvailabler {
 
     private final Context context;
 
+    private final String REAL_PING_URL_FORMAT;
+
     private ScheduledExecutorService executor;
 
     public HostAvailabler(Context context, URLCenter urlCenter) {
         this.urlCenter = urlCenter;
         this.context = context;
+        this.REAL_PING_URL_FORMAT = PING_URL_FORMAT.replace("{}", context.getSchema());
         if (context.getHosts().size() <= 1) {
             return;
         }
@@ -104,9 +108,10 @@ public class HostAvailabler {
     }
 
     private boolean doPing(String host) {
-        String url = String.format(PING_URL_FORMAT, host);
+        String url = String.format(REAL_PING_URL_FORMAT, host);
         Request httpReq = new Request.Builder()
                 .url(url)
+                .headers(customerHeaders())
                 .get()
                 .build();
         Call httpCall = httpCli.newCall(httpReq);
@@ -120,6 +125,12 @@ public class HostAvailabler {
             long cost = System.currentTimeMillis() - start;
             log.debug("[ByteplusSDK] ping host:'{}' cost:'{}ms'", host, cost);
         }
+    }
+
+    private Headers customerHeaders() {
+        Headers.Builder builder = new Headers.Builder();
+        context.getCustomerHeaders().forEach(builder::set);
+        return builder.build();
     }
 
     private void switchHost() {
