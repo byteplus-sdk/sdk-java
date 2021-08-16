@@ -90,7 +90,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
         String urlFormat = generalURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<DoneResponse> parser = DoneResponse.parser();
-        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser);
+        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser, opts);
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }

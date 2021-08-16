@@ -14,6 +14,10 @@ public final class Constant {
 
     final static List<String> SG_HOSTS = Collections.singletonList("tob.sgsnssdk.com");
 
+    final static List<String> US_HOSTS = Collections.singletonList("rec-us-east-1.byteplusapi.com");
+
+    final static List<String> AIR_HOSTS = Collections.singletonList("byteair-api-cn1.snssdk.com");
+
     /**
      * All requests will have a XXXResponse corresponding to them,
      * and all XXXResponses will contain a 'Status' field.

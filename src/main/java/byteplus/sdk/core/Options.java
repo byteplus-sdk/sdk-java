@@ -21,4 +21,6 @@ class Options {
     private Boolean dataIsEnd;
 
     private Duration serverTimeout;
+
+    private String stage;
 }
