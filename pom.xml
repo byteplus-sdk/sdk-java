@@ -6,7 +6,7 @@
 
     <groupId>com.volcengine</groupId>
     <artifactId>byteplus-sdk</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>byteplus-sdk</name>
@@ -172,10 +172,10 @@
 
     <developers>
         <developer>
-            <name>Guowei Lei</name>
-            <email>leiguowei@bytedance.com</email>
+            <name>fangxikang</name>
+            <email>fangxikang@bytedance.com</email>
             <organization>bytedance</organization>
-            <url>https://github.com/greastate</url>
+            <url>https://github.com/xikangfang</url>
         </developer>
     </developers>
 
