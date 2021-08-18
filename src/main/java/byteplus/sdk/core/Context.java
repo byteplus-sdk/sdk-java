@@ -96,6 +96,16 @@ public class Context {
             hosts = Constant.CN_HOSTS;
             return;
         }
-        hosts = Constant.SG_HOSTS;
+        if (param.region == Region.US) {
+            hosts = Constant.US_HOSTS;
+            return;
+        }
+        if (param.region == Region.SG) {
+            hosts = Constant.AIR_HOSTS;
+            return;
+        }
+        if (param.region == Region.AIR) {
+            hosts = Constant.AIR_HOSTS;
+        }
     }
 }

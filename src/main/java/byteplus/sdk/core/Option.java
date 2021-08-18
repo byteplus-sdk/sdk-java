@@ -49,4 +49,12 @@ public interface Option {
     static Option withServerTimeout(Duration timeout) {
         return options -> options.setServerTimeout(timeout);
     }
+
+    static Option withQueries(Map<String, String> queries) {
+        return options -> options.setQueries(queries);
+    }
+
+    static Option withStage(String stage) {
+        return options -> options.setStage(stage);
+    }
 }

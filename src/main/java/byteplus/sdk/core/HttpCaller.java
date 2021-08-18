@@ -22,10 +22,7 @@ import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -72,6 +69,7 @@ public class HttpCaller {
         reqBytes = gzipCompress(reqBytes);
         Options options = Option.conv2Options(opts);
         Headers headers = buildHeaders(options, reqBytes, contentType);
+        url = withOptionQueries(options, url);
         byte[] rspBytes = doHttpRequest(url, headers, reqBytes, options.getTimeout());
         try {
             return rspParser.parseFrom(rspBytes);
@@ -108,6 +106,28 @@ public class HttpCaller {
         withOptionHeaders(builder, options);
         withAuthHeaders(builder, bodyBytes);
         return builder.build();
+    }
+
+    private String withOptionQueries(Options options, String url) {
+        Map<String, String> queries = new HashMap<>();
+        if (Objects.nonNull(options.getStage())) {
+            queries.put("stage", options.getStage());
+        }
+        if (Objects.nonNull(options.getQueries())) {
+            queries.putAll(options.getQueries());
+        }
+        if (queries.isEmpty()) {
+            return url;
+        }
+        ArrayList<String> queryParts = new ArrayList<>();
+        queries.forEach((queryName, queryValue) ->
+                queryParts.add(queryName + "=" + queryValue));
+        String queryString = String.join("&", queryParts);
+        if (url.contains("?")) { //already contains queries
+            return url + "&" + queryString;
+        } else {
+            return url + "?" + queryString;
+        }
     }
 
     private void withOptionHeaders(Headers.Builder builder, Options options) {

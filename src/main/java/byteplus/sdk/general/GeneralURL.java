@@ -21,7 +21,7 @@ public class GeneralURL extends CommonURL implements URLCenter {
 
     // The URL format of marking a whole day data has been imported completely
     // Example: https://tob.sgsnssdk.com/predict/api/general_demo/done?topic=user
-    private final static String DONE_URL_FORMAT = "%s://%s/predict/api/%s/done?topic={}";
+    private final static String DONE_URL_FORMAT = "%s://%s/data/api/%s/done?topic={}";
 
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/general_demo/home

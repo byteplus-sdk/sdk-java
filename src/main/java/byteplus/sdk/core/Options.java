@@ -14,9 +14,13 @@ class Options {
 
     private Map<String, String> headers;
 
+    private Map<String, String> queries;
+
     private LocalDate dataDate;
 
     private Boolean dataIsEnd;
 
     private Duration serverTimeout;
+
+    private String stage;
 }
