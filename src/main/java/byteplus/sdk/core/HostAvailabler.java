@@ -167,7 +167,7 @@ public class HostAvailabler {
             }
             head = (head + 1) % size;
             items[head] = success;
-            tail = (tail + 1) & size;
+            tail = (tail + 1) % size;
             boolean removingItem = items[tail];
             if (!removingItem) {
                 failureCount--;
