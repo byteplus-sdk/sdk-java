@@ -69,7 +69,7 @@ public class HttpCaller {
         reqBytes = gzipCompress(reqBytes);
         Options options = Option.conv2Options(opts);
         Headers headers = buildHeaders(options, reqBytes, contentType);
-        url = withOptionQueries(options, url);
+        url = buildUrlWithQueries(options, url);
         byte[] rspBytes = doHttpRequest(url, headers, reqBytes, options.getTimeout());
         try {
             return rspParser.parseFrom(rspBytes);
@@ -108,7 +108,7 @@ public class HttpCaller {
         return builder.build();
     }
 
-    private String withOptionQueries(Options options, String url) {
+    private String buildUrlWithQueries(Options options, String url) {
         Map<String, String> queries = new HashMap<>();
         if (Objects.nonNull(options.getStage())) {
             queries.put("stage", options.getStage());
