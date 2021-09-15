@@ -275,11 +275,11 @@ public class HttpCaller {
     private void logHttpResponse(String url, Response response) throws IOException {
         ResponseBody rspBody = response.body();
         if (Objects.nonNull(rspBody)) {
-            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} body:\n{}",
-                    url, response.code(), response.message(), rspBody.string());
+            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} headers:\n{} body:\n{}",
+                    url, response.code(), response.message(), response.headers(), rspBody.string());
         } else {
-            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{}",
-                    url, response.code(), response.message());
+            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} headers:\n{}",
+                    url, response.code(), response.message(), response.headers());
         }
     }
 
