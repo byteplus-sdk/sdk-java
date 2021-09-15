@@ -12,7 +12,7 @@ public final class Constant {
 
     final static List<String> CN_HOSTS = Arrays.asList("rec-b.volcengineapi.com", "rec.volcengineapi.com");
 
-    final static List<String> SG_HOSTS = Collections.singletonList("tob.sgsnssdk.com");
+    final static List<String> SG_HOSTS = Collections.singletonList("rec-ap-singapore-1.byteplusapi.com");
 
     final static List<String> US_HOSTS = Collections.singletonList("rec-us-east-1.byteplusapi.com");
 

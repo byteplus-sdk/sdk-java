@@ -101,7 +101,7 @@ public class Context {
             return;
         }
         if (param.region == Region.SG) {
-            hosts = Constant.AIR_HOSTS;
+            hosts = Constant.SG_HOSTS;
             return;
         }
         if (param.region == Region.AIR) {

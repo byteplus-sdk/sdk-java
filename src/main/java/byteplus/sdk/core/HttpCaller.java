@@ -235,11 +235,11 @@ public class HttpCaller {
             return gzipDecompress(rspBody.bytes(), url);
         } catch (IOException e) {
             if (e.getMessage().toLowerCase().contains("timeout")) {
-                log.error("[ByteplusSDK] do http request timeout, msg:{} url:{}", e.getMessage(), url);
-                throw new NetException(e.getMessage());
+                log.error("[ByteplusSDK] do http request timeout, msg:{} url:{}", e, url);
+                throw new NetException(e.toString());
             }
-            log.error("[ByteplusSDK] do http request occur exception, msg:{} url:{}", e.getMessage(), url);
-            throw new BizException(e.getMessage());
+            log.error("[ByteplusSDK] do http request occur exception, msg:{} url:{}", e, url);
+            throw new BizException(e.toString());
         } finally {
             log.debug("[ByteplusSDK] http url:{}, cost:{}ms",
                     url, Duration.between(startTime, LocalDateTime.now()).toMillis());
