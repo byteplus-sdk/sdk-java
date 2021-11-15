@@ -23,4 +23,6 @@ class Options {
     private Duration serverTimeout;
 
     private String stage;
+
+    private String scene;
 }
