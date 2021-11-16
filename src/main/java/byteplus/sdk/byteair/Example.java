@@ -20,9 +20,9 @@ public final class Example {
 
     public static void main(String[] args) {
         init();
-//        writeDataExample();
+        writeDataExample();
         doneExample();
-//        predictAndCallbackDemo();
+        predictAndCallbackDemo();
     }
 
     private static void init() {
@@ -35,13 +35,13 @@ public final class Example {
                 //Required，鉴权token，以字节实际分配的为准
                 .token("776147e1c52c62c2b1e3600734f5d944")
                 //Required，租户id
-                .tenantId("2000008540")
+                .tenantId("1324123")
                 //Required，项目id
-                .projectId("28540231")
+                .projectId("3241331")
                 //Optional，url schema
                 .schema("http")
                 // Optional，请求头设置
-                .headers(Collections.singletonMap("Customer-Header", "value"))
+                //.headers(Collections.singletonMap("Customer-Header", "value"))
                 //进行构建client
                 .build();
     }
