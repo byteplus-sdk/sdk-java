@@ -35,9 +35,9 @@ public final class Example {
                 //Required，鉴权token，以字节实际分配的为准
                 .token("776147e1c52c62c2b1e3600734f5d944")
                 //Required，租户id
-                .tenantId("1324123")
+                .tenantId("2000008522")
                 //Required，项目id
-                .projectId("3241331")
+                .projectId("285402222")
                 //Optional，url schema
                 .schema("http")
                 // Optional，请求头设置
@@ -149,8 +149,7 @@ public final class Example {
         Option[] predictOpts = new Option[]{
                 Option.withRequestId(UUID.randomUUID().toString()),
                 Option.withTimeout(Duration.ofMillis(800)),
-                Option.withHeaders(customerHeaders),
-                Option.withScene(DEFAULT_PREDICT_SCENE)
+                Option.withHeaders(customerHeaders)
         };
         ByteplusByteair.PredictResponse predictResponse = null;
         // The `scene` is provided by ByteDance, according to tenant's situation

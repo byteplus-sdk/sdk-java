@@ -54,6 +54,10 @@ public interface ByteairClient extends CommonClient {
     // The updated product data will take effect in 30 mins.
     // Depending how (realtime or batch) the UserEvents are sent back, it will
     // be fed into the models and take effect after that.
+    PredictResponse predict(PredictRequest request, String scene,
+                            Option... opts) throws NetException, BizException;
+
+    // Predict with "default" scene
     PredictResponse predict(PredictRequest request,
                             Option... opts) throws NetException, BizException;
 

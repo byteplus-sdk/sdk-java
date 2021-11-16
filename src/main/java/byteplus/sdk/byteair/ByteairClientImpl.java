@@ -32,6 +32,8 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
     private final static String ERR_MSG_TOO_MANY_ITEMS =
             String.format("Only can receive max to %d items in one request", MAX_IMPORT_ITEM_COUNT);
 
+    public final static String DEFAULT_PREDICT_SCENE = "default";
+
     private final ByteairURL byteairURL;
 
     ByteairClientImpl(Context.Param param) {
@@ -103,14 +105,21 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         return date.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
     }
 
+
     @Override
-    public PredictResponse predict(PredictRequest request,
+    public PredictResponse predict(PredictRequest request, String scene,
                                    Option... opts) throws NetException, BizException {
-        String url = byteairURL.getPredictUrlFormat();
+        String url = byteairURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
         PredictResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
+    }
+
+    @Override
+    public PredictResponse predict(PredictRequest request,
+                                   Option... opts) throws NetException, BizException {
+        return predict(request, DEFAULT_PREDICT_SCENE, opts);
     }
 
     @Override
