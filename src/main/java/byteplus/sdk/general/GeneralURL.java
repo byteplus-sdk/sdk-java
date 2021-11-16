@@ -25,23 +25,23 @@ public class GeneralURL extends CommonURL implements URLCenter {
 
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/general_demo/home
-    private String predictUrlFormat;
+    private volatile String predictUrlFormat;
 
     // The URL of reporting the real exposure list
     // Example: https://tob.sgsnssdk.com/predict/api/general_demo/callback
-    private String callbackUrl;
+    private volatile String callbackUrl;
 
     // The URL of uploading real-time user data
     // Example: https://tob.sgsnssdk.com/data/api/general_demo/user?method=write
-    private String writeDataUrlFormat;
+    private volatile String writeDataUrlFormat;
 
     // The URL of importing daily offline user data
     // Example: https://tob.sgsnssdk.com/data/api/general_demo/user?method=import
-    private String importDataUrlFormat;
+    private volatile String importDataUrlFormat;
 
     // The URL format of marking a whole day data has been imported completely
     // Example: https://tob.sgsnssdk.com/predict/api/general_demo/done?topic=user
-    private String doneUrlFormat;
+    private volatile String doneUrlFormat;
 
     public GeneralURL(Context context) {
         super(context);

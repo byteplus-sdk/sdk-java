@@ -3375,6 +3375,1643 @@ public final class ByteplusByteair {
 
   }
 
+  public interface DateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.Date)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+     * a year.
+     * </pre>
+     *
+     * <code>int32 year = 1;</code>
+     * @return The year.
+     */
+    int getYear();
+
+    /**
+     * <pre>
+     * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+     * month and day.
+     * </pre>
+     *
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    int getMonth();
+
+    /**
+     * <pre>
+     * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+     * to specify a year by itself or a year and month where the day isn't
+     * significant.
+     * </pre>
+     *
+     * <code>int32 day = 3;</code>
+     * @return The day.
+     */
+    int getDay();
+  }
+  /**
+   * <pre>
+   * Represents a whole or partial calendar date, such as a birthday. The time of
+   * day and time zone are either specified elsewhere or are insignificant. The
+   * date is relative to the Gregorian Calendar. This can represent one of the
+   * following:
+   * * A full date, with non-zero year, month, and day values
+   * * A month and day value, with a zero year, such as an anniversary
+   * * A year on its own, with zero month and day values
+   * * A year and month value, with a zero day, such as a credit card expiration
+   * date
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.byteair.Date}
+   */
+  public static final class Date extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.Date)
+      DateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Date.newBuilder() to construct.
+    private Date(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Date() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Date();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Date(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              year_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              month_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              day_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_Date_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_Date_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.Date.class, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder.class);
+    }
+
+    public static final int YEAR_FIELD_NUMBER = 1;
+    private int year_;
+    /**
+     * <pre>
+     * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+     * a year.
+     * </pre>
+     *
+     * <code>int32 year = 1;</code>
+     * @return The year.
+     */
+    @java.lang.Override
+    public int getYear() {
+      return year_;
+    }
+
+    public static final int MONTH_FIELD_NUMBER = 2;
+    private int month_;
+    /**
+     * <pre>
+     * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+     * month and day.
+     * </pre>
+     *
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    @java.lang.Override
+    public int getMonth() {
+      return month_;
+    }
+
+    public static final int DAY_FIELD_NUMBER = 3;
+    private int day_;
+    /**
+     * <pre>
+     * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+     * to specify a year by itself or a year and month where the day isn't
+     * significant.
+     * </pre>
+     *
+     * <code>int32 day = 3;</code>
+     * @return The day.
+     */
+    @java.lang.Override
+    public int getDay() {
+      return day_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (year_ != 0) {
+        output.writeInt32(1, year_);
+      }
+      if (month_ != 0) {
+        output.writeInt32(2, month_);
+      }
+      if (day_ != 0) {
+        output.writeInt32(3, day_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (year_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, year_);
+      }
+      if (month_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, month_);
+      }
+      if (day_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, day_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.Date)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.Date other = (byteplus.sdk.byteair.protocol.ByteplusByteair.Date) obj;
+
+      if (getYear()
+          != other.getYear()) return false;
+      if (getMonth()
+          != other.getMonth()) return false;
+      if (getDay()
+          != other.getDay()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getYear();
+      hash = (37 * hash) + MONTH_FIELD_NUMBER;
+      hash = (53 * hash) + getMonth();
+      hash = (37 * hash) + DAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDay();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.Date prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a whole or partial calendar date, such as a birthday. The time of
+     * day and time zone are either specified elsewhere or are insignificant. The
+     * date is relative to the Gregorian Calendar. This can represent one of the
+     * following:
+     * * A full date, with non-zero year, month, and day values
+     * * A month and day value, with a zero year, such as an anniversary
+     * * A year on its own, with zero month and day values
+     * * A year and month value, with a zero day, such as a credit card expiration
+     * date
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.byteair.Date}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.Date)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_Date_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_Date_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.Date.class, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.Date.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        year_ = 0;
+
+        month_ = 0;
+
+        day_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_Date_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.Date.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.Date result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.Date result = new byteplus.sdk.byteair.protocol.ByteplusByteair.Date(this);
+        result.year_ = year_;
+        result.month_ = month_;
+        result.day_ = day_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.Date) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.Date)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.Date other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.Date.getDefaultInstance()) return this;
+        if (other.getYear() != 0) {
+          setYear(other.getYear());
+        }
+        if (other.getMonth() != 0) {
+          setMonth(other.getMonth());
+        }
+        if (other.getDay() != 0) {
+          setDay(other.getDay());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.Date parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.Date) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int year_ ;
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @return The year.
+       */
+      @java.lang.Override
+      public int getYear() {
+        return year_;
+      }
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @param value The year to set.
+       * @return This builder for chaining.
+       */
+      public Builder setYear(int value) {
+        
+        year_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearYear() {
+        
+        year_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int month_ ;
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @return The month.
+       */
+      @java.lang.Override
+      public int getMonth() {
+        return month_;
+      }
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @param value The month to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonth(int value) {
+        
+        month_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonth() {
+        
+        month_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int day_ ;
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @return The day.
+       */
+      @java.lang.Override
+      public int getDay() {
+        return day_;
+      }
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @param value The day to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDay(int value) {
+        
+        day_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDay() {
+        
+        day_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.Date)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.Date)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.Date DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.Date();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Date>
+        PARSER = new com.google.protobuf.AbstractParser<Date>() {
+      @java.lang.Override
+      public Date parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Date(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Date> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Date> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DoneRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.DoneRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date> 
+        getDataDatesList();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDataDates(int index);
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    int getDataDatesCount();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    java.util.List<? extends byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder> 
+        getDataDatesOrBuilderList();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder getDataDatesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.DoneRequest}
+   */
+  public static final class DoneRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.DoneRequest)
+      DoneRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DoneRequest.newBuilder() to construct.
+    private DoneRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DoneRequest() {
+      dataDates_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DoneRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DoneRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dataDates_ = new java.util.ArrayList<byteplus.sdk.byteair.protocol.ByteplusByteair.Date>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dataDates_.add(
+                  input.readMessage(byteplus.sdk.byteair.protocol.ByteplusByteair.Date.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dataDates_ = java.util.Collections.unmodifiableList(dataDates_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoneRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.class, byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.Builder.class);
+    }
+
+    public static final int DATA_DATES_FIELD_NUMBER = 1;
+    private java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date> dataDates_;
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date> getDataDatesList() {
+      return dataDates_;
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder> 
+        getDataDatesOrBuilderList() {
+      return dataDates_;
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public int getDataDatesCount() {
+      return dataDates_.size();
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDataDates(int index) {
+      return dataDates_.get(index);
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder getDataDatesOrBuilder(
+        int index) {
+      return dataDates_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < dataDates_.size(); i++) {
+        output.writeMessage(1, dataDates_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < dataDates_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, dataDates_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest other = (byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest) obj;
+
+      if (!getDataDatesList()
+          .equals(other.getDataDatesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDataDatesCount() > 0) {
+        hash = (37 * hash) + DATA_DATES_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDatesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.DoneRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.DoneRequest)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoneRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.class, byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDataDatesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataDatesBuilder_ == null) {
+          dataDates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          dataDatesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest result = new byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (dataDatesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            dataDates_ = java.util.Collections.unmodifiableList(dataDates_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.dataDates_ = dataDates_;
+        } else {
+          result.dataDates_ = dataDatesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest.getDefaultInstance()) return this;
+        if (dataDatesBuilder_ == null) {
+          if (!other.dataDates_.isEmpty()) {
+            if (dataDates_.isEmpty()) {
+              dataDates_ = other.dataDates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDataDatesIsMutable();
+              dataDates_.addAll(other.dataDates_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dataDates_.isEmpty()) {
+            if (dataDatesBuilder_.isEmpty()) {
+              dataDatesBuilder_.dispose();
+              dataDatesBuilder_ = null;
+              dataDates_ = other.dataDates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dataDatesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDataDatesFieldBuilder() : null;
+            } else {
+              dataDatesBuilder_.addAllMessages(other.dataDates_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date> dataDates_ =
+        java.util.Collections.emptyList();
+      private void ensureDataDatesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          dataDates_ = new java.util.ArrayList<byteplus.sdk.byteair.protocol.ByteplusByteair.Date>(dataDates_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.Date, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder> dataDatesBuilder_;
+
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date> getDataDatesList() {
+        if (dataDatesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dataDates_);
+        } else {
+          return dataDatesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public int getDataDatesCount() {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.size();
+        } else {
+          return dataDatesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date getDataDates(int index) {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.get(index);
+        } else {
+          return dataDatesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder setDataDates(
+          int index, byteplus.sdk.byteair.protocol.ByteplusByteair.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.set(index, value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder setDataDates(
+          int index, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(byteplus.sdk.byteair.protocol.ByteplusByteair.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.add(value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          int index, byteplus.sdk.byteair.protocol.ByteplusByteair.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.add(index, value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          int index, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder addAllDataDates(
+          java.lang.Iterable<? extends byteplus.sdk.byteair.protocol.ByteplusByteair.Date> values) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dataDates_);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder clearDataDates() {
+        if (dataDatesBuilder_ == null) {
+          dataDates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dataDatesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public Builder removeDataDates(int index) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.remove(index);
+          onChanged();
+        } else {
+          dataDatesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder getDataDatesBuilder(
+          int index) {
+        return getDataDatesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder getDataDatesOrBuilder(
+          int index) {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.get(index);  } else {
+          return dataDatesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public java.util.List<? extends byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder> 
+           getDataDatesOrBuilderList() {
+        if (dataDatesBuilder_ != null) {
+          return dataDatesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dataDates_);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder addDataDatesBuilder() {
+        return getDataDatesFieldBuilder().addBuilder(
+            byteplus.sdk.byteair.protocol.ByteplusByteair.Date.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder addDataDatesBuilder(
+          int index) {
+        return getDataDatesFieldBuilder().addBuilder(
+            index, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.byteair.Date data_dates = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder> 
+           getDataDatesBuilderList() {
+        return getDataDatesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.Date, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder> 
+          getDataDatesFieldBuilder() {
+        if (dataDatesBuilder_ == null) {
+          dataDatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              byteplus.sdk.byteair.protocol.ByteplusByteair.Date, byteplus.sdk.byteair.protocol.ByteplusByteair.Date.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.DateOrBuilder>(
+                  dataDates_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dataDates_ = null;
+        }
+        return dataDatesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.DoneRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.DoneRequest)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DoneRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DoneRequest>() {
+      @java.lang.Override
+      public DoneRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DoneRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DoneRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DoneRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DoneResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.DoneResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -27182,6 +28819,16 @@ public final class ByteplusByteair {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_byteair_ImportResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_Date_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_Date_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_DoneRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_byteair_DoneResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -27329,96 +28976,99 @@ public final class ByteplusByteair {
       "plus.byteair.DataError\"z\n\016ImportResponse" +
       "\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus.St" +
       "atus\022<\n\rerror_samples\030\002 \003(\0132%.bytedance." +
-      "byteplus.byteair.DataError\":\n\014DoneRespon" +
-      "se\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus." +
-      "Status\"\317\001\n\rPredictDevice\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\020\n\010platform\030\002 \001(\t\022\025\n\rdevice_vendor\030\003" +
-      " \001(\t\022\024\n\014device_model\030\004 \001(\t\022\031\n\021device_res" +
-      "olution\030\005 \001(\t\022\026\n\016client_version\030\006 \001(\t\022\022\n" +
-      "\nos_version\030\007 \001(\t\022\024\n\014network_type\030\010 \001(\t\022" +
-      "\017\n\007carrier\030\t \001(\t\"\316\002\n\013PredictUser\022\013\n\003uid\030" +
-      "\001 \001(\t\0229\n\006device\030\002 \001(\0132).bytedance.bytepl" +
-      "us.byteair.PredictDevice\022\013\n\003age\030\003 \001(\t\022\016\n" +
-      "\006gender\030\004 \001(\t\022\020\n\010province\030\005 \001(\t\022\014\n\004city\030" +
-      "\006 \001(\t\022\020\n\010district\030\007 \001(\t\022\022\n\napp_market\030\010 " +
-      "\001(\t\022\022\n\nlogin_mode\030\t \001(\t\022\017\n\007country\030\n \001(\t" +
-      "\022A\n\005extra\030d \003(\01322.bytedance.byteplus.byt" +
-      "eair.PredictUser.ExtraEntry\032,\n\nExtraEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\016Pr" +
-      "edictContext\022\013\n\003spm\030\001 \001(\t\022D\n\005extra\030d \003(\013" +
-      "25.bytedance.byteplus.byteair.PredictCon" +
-      "text.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\024PredictCandida" +
-      "teItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005pri" +
-      "ce\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra\030d " +
-      "\003(\0132;.bytedance.byteplus.byteair.Predict" +
-      "CandidateItem.ExtraEntry\032,\n\nExtraEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n\014Predi" +
-      "ctExtra\022B\n\005extra\030e \003(\01323.bytedance.bytep" +
-      "lus.byteair.PredictExtra.ExtraEntry\032,\n\nE" +
-      "xtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"\230\001\n\022PredictRelatedItem\022\n\n\002id\030\001 \001(\t\022H\n\005" +
-      "extra\030d \003(\01329.bytedance.byteplus.byteair" +
-      ".PredictRelatedItem.ExtraEntry\032,\n\nExtraE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"B\n\013" +
-      "SearchItems\022\020\n\010goods_id\030\002 \001(\t\022\r\n\005price\030\003" +
-      " \001(\002\022\022\n\nboost_ceof\030\004 \001(\002\"\035\n\013StringArray\022" +
-      "\016\n\006values\030\001 \003(\t\"\202\004\n\017SearchCondition\022\r\n\005s" +
-      "tart\030\001 \001(\005\022\023\n\013search_type\030\002 \001(\005\022\021\n\tsort_" +
-      "mode\030\003 \001(\005\022\021\n\tsort_type\030\004 \001(\005\022\017\n\007content" +
-      "\030\005 \001(\t\022\r\n\005query\030\006 \001(\t\022I\n\007filters\030\007 \003(\01328" +
-      ".bytedance.byteplus.byteair.SearchCondit" +
-      "ion.FiltersEntry\022N\n\nfilter_out\030\010 \003(\0132:.b" +
-      "ytedance.byteplus.byteair.SearchConditio" +
-      "n.FilterOutEntry\0226\n\005items\030\t \003(\0132\'.byteda" +
-      "nce.byteplus.byteair.SearchItems\032W\n\014Filt" +
-      "ersEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.b" +
-      "ytedance.byteplus.byteair.StringArray:\0028" +
-      "\001\032Y\n\016FilterOutEntry\022\013\n\003key\030\001 \001(\t\0226\n\005valu" +
-      "e\030\002 \001(\0132\'.bytedance.byteplus.byteair.Str" +
-      "ingArray:\0028\001\"\243\003\n\016PredictRequest\0225\n\004user\030" +
-      "\001 \001(\0132\'.bytedance.byteplus.byteair.Predi" +
-      "ctUser\022;\n\007context\030\002 \001(\0132*.bytedance.byte" +
-      "plus.byteair.PredictContext\022\014\n\004size\030\003 \001(" +
-      "\005\022I\n\017candidate_items\030\004 \003(\01320.bytedance.b" +
-      "yteplus.byteair.PredictCandidateItem\0227\n\005" +
-      "extra\030\005 \001(\0132(.bytedance.byteplus.byteair" +
-      ".PredictExtra\022D\n\014related_item\030\006 \001(\0132..by" +
-      "tedance.byteplus.byteair.PredictRelatedI" +
-      "tem\022E\n\020search_condition\030\007 \001(\0132+.bytedanc" +
-      "e.byteplus.byteair.SearchCondition\"\270\001\n\021P" +
-      "redictResultItem\022\n\n\002id\030\001 \001(\t\022\014\n\004rank\030\003 \001" +
-      "(\005\022\022\n\ntrans_data\030\004 \001(\t\022G\n\005extra\030\005 \003(\01328." +
-      "bytedance.byteplus.byteair.PredictResult" +
-      "Item.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\325\001\n\rPredictResult\022" +
-      "<\n\005items\030\001 \003(\0132-.bytedance.byteplus.byte" +
-      "air.PredictResultItem\022C\n\005extra\030\002 \003(\01324.b" +
-      "ytedance.byteplus.byteair.PredictResult." +
-      "ExtraEntry\022\023\n\013total_count\030\003 \001(\005\032,\n\nExtra" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n" +
-      "\017PredictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007messag" +
-      "e\030\002 \001(\t\0228\n\005value\030\003 \001(\0132).bytedance.bytep" +
-      "lus.byteair.PredictResult\022\022\n\nrequest_id\030" +
-      "\004 \001(\t\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos" +
-      "\030\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\202\001\n\017CallbackReques" +
-      "t\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003" +
-      " \003(\0132(.bytedance.byteplus.byteair.Callba" +
-      "ckItem\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Ca" +
-      "llbackResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030" +
-      "\002 \001(\t2\304\003\n\026ByteplusGeneralService\022L\n\tWrit" +
-      "eData\022\024.google.protobuf.Any\032).bytedance." +
-      "byteplus.byteair.WriteResponse\022I\n\nImport" +
-      "Data\022\024.google.protobuf.Any\032%.bytedance.b" +
-      "yteplus.OperationResponse\022F\n\004Done\022\024.goog" +
-      "le.protobuf.Any\032(.bytedance.byteplus.byt" +
-      "eair.DoneResponse\022b\n\007Predict\022*.bytedance" +
-      ".byteplus.byteair.PredictRequest\032+.byted" +
-      "ance.byteplus.byteair.PredictResponse\022e\n" +
-      "\010Callback\022+.bytedance.byteplus.byteair.C" +
-      "allbackRequest\032,.bytedance.byteplus.byte" +
-      "air.CallbackResponseB\037\n\035byteplus.sdk.byt" +
-      "eair.protocolb\006proto3"
+      "byteplus.byteair.DataError\"0\n\004Date\022\014\n\004ye" +
+      "ar\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"C\n\013" +
+      "DoneRequest\0224\n\ndata_dates\030\001 \003(\0132 .byteda" +
+      "nce.byteplus.byteair.Date\":\n\014DoneRespons" +
+      "e\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus.S" +
+      "tatus\"\317\001\n\rPredictDevice\022\021\n\tdevice_id\030\001 \001" +
+      "(\t\022\020\n\010platform\030\002 \001(\t\022\025\n\rdevice_vendor\030\003 " +
+      "\001(\t\022\024\n\014device_model\030\004 \001(\t\022\031\n\021device_reso" +
+      "lution\030\005 \001(\t\022\026\n\016client_version\030\006 \001(\t\022\022\n\n" +
+      "os_version\030\007 \001(\t\022\024\n\014network_type\030\010 \001(\t\022\017" +
+      "\n\007carrier\030\t \001(\t\"\316\002\n\013PredictUser\022\013\n\003uid\030\001" +
+      " \001(\t\0229\n\006device\030\002 \001(\0132).bytedance.byteplu" +
+      "s.byteair.PredictDevice\022\013\n\003age\030\003 \001(\t\022\016\n\006" +
+      "gender\030\004 \001(\t\022\020\n\010province\030\005 \001(\t\022\014\n\004city\030\006" +
+      " \001(\t\022\020\n\010district\030\007 \001(\t\022\022\n\napp_market\030\010 \001" +
+      "(\t\022\022\n\nlogin_mode\030\t \001(\t\022\017\n\007country\030\n \001(\t\022" +
+      "A\n\005extra\030d \003(\01322.bytedance.byteplus.byte" +
+      "air.PredictUser.ExtraEntry\032,\n\nExtraEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\016Pre" +
+      "dictContext\022\013\n\003spm\030\001 \001(\t\022D\n\005extra\030d \003(\0132" +
+      "5.bytedance.byteplus.byteair.PredictCont" +
+      "ext.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\024PredictCandidat" +
+      "eItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005pric" +
+      "e\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra\030d \003" +
+      "(\0132;.bytedance.byteplus.byteair.PredictC" +
+      "andidateItem.ExtraEntry\032,\n\nExtraEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n\014Predic" +
+      "tExtra\022B\n\005extra\030e \003(\01323.bytedance.bytepl" +
+      "us.byteair.PredictExtra.ExtraEntry\032,\n\nEx" +
+      "traEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"\230\001\n\022PredictRelatedItem\022\n\n\002id\030\001 \001(\t\022H\n\005e" +
+      "xtra\030d \003(\01329.bytedance.byteplus.byteair." +
+      "PredictRelatedItem.ExtraEntry\032,\n\nExtraEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"B\n\013S" +
+      "earchItems\022\020\n\010goods_id\030\002 \001(\t\022\r\n\005price\030\003 " +
+      "\001(\002\022\022\n\nboost_ceof\030\004 \001(\002\"\035\n\013StringArray\022\016" +
+      "\n\006values\030\001 \003(\t\"\202\004\n\017SearchCondition\022\r\n\005st" +
+      "art\030\001 \001(\005\022\023\n\013search_type\030\002 \001(\005\022\021\n\tsort_m" +
+      "ode\030\003 \001(\005\022\021\n\tsort_type\030\004 \001(\005\022\017\n\007content\030" +
+      "\005 \001(\t\022\r\n\005query\030\006 \001(\t\022I\n\007filters\030\007 \003(\01328." +
+      "bytedance.byteplus.byteair.SearchConditi" +
+      "on.FiltersEntry\022N\n\nfilter_out\030\010 \003(\0132:.by" +
+      "tedance.byteplus.byteair.SearchCondition" +
+      ".FilterOutEntry\0226\n\005items\030\t \003(\0132\'.bytedan" +
+      "ce.byteplus.byteair.SearchItems\032W\n\014Filte" +
+      "rsEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.by" +
+      "tedance.byteplus.byteair.StringArray:\0028\001" +
+      "\032Y\n\016FilterOutEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value" +
+      "\030\002 \001(\0132\'.bytedance.byteplus.byteair.Stri" +
+      "ngArray:\0028\001\"\243\003\n\016PredictRequest\0225\n\004user\030\001" +
+      " \001(\0132\'.bytedance.byteplus.byteair.Predic" +
+      "tUser\022;\n\007context\030\002 \001(\0132*.bytedance.bytep" +
+      "lus.byteair.PredictContext\022\014\n\004size\030\003 \001(\005" +
+      "\022I\n\017candidate_items\030\004 \003(\01320.bytedance.by" +
+      "teplus.byteair.PredictCandidateItem\0227\n\005e" +
+      "xtra\030\005 \001(\0132(.bytedance.byteplus.byteair." +
+      "PredictExtra\022D\n\014related_item\030\006 \001(\0132..byt" +
+      "edance.byteplus.byteair.PredictRelatedIt" +
+      "em\022E\n\020search_condition\030\007 \001(\0132+.bytedance" +
+      ".byteplus.byteair.SearchCondition\"\270\001\n\021Pr" +
+      "edictResultItem\022\n\n\002id\030\001 \001(\t\022\014\n\004rank\030\003 \001(" +
+      "\005\022\022\n\ntrans_data\030\004 \001(\t\022G\n\005extra\030\005 \003(\01328.b" +
+      "ytedance.byteplus.byteair.PredictResultI" +
+      "tem.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\325\001\n\rPredictResult\022<" +
+      "\n\005items\030\001 \003(\0132-.bytedance.byteplus.bytea" +
+      "ir.PredictResultItem\022C\n\005extra\030\002 \003(\01324.by" +
+      "tedance.byteplus.byteair.PredictResult.E" +
+      "xtraEntry\022\023\n\013total_count\030\003 \001(\005\032,\n\nExtraE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\017" +
+      "PredictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message" +
+      "\030\002 \001(\t\0228\n\005value\030\003 \001(\0132).bytedance.bytepl" +
+      "us.byteair.PredictResult\022\022\n\nrequest_id\030\004" +
+      " \001(\t\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos\030" +
+      "\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\202\001\n\017CallbackRequest" +
+      "\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003 " +
+      "\003(\0132(.bytedance.byteplus.byteair.Callbac" +
+      "kItem\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Cal" +
+      "lbackResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002" +
+      " \001(\t2\304\003\n\026ByteplusGeneralService\022L\n\tWrite" +
+      "Data\022\024.google.protobuf.Any\032).bytedance.b" +
+      "yteplus.byteair.WriteResponse\022I\n\nImportD" +
+      "ata\022\024.google.protobuf.Any\032%.bytedance.by" +
+      "teplus.OperationResponse\022F\n\004Done\022\024.googl" +
+      "e.protobuf.Any\032(.bytedance.byteplus.byte" +
+      "air.DoneResponse\022b\n\007Predict\022*.bytedance." +
+      "byteplus.byteair.PredictRequest\032+.byteda" +
+      "nce.byteplus.byteair.PredictResponse\022e\n\010" +
+      "Callback\022+.bytedance.byteplus.byteair.Ca" +
+      "llbackRequest\032,.bytedance.byteplus.bytea" +
+      "ir.CallbackResponseB\037\n\035byteplus.sdk.byte" +
+      "air.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -27444,20 +29094,32 @@ public final class ByteplusByteair {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_ImportResponse_descriptor,
         new java.lang.String[] { "Status", "ErrorSamples", });
-    internal_static_bytedance_byteplus_byteair_DoneResponse_descriptor =
+    internal_static_bytedance_byteplus_byteair_Date_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_bytedance_byteplus_byteair_Date_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_Date_descriptor,
+        new java.lang.String[] { "Year", "Month", "Day", });
+    internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_bytedance_byteplus_byteair_DoneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_DoneRequest_descriptor,
+        new java.lang.String[] { "DataDates", });
+    internal_static_bytedance_byteplus_byteair_DoneResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_bytedance_byteplus_byteair_DoneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_DoneResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_bytedance_byteplus_byteair_PredictDevice_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_bytedance_byteplus_byteair_PredictDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictDevice_descriptor,
         new java.lang.String[] { "DeviceId", "Platform", "DeviceVendor", "DeviceModel", "DeviceResolution", "ClientVersion", "OsVersion", "NetworkType", "Carrier", });
     internal_static_bytedance_byteplus_byteair_PredictUser_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_bytedance_byteplus_byteair_PredictUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictUser_descriptor,
@@ -27469,7 +29131,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictUser_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictContext_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_bytedance_byteplus_byteair_PredictContext_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictContext_descriptor,
@@ -27481,7 +29143,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictContext_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_bytedance_byteplus_byteair_PredictCandidateItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor,
@@ -27493,7 +29155,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictCandidateItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictExtra_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_bytedance_byteplus_byteair_PredictExtra_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictExtra_descriptor,
@@ -27505,7 +29167,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictExtra_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictRelatedItem_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_bytedance_byteplus_byteair_PredictRelatedItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictRelatedItem_descriptor,
@@ -27517,19 +29179,19 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictRelatedItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_SearchItems_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_bytedance_byteplus_byteair_SearchItems_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_SearchItems_descriptor,
         new java.lang.String[] { "GoodsId", "Price", "BoostCeof", });
     internal_static_bytedance_byteplus_byteair_StringArray_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_StringArray_descriptor,
         new java.lang.String[] { "Values", });
     internal_static_bytedance_byteplus_byteair_SearchCondition_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_bytedance_byteplus_byteair_SearchCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_SearchCondition_descriptor,
@@ -27547,13 +29209,13 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_SearchCondition_FilterOutEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_bytedance_byteplus_byteair_PredictRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictRequest_descriptor,
         new java.lang.String[] { "User", "Context", "Size", "CandidateItems", "Extra", "RelatedItem", "SearchCondition", });
     internal_static_bytedance_byteplus_byteair_PredictResultItem_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_bytedance_byteplus_byteair_PredictResultItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictResultItem_descriptor,
@@ -27565,7 +29227,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictResultItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictResult_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_bytedance_byteplus_byteair_PredictResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictResult_descriptor,
@@ -27577,25 +29239,25 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictResult_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_bytedance_byteplus_byteair_PredictResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictResponse_descriptor,
         new java.lang.String[] { "Code", "Message", "Value", "RequestId", });
     internal_static_bytedance_byteplus_byteair_CallbackItem_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_bytedance_byteplus_byteair_CallbackItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackItem_descriptor,
         new java.lang.String[] { "Id", "Pos", "Extra", });
     internal_static_bytedance_byteplus_byteair_CallbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_bytedance_byteplus_byteair_CallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackRequest_descriptor,
         new java.lang.String[] { "Uid", "Scene", "Items", "PredictRequestId", });
     internal_static_bytedance_byteplus_byteair_CallbackResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_bytedance_byteplus_byteair_CallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackResponse_descriptor,

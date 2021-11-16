@@ -1,5 +1,6 @@
 package byteplus.sdk.byteair;
 
+import byteplus.sdk.byteair.protocol.ByteplusByteair;
 import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
@@ -8,6 +9,8 @@ import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackResponse;
+import byteplus.sdk.byteair.protocol.ByteplusByteair.Date;
+import byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.DoneResponse;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.PredictRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.PredictResponse;
@@ -16,7 +19,6 @@ import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -80,29 +82,31 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
     @Override
     public DoneResponse done(List<LocalDate> dateList, String topic,
                              Option... opts) throws NetException, BizException {
-        List<Map<String, String>> dateMapList = new ArrayList<>();
+        List<Date> dates = new ArrayList<>();
         if (Objects.isNull(dateList) || dateList.isEmpty()) {
             LocalDate previousDay = LocalDate.now().plusDays(-1);
-            addDoneDate(dateMapList, previousDay);
+            addDoneDate(dates, previousDay);
         } else {
             for (LocalDate date : dateList) {
-                addDoneDate(dateMapList, date);
+                addDoneDate(dates, date);
             }
         }
         String urlFormat = byteairURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<DoneResponse> parser = DoneResponse.parser();
-        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser, opts);
+        DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
+        DoneResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
 
-    private void addDoneDate(List<Map<String, String>> dateMapList, LocalDate date) {
-        dateMapList.add(Collections.singletonMap("partition_date", formatDoneDate(date)));
+    private void addDoneDate(List<Date> dateMapList, LocalDate date) {
+        dateMapList.add(buildDoneDate(date));
     }
 
-    private String formatDoneDate(LocalDate date) {
-        return date.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+    private Date buildDoneDate(LocalDate date) {
+        return Date.newBuilder().setYear(date.getYear()).setMonth(date.getMonthValue()).
+                setDay(date.getDayOfMonth()).build();
     }
 
 

@@ -25,23 +25,23 @@ public class ByteairURL extends CommonURL implements URLCenter {
 
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://byteair-api-cn1.snssdk.com/predict/api/20013144/home
-    private String predictUrlFormat;
+    private volatile String predictUrlFormat;
 
     // The URL of reporting the real exposure list
     // Example: https://byteair-api-cn1.snssdk.com/predict/api/20013144/callback
-    private String callbackUrl;
+    private volatile String callbackUrl;
 
     // The URL of uploading real-time user data
     // Example: https://byteair-api-cn1.snssdk.com/data/api/20013144/user?method=write
-    private String writeDataUrlFormat;
+    private volatile String writeDataUrlFormat;
 
     // The URL of importing batch offline user data
     // Example: https://byteair-api-cn1.snssdk.com/data/api/20013144/user?method=import
-    private String importDataUrlFormat;
+    private volatile String importDataUrlFormat;
 
     // The URL format of marking a whole day data has been imported completely
     // Example: https://byteair-api-cn1.snssdk.com/data/api/20013144/done?topic=user
-    private String doneUrlFormat;
+    private volatile String doneUrlFormat;
 
     public ByteairURL(Context context) {
         super(context);

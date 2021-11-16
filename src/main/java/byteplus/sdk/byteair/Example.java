@@ -14,7 +14,7 @@ import java.util.*;
 
 public final class Example {
     private static ByteairClient client;
-    private static List<String> AIR_HOSTS = Arrays.asList("byteair-api-cn1.snssdk.com");
+    //private static List<String> AIR_HOSTS = Arrays.asList("byteair-api-cn1.snssdk.com");
     private static String DEFAULT_PREDICT_SCENE = "default";
     private static Duration DEFAULT_PREDICT_TIMEOUT = Duration.ofMillis(800);
 
@@ -30,18 +30,14 @@ public final class Example {
         client = new ByteairClientBuilder()
                 //Required，区域, 推荐平台统一使用Region.AIR
                 .region(Region.AIR)
-                //Optional，域名list，如果设置了region，会默认填入byteair-api-cn1.snssdk.com
-                .hosts(AIR_HOSTS)
                 //Required，鉴权token，以字节实际分配的为准
                 .token("776147e1c52c62c2b1e3600734f5d944")
                 //Required，租户id
-                .tenantId("2000008522")
+                .tenantId("2000008220")
                 //Required，项目id
-                .projectId("285402222")
+                .projectId("285412311")
                 //Optional，url schema
                 .schema("http")
-                // Optional，请求头设置
-                //.headers(Collections.singletonMap("Customer-Header", "value"))
                 //进行构建client
                 .build();
     }
@@ -87,8 +83,11 @@ public final class Example {
     }
 
     private static void doneExample() {
-        LocalDate date = LocalDate.of(2021, 8, 1); //替换成对应需要执行done的日期
-        List<LocalDate> dateList = Collections.singletonList(date);
+        LocalDate date1 = LocalDate.of(2021, 8, 1); //替换成对应需要执行done的日期
+        LocalDate date2 = LocalDate.of(2021, 9, 1); //替换成对应需要执行done的日期
+        List<LocalDate> dateList = new ArrayList<>();
+        dateList.add(date1);
+        dateList.add(date2);
         String topic = "user"; //替换成对应需要执行done的topic，
         Option[] opts = doneOptions();
         ByteplusByteair.DoneResponse doneResponse = null;
@@ -152,26 +151,24 @@ public final class Example {
                 Option.withHeaders(customerHeaders)
         };
         ByteplusByteair.PredictResponse predictResponse = null;
-        // The `scene` is provided by ByteDance, according to tenant's situation
-//        String scene = "home";
         try {
             predictResponse = client.predict(predictRequest, predictOpts);
         } catch (Exception e) {
             System.out.printf("predict occur error, msg:%s \n", e.getMessage());
             return;
-        } finally {
-            if (predictResponse != null && predictResponse.getCode() == 0)
-                System.out.printf("predict success info, msg: %s \n", predictResponse);
-            else{
-                System.out.printf("predict failure info, msg: %s \n", predictResponse);
-            }
         }
+        if (predictResponse == null || predictResponse.getCode() != 0) {
+            System.out.printf("predict failure info, msg: %s \n", predictResponse);
+            return;
+        }
+        System.out.printf("predict success info, msg: %s \n", predictResponse);
 
+        // 推荐请求成功，需要将推荐曝光结果通过callback接口上报给字节侧
         List<ByteplusByteair.CallbackItem> callbackItems = conv2CallbackItems(predictResponse.getValue().getItemsList());
         ByteplusByteair.CallbackRequest callbackRequest = ByteplusByteair.CallbackRequest.newBuilder()
                 .setPredictRequestId(predictResponse.getRequestId())
                 .setUid(predictRequest.getUser().getUid())
-                .setScene(DEFAULT_PREDICT_SCENE)
+                .setScene(DEFAULT_PREDICT_SCENE) //必传，传入"default"
                 .addAllItems(callbackItems)
                 .build();
         Option[] callbackOpts = new Option[]{
