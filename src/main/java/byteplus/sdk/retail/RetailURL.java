@@ -23,32 +23,32 @@ public final class RetailURL extends CommonURL implements URLCenter {
 
     // The URL template of "predict" request, which need fill with "scene" info when use
     // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/home
-    private String predictUrlFormat;
+    private volatile String predictUrlFormat;
 
     // The URL of reporting the real exposure list
     // Example: https://tob.sgsnssdk.com/predict/api/retail/demo/ack_server_impression
-    private String ackImpressionUrl;
+    private volatile String ackImpressionUrl;
 
     // The URL of uploading real-time user data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
-    private String writeUsersUrl;
+    private volatile String writeUsersUrl;
     // The URL of importing daily offline user data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=import
-    private String importUsersUrl;
+    private volatile String importUsersUrl;
 
     // The URL of uploading real-time product data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/product?method=write
-    private String writeProductsUrl;
+    private volatile String writeProductsUrl;
     // The URL of importing daily offline product data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/product?method=import
-    private String importProductsUrl;
+    private volatile String importProductsUrl;
 
     // The URL of uploading real-time user event data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=write
-    private String writeUserEventsUrl;
+    private volatile String writeUserEventsUrl;
     // The URL of importing daily offline product data
     // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=import
-    private String importUserEventsUrl;
+    private volatile String importUserEventsUrl;
 
     public RetailURL(Context context) {
         super(context);

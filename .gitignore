@@ -129,3 +129,5 @@ hs_err_pid*
 byteplus-sdk.iml
 
 target
+
+src/main/java/Example/
