@@ -21,8 +21,8 @@ public final class Example {
     public static void main(String[] args) {
         init();
         writeDataExample();
-        doneExample();
-        predictAndCallbackDemo();
+//        doneExample();
+//        predictAndCallbackDemo();
     }
 
     private static void init() {
@@ -33,9 +33,9 @@ public final class Example {
                 //Required，鉴权token，以字节实际分配的为准
                 .token("776147e1c52c62c2b1e3600734f5d944")
                 //Required，租户id
-                .tenantId("2000008220")
+                .tenantId("2000008")
                 //Required，项目id
-                .projectId("285412311")
+                .projectId("28540231")
                 //Optional，url schema
                 .schema("http")
                 //进行构建client
