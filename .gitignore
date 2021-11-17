@@ -130,4 +130,4 @@ byteplus-sdk.iml
 
 target
 
-src/main/java/byteplus/sdk/byteair/Example.java
+src/main/java/Example/
