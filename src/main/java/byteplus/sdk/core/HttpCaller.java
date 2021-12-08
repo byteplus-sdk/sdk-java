@@ -99,17 +99,6 @@ public class HttpCaller {
         return out.toByteArray();
     }
 
-//    private Headers buildHeaders(Options options, byte[] bodyBytes, String contentType) {
-//        Headers.Builder builder = new Headers.Builder();
-//        builder.set("Content-Encoding", "gzip");
-//        builder.set("Accept-Encoding", "gzip");
-//        builder.set("Content-Type", contentType);
-//        builder.set("Accept", contentType);
-//        withOptionHeaders(builder, options);
-//        withAuthHeaders(builder, bodyBytes);
-//        return builder.build();
-//    }
-
     private Headers buildHeaders(Options options, String contentType) {
         Headers.Builder builder = new Headers.Builder();
         builder.set("Content-Encoding", "gzip");
@@ -164,25 +153,6 @@ public class HttpCaller {
             builder.set("Timeout-Millis", options.getServerTimeout().toMillis() + "");
         }
     }
-
-//    private void withAuthHeaders(Headers.Builder headerBuilder, RequestParam requestParam, byte[] httpBody) {
-//        // Gets the second-level timestamp of the current time.
-//        // The server only supports the second-level timestamp.
-//        // The 'ts' must be the current time.
-//        // When current time exceeds a certain time, such as 5 seconds, of 'ts',
-//        // the signature will be invalid and cannot pass authentication
-//        String ts = "" + (System.currentTimeMillis() / 1000);
-//        // Use sub string of UUID as "nonce",  too long will be wasted.
-//        // You can also use 'ts' as' nonce'
-//        String nonce = UUID.randomUUID().toString().substring(0, 8);
-//        // calculate the authentication signature
-//        String signature = calSignature(httpBody, ts, nonce);
-//
-//        headerBuilder.set("Tenant-Id", context.getTenantId());
-//        headerBuilder.set("Tenant-Ts", ts);
-//        headerBuilder.set("Tenant-Nonce", nonce);
-//        headerBuilder.set("Tenant-Signature", signature);
-//    }
 
     private String calSignature(byte[] httpBody, String ts, String nonce) {
         MessageDigest digest;
