@@ -1,5 +1,6 @@
 package byteplus.sdk.core;
 
+import byteplus.sdk.core.volc_auth.Credentials;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -10,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import static byteplus.sdk.core.Constant.VOLC_AUTH_SERVICE;
+
 @Getter
 public class Context {
 
@@ -17,6 +20,8 @@ public class Context {
     // generate an authenticated signature when building a request.
     // It is sometimes called "secret".
     private final String token;
+
+    private Credentials volcCredentials;
 
     // A unique token assigned by bytedance, which is used to
     // generate an authenticated signature when building a request.
@@ -48,6 +53,10 @@ public class Context {
 
         private String token;
 
+        private String ak; // AccessKey of a volcengin tenant
+
+        private String sk; // SecretKey of a volcengin tenant
+
         private String schema;
 
         private List<String> hosts;
@@ -63,6 +72,7 @@ public class Context {
         this.tenantId = param.tenantId;
         this.token = param.token;
         fillHosts(param);
+        fillVolcCredentials(param);
 
         if (Objects.nonNull(param.schema)) {
             this.schema = param.schema;
@@ -79,11 +89,22 @@ public class Context {
         if (Objects.isNull(param.tenantId)) {
             throw new RuntimeException("Tenant id is null");
         }
-        if (Objects.isNull(param.token)) {
-            throw new RuntimeException("Token is null");
-        }
         if (Objects.isNull(param.region)) {
             throw new RuntimeException("Region is null");
+        }
+        checkAuthRequiredField(param);
+    }
+
+    private void checkAuthRequiredField(Param param) {
+        // air auth only need token for signature， ak will be ignored
+        if ((Objects.isNull(param.token) || param.token.equals("")) &&
+                (Objects.isNull(param.ak) || param.ak.equals(""))) {
+            throw new RuntimeException("token and ak are null");
+        }
+        // if token is absent, then use volc auth for signature, ak and sdk are required
+        if ((Objects.nonNull(param.ak) && !param.ak.equals("")) &&
+                (Objects.isNull(param.sk) || param.sk.equals(""))) {
+            throw new RuntimeException("sk is null");
         }
     }
 
@@ -104,8 +125,28 @@ public class Context {
             hosts = Constant.SG_HOSTS;
             return;
         }
-        if (param.region == Region.AIR) {
-            hosts = Constant.AIR_HOSTS;
+        if (param.region == Region.AIR_CN) {
+            hosts = Constant.AIR_CN_HOSTS;
+            return;
         }
+        if (param.region == Region.AIR_SG) {
+            hosts = Constant.AIR_SG_HOSTS;
+        }
+    }
+
+    private void fillVolcCredentials(Param param) {
+        String region = "";
+        switch (param.region) {
+            case SG:
+            case AIR_SG:
+                region = "ap-singapore-1";
+                break;
+            case US:
+                region =  "us-east-1";
+                break;
+            default: //Region "CN" and "AIR_CN" belong to "cn-north-1"
+                region =  "cn-north-1";
+        }
+        this.volcCredentials = new Credentials(param.ak, param.sk, VOLC_AUTH_SERVICE, region);
     }
 }
