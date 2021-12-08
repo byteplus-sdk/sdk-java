@@ -8,5 +8,7 @@ public enum Region {
     // sg
     SG,
     // byteair as a uniq region
-    AIR
+    AIR,
+    // bytePlus as a uniq region
+    SAAS_SG,
 }
