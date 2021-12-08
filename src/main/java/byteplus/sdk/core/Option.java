@@ -57,4 +57,8 @@ public interface Option {
     static Option withStage(String stage) {
         return options -> options.setStage(stage);
     }
+
+    static Option withScene(String scene) {
+        return options -> options.setScene(scene);
+    }
 }

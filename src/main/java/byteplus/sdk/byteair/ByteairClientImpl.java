@@ -3,10 +3,7 @@ package byteplus.sdk.byteair;
 import byteplus.sdk.byteair.protocol.ByteplusByteair;
 import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
-import byteplus.sdk.core.BizException;
-import byteplus.sdk.core.Context;
-import byteplus.sdk.core.NetException;
-import byteplus.sdk.core.Option;
+import byteplus.sdk.core.*;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackResponse;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.Date;
@@ -60,7 +57,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = byteairURL.getWriteDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
-        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, opts);
+        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
         return response;
     }
@@ -74,7 +71,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         String urlFormat = byteairURL.getImportDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<OperationResponse> parser = OperationResponse.parser();
-        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, opts);
+        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][ImportData] rsp:\n{}", response);
         return response;
     }
@@ -95,7 +92,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         String url = urlFormat.replace("{}", topic);
         Parser<DoneResponse> parser = DoneResponse.parser();
         DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
-        DoneResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        DoneResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
@@ -109,21 +106,23 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
                 setDay(date.getDayOfMonth()).build();
     }
 
-
     @Override
-    public PredictResponse predict(PredictRequest request, String scene,
+    public PredictResponse predict(PredictRequest request,
                                    Option... opts) throws NetException, BizException {
+        Options options = Option.conv2Options(opts);
+        String scene = getSceneFromOpts(options);
         String url = byteairURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        PredictResponse response = httpCaller.doPbRequest(url, request, parser, options);
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
 
-    @Override
-    public PredictResponse predict(PredictRequest request,
-                                   Option... opts) throws NetException, BizException {
-        return predict(request, DEFAULT_PREDICT_SCENE, opts);
+    private String getSceneFromOpts(Options options) {
+        if (Objects.isNull(options.getScene()) || "".equals(options.getScene())) {
+            return DEFAULT_PREDICT_SCENE;
+        }
+        return options.getScene();
     }
 
     @Override
@@ -131,7 +130,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
                                      Option... opts) throws NetException, BizException {
         Parser<CallbackResponse> parser = CallbackResponse.parser();
         String url = byteairURL.getCallbackUrl();
-        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Callback] rsp:\n{}", response);
         return response;
     }

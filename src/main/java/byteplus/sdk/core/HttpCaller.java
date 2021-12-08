@@ -47,29 +47,28 @@ public class HttpCaller {
             String url,
             Req request,
             Parser<Rsp> rspParser,
-            Option... opts) throws NetException, BizException {
+            Options options) throws NetException, BizException {
         byte[] reqBytes = request.toByteArray();
         String contentType = "application/x-protobuf";
-        return doRequest(url, reqBytes, rspParser, contentType, opts);
+        return doRequest(url, reqBytes, rspParser, contentType, options);
     }
 
     public <Rsp extends Message> Rsp doJsonRequest(
             String url,
             Object request,
             Parser<Rsp> rspParser,
-            Option... opts) throws NetException, BizException {
+            Options options) throws NetException, BizException {
         byte[] reqBytes = JSON.toJSONBytes(request);
         String contentType = "application/json";
-        return doRequest(url, reqBytes, rspParser, contentType, opts);
+        return doRequest(url, reqBytes, rspParser, contentType, options);
     }
 
     private <Rsp extends Message> Rsp doRequest(String url,
                                                 byte[] reqBytes,
                                                 Parser<Rsp> rspParser,
                                                 String contentType,
-                                                Option... opts) throws NetException, BizException {
+                                                Options options) throws NetException, BizException {
         reqBytes = gzipCompress(reqBytes);
-        Options options = Option.conv2Options(opts);
         Headers headers = buildHeaders(options, contentType);
         url = buildUrlWithQueries(options, url);
         byte[] rspBytes = doHttpRequest(url, headers, reqBytes, options.getTimeout());

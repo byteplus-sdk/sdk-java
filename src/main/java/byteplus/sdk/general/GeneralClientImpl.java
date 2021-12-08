@@ -56,7 +56,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = generalURL.getWriteDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
-        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, opts);
+        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
         return response;
     }
@@ -70,7 +70,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
         String urlFormat = generalURL.getImportDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<OperationResponse> parser = OperationResponse.parser();
-        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, opts);
+        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][ImportData] rsp:\n{}", response);
         return response;
     }
@@ -90,7 +90,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
         String urlFormat = generalURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<DoneResponse> parser = DoneResponse.parser();
-        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser, opts);
+        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
@@ -108,7 +108,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                    Option... opts) throws NetException, BizException {
         String url = generalURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        PredictResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -118,7 +118,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                      Option... opts) throws NetException, BizException {
         Parser<CallbackResponse> parser = CallbackResponse.parser();
         String url = generalURL.getCallbackUrl();
-        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Callback] rsp:\n{}", response);
         return response;
     }
