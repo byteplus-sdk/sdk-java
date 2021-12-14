@@ -1,5 +1,6 @@
 package byteplus.sdk.common;
 
+import byteplus.sdk.common.protocol.ByteplusCommon;
 import byteplus.sdk.common.protocol.ByteplusCommon.*;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
@@ -63,6 +64,16 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
         String url = commonURL.getListOperationsUrl();
         ListOperationsResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][ListOperations] rsp:\n{}", response);
+        return response;
+    }
+
+    @Override
+    public Response done(DoneRequest request, String topic, Option... opts) throws NetException, BizException {
+        String urlFormat = commonURL.getDoneUrlFormat();
+        String url = urlFormat.replace("{}", topic);
+        Parser<Response> parser =  ByteplusCommon.Response.parser();
+        Response response = httpCaller.doPbRequest(url, request, parser, opts);
+        log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
 }

@@ -7457,6 +7457,2332 @@ public final class ByteplusCommon {
 
   }
 
+  public interface DateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.Date)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+     * a year.
+     * </pre>
+     *
+     * <code>int32 year = 1;</code>
+     * @return The year.
+     */
+    int getYear();
+
+    /**
+     * <pre>
+     * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+     * month and day.
+     * </pre>
+     *
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    int getMonth();
+
+    /**
+     * <pre>
+     * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+     * to specify a year by itself or a year and month where the day isn't
+     * significant.
+     * </pre>
+     *
+     * <code>int32 day = 3;</code>
+     * @return The day.
+     */
+    int getDay();
+  }
+  /**
+   * <pre>
+   * Represents a whole or partial calendar date, such as a birthday. The time of
+   * day and time zone are either specified elsewhere or are insignificant. The
+   * date is relative to the Gregorian Calendar. This can represent one of the
+   * following:
+   * * A full date, with non-zero year, month, and day values
+   * * A month and day value, with a zero year, such as an anniversary
+   * * A year on its own, with zero month and day values
+   * * A year and month value, with a zero day, such as a credit card expiration
+   * date
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.Date}
+   */
+  public static final class Date extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.Date)
+      DateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Date.newBuilder() to construct.
+    private Date(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Date() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Date();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Date(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              year_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              month_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              day_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Date_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Date_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.common.protocol.ByteplusCommon.Date.class, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder.class);
+    }
+
+    public static final int YEAR_FIELD_NUMBER = 1;
+    private int year_;
+    /**
+     * <pre>
+     * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+     * a year.
+     * </pre>
+     *
+     * <code>int32 year = 1;</code>
+     * @return The year.
+     */
+    @java.lang.Override
+    public int getYear() {
+      return year_;
+    }
+
+    public static final int MONTH_FIELD_NUMBER = 2;
+    private int month_;
+    /**
+     * <pre>
+     * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+     * month and day.
+     * </pre>
+     *
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    @java.lang.Override
+    public int getMonth() {
+      return month_;
+    }
+
+    public static final int DAY_FIELD_NUMBER = 3;
+    private int day_;
+    /**
+     * <pre>
+     * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+     * to specify a year by itself or a year and month where the day isn't
+     * significant.
+     * </pre>
+     *
+     * <code>int32 day = 3;</code>
+     * @return The day.
+     */
+    @java.lang.Override
+    public int getDay() {
+      return day_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (year_ != 0) {
+        output.writeInt32(1, year_);
+      }
+      if (month_ != 0) {
+        output.writeInt32(2, month_);
+      }
+      if (day_ != 0) {
+        output.writeInt32(3, day_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (year_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, year_);
+      }
+      if (month_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, month_);
+      }
+      if (day_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, day_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.common.protocol.ByteplusCommon.Date)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.common.protocol.ByteplusCommon.Date other = (byteplus.sdk.common.protocol.ByteplusCommon.Date) obj;
+
+      if (getYear()
+          != other.getYear()) return false;
+      if (getMonth()
+          != other.getMonth()) return false;
+      if (getDay()
+          != other.getDay()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getYear();
+      hash = (37 * hash) + MONTH_FIELD_NUMBER;
+      hash = (53 * hash) + getMonth();
+      hash = (37 * hash) + DAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDay();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.common.protocol.ByteplusCommon.Date prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a whole or partial calendar date, such as a birthday. The time of
+     * day and time zone are either specified elsewhere or are insignificant. The
+     * date is relative to the Gregorian Calendar. This can represent one of the
+     * following:
+     * * A full date, with non-zero year, month, and day values
+     * * A month and day value, with a zero year, such as an anniversary
+     * * A year on its own, with zero month and day values
+     * * A year and month value, with a zero day, such as a credit card expiration
+     * date
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.Date}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.Date)
+        byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Date_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Date_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.common.protocol.ByteplusCommon.Date.class, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.common.protocol.ByteplusCommon.Date.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        year_ = 0;
+
+        month_ = 0;
+
+        day_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Date_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date getDefaultInstanceForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.Date.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date build() {
+        byteplus.sdk.common.protocol.ByteplusCommon.Date result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date buildPartial() {
+        byteplus.sdk.common.protocol.ByteplusCommon.Date result = new byteplus.sdk.common.protocol.ByteplusCommon.Date(this);
+        result.year_ = year_;
+        result.month_ = month_;
+        result.day_ = day_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.common.protocol.ByteplusCommon.Date) {
+          return mergeFrom((byteplus.sdk.common.protocol.ByteplusCommon.Date)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.common.protocol.ByteplusCommon.Date other) {
+        if (other == byteplus.sdk.common.protocol.ByteplusCommon.Date.getDefaultInstance()) return this;
+        if (other.getYear() != 0) {
+          setYear(other.getYear());
+        }
+        if (other.getMonth() != 0) {
+          setMonth(other.getMonth());
+        }
+        if (other.getDay() != 0) {
+          setDay(other.getDay());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.common.protocol.ByteplusCommon.Date parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.common.protocol.ByteplusCommon.Date) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int year_ ;
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @return The year.
+       */
+      @java.lang.Override
+      public int getYear() {
+        return year_;
+      }
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @param value The year to set.
+       * @return This builder for chaining.
+       */
+      public Builder setYear(int value) {
+        
+        year_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Year of the date. Must be from 1 to 9999, or 0 to specify a date without
+       * a year.
+       * </pre>
+       *
+       * <code>int32 year = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearYear() {
+        
+        year_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int month_ ;
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @return The month.
+       */
+      @java.lang.Override
+      public int getMonth() {
+        return month_;
+      }
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @param value The month to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonth(int value) {
+        
+        month_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Month of a year. Must be from 1 to 12, or 0 to specify a year without a
+       * month and day.
+       * </pre>
+       *
+       * <code>int32 month = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonth() {
+        
+        month_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int day_ ;
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @return The day.
+       */
+      @java.lang.Override
+      public int getDay() {
+        return day_;
+      }
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @param value The day to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDay(int value) {
+        
+        day_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0
+       * to specify a year by itself or a year and month where the day isn't
+       * significant.
+       * </pre>
+       *
+       * <code>int32 day = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDay() {
+        
+        day_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.Date)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.Date)
+    private static final byteplus.sdk.common.protocol.ByteplusCommon.Date DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.common.protocol.ByteplusCommon.Date();
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Date getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Date>
+        PARSER = new com.google.protobuf.AbstractParser<Date>() {
+      @java.lang.Override
+      public Date parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Date(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Date> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Date> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Date getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DoneRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.DoneRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date> 
+        getDataDatesList();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.Date getDataDates(int index);
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    int getDataDatesCount();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    java.util.List<? extends byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder> 
+        getDataDatesOrBuilderList();
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder getDataDatesOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * the request for Done, contains a date list
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.DoneRequest}
+   */
+  public static final class DoneRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.DoneRequest)
+      DoneRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DoneRequest.newBuilder() to construct.
+    private DoneRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DoneRequest() {
+      dataDates_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DoneRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DoneRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dataDates_ = new java.util.ArrayList<byteplus.sdk.common.protocol.ByteplusCommon.Date>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dataDates_.add(
+                  input.readMessage(byteplus.sdk.common.protocol.ByteplusCommon.Date.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dataDates_ = java.util.Collections.unmodifiableList(dataDates_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_DoneRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_DoneRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.class, byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.Builder.class);
+    }
+
+    public static final int DATA_DATES_FIELD_NUMBER = 1;
+    private java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date> dataDates_;
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date> getDataDatesList() {
+      return dataDates_;
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder> 
+        getDataDatesOrBuilderList() {
+      return dataDates_;
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public int getDataDatesCount() {
+      return dataDates_.size();
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Date getDataDates(int index) {
+      return dataDates_.get(index);
+    }
+    /**
+     * <pre>
+     * The target data date list
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder getDataDatesOrBuilder(
+        int index) {
+      return dataDates_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < dataDates_.size(); i++) {
+        output.writeMessage(1, dataDates_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < dataDates_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, dataDates_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest other = (byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest) obj;
+
+      if (!getDataDatesList()
+          .equals(other.getDataDatesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDataDatesCount() > 0) {
+        hash = (37 * hash) + DATA_DATES_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDatesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * the request for Done, contains a date list
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.DoneRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.DoneRequest)
+        byteplus.sdk.common.protocol.ByteplusCommon.DoneRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_DoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_DoneRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.class, byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDataDatesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataDatesBuilder_ == null) {
+          dataDates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          dataDatesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_DoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest getDefaultInstanceForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest build() {
+        byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest buildPartial() {
+        byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest result = new byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (dataDatesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            dataDates_ = java.util.Collections.unmodifiableList(dataDates_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.dataDates_ = dataDates_;
+        } else {
+          result.dataDates_ = dataDatesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest) {
+          return mergeFrom((byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest other) {
+        if (other == byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest.getDefaultInstance()) return this;
+        if (dataDatesBuilder_ == null) {
+          if (!other.dataDates_.isEmpty()) {
+            if (dataDates_.isEmpty()) {
+              dataDates_ = other.dataDates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDataDatesIsMutable();
+              dataDates_.addAll(other.dataDates_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dataDates_.isEmpty()) {
+            if (dataDatesBuilder_.isEmpty()) {
+              dataDatesBuilder_.dispose();
+              dataDatesBuilder_ = null;
+              dataDates_ = other.dataDates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dataDatesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDataDatesFieldBuilder() : null;
+            } else {
+              dataDatesBuilder_.addAllMessages(other.dataDates_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date> dataDates_ =
+        java.util.Collections.emptyList();
+      private void ensureDataDatesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          dataDates_ = new java.util.ArrayList<byteplus.sdk.common.protocol.ByteplusCommon.Date>(dataDates_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Date, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder, byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder> dataDatesBuilder_;
+
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date> getDataDatesList() {
+        if (dataDatesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dataDates_);
+        } else {
+          return dataDatesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public int getDataDatesCount() {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.size();
+        } else {
+          return dataDatesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date getDataDates(int index) {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.get(index);
+        } else {
+          return dataDatesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder setDataDates(
+          int index, byteplus.sdk.common.protocol.ByteplusCommon.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.set(index, value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder setDataDates(
+          int index, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(byteplus.sdk.common.protocol.ByteplusCommon.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.add(value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          int index, byteplus.sdk.common.protocol.ByteplusCommon.Date value) {
+        if (dataDatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataDatesIsMutable();
+          dataDates_.add(index, value);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder addDataDates(
+          int index, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder builderForValue) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataDatesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder addAllDataDates(
+          java.lang.Iterable<? extends byteplus.sdk.common.protocol.ByteplusCommon.Date> values) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dataDates_);
+          onChanged();
+        } else {
+          dataDatesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder clearDataDates() {
+        if (dataDatesBuilder_ == null) {
+          dataDates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dataDatesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public Builder removeDataDates(int index) {
+        if (dataDatesBuilder_ == null) {
+          ensureDataDatesIsMutable();
+          dataDates_.remove(index);
+          onChanged();
+        } else {
+          dataDatesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder getDataDatesBuilder(
+          int index) {
+        return getDataDatesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder getDataDatesOrBuilder(
+          int index) {
+        if (dataDatesBuilder_ == null) {
+          return dataDates_.get(index);  } else {
+          return dataDatesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public java.util.List<? extends byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder> 
+           getDataDatesOrBuilderList() {
+        if (dataDatesBuilder_ != null) {
+          return dataDatesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dataDates_);
+        }
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder addDataDatesBuilder() {
+        return getDataDatesFieldBuilder().addBuilder(
+            byteplus.sdk.common.protocol.ByteplusCommon.Date.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder addDataDatesBuilder(
+          int index) {
+        return getDataDatesFieldBuilder().addBuilder(
+            index, byteplus.sdk.common.protocol.ByteplusCommon.Date.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The target data date list
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.Date data_dates = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder> 
+           getDataDatesBuilderList() {
+        return getDataDatesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Date, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder, byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder> 
+          getDataDatesFieldBuilder() {
+        if (dataDatesBuilder_ == null) {
+          dataDatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              byteplus.sdk.common.protocol.ByteplusCommon.Date, byteplus.sdk.common.protocol.ByteplusCommon.Date.Builder, byteplus.sdk.common.protocol.ByteplusCommon.DateOrBuilder>(
+                  dataDates_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dataDates_ = null;
+        }
+        return dataDatesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.DoneRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.DoneRequest)
+    private static final byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest();
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DoneRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DoneRequest>() {
+      @java.lang.Override
+      public DoneRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DoneRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DoneRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DoneRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    boolean hasStatus();
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * @return The status.
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.Response}
+   */
+  public static final class Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.Response)
+      ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Response.newBuilder() to construct.
+    private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Response() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Response();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(byteplus.sdk.common.protocol.ByteplusCommon.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Response_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.common.protocol.ByteplusCommon.Response.class, byteplus.sdk.common.protocol.ByteplusCommon.Response.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+      return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+    }
+    /**
+     * <pre>
+     * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.Status status = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != null) {
+        output.writeMessage(1, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.common.protocol.ByteplusCommon.Response)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.common.protocol.ByteplusCommon.Response other = (byteplus.sdk.common.protocol.ByteplusCommon.Response) obj;
+
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.common.protocol.ByteplusCommon.Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.Response)
+        byteplus.sdk.common.protocol.ByteplusCommon.ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Response_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.common.protocol.ByteplusCommon.Response.class, byteplus.sdk.common.protocol.ByteplusCommon.Response.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.common.protocol.ByteplusCommon.Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.internal_static_bytedance_byteplus_Response_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Response getDefaultInstanceForType() {
+        return byteplus.sdk.common.protocol.ByteplusCommon.Response.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Response build() {
+        byteplus.sdk.common.protocol.ByteplusCommon.Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.common.protocol.ByteplusCommon.Response buildPartial() {
+        byteplus.sdk.common.protocol.ByteplusCommon.Response result = new byteplus.sdk.common.protocol.ByteplusCommon.Response(this);
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.common.protocol.ByteplusCommon.Response) {
+          return mergeFrom((byteplus.sdk.common.protocol.ByteplusCommon.Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.common.protocol.ByteplusCommon.Response other) {
+        if (other == byteplus.sdk.common.protocol.ByteplusCommon.Response.getDefaultInstance()) return this;
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.common.protocol.ByteplusCommon.Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.common.protocol.ByteplusCommon.Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> statusBuilder_;
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * @return Whether the status field is set.
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * @return The status.
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public Builder setStatus(
+          byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <pre>
+       * 本次请求结果（与异步任务执行情况无关），status.code为0代表请求成功
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.Status status = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.Response)
+    private static final byteplus.sdk.common.protocol.ByteplusCommon.Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.common.protocol.ByteplusCommon.Response();
+    }
+
+    public static byteplus.sdk.common.protocol.ByteplusCommon.Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Response>
+        PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      @java.lang.Override
+      public Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Response> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_Status_descriptor;
   private static final 
@@ -7492,6 +9818,21 @@ public final class ByteplusCommon {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_ListOperationsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_Date_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_Date_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_DoneRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_DoneRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_Response_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_Response_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7519,14 +9860,20 @@ public final class ByteplusCommon {
       "en\030\003 \001(\t\"\220\001\n\026ListOperationsResponse\022*\n\006s" +
       "tatus\030\001 \001(\0132\032.bytedance.byteplus.Status\022" +
       "1\n\noperations\030\002 \003(\0132\035.bytedance.byteplus" +
-      ".Operation\022\027\n\017next_page_token\030\003 \001(\t2\340\001\n\025" +
-      "ByteplusCommonService\022^\n\014GetOperation\022\'." +
-      "bytedance.byteplus.GetOperationRequest\032%" +
-      ".bytedance.byteplus.OperationResponse\022g\n" +
-      "\016ListOperations\022).bytedance.byteplus.Lis" +
-      "tOperationsRequest\032*.bytedance.byteplus." +
-      "ListOperationsResponseB\036\n\034byteplus.sdk.c" +
-      "ommon.protocolb\006proto3"
+      ".Operation\022\027\n\017next_page_token\030\003 \001(\t\"0\n\004D" +
+      "ate\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003day\030" +
+      "\003 \001(\005\";\n\013DoneRequest\022,\n\ndata_dates\030\001 \003(\013" +
+      "2\030.bytedance.byteplus.Date\"6\n\010Response\022*" +
+      "\n\006status\030\001 \001(\0132\032.bytedance.byteplus.Stat" +
+      "us2\247\002\n\025ByteplusCommonService\022^\n\014GetOpera" +
+      "tion\022\'.bytedance.byteplus.GetOperationRe" +
+      "quest\032%.bytedance.byteplus.OperationResp" +
+      "onse\022g\n\016ListOperations\022).bytedance.bytep" +
+      "lus.ListOperationsRequest\032*.bytedance.by" +
+      "teplus.ListOperationsResponse\022E\n\004Done\022\037." +
+      "bytedance.byteplus.DoneRequest\032\034.bytedan" +
+      "ce.byteplus.ResponseB\036\n\034byteplus.sdk.com" +
+      "mon.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7575,6 +9922,24 @@ public final class ByteplusCommon {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_ListOperationsResponse_descriptor,
         new java.lang.String[] { "Status", "Operations", "NextPageToken", });
+    internal_static_bytedance_byteplus_Date_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_bytedance_byteplus_Date_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_Date_descriptor,
+        new java.lang.String[] { "Year", "Month", "Day", });
+    internal_static_bytedance_byteplus_DoneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_bytedance_byteplus_DoneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_DoneRequest_descriptor,
+        new java.lang.String[] { "DataDates", });
+    internal_static_bytedance_byteplus_Response_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_bytedance_byteplus_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_Response_descriptor,
+        new java.lang.String[] { "Status", });
     com.google.protobuf.AnyProto.getDescriptor();
   }
 
