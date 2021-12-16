@@ -233,20 +233,18 @@ public class HttpCaller {
     }
 
     private void withAuthHeaders(Request.Builder request, RequestAdapter requestAdapter, byte[] bodyBytes) throws BizException {
-        //volc_auth
-        if (Objects.nonNull(context.getVolcCredentials()) &&
-                Objects.nonNull(context.getVolcCredentials().getAccessKeyID()) &&
-                !context.getVolcCredentials().getAccessKeyID().equals("")) {
-            try {
-                VoclAuth.sign(requestAdapter.getAuthRequest(), context.getVolcCredentials());
-                requestAdapter.copyHeaders(request);
-                return;
-            } catch (Exception e) {
-                throw new BizException(e.getMessage());
-            }
-        }
         //air_auth
-        withAirAuthHeaders(request, bodyBytes);
+        if (context.isUseAirAuth()) {
+            withAirAuthHeaders(request, bodyBytes);
+            return;
+        }
+        //volc_auth
+        try {
+            VoclAuth.sign(requestAdapter.getAuthRequest(), context.getVolcCredentials());
+            requestAdapter.copyHeaders(request);
+        } catch (Exception e) {
+            throw new BizException(e.getMessage());
+        }
     }
 
     private void withAirAuthHeaders(Request.Builder request, byte[] reqBytes) {

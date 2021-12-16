@@ -48,11 +48,8 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
     @Override
     public WriteResponse writeData(List<Map<String, Object>> dataList, String topic,
                                    Option... opts) throws NetException, BizException {
-        if (Objects.nonNull(dataList) && dataList.size() > MAX_WRITE_ITEM_COUNT) {
-            log.warn("[ByteplusSDK][WriteData] item count more than '{}'", MAX_WRITE_ITEM_COUNT);
-            if (dataList.size() > MAX_IMPORT_ITEM_COUNT) {
-                throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
-            }
+        if (Objects.nonNull(dataList) && dataList.size() > MAX_IMPORT_ITEM_COUNT) {
+            throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
         }
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = byteairURL.getWriteDataUrlFormat();
@@ -62,19 +59,6 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         return response;
     }
 
-    @Override
-    public OperationResponse importData(List<Map<String, Object>> dataList, String topic,
-                                        Option... opts) throws NetException, BizException {
-        if (Objects.nonNull(dataList) && dataList.size() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
-        }
-        String urlFormat = byteairURL.getImportDataUrlFormat();
-        String url = urlFormat.replace("{}", topic);
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][ImportData] rsp:\n{}", response);
-        return response;
-    }
 
     @Override
     public DoneResponse done(List<LocalDate> dateList, String topic,

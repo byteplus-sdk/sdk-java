@@ -21,22 +21,6 @@ public interface ByteairClient extends CommonClient {
     WriteResponse writeData(List<Map<String, Object>> dataList, String topic,
                             Option... opts) throws NetException, BizException;
 
-    // Import
-    //
-    // Bulk import of data.
-    //
-    // `Operation.response` is of type ImportResponse. Note that it is
-    // possible for a subset of the items to be successfully inserted.
-    // Operation.metadata is of type Metadata.
-    // This call returns immediately after the server finishes the
-    // preliminary validations and persists the request. The caller should
-    // keep polling `OperationResponse.operation.name` using `GetOperation`
-    // call below to check the status.
-    // Note: This can also be used to update the existing data(some data type not support).
-    // In this case, please make sure you provide all fields.
-    OperationResponse importData(List<Map<String, Object>> dataList, String topic,
-                                 Option... opts) throws NetException, BizException;
-
     // Done
     //
     // When the data of a day is imported completely,

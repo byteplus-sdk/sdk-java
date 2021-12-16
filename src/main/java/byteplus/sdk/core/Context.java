@@ -23,6 +23,8 @@ public class Context {
 
     private Credentials volcCredentials;
 
+    private final boolean useAirAuth;
+
     // A unique token assigned by bytedance, which is used to
     // generate an authenticated signature when building a request.
     // It is sometimes called "secret".
@@ -57,6 +59,8 @@ public class Context {
 
         private String sk; // SecretKey of a volcengin tenant
 
+        private boolean useAirAuth; // if true, use air auth, otherwise use volc auth
+
         private String schema;
 
         private List<String> hosts;
@@ -80,6 +84,7 @@ public class Context {
         if (Objects.nonNull(param.headers)) {
             this.customerHeaders = param.headers;
         }
+        this.useAirAuth = param.useAirAuth;
     }
 
     private void checkRequiredField(Param param) {
@@ -89,22 +94,18 @@ public class Context {
         if (Objects.isNull(param.tenantId)) {
             throw new RuntimeException("Tenant id is null");
         }
+        if(param.useAirAuth) {
+            if (Objects.isNull(param.token)||"".equals(param.token)) {
+                throw new RuntimeException("token is null");
+            }
+        } else {
+            if (Objects.isNull(param.ak) || param.ak.equals("") ||
+                    (Objects.isNull(param.sk) || param.sk.equals(""))) {
+                throw new RuntimeException("ak and sk cannot be null");
+            }
+        }
         if (Objects.isNull(param.region)) {
             throw new RuntimeException("Region is null");
-        }
-        checkAuthRequiredField(param);
-    }
-
-    private void checkAuthRequiredField(Param param) {
-        // air auth only need token for signature， ak will be ignored
-        if ((Objects.isNull(param.token) || param.token.equals("")) &&
-                (Objects.isNull(param.ak) || param.ak.equals(""))) {
-            throw new RuntimeException("token and ak are null");
-        }
-        // if token is absent, then use volc auth for signature, ak and sdk are required
-        if ((Objects.nonNull(param.ak) && !param.ak.equals("")) &&
-                (Objects.isNull(param.sk) || param.sk.equals(""))) {
-            throw new RuntimeException("sk is null");
         }
     }
 
