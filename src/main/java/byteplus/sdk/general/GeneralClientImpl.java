@@ -2,13 +2,13 @@ package byteplus.sdk.general;
 
 import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
+import byteplus.sdk.common.protocol.ByteplusCommon.DoneResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.general.protocol.ByteplusGeneral.CallbackRequest;
 import byteplus.sdk.general.protocol.ByteplusGeneral.CallbackResponse;
-import byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse;
 import byteplus.sdk.general.protocol.ByteplusGeneral.PredictRequest;
 import byteplus.sdk.general.protocol.ByteplusGeneral.PredictResponse;
 import byteplus.sdk.general.protocol.ByteplusGeneral.WriteResponse;

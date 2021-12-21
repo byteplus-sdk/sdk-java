@@ -12,6 +12,11 @@ import byteplus.sdk.core.URLCenter;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 @Slf4j
 public abstract class CommonClientImpl implements CommonClient, URLCenter {
 
@@ -68,12 +73,31 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
     }
 
     @Override
-    public Response done(DoneRequest request, String topic, Option... opts) throws NetException, BizException {
+    public DoneResponse done(List<LocalDate> dateList, String topic, Option... opts) throws NetException, BizException {
+        List<Date> dates = new ArrayList<>();
+        if (Objects.isNull(dateList) || dateList.isEmpty()) {
+            LocalDate previousDay = LocalDate.now().plusDays(-1);
+            addDoneDate(dates, previousDay);
+        } else {
+            for (LocalDate date : dateList) {
+                addDoneDate(dates, date);
+            }
+        }
         String urlFormat = commonURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
-        Parser<Response> parser =  ByteplusCommon.Response.parser();
-        Response response = httpCaller.doPbRequest(url, request, parser, opts);
+        DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
+        Parser<DoneResponse> parser =  DoneResponse.parser();
+        DoneResponse response = httpCaller.doPbRequest(url, request, parser, opts);
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
+    }
+
+    private void addDoneDate(List<Date> dateMapList, LocalDate date) {
+        dateMapList.add(buildDoneDate(date));
+    }
+
+    private Date buildDoneDate(LocalDate date) {
+        return Date.newBuilder().setYear(date.getYear()).setMonth(date.getMonthValue()).
+                setDay(date.getDayOfMonth()).build();
     }
 }

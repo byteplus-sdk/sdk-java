@@ -834,7 +834,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -846,7 +846,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -858,7 +858,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -1030,7 +1030,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -1045,7 +1045,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -1060,7 +1060,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -1520,7 +1520,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -1534,7 +1534,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -1552,7 +1552,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -1575,7 +1575,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -1596,7 +1596,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -1621,7 +1621,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -1642,7 +1642,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -1657,7 +1657,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -1675,7 +1675,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -2104,7 +2104,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -2117,7 +2117,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -2130,7 +2130,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -2303,7 +2303,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -2319,7 +2319,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -2335,7 +2335,7 @@ public final class ByteplusGeneral {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -2796,7 +2796,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -2811,7 +2811,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -2830,7 +2830,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -2854,7 +2854,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -2876,7 +2876,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -2902,7 +2902,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -2924,7 +2924,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -2940,7 +2940,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -2959,7 +2959,7 @@ public final class ByteplusGeneral {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -3370,702 +3370,6 @@ public final class ByteplusGeneral {
 
     @java.lang.Override
     public byteplus.sdk.general.protocol.ByteplusGeneral.ImportResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DoneResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.general.DoneResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     * @return Whether the status field is set.
-     */
-    boolean hasStatus();
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     * @return The status.
-     */
-    byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     */
-    byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
-  }
-  /**
-   * Protobuf type {@code bytedance.byteplus.general.DoneResponse}
-   */
-  public static final class DoneResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bytedance.byteplus.general.DoneResponse)
-      DoneResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DoneResponse.newBuilder() to construct.
-    private DoneResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DoneResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DoneResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DoneResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ = input.readMessage(byteplus.sdk.common.protocol.ByteplusCommon.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_DoneResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_DoneResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.class, byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.Builder.class);
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 1;
-    private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     * @return Whether the status field is set.
-     */
-    @java.lang.Override
-    public boolean hasStatus() {
-      return status_ != null;
-    }
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
-      return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
-    }
-    /**
-     * <pre>
-     * Output only.
-     * The status of this response.
-     * </pre>
-     *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
-     */
-    @java.lang.Override
-    public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (status_ != null) {
-        output.writeMessage(1, getStatus());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (status_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStatus());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse)) {
-        return super.equals(obj);
-      }
-      byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse other = (byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse) obj;
-
-      if (hasStatus() != other.hasStatus()) return false;
-      if (hasStatus()) {
-        if (!getStatus()
-            .equals(other.getStatus())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasStatus()) {
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code bytedance.byteplus.general.DoneResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.general.DoneResponse)
-        byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_DoneResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_DoneResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.class, byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.Builder.class);
-      }
-
-      // Construct using byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_DoneResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse getDefaultInstanceForType() {
-        return byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse build() {
-        byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse buildPartial() {
-        byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse result = new byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse(this);
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse) {
-          return mergeFrom((byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse other) {
-        if (other == byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse.getDefaultInstance()) return this;
-        if (other.hasStatus()) {
-          mergeStatus(other.getStatus());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> statusBuilder_;
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       * @return Whether the status field is set.
-       */
-      public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       * @return The status.
-       */
-      public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
-        if (statusBuilder_ == null) {
-          return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
-        } else {
-          return statusBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
-        if (statusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          status_ = value;
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public Builder setStatus(
-          byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
-        if (statusBuilder_ == null) {
-          status_ = builderForValue.build();
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
-        if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-              byteplus.sdk.common.protocol.ByteplusCommon.Status.newBuilder(status_).mergeFrom(value).buildPartial();
-          } else {
-            status_ = value;
-          }
-          onChanged();
-        } else {
-          statusBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
-        
-        onChanged();
-        return getStatusFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
-        if (statusBuilder_ != null) {
-          return statusBuilder_.getMessageOrBuilder();
-        } else {
-          return status_ == null ?
-              byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
-        }
-      }
-      /**
-       * <pre>
-       * Output only.
-       * The status of this response.
-       * </pre>
-       *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
-          getStatusFieldBuilder() {
-        if (statusBuilder_ == null) {
-          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder>(
-                  getStatus(),
-                  getParentForChildren(),
-                  isClean());
-          status_ = null;
-        }
-        return statusBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.general.DoneResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:bytedance.byteplus.general.DoneResponse)
-    private static final byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse();
-    }
-
-    public static byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DoneResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DoneResponse>() {
-      @java.lang.Override
-      public DoneResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DoneResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DoneResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DoneResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17484,7 +16788,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      * @return Whether the context field is set.
      */
     boolean hasContext();
@@ -17494,7 +16798,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      * @return The context.
      */
     byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext getContext();
@@ -17504,7 +16808,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      */
     byteplus.sdk.general.protocol.ByteplusGeneral.PredictContextOrBuilder getContextOrBuilder();
 
@@ -17879,7 +17183,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      * @return Whether the context field is set.
      */
     @java.lang.Override
@@ -17892,7 +17196,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      * @return The context.
      */
     @java.lang.Override
@@ -17905,7 +17209,7 @@ public final class ByteplusGeneral {
      * The context info
      * </pre>
      *
-     * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+     * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
      */
     @java.lang.Override
     public byteplus.sdk.general.protocol.ByteplusGeneral.PredictContextOrBuilder getContextOrBuilder() {
@@ -18809,7 +18113,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        * @return Whether the context field is set.
        */
       public boolean hasContext() {
@@ -18821,7 +18125,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        * @return The context.
        */
       public byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext getContext() {
@@ -18837,7 +18141,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public Builder setContext(byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext value) {
         if (contextBuilder_ == null) {
@@ -18858,7 +18162,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public Builder setContext(
           byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext.Builder builderForValue) {
@@ -18877,7 +18181,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public Builder mergeContext(byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext value) {
         if (contextBuilder_ == null) {
@@ -18900,7 +18204,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public Builder clearContext() {
         if (contextBuilder_ == null) {
@@ -18919,7 +18223,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext.Builder getContextBuilder() {
         
@@ -18932,7 +18236,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       public byteplus.sdk.general.protocol.ByteplusGeneral.PredictContextOrBuilder getContextOrBuilder() {
         if (contextBuilder_ != null) {
@@ -18948,7 +18252,7 @@ public final class ByteplusGeneral {
        * The context info
        * </pre>
        *
-       * <code>.bytedance.byteplus.general.PredictContext Context = 2;</code>
+       * <code>.bytedance.byteplus.general.PredictContext context = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext, byteplus.sdk.general.protocol.ByteplusGeneral.PredictContext.Builder, byteplus.sdk.general.protocol.ByteplusGeneral.PredictContextOrBuilder> 
@@ -27182,11 +26486,6 @@ public final class ByteplusGeneral {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_general_ImportResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bytedance_byteplus_general_DoneResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bytedance_byteplus_general_DoneResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_general_PredictDevice_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -27323,102 +26622,101 @@ public final class ByteplusGeneral {
       "\n\026byteplus_general.proto\022\032bytedance.byte" +
       "plus.general\032\025byteplus_common.proto\032\031goo" +
       "gle/protobuf/any.proto\"*\n\tDataError\022\017\n\007m" +
-      "essage\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"r\n\rWriteRespo" +
-      "nse\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus" +
-      ".Status\0225\n\006errors\030\002 \003(\0132%.bytedance.byte" +
-      "plus.general.DataError\"z\n\016ImportResponse" +
-      "\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus.St" +
-      "atus\022<\n\rerror_samples\030\002 \003(\0132%.bytedance." +
-      "byteplus.general.DataError\":\n\014DoneRespon" +
-      "se\022*\n\006status\030\001 \001(\0132\032.bytedance.byteplus." +
-      "Status\"\317\001\n\rPredictDevice\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\020\n\010platform\030\002 \001(\t\022\025\n\rdevice_vendor\030\003" +
-      " \001(\t\022\024\n\014device_model\030\004 \001(\t\022\031\n\021device_res" +
-      "olution\030\005 \001(\t\022\026\n\016client_version\030\006 \001(\t\022\022\n" +
-      "\nos_version\030\007 \001(\t\022\024\n\014network_type\030\010 \001(\t\022" +
-      "\017\n\007carrier\030\t \001(\t\"\316\002\n\013PredictUser\022\013\n\003uid\030" +
-      "\001 \001(\t\0229\n\006device\030\002 \001(\0132).bytedance.bytepl" +
-      "us.general.PredictDevice\022\013\n\003age\030\003 \001(\t\022\016\n" +
-      "\006gender\030\004 \001(\t\022\020\n\010province\030\005 \001(\t\022\014\n\004city\030" +
-      "\006 \001(\t\022\020\n\010district\030\007 \001(\t\022\022\n\napp_market\030\010 " +
-      "\001(\t\022\022\n\nlogin_mode\030\t \001(\t\022\017\n\007country\030\n \001(\t" +
-      "\022A\n\005extra\030d \003(\01322.bytedance.byteplus.gen" +
-      "eral.PredictUser.ExtraEntry\032,\n\nExtraEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\016Pr" +
-      "edictContext\022\013\n\003spm\030\001 \001(\t\022D\n\005extra\030d \003(\013" +
-      "25.bytedance.byteplus.general.PredictCon" +
-      "text.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\024PredictCandida" +
-      "teItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005pri" +
-      "ce\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra\030d " +
-      "\003(\0132;.bytedance.byteplus.general.Predict" +
-      "CandidateItem.ExtraEntry\032,\n\nExtraEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n\014Predi" +
-      "ctExtra\022B\n\005extra\030e \003(\01323.bytedance.bytep" +
-      "lus.general.PredictExtra.ExtraEntry\032,\n\nE" +
-      "xtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"\230\001\n\022PredictRelatedItem\022\n\n\002id\030\001 \001(\t\022H\n\005" +
-      "extra\030d \003(\01329.bytedance.byteplus.general" +
-      ".PredictRelatedItem.ExtraEntry\032,\n\nExtraE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"B\n\013" +
-      "SearchItems\022\020\n\010goods_id\030\002 \001(\t\022\r\n\005price\030\003" +
-      " \001(\002\022\022\n\nboost_ceof\030\004 \001(\002\"\035\n\013StringArray\022" +
-      "\016\n\006values\030\001 \003(\t\"\202\004\n\017SearchCondition\022\r\n\005s" +
-      "tart\030\001 \001(\005\022\023\n\013search_type\030\002 \001(\005\022\021\n\tsort_" +
-      "mode\030\003 \001(\005\022\021\n\tsort_type\030\004 \001(\005\022\017\n\007content" +
-      "\030\005 \001(\t\022\r\n\005query\030\006 \001(\t\022I\n\007filters\030\007 \003(\01328" +
-      ".bytedance.byteplus.general.SearchCondit" +
-      "ion.FiltersEntry\022N\n\nfilter_out\030\010 \003(\0132:.b" +
-      "ytedance.byteplus.general.SearchConditio" +
-      "n.FilterOutEntry\0226\n\005items\030\t \003(\0132\'.byteda" +
-      "nce.byteplus.general.SearchItems\032W\n\014Filt" +
-      "ersEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.b" +
-      "ytedance.byteplus.general.StringArray:\0028" +
-      "\001\032Y\n\016FilterOutEntry\022\013\n\003key\030\001 \001(\t\0226\n\005valu" +
-      "e\030\002 \001(\0132\'.bytedance.byteplus.general.Str" +
-      "ingArray:\0028\001\"\243\003\n\016PredictRequest\0225\n\004user\030" +
-      "\001 \001(\0132\'.bytedance.byteplus.general.Predi" +
-      "ctUser\022;\n\007Context\030\002 \001(\0132*.bytedance.byte" +
-      "plus.general.PredictContext\022\014\n\004size\030\003 \001(" +
-      "\005\022I\n\017candidate_items\030\004 \003(\01320.bytedance.b" +
-      "yteplus.general.PredictCandidateItem\0227\n\005" +
-      "extra\030\005 \001(\0132(.bytedance.byteplus.general" +
-      ".PredictExtra\022D\n\014related_item\030\006 \001(\0132..by" +
-      "tedance.byteplus.general.PredictRelatedI" +
-      "tem\022E\n\020search_condition\030\007 \001(\0132+.bytedanc" +
-      "e.byteplus.general.SearchCondition\"\270\001\n\021P" +
-      "redictResultItem\022\n\n\002id\030\001 \001(\t\022\014\n\004rank\030\003 \001" +
-      "(\005\022\022\n\ntrans_data\030\004 \001(\t\022G\n\005extra\030\005 \003(\01328." +
-      "bytedance.byteplus.general.PredictResult" +
-      "Item.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\325\001\n\rPredictResult\022" +
-      "<\n\005items\030\001 \003(\0132-.bytedance.byteplus.gene" +
-      "ral.PredictResultItem\022C\n\005extra\030\002 \003(\01324.b" +
-      "ytedance.byteplus.general.PredictResult." +
-      "ExtraEntry\022\023\n\013total_count\030\003 \001(\005\032,\n\nExtra" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n" +
-      "\017PredictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007messag" +
-      "e\030\002 \001(\t\0228\n\005value\030\003 \001(\0132).bytedance.bytep" +
-      "lus.general.PredictResult\022\022\n\nrequest_id\030" +
-      "\004 \001(\t\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos" +
-      "\030\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\202\001\n\017CallbackReques" +
-      "t\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003" +
-      " \003(\0132(.bytedance.byteplus.general.Callba" +
-      "ckItem\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Ca" +
-      "llbackResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030" +
-      "\002 \001(\t2\304\003\n\026ByteplusGeneralService\022L\n\tWrit" +
-      "eData\022\024.google.protobuf.Any\032).bytedance." +
-      "byteplus.general.WriteResponse\022I\n\nImport" +
-      "Data\022\024.google.protobuf.Any\032%.bytedance.b" +
-      "yteplus.OperationResponse\022F\n\004Done\022\024.goog" +
-      "le.protobuf.Any\032(.bytedance.byteplus.gen" +
-      "eral.DoneResponse\022b\n\007Predict\022*.bytedance" +
-      ".byteplus.general.PredictRequest\032+.byted" +
-      "ance.byteplus.general.PredictResponse\022e\n" +
-      "\010Callback\022+.bytedance.byteplus.general.C" +
-      "allbackRequest\032,.bytedance.byteplus.gene" +
-      "ral.CallbackResponseB\037\n\035byteplus.sdk.gen" +
-      "eral.protocolb\006proto3"
+      "essage\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"y\n\rWriteRespo" +
+      "nse\0221\n\006status\030\001 \001(\0132!.bytedance.byteplus" +
+      ".common.Status\0225\n\006errors\030\002 \003(\0132%.bytedan" +
+      "ce.byteplus.general.DataError\"\201\001\n\016Import" +
+      "Response\0221\n\006status\030\001 \001(\0132!.bytedance.byt" +
+      "eplus.common.Status\022<\n\rerror_samples\030\002 \003" +
+      "(\0132%.bytedance.byteplus.general.DataErro" +
+      "r\"\317\001\n\rPredictDevice\022\021\n\tdevice_id\030\001 \001(\t\022\020" +
+      "\n\010platform\030\002 \001(\t\022\025\n\rdevice_vendor\030\003 \001(\t\022" +
+      "\024\n\014device_model\030\004 \001(\t\022\031\n\021device_resoluti" +
+      "on\030\005 \001(\t\022\026\n\016client_version\030\006 \001(\t\022\022\n\nos_v" +
+      "ersion\030\007 \001(\t\022\024\n\014network_type\030\010 \001(\t\022\017\n\007ca" +
+      "rrier\030\t \001(\t\"\316\002\n\013PredictUser\022\013\n\003uid\030\001 \001(\t" +
+      "\0229\n\006device\030\002 \001(\0132).bytedance.byteplus.ge" +
+      "neral.PredictDevice\022\013\n\003age\030\003 \001(\t\022\016\n\006gend" +
+      "er\030\004 \001(\t\022\020\n\010province\030\005 \001(\t\022\014\n\004city\030\006 \001(\t" +
+      "\022\020\n\010district\030\007 \001(\t\022\022\n\napp_market\030\010 \001(\t\022\022" +
+      "\n\nlogin_mode\030\t \001(\t\022\017\n\007country\030\n \001(\t\022A\n\005e" +
+      "xtra\030d \003(\01322.bytedance.byteplus.general." +
+      "PredictUser.ExtraEntry\032,\n\nExtraEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\016Predict" +
+      "Context\022\013\n\003spm\030\001 \001(\t\022D\n\005extra\030d \003(\01325.by" +
+      "tedance.byteplus.general.PredictContext." +
+      "ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"\316\001\n\024PredictCandidateIte" +
+      "m\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005price\030\003 " +
+      "\001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra\030d \003(\0132;" +
+      ".bytedance.byteplus.general.PredictCandi" +
+      "dateItem.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n\014PredictExt" +
+      "ra\022B\n\005extra\030e \003(\01323.bytedance.byteplus.g" +
+      "eneral.PredictExtra.ExtraEntry\032,\n\nExtraE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\001\n" +
+      "\022PredictRelatedItem\022\n\n\002id\030\001 \001(\t\022H\n\005extra" +
+      "\030d \003(\01329.bytedance.byteplus.general.Pred" +
+      "ictRelatedItem.ExtraEntry\032,\n\nExtraEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"B\n\013Searc" +
+      "hItems\022\020\n\010goods_id\030\002 \001(\t\022\r\n\005price\030\003 \001(\002\022" +
+      "\022\n\nboost_ceof\030\004 \001(\002\"\035\n\013StringArray\022\016\n\006va" +
+      "lues\030\001 \003(\t\"\202\004\n\017SearchCondition\022\r\n\005start\030" +
+      "\001 \001(\005\022\023\n\013search_type\030\002 \001(\005\022\021\n\tsort_mode\030" +
+      "\003 \001(\005\022\021\n\tsort_type\030\004 \001(\005\022\017\n\007content\030\005 \001(" +
+      "\t\022\r\n\005query\030\006 \001(\t\022I\n\007filters\030\007 \003(\01328.byte" +
+      "dance.byteplus.general.SearchCondition.F" +
+      "iltersEntry\022N\n\nfilter_out\030\010 \003(\0132:.byteda" +
+      "nce.byteplus.general.SearchCondition.Fil" +
+      "terOutEntry\0226\n\005items\030\t \003(\0132\'.bytedance.b" +
+      "yteplus.general.SearchItems\032W\n\014FiltersEn" +
+      "try\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.byteda" +
+      "nce.byteplus.general.StringArray:\0028\001\032Y\n\016" +
+      "FilterOutEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001" +
+      "(\0132\'.bytedance.byteplus.general.StringAr" +
+      "ray:\0028\001\"\243\003\n\016PredictRequest\0225\n\004user\030\001 \001(\013" +
+      "2\'.bytedance.byteplus.general.PredictUse" +
+      "r\022;\n\007context\030\002 \001(\0132*.bytedance.byteplus." +
+      "general.PredictContext\022\014\n\004size\030\003 \001(\005\022I\n\017" +
+      "candidate_items\030\004 \003(\01320.bytedance.bytepl" +
+      "us.general.PredictCandidateItem\0227\n\005extra" +
+      "\030\005 \001(\0132(.bytedance.byteplus.general.Pred" +
+      "ictExtra\022D\n\014related_item\030\006 \001(\0132..bytedan" +
+      "ce.byteplus.general.PredictRelatedItem\022E" +
+      "\n\020search_condition\030\007 \001(\0132+.bytedance.byt" +
+      "eplus.general.SearchCondition\"\270\001\n\021Predic" +
+      "tResultItem\022\n\n\002id\030\001 \001(\t\022\014\n\004rank\030\003 \001(\005\022\022\n" +
+      "\ntrans_data\030\004 \001(\t\022G\n\005extra\030\005 \003(\01328.byted" +
+      "ance.byteplus.general.PredictResultItem." +
+      "ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"\325\001\n\rPredictResult\022<\n\005it" +
+      "ems\030\001 \003(\0132-.bytedance.byteplus.general.P" +
+      "redictResultItem\022C\n\005extra\030\002 \003(\01324.byteda" +
+      "nce.byteplus.general.PredictResult.Extra" +
+      "Entry\022\023\n\013total_count\030\003 \001(\005\032,\n\nExtraEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\017Pred" +
+      "ictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001" +
+      "(\t\0228\n\005value\030\003 \001(\0132).bytedance.byteplus.g" +
+      "eneral.PredictResult\022\022\n\nrequest_id\030\004 \001(\t" +
+      "\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos\030\002 \001(" +
+      "\t\022\r\n\005extra\030\003 \001(\t\"\202\001\n\017CallbackRequest\022\013\n\003" +
+      "uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003 \003(\0132" +
+      "(.bytedance.byteplus.general.CallbackIte" +
+      "m\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Callbac" +
+      "kResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
+      "2\312\003\n\026ByteplusGeneralService\022L\n\tWriteData" +
+      "\022\024.google.protobuf.Any\032).bytedance.bytep" +
+      "lus.general.WriteResponse\022P\n\nImportData\022" +
+      "\024.google.protobuf.Any\032,.bytedance.bytepl" +
+      "us.common.OperationResponse\022E\n\004Done\022\024.go" +
+      "ogle.protobuf.Any\032\'.bytedance.byteplus.c" +
+      "ommon.DoneResponse\022b\n\007Predict\022*.bytedanc" +
+      "e.byteplus.general.PredictRequest\032+.byte" +
+      "dance.byteplus.general.PredictResponse\022e" +
+      "\n\010Callback\022+.bytedance.byteplus.general." +
+      "CallbackRequest\032,.bytedance.byteplus.gen" +
+      "eral.CallbackResponseB\037\n\035byteplus.sdk.ge" +
+      "neral.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -27444,20 +26742,14 @@ public final class ByteplusGeneral {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_ImportResponse_descriptor,
         new java.lang.String[] { "Status", "ErrorSamples", });
-    internal_static_bytedance_byteplus_general_DoneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_bytedance_byteplus_general_DoneResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bytedance_byteplus_general_DoneResponse_descriptor,
-        new java.lang.String[] { "Status", });
     internal_static_bytedance_byteplus_general_PredictDevice_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_bytedance_byteplus_general_PredictDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictDevice_descriptor,
         new java.lang.String[] { "DeviceId", "Platform", "DeviceVendor", "DeviceModel", "DeviceResolution", "ClientVersion", "OsVersion", "NetworkType", "Carrier", });
     internal_static_bytedance_byteplus_general_PredictUser_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_bytedance_byteplus_general_PredictUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictUser_descriptor,
@@ -27469,7 +26761,7 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictUser_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictContext_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_bytedance_byteplus_general_PredictContext_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictContext_descriptor,
@@ -27481,7 +26773,7 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictContext_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictCandidateItem_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_bytedance_byteplus_general_PredictCandidateItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictCandidateItem_descriptor,
@@ -27493,7 +26785,7 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictCandidateItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictExtra_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_bytedance_byteplus_general_PredictExtra_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictExtra_descriptor,
@@ -27505,7 +26797,7 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictExtra_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictRelatedItem_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_bytedance_byteplus_general_PredictRelatedItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictRelatedItem_descriptor,
@@ -27517,19 +26809,19 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictRelatedItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_SearchItems_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_bytedance_byteplus_general_SearchItems_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_SearchItems_descriptor,
         new java.lang.String[] { "GoodsId", "Price", "BoostCeof", });
     internal_static_bytedance_byteplus_general_StringArray_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_bytedance_byteplus_general_StringArray_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_StringArray_descriptor,
         new java.lang.String[] { "Values", });
     internal_static_bytedance_byteplus_general_SearchCondition_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_bytedance_byteplus_general_SearchCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_SearchCondition_descriptor,
@@ -27547,13 +26839,13 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_SearchCondition_FilterOutEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_bytedance_byteplus_general_PredictRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictRequest_descriptor,
         new java.lang.String[] { "User", "Context", "Size", "CandidateItems", "Extra", "RelatedItem", "SearchCondition", });
     internal_static_bytedance_byteplus_general_PredictResultItem_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_bytedance_byteplus_general_PredictResultItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictResultItem_descriptor,
@@ -27565,7 +26857,7 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictResultItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictResult_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_bytedance_byteplus_general_PredictResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictResult_descriptor,
@@ -27577,25 +26869,25 @@ public final class ByteplusGeneral {
         internal_static_bytedance_byteplus_general_PredictResult_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_PredictResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_bytedance_byteplus_general_PredictResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_PredictResponse_descriptor,
         new java.lang.String[] { "Code", "Message", "Value", "RequestId", });
     internal_static_bytedance_byteplus_general_CallbackItem_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_bytedance_byteplus_general_CallbackItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_CallbackItem_descriptor,
         new java.lang.String[] { "Id", "Pos", "Extra", });
     internal_static_bytedance_byteplus_general_CallbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_bytedance_byteplus_general_CallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_CallbackRequest_descriptor,
         new java.lang.String[] { "Uid", "Scene", "Items", "PredictRequestId", });
     internal_static_bytedance_byteplus_general_CallbackResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_bytedance_byteplus_general_CallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_CallbackResponse_descriptor,

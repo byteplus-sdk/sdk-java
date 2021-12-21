@@ -1,6 +1,5 @@
 package byteplus.sdk.byteair;
 
-import byteplus.sdk.byteair.protocol.ByteplusByteair;
 import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
@@ -9,9 +8,9 @@ import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.CallbackResponse;
-import byteplus.sdk.byteair.protocol.ByteplusByteair.Date;
-import byteplus.sdk.byteair.protocol.ByteplusByteair.DoneRequest;
-import byteplus.sdk.byteair.protocol.ByteplusByteair.DoneResponse;
+import byteplus.sdk.common.protocol.ByteplusCommon.Date;
+import byteplus.sdk.common.protocol.ByteplusCommon.DoneRequest;
+import byteplus.sdk.common.protocol.ByteplusCommon.DoneResponse;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.PredictRequest;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.PredictResponse;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.WriteResponse;
@@ -108,7 +107,6 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         return Date.newBuilder().setYear(date.getYear()).setMonth(date.getMonthValue()).
                 setDay(date.getDayOfMonth()).build();
     }
-
 
     @Override
     public PredictResponse predict(PredictRequest request, String scene,

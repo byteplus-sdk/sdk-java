@@ -10,6 +10,7 @@ option java_package = "byteplus.sdk.retailv2.protocol";
 ////   All comments start with "////" will be filtered
 
 import "byteplus_common.proto";
+import "google/protobuf/any.proto";
 
 // The user proto.
 message User {
@@ -152,7 +153,7 @@ message WriteUsersResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -419,7 +420,7 @@ message WriteProductsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -672,7 +673,7 @@ message WriteUserEventsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -768,7 +769,7 @@ message PredictResult {
 message PredictResponse {
   // Output only.
   // The status of the call.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This is same as the request id of request.
@@ -829,7 +830,7 @@ message AckServerImpressionsRequest {
 message AckServerImpressionsResponse {
   // Output only.
   // The status of this response.
-  Status status = 1;
+  common.Status status = 1;
 }
 
 // The Byteplus Retail service.
@@ -862,6 +863,12 @@ service ByteplusRetailService {
   // Please make sure the requests are deduplicated before sending over.
   // Refer to [this](../docs/rpcs) for how to use RPCs.
   rpc WriteUserEvents(WriteUserEventsRequest) returns (WriteUserEventsResponse);
+
+  // Done
+  //
+  // Pass a date list to mark the completion of data synchronization for these days.
+  // Suitable for new data API
+  rpc Done(google.protobuf.Any) returns (common.DoneResponse);
 
   // Predict
   //
