@@ -1,4 +1,4 @@
-package byteplus.sdk.core.volc_auth;
+package byteplus.sdk.core.volcAuth;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -22,9 +22,9 @@ import java.security.MessageDigest;
 import java.util.*;
 import java.util.zip.CRC32;
 
-public class Helper {
+public class VolcAuthHelper {
 
-    public static List<NameValuePair> mapToPairList(Map<String, String> params) {
+     static List<NameValuePair> mapToPairList(Map<String, String> params) {
         List<NameValuePair> res = new ArrayList<NameValuePair>();
 
         if (params != null) {
@@ -35,7 +35,7 @@ public class Helper {
         return res;
     }
 
-    public static String hashSHA256(byte[] content) throws Exception {
+     static String hashSHA256(byte[] content) throws Exception {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             return Hex.encodeHexString(md.digest(content));
@@ -46,7 +46,7 @@ public class Helper {
         }
     }
 
-    public static byte[] hmacSHA256(byte[] key, String content) throws Exception {
+     static byte[] hmacSHA256(byte[] key, String content) throws Exception {
         try {
             Mac mac = Mac.getInstance("HmacSHA256");
             mac.init(new SecretKeySpec(key, "HmacSHA256"));
@@ -58,7 +58,7 @@ public class Helper {
         }
     }
 
-    public static byte[] hmacSHA1(byte[] key, String content) throws Exception {
+     static byte[] hmacSHA1(byte[] key, String content) throws Exception {
         try {
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(new SecretKeySpec(key, "HmacSHA1"));
@@ -70,7 +70,7 @@ public class Helper {
         }
     }
 
-    public static String randWeights(Map<String, Integer> weightsMap, String excludeDomain) {
+     static String randWeights(Map<String, Integer> weightsMap, String excludeDomain) {
         int weightSum = 0;
         for (Map.Entry<String, Integer> entry : weightsMap.entrySet()) {
             if (entry.getKey().equals(excludeDomain)) {
@@ -97,7 +97,7 @@ public class Helper {
         return "";
     }
 
-    public static String encode(Map<String, List<String>> v) {
+     static String encode(Map<String, List<String>> v) {
         if (v == null) {
             return "";
         }
@@ -124,7 +124,7 @@ public class Helper {
         return stringBuilder.toString();
     }
 
-    public static long crc32(String filePath) throws Exception {
+     static long crc32(String filePath) throws Exception {
         try {
             InputStream inputStream = new BufferedInputStream(new FileInputStream(filePath));
             CRC32 crc = new CRC32();
@@ -142,8 +142,7 @@ public class Helper {
         }
     }
 
-    // 对于List类型entry，逗号连接生成string value
-    public static Map<String, String> paramsToMap(Object obj) {
+     static Map<String, String> paramsToMap(Object obj) {
         Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JSON.toJSONString(obj)), Map.class);
         Map<String, String> params = new HashMap<>();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
@@ -163,8 +162,7 @@ public class Helper {
         return params;
     }
 
-    // 对于List类型entry，拆分为多个Name-Value pair
-    public static List<NameValuePair> paramsToPair(Object obj) {
+     static List<NameValuePair> paramsToPair(Object obj) {
         Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JSON.toJSONString(obj)), Map.class);
         List<NameValuePair> pairs = new ArrayList<>();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
@@ -182,8 +180,7 @@ public class Helper {
         return pairs;
     }
 
-    // 对于List类型entry，逗号连接生成string value
-    public static Map<String, String> protoBufferToMap(MessageOrBuilder obj, boolean needDefaultValueFields) throws InvalidProtocolBufferException {
+     static Map<String, String> protoBufferToMap(MessageOrBuilder obj, boolean needDefaultValueFields) throws InvalidProtocolBufferException {
         JsonFormat.Printer printer = JsonFormat.printer();
         if (needDefaultValueFields) {
             printer = printer.includingDefaultValueFields();

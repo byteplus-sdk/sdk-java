@@ -1,7 +1,7 @@
 package byteplus.sdk.core;
 
-import byteplus.sdk.core.volc_auth.RequestAdapter;
-import byteplus.sdk.core.volc_auth.VoclAuth;
+import byteplus.sdk.core.volcAuth.RequestAdapter;
+import byteplus.sdk.core.volcAuth.VoclAuth;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
@@ -233,18 +233,21 @@ public class HttpCaller {
     }
 
     private void withAuthHeaders(Request.Builder request, RequestAdapter requestAdapter, byte[] bodyBytes) throws BizException {
-        //air_auth
-        if (context.isUseAirAuth()) {
-            withAirAuthHeaders(request, bodyBytes);
-            return;
-        }
         //volc_auth
-        try {
-            VoclAuth.sign(requestAdapter.getAuthRequest(), context.getVolcCredentials());
-            requestAdapter.copyHeaders(request);
-        } catch (Exception e) {
-            throw new BizException(e.getMessage());
+        if (Objects.nonNull(context.getVolcCredential()) &&
+                Objects.nonNull(context.getVolcCredential().getAccessKeyID()) &&
+                !context.getVolcCredential().getAccessKeyID().equals("")) {
+            try {
+                VoclAuth.sign(requestAdapter.getAuthRequest(), context.getVolcCredential());
+                requestAdapter.copyHeaders(request);
+                return;
+            } catch (Exception e) {
+                throw new BizException(e.getMessage());
+            }
         }
+        //air_auth
+        withAirAuthHeaders(request, bodyBytes);
+
     }
 
     private void withAirAuthHeaders(Request.Builder request, byte[] reqBytes) {

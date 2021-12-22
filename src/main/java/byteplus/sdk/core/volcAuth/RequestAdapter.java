@@ -1,4 +1,4 @@
-package byteplus.sdk.core.volc_auth;
+package byteplus.sdk.core.volcAuth;
 
 import lombok.Getter;
 import okhttp3.Headers;

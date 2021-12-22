@@ -1,4 +1,4 @@
-package byteplus.sdk.core.volc_auth;
+package byteplus.sdk.core.volcAuth;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
@@ -31,7 +31,7 @@ public class VoclAuth {
     H_INCLUDE.add("Host");
   }
 
-  public static void sign(HttpUriRequest request, Credentials credentials) throws Exception {
+  public static void sign(HttpUriRequest request, Credential credential) throws Exception {
     if ("".equals(request.getURI().getPath())) {
       URI uri = request.getURI();
       URIBuilder builder = new URIBuilder(uri);
@@ -54,8 +54,8 @@ public class VoclAuth {
 
     MetaData meta = new MetaData();
     meta.setAlgorithm("HMAC-SHA256");
-    meta.setService(credentials.getService());
-    meta.setRegion(credentials.getRegion());
+    meta.setService(credential.getService());
+    meta.setRegion(credential.getRegion());
     meta.setDate(toDate(formatDate));
 
     // step 1
@@ -67,10 +67,10 @@ public class VoclAuth {
     String stringToSign = StringUtils.join(new String[]{meta.getAlgorithm(), formatDate, meta.getCredentialScope(), hashedCanonReq}, "\n");
 
     // step 3
-    byte[] signingKey = genSigningSecretKeyV4(credentials.getSecretAccessKey(), meta.getDate(), meta.getRegion(), meta.getService());
+    byte[] signingKey = genSigningSecretKeyV4(credential.getSecretAccessKey(), meta.getDate(), meta.getRegion(), meta.getService());
     //System.out.println("signed key:\n" + bytesToHex(signingKey) + "\nmeta:\n" + meta);
-    String signature = Hex.encodeHexString(Helper.hmacSHA256(signingKey, stringToSign));
-    request.setHeader("Authorization", buildAuthHeaderV4(signature, meta, credentials));
+    String signature = Hex.encodeHexString(VolcAuthHelper.hmacSHA256(signingKey, stringToSign));
+    request.setHeader("Authorization", buildAuthHeaderV4(signature, meta, credential));
   }
 
   public static String bytesToHex(byte[] bytes) {
@@ -95,7 +95,7 @@ public class VoclAuth {
       }
     }
 
-    String bodyHash = Helper.hashSHA256(body);
+    String bodyHash = VolcAuthHelper.hashSHA256(body);
     request.setHeader("X-Content-Sha256", bodyHash);
 
     List<String> signedHeaders = new ArrayList<>();
@@ -132,17 +132,17 @@ public class VoclAuth {
         "\n");
 
   //System.out.println("canonicalRequest:" + canonicalRequest);
-    return Helper.hashSHA256(canonicalRequest.getBytes());
+    return VolcAuthHelper.hashSHA256(canonicalRequest.getBytes());
   }
 
   private static byte[] genSigningSecretKeyV4(String secretKey, String date, String region, String service) throws Exception {
-    byte[] kDate = Helper.hmacSHA256((secretKey).getBytes(), date);
-    byte[] kRegion = Helper.hmacSHA256(kDate, region);
-    byte[] kService = Helper.hmacSHA256(kRegion, service);
-    return Helper.hmacSHA256(kService, "request");
+    byte[] kDate = VolcAuthHelper.hmacSHA256((secretKey).getBytes(), date);
+    byte[] kRegion = VolcAuthHelper.hmacSHA256(kDate, region);
+    byte[] kService = VolcAuthHelper.hmacSHA256(kRegion, service);
+    return VolcAuthHelper.hmacSHA256(kService, "request");
   }
 
-  private static String buildAuthHeaderV4(String signature, MetaData meta, Credentials credentials) {
+  private static String buildAuthHeaderV4(String signature, MetaData meta, Credential credentials) {
     String credential = credentials.getAccessKeyID() + "/" + meta.getCredentialScope();
 
     return meta.getAlgorithm() +
