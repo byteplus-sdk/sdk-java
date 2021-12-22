@@ -26704,19 +26704,17 @@ public final class ByteplusByteair {
       "(.bytedance.byteplus.byteair.CallbackIte" +
       "m\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Callbac" +
       "kResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
-      "2\312\003\n\026ByteplusGeneralService\022L\n\tWriteData" +
+      "2\203\003\n\026ByteplusGeneralService\022L\n\tWriteData" +
       "\022\024.google.protobuf.Any\032).bytedance.bytep" +
       "lus.byteair.WriteResponse\022P\n\nImportData\022" +
       "\024.google.protobuf.Any\032,.bytedance.bytepl" +
-      "us.common.OperationResponse\022E\n\004Done\022\024.go" +
-      "ogle.protobuf.Any\032\'.bytedance.byteplus.c" +
-      "ommon.DoneResponse\022b\n\007Predict\022*.bytedanc" +
-      "e.byteplus.byteair.PredictRequest\032+.byte" +
-      "dance.byteplus.byteair.PredictResponse\022e" +
-      "\n\010Callback\022+.bytedance.byteplus.byteair." +
-      "CallbackRequest\032,.bytedance.byteplus.byt" +
-      "eair.CallbackResponseB\037\n\035byteplus.sdk.by" +
-      "teair.protocolb\006proto3"
+      "us.common.OperationResponse\022b\n\007Predict\022*" +
+      ".bytedance.byteplus.byteair.PredictReque" +
+      "st\032+.bytedance.byteplus.byteair.PredictR" +
+      "esponse\022e\n\010Callback\022+.bytedance.byteplus" +
+      ".byteair.CallbackRequest\032,.bytedance.byt" +
+      "eplus.byteair.CallbackResponseB\037\n\035bytepl" +
+      "us.sdk.byteair.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

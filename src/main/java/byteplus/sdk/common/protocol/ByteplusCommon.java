@@ -9873,16 +9873,17 @@ public final class ByteplusCommon {
       "sResponse\0221\n\006status\030\001 \001(\0132!.bytedance.by" +
       "teplus.common.Status\0228\n\noperations\030\002 \003(\013" +
       "2$.bytedance.byteplus.common.Operation\022\027" +
-      "\n\017next_page_token\030\003 \001(\t2\303\002\n\025ByteplusComm" +
+      "\n\017next_page_token\030\003 \001(\t2\325\002\n\025ByteplusComm" +
       "onService\022l\n\014GetOperation\022..bytedance.by" +
       "teplus.common.GetOperationRequest\032,.byte" +
       "dance.byteplus.common.OperationResponse\022" +
       "u\n\016ListOperations\0220.bytedance.byteplus.c" +
       "ommon.ListOperationsRequest\0321.bytedance." +
-      "byteplus.common.ListOperationsResponse\022E" +
-      "\n\004Done\022\024.google.protobuf.Any\032\'.bytedance" +
-      ".byteplus.common.DoneResponseB\036\n\034byteplu" +
-      "s.sdk.common.protocolb\006proto3"
+      "byteplus.common.ListOperationsResponse\022W" +
+      "\n\004Done\022&.bytedance.byteplus.common.DoneR" +
+      "equest\032\'.bytedance.byteplus.common.DoneR" +
+      "esponseB\036\n\034byteplus.sdk.common.protocolb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -44752,163 +44752,159 @@ public final class ByteplusRetailv2 {
   static {
     java.lang.String[] descriptorData = {
       "\n\027byteplus_retailv2.proto\022\033bytedance.byt" +
-      "eplus.retailv2\032\025byteplus_common.proto\032\031g" +
-      "oogle/protobuf/any.proto\"\230\003\n\004User\022\017\n\007use" +
-      "r_id\030\001 \001(\t\022\016\n\006gender\030\002 \001(\t\022\013\n\003age\030\003 \001(\t\022" +
-      "\014\n\004tags\030\004 \003(\t\022\032\n\022activation_channel\030\005 \001(" +
-      "\t\022\030\n\020membership_level\030\006 \001(\t\022\036\n\026registrat" +
-      "ion_timestamp\030\007 \001(\003\022<\n\010location\030\010 \001(\0132*." +
-      "bytedance.byteplus.retailv2.User.Locatio" +
-      "n\022;\n\005extra\030d \003(\0132,.bytedance.byteplus.re" +
-      "tailv2.User.ExtraEntry\032U\n\010Location\022\017\n\007co" +
-      "untry\030\001 \001(\t\022\014\n\004city\030\002 \001(\t\022\030\n\020district_or" +
-      "_area\030\003 \001(\t\022\020\n\010postcode\030\004 \001(\t\032,\n\nExtraEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\275\001\n\021" +
-      "WriteUsersRequest\0220\n\005users\030\001 \003(\0132!.byted" +
-      "ance.byteplus.retailv2.User\022H\n\005extra\030d \003" +
-      "(\01329.bytedance.byteplus.retailv2.WriteUs" +
-      "ersRequest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\tUserError" +
-      "\022\017\n\007message\030\001 \001(\t\022/\n\004user\030\002 \001(\0132!.byteda" +
-      "nce.byteplus.retailv2.User\"\177\n\022WriteUsers" +
-      "Response\0221\n\006status\030\001 \001(\0132!.bytedance.byt" +
-      "eplus.common.Status\0226\n\006errors\030\002 \003(\0132&.by" +
-      "tedance.byteplus.retailv2.UserError\"\261\t\n\007" +
-      "Product\022\022\n\nproduct_id\030\001 \001(\t\022A\n\ncategorie" +
-      "s\030\002 \003(\0132-.bytedance.byteplus.retailv2.Pr" +
-      "oduct.Category\022:\n\006brands\030\003 \003(\0132*.bytedan" +
-      "ce.byteplus.retailv2.Product.Brand\0229\n\005pr" +
-      "ice\030\004 \001(\0132*.bytedance.byteplus.retailv2." +
-      "Product.Price\022\030\n\020is_recommendable\030\005 \001(\010\022" +
-      "\r\n\005title\030\006 \001(\t\022\025\n\rquality_score\030\007 \001(\001\022\014\n" +
-      "\004tags\030\010 \003(\t\022=\n\007display\030\t \001(\0132,.bytedance" +
-      ".byteplus.retailv2.Product.Display\022F\n\014pr" +
-      "oduct_spec\030\n \001(\01320.bytedance.byteplus.re" +
-      "tailv2.Product.ProductSpec\022;\n\006seller\030\013 \001" +
-      "(\0132+.bytedance.byteplus.retailv2.Product" +
-      ".Seller\022>\n\005extra\030d \003(\0132/.bytedance.bytep" +
-      "lus.retailv2.Product.ExtraEntry\032\232\001\n\010Cate" +
-      "gory\022\026\n\016category_depth\030\001 \001(\005\022R\n\016category" +
-      "_nodes\030\002 \003(\0132:.bytedance.byteplus.retail" +
-      "v2.Product.Category.CategoryNode\032\"\n\014Cate" +
-      "goryNode\022\022\n\nid_or_name\030\001 \001(\t\0320\n\005Brand\022\023\n" +
-      "\013brand_depth\030\001 \001(\005\022\022\n\nid_or_name\030\002 \001(\t\0324" +
-      "\n\005Price\022\025\n\rcurrent_price\030\001 \001(\003\022\024\n\014origin" +
-      "_price\030\002 \001(\003\032\217\001\n\007Display\022!\n\031listing_page" +
-      "_display_tags\030\001 \003(\t\022 \n\030detail_page_displ" +
-      "ay_tags\030\002 \003(\t\022!\n\031listing_page_display_ty" +
-      "pe\030\003 \001(\t\022\034\n\024cover_multimedia_url\030\004 \001(\t\032~" +
-      "\n\013ProductSpec\022\030\n\020product_group_id\030\001 \001(\t\022" +
-      "\023\n\013user_rating\030\002 \001(\001\022\025\n\rcomment_count\030\003 " +
-      "\001(\005\022\016\n\006source\030\004 \001(\t\022\031\n\021publish_timestamp" +
-      "\030\005 \001(\003\032A\n\006Seller\022\n\n\002id\030\001 \001(\t\022\024\n\014seller_l" +
-      "evel\030\002 \001(\t\022\025\n\rseller_rating\030\003 \001(\001\032,\n\nExt" +
-      "raEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      "\311\001\n\024WriteProductsRequest\0226\n\010products\030\001 \003" +
+      "eplus.retailv2\032\025byteplus_common.proto\"\230\003" +
+      "\n\004User\022\017\n\007user_id\030\001 \001(\t\022\016\n\006gender\030\002 \001(\t\022" +
+      "\013\n\003age\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\022\032\n\022activation" +
+      "_channel\030\005 \001(\t\022\030\n\020membership_level\030\006 \001(\t" +
+      "\022\036\n\026registration_timestamp\030\007 \001(\003\022<\n\010loca" +
+      "tion\030\010 \001(\0132*.bytedance.byteplus.retailv2" +
+      ".User.Location\022;\n\005extra\030d \003(\0132,.bytedanc" +
+      "e.byteplus.retailv2.User.ExtraEntry\032U\n\010L" +
+      "ocation\022\017\n\007country\030\001 \001(\t\022\014\n\004city\030\002 \001(\t\022\030" +
+      "\n\020district_or_area\030\003 \001(\t\022\020\n\010postcode\030\004 \001" +
+      "(\t\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"\275\001\n\021WriteUsersRequest\0220\n\005users\030" +
+      "\001 \003(\0132!.bytedance.byteplus.retailv2.User" +
+      "\022H\n\005extra\030d \003(\01329.bytedance.byteplus.ret" +
+      "ailv2.WriteUsersRequest.ExtraEntry\032,\n\nEx" +
+      "traEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"M\n\tUserError\022\017\n\007message\030\001 \001(\t\022/\n\004user\030\002" +
+      " \001(\0132!.bytedance.byteplus.retailv2.User\"" +
+      "\177\n\022WriteUsersResponse\0221\n\006status\030\001 \001(\0132!." +
+      "bytedance.byteplus.common.Status\0226\n\006erro" +
+      "rs\030\002 \003(\0132&.bytedance.byteplus.retailv2.U" +
+      "serError\"\261\t\n\007Product\022\022\n\nproduct_id\030\001 \001(\t" +
+      "\022A\n\ncategories\030\002 \003(\0132-.bytedance.byteplu" +
+      "s.retailv2.Product.Category\022:\n\006brands\030\003 " +
+      "\003(\0132*.bytedance.byteplus.retailv2.Produc" +
+      "t.Brand\0229\n\005price\030\004 \001(\0132*.bytedance.bytep" +
+      "lus.retailv2.Product.Price\022\030\n\020is_recomme" +
+      "ndable\030\005 \001(\010\022\r\n\005title\030\006 \001(\t\022\025\n\rquality_s" +
+      "core\030\007 \001(\001\022\014\n\004tags\030\010 \003(\t\022=\n\007display\030\t \001(" +
+      "\0132,.bytedance.byteplus.retailv2.Product." +
+      "Display\022F\n\014product_spec\030\n \001(\01320.bytedanc" +
+      "e.byteplus.retailv2.Product.ProductSpec\022" +
+      ";\n\006seller\030\013 \001(\0132+.bytedance.byteplus.ret" +
+      "ailv2.Product.Seller\022>\n\005extra\030d \003(\0132/.by" +
+      "tedance.byteplus.retailv2.Product.ExtraE" +
+      "ntry\032\232\001\n\010Category\022\026\n\016category_depth\030\001 \001(" +
+      "\005\022R\n\016category_nodes\030\002 \003(\0132:.bytedance.by" +
+      "teplus.retailv2.Product.Category.Categor" +
+      "yNode\032\"\n\014CategoryNode\022\022\n\nid_or_name\030\001 \001(" +
+      "\t\0320\n\005Brand\022\023\n\013brand_depth\030\001 \001(\005\022\022\n\nid_or" +
+      "_name\030\002 \001(\t\0324\n\005Price\022\025\n\rcurrent_price\030\001 " +
+      "\001(\003\022\024\n\014origin_price\030\002 \001(\003\032\217\001\n\007Display\022!\n" +
+      "\031listing_page_display_tags\030\001 \003(\t\022 \n\030deta" +
+      "il_page_display_tags\030\002 \003(\t\022!\n\031listing_pa" +
+      "ge_display_type\030\003 \001(\t\022\034\n\024cover_multimedi" +
+      "a_url\030\004 \001(\t\032~\n\013ProductSpec\022\030\n\020product_gr" +
+      "oup_id\030\001 \001(\t\022\023\n\013user_rating\030\002 \001(\001\022\025\n\rcom" +
+      "ment_count\030\003 \001(\005\022\016\n\006source\030\004 \001(\t\022\031\n\021publ" +
+      "ish_timestamp\030\005 \001(\003\032A\n\006Seller\022\n\n\002id\030\001 \001(" +
+      "\t\022\024\n\014seller_level\030\002 \001(\t\022\025\n\rseller_rating" +
+      "\030\003 \001(\001\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"\311\001\n\024WriteProductsRequest\0226\n" +
+      "\010products\030\001 \003(\0132$.bytedance.byteplus.ret" +
+      "ailv2.Product\022K\n\005extra\030d \003(\0132<.bytedance" +
+      ".byteplus.retailv2.WriteProductsRequest." +
+      "ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"V\n\014ProductError\022\017\n\007mess" +
+      "age\030\001 \001(\t\0225\n\007product\030\002 \001(\0132$.bytedance.b" +
+      "yteplus.retailv2.Product\"\205\001\n\025WriteProduc" +
+      "tsResponse\0221\n\006status\030\001 \001(\0132!.bytedance.b" +
+      "yteplus.common.Status\0229\n\006errors\030\002 \003(\0132)." +
+      "bytedance.byteplus.retailv2.ProductError" +
+      "\"\271\006\n\tUserEvent\022\017\n\007user_id\030\001 \001(\t\022\022\n\nevent" +
+      "_type\030\002 \001(\t\022\027\n\017event_timestamp\030\003 \001(\003\022;\n\005" +
+      "scene\030\004 \001(\0132,.bytedance.byteplus.retailv" +
+      "2.UserEvent.Scene\022\022\n\nproduct_id\030\005 \001(\t\022=\n" +
+      "\006device\030\006 \001(\0132-.bytedance.byteplus.retai" +
+      "lv2.UserEvent.Device\022?\n\007context\030\007 \001(\0132.." +
+      "bytedance.byteplus.retailv2.UserEvent.Co" +
+      "ntext\022\031\n\021attribution_token\030\010 \001(\t\022\020\n\010rec_" +
+      "info\030\t \001(\t\022\026\n\016traffic_source\030\n \001(\t\022\026\n\016pu" +
+      "rchase_count\030\013 \001(\005\022\035\n\025detail_page_stay_t" +
+      "ime\030\014 \001(\005\022@\n\005extra\030d \003(\01321.bytedance.byt" +
+      "eplus.retailv2.UserEvent.ExtraEntry\032@\n\005S" +
+      "cene\022\022\n\nscene_name\030\001 \001(\t\022\023\n\013page_number\030" +
+      "\002 \001(\005\022\016\n\006offset\030\003 \001(\005\032\273\001\n\006Device\022\020\n\010plat" +
+      "form\030\001 \001(\t\022\017\n\007os_type\030\002 \001(\t\022\023\n\013app_versi" +
+      "on\030\003 \001(\t\022\024\n\014device_model\030\004 \001(\t\022\024\n\014device" +
+      "_brand\030\005 \001(\t\022\022\n\nos_version\030\006 \001(\t\022\024\n\014brow" +
+      "ser_type\030\007 \001(\t\022\022\n\nuser_agent\030\010 \001(\t\022\017\n\007ne" +
+      "twork\030\t \001(\t\0321\n\007Context\022\r\n\005query\030\001 \001(\t\022\027\n" +
+      "\017root_product_id\030\002 \001(\t\032,\n\nExtraEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\322\001\n\026WriteUs" +
+      "erEventsRequest\022;\n\013user_events\030\001 \003(\0132&.b" +
+      "ytedance.byteplus.retailv2.UserEvent\022M\n\005" +
+      "extra\030d \003(\0132>.bytedance.byteplus.retailv" +
+      "2.WriteUserEventsRequest.ExtraEntry\032,\n\nE" +
+      "xtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"]\n\016UserEventError\022\017\n\007message\030\001 \001(\t\022:\n\n" +
+      "user_event\030\002 \001(\0132&.bytedance.byteplus.re" +
+      "tailv2.UserEvent\"\211\001\n\027WriteUserEventsResp" +
+      "onse\0221\n\006status\030\001 \001(\0132!.bytedance.byteplu" +
+      "s.common.Status\022;\n\006errors\030\002 \003(\0132+.byteda" +
+      "nce.byteplus.retailv2.UserEventError\"\315\003\n" +
+      "\016PredictRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n\004size" +
+      "\030\002 \001(\005\022;\n\005scene\030\003 \001(\0132,.bytedance.bytepl" +
+      "us.retailv2.UserEvent.Scene\022D\n\007context\030\004" +
+      " \001(\01323.bytedance.byteplus.retailv2.Predi" +
+      "ctRequest.Context\022E\n\005extra\030d \003(\01326.byted" +
+      "ance.byteplus.retailv2.PredictRequest.Ex" +
+      "traEntry\032\243\001\n\007Context\022:\n\014root_product\030\001 \001" +
       "(\0132$.bytedance.byteplus.retailv2.Product" +
-      "\022K\n\005extra\030d \003(\0132<.bytedance.byteplus.ret" +
-      "ailv2.WriteProductsRequest.ExtraEntry\032,\n" +
-      "\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"V\n\014ProductError\022\017\n\007message\030\001 \001(\t\0225\n\007" +
-      "product\030\002 \001(\0132$.bytedance.byteplus.retai" +
-      "lv2.Product\"\205\001\n\025WriteProductsResponse\0221\n" +
-      "\006status\030\001 \001(\0132!.bytedance.byteplus.commo" +
-      "n.Status\0229\n\006errors\030\002 \003(\0132).bytedance.byt" +
-      "eplus.retailv2.ProductError\"\271\006\n\tUserEven" +
-      "t\022\017\n\007user_id\030\001 \001(\t\022\022\n\nevent_type\030\002 \001(\t\022\027" +
-      "\n\017event_timestamp\030\003 \001(\003\022;\n\005scene\030\004 \001(\0132," +
-      ".bytedance.byteplus.retailv2.UserEvent.S" +
-      "cene\022\022\n\nproduct_id\030\005 \001(\t\022=\n\006device\030\006 \001(\013" +
-      "2-.bytedance.byteplus.retailv2.UserEvent" +
-      ".Device\022?\n\007context\030\007 \001(\0132..bytedance.byt" +
-      "eplus.retailv2.UserEvent.Context\022\031\n\021attr" +
-      "ibution_token\030\010 \001(\t\022\020\n\010rec_info\030\t \001(\t\022\026\n" +
-      "\016traffic_source\030\n \001(\t\022\026\n\016purchase_count\030" +
-      "\013 \001(\005\022\035\n\025detail_page_stay_time\030\014 \001(\005\022@\n\005" +
-      "extra\030d \003(\01321.bytedance.byteplus.retailv" +
-      "2.UserEvent.ExtraEntry\032@\n\005Scene\022\022\n\nscene" +
-      "_name\030\001 \001(\t\022\023\n\013page_number\030\002 \001(\005\022\016\n\006offs" +
-      "et\030\003 \001(\005\032\273\001\n\006Device\022\020\n\010platform\030\001 \001(\t\022\017\n" +
-      "\007os_type\030\002 \001(\t\022\023\n\013app_version\030\003 \001(\t\022\024\n\014d" +
-      "evice_model\030\004 \001(\t\022\024\n\014device_brand\030\005 \001(\t\022" +
-      "\022\n\nos_version\030\006 \001(\t\022\024\n\014browser_type\030\007 \001(" +
-      "\t\022\022\n\nuser_agent\030\010 \001(\t\022\017\n\007network\030\t \001(\t\0321" +
-      "\n\007Context\022\r\n\005query\030\001 \001(\t\022\027\n\017root_product" +
-      "_id\030\002 \001(\t\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\322\001\n\026WriteUserEventsReque" +
-      "st\022;\n\013user_events\030\001 \003(\0132&.bytedance.byte" +
-      "plus.retailv2.UserEvent\022M\n\005extra\030d \003(\0132>" +
-      ".bytedance.byteplus.retailv2.WriteUserEv" +
-      "entsRequest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n\016UserEven" +
-      "tError\022\017\n\007message\030\001 \001(\t\022:\n\nuser_event\030\002 " +
-      "\001(\0132&.bytedance.byteplus.retailv2.UserEv" +
-      "ent\"\211\001\n\027WriteUserEventsResponse\0221\n\006statu" +
-      "s\030\001 \001(\0132!.bytedance.byteplus.common.Stat" +
-      "us\022;\n\006errors\030\002 \003(\0132+.bytedance.byteplus." +
-      "retailv2.UserEventError\"\315\003\n\016PredictReque" +
-      "st\022\017\n\007user_id\030\001 \001(\t\022\014\n\004size\030\002 \001(\005\022;\n\005sce" +
-      "ne\030\003 \001(\0132,.bytedance.byteplus.retailv2.U" +
-      "serEvent.Scene\022D\n\007context\030\004 \001(\01323.byteda" +
-      "nce.byteplus.retailv2.PredictRequest.Con" +
-      "text\022E\n\005extra\030d \003(\01326.bytedance.byteplus" +
-      ".retailv2.PredictRequest.ExtraEntry\032\243\001\n\007" +
-      "Context\022:\n\014root_product\030\001 \001(\0132$.bytedanc" +
-      "e.byteplus.retailv2.Product\022=\n\006device\030\002 " +
-      "\001(\0132-.bytedance.byteplus.retailv2.UserEv" +
-      "ent.Device\022\035\n\025candidate_product_ids\030\003 \003(" +
-      "\t\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\"\302\003\n\rPredictResult\022U\n\021response_pr" +
-      "oducts\030\001 \003(\0132:.bytedance.byteplus.retail" +
-      "v2.PredictResult.ResponseProduct\022D\n\005extr" +
-      "a\030d \003(\01325.bytedance.byteplus.retailv2.Pr" +
-      "edictResult.ExtraEntry\032\345\001\n\017ResponseProdu" +
-      "ct\022\022\n\nproduct_id\030\001 \001(\t\022\014\n\004rank\030\002 \001(\005\022\014\n\004" +
-      "pctr\030\003 \001(\001\022\014\n\004pcvr\030\004 \001(\001\022\020\n\010rec_info\030\005 \001" +
-      "(\t\022T\n\005extra\030d \003(\0132E.bytedance.byteplus.r" +
-      "etailv2.PredictResult.ResponseProduct.Ex" +
-      "traEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\017PredictResponse" +
-      "\0221\n\006status\030\001 \001(\0132!.bytedance.byteplus.co" +
-      "mmon.Status\022\022\n\nrequest_id\030\002 \001(\t\0229\n\005value" +
-      "\030\003 \001(\0132*.bytedance.byteplus.retailv2.Pre" +
-      "dictResult\"\316\002\n\033AckServerImpressionsReque" +
-      "st\022\032\n\022predict_request_id\030\001 \001(\t\022\017\n\007user_i" +
-      "d\030\002 \001(\t\022\026\n\016traffic_source\030\003 \001(\t\022;\n\005scene" +
-      "\030\004 \001(\0132,.bytedance.byteplus.retailv2.Use" +
-      "rEvent.Scene\022a\n\020altered_products\030\005 \003(\0132G" +
-      ".bytedance.byteplus.retailv2.AckServerIm" +
-      "pressionsRequest.AlteredProduct\032J\n\016Alter" +
-      "edProduct\022\022\n\nproduct_id\030\001 \001(\t\022\026\n\016altered" +
-      "_reason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005\"Q\n\034AckServer" +
-      "ImpressionsResponse\0221\n\006status\030\001 \001(\0132!.by" +
-      "tedance.byteplus.common.Status2\267\005\n\025Bytep" +
-      "lusRetailService\022m\n\nWriteUsers\022..bytedan" +
-      "ce.byteplus.retailv2.WriteUsersRequest\032/" +
-      ".bytedance.byteplus.retailv2.WriteUsersR" +
-      "esponse\022v\n\rWriteProducts\0221.bytedance.byt" +
-      "eplus.retailv2.WriteProductsRequest\0322.by" +
-      "tedance.byteplus.retailv2.WriteProductsR" +
-      "esponse\022|\n\017WriteUserEvents\0223.bytedance.b" +
-      "yteplus.retailv2.WriteUserEventsRequest\032" +
-      "4.bytedance.byteplus.retailv2.WriteUserE" +
-      "ventsResponse\022E\n\004Done\022\024.google.protobuf." +
-      "Any\032\'.bytedance.byteplus.common.DoneResp" +
-      "onse\022d\n\007Predict\022+.bytedance.byteplus.ret" +
-      "ailv2.PredictRequest\032,.bytedance.byteplu" +
-      "s.retailv2.PredictResponse\022\213\001\n\024AckServer" +
-      "Impressions\0228.bytedance.byteplus.retailv" +
-      "2.AckServerImpressionsRequest\0329.bytedanc" +
-      "e.byteplus.retailv2.AckServerImpressions" +
-      "ResponseB \n\036byteplus.sdk.retailv2.protoc" +
-      "olb\006proto3"
+      "\022=\n\006device\030\002 \001(\0132-.bytedance.byteplus.re" +
+      "tailv2.UserEvent.Device\022\035\n\025candidate_pro" +
+      "duct_ids\030\003 \003(\t\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\302\003\n\rPredictResult\022U" +
+      "\n\021response_products\030\001 \003(\0132:.bytedance.by" +
+      "teplus.retailv2.PredictResult.ResponsePr" +
+      "oduct\022D\n\005extra\030d \003(\01325.bytedance.byteplu" +
+      "s.retailv2.PredictResult.ExtraEntry\032\345\001\n\017" +
+      "ResponseProduct\022\022\n\nproduct_id\030\001 \001(\t\022\014\n\004r" +
+      "ank\030\002 \001(\005\022\014\n\004pctr\030\003 \001(\001\022\014\n\004pcvr\030\004 \001(\001\022\020\n" +
+      "\010rec_info\030\005 \001(\t\022T\n\005extra\030d \003(\0132E.bytedan" +
+      "ce.byteplus.retailv2.PredictResult.Respo" +
+      "nseProduct.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032,\n\nExtraEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\017Pr" +
+      "edictResponse\0221\n\006status\030\001 \001(\0132!.bytedanc" +
+      "e.byteplus.common.Status\022\022\n\nrequest_id\030\002" +
+      " \001(\t\0229\n\005value\030\003 \001(\0132*.bytedance.byteplus" +
+      ".retailv2.PredictResult\"\316\002\n\033AckServerImp" +
+      "ressionsRequest\022\032\n\022predict_request_id\030\001 " +
+      "\001(\t\022\017\n\007user_id\030\002 \001(\t\022\026\n\016traffic_source\030\003" +
+      " \001(\t\022;\n\005scene\030\004 \001(\0132,.bytedance.byteplus" +
+      ".retailv2.UserEvent.Scene\022a\n\020altered_pro" +
+      "ducts\030\005 \003(\0132G.bytedance.byteplus.retailv" +
+      "2.AckServerImpressionsRequest.AlteredPro" +
+      "duct\032J\n\016AlteredProduct\022\022\n\nproduct_id\030\001 \001" +
+      "(\t\022\026\n\016altered_reason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005" +
+      "\"Q\n\034AckServerImpressionsResponse\0221\n\006stat" +
+      "us\030\001 \001(\0132!.bytedance.byteplus.common.Sta" +
+      "tus2\360\004\n\025ByteplusRetailService\022m\n\nWriteUs" +
+      "ers\022..bytedance.byteplus.retailv2.WriteU" +
+      "sersRequest\032/.bytedance.byteplus.retailv" +
+      "2.WriteUsersResponse\022v\n\rWriteProducts\0221." +
+      "bytedance.byteplus.retailv2.WriteProduct" +
+      "sRequest\0322.bytedance.byteplus.retailv2.W" +
+      "riteProductsResponse\022|\n\017WriteUserEvents\022" +
+      "3.bytedance.byteplus.retailv2.WriteUserE" +
+      "ventsRequest\0324.bytedance.byteplus.retail" +
+      "v2.WriteUserEventsResponse\022d\n\007Predict\022+." +
+      "bytedance.byteplus.retailv2.PredictReque" +
+      "st\032,.bytedance.byteplus.retailv2.Predict" +
+      "Response\022\213\001\n\024AckServerImpressions\0228.byte" +
+      "dance.byteplus.retailv2.AckServerImpress" +
+      "ionsRequest\0329.bytedance.byteplus.retailv" +
+      "2.AckServerImpressionsResponseB \n\036bytepl" +
+      "us.sdk.retailv2.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           byteplus.sdk.common.protocol.ByteplusCommon.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_bytedance_byteplus_retailv2_User_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -45151,7 +45147,6 @@ public final class ByteplusRetailv2 {
         internal_static_bytedance_byteplus_retailv2_AckServerImpressionsResponse_descriptor,
         new java.lang.String[] { "Status", });
     byteplus.sdk.common.protocol.ByteplusCommon.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

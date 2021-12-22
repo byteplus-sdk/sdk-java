@@ -203,5 +203,5 @@ service ByteplusCommonService {
   //
   // Pass a date list to mark the completion of data synchronization for these days.
   // Suitable for new data API
-  rpc Done(google.protobuf.Any) returns (common.DoneResponse);
+  rpc Done(DoneRequest) returns (common.DoneResponse);
 }

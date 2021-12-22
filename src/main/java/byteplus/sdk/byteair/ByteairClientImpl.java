@@ -79,36 +79,6 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
     }
 
     @Override
-    public DoneResponse done(List<LocalDate> dateList, String topic,
-                             Option... opts) throws NetException, BizException {
-        List<Date> dates = new ArrayList<>();
-        if (Objects.isNull(dateList) || dateList.isEmpty()) {
-            LocalDate previousDay = LocalDate.now().plusDays(-1);
-            addDoneDate(dates, previousDay);
-        } else {
-            for (LocalDate date : dateList) {
-                addDoneDate(dates, date);
-            }
-        }
-        String urlFormat = byteairURL.getDoneUrlFormat();
-        String url = urlFormat.replace("{}", topic);
-        Parser<DoneResponse> parser = DoneResponse.parser();
-        DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
-        DoneResponse response = httpCaller.doPbRequest(url, request, parser, opts);
-        log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
-        return response;
-    }
-
-    private void addDoneDate(List<Date> dateMapList, LocalDate date) {
-        dateMapList.add(buildDoneDate(date));
-    }
-
-    private Date buildDoneDate(LocalDate date) {
-        return Date.newBuilder().setYear(date.getYear()).setMonth(date.getMonthValue()).
-                setDay(date.getDayOfMonth()).build();
-    }
-
-    @Override
     public PredictResponse predict(PredictRequest request, String scene,
                                    Option... opts) throws NetException, BizException {
         String url = byteairURL.getPredictUrlFormat().replace("{}", scene);

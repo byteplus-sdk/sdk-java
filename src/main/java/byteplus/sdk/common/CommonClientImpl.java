@@ -75,13 +75,8 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
     @Override
     public DoneResponse done(List<LocalDate> dateList, String topic, Option... opts) throws NetException, BizException {
         List<Date> dates = new ArrayList<>();
-        if (Objects.isNull(dateList) || dateList.isEmpty()) {
-            LocalDate previousDay = LocalDate.now().plusDays(-1);
-            addDoneDate(dates, previousDay);
-        } else {
-            for (LocalDate date : dateList) {
-                addDoneDate(dates, date);
-            }
+        for (LocalDate date : dateList) {
+            addDoneDate(dates, date);
         }
         String urlFormat = commonURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);

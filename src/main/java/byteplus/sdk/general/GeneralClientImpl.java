@@ -79,13 +79,8 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     public DoneResponse done(List<LocalDate> dateList, String topic,
                              Option... opts) throws NetException, BizException {
         List<Map<String, String>> dateMapList = new ArrayList<>();
-        if (Objects.isNull(dateList) || dateList.isEmpty()) {
-            LocalDate previousDay = LocalDate.now().plusDays(-1);
-            addDoneDate(dateMapList, previousDay);
-        } else {
-            for (LocalDate date : dateList) {
-                addDoneDate(dateMapList, date);
-            }
+        for (LocalDate date : dateList) {
+            addDoneDate(dateMapList, date);
         }
         String urlFormat = generalURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
