@@ -46,7 +46,7 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         }
         Parser<WriteUsersResponse> parser = WriteUsersResponse.parser();
         String url = retailUrl.getWriteUsersUrl();
-        WriteUsersResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        WriteUsersResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteUsers] rsp:\n{}", response);
         return response;
     }
@@ -60,7 +60,7 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         Parser<WriteProductsResponse> parser = WriteProductsResponse.parser();
         String url = retailUrl.getWriteProductsUrl();
         WriteProductsResponse response =
-                httpCaller.doPbRequest(url, request, parser, opts);
+                httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteProducts] rsp:\n{}", response);
         return response;
     }
@@ -73,7 +73,7 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         }
         Parser<WriteUserEventsResponse> parser = WriteUserEventsResponse.parser();
         String url = retailUrl.getWriteUserEventsUrl();
-        WriteUserEventsResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        WriteUserEventsResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n{}", response);
         return response;
     }
@@ -84,7 +84,7 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         String urlFormat = retailUrl.getPredictUrlFormat();
         String url = urlFormat.replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        PredictResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -94,7 +94,7 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
             AckServerImpressionsRequest request, Option... opts) throws NetException, BizException {
         Parser<AckServerImpressionsResponse> parser = AckServerImpressionsResponse.parser();
         String url = retailUrl.getAckImpressionUrl();
-        AckServerImpressionsResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        AckServerImpressionsResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][AckImpressions] rsp:\n{}", response);
         return response;
     }

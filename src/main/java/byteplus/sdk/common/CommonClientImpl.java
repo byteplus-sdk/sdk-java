@@ -72,7 +72,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
         String urlFormat = commonURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);
         Parser<Response> parser =  ByteplusCommon.Response.parser();
-        Response response = httpCaller.doPbRequest(url, request, parser, opts);
+        Response response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
