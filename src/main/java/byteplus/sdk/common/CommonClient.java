@@ -18,5 +18,11 @@ public interface CommonClient {
     ListOperationsResponse listOperations(ListOperationsRequest request,
                                           Option... opts) throws NetException, BizException;
 
+    // Done
+    //
+    // Pass a date list to mark the completion of data synchronization for these days
+    // suitable for new API
+    Response done(DoneRequest request, String topic, Option... opts) throws NetException, BizException;
+
     void release();
 }
