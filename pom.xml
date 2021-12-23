@@ -6,7 +6,7 @@
 
     <groupId>com.volcengine</groupId>
     <artifactId>byteplus-sdk</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <packaging>jar</packaging>
 
     <name>byteplus-sdk</name>
@@ -55,26 +55,11 @@
             <version>${slf4j-api.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j-log4j12.version}</version>
-            <optional>true</optional>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
         </dependency>
 
     </dependencies>
@@ -191,7 +176,7 @@
         <connection>scm:git:https://github.com/byteplus-sdk/sdk-java.git</connection>
         <developerConnection>scm:git:https://github.com/byteplus-sdk/sdk-java.git</developerConnection>
         <url>https://github.com/byteplus-sdk</url>
-        <tag>1.0.8</tag>
+        <tag>1.0.9</tag>
     </scm>
 
     <distributionManagement>

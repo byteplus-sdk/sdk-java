@@ -2,13 +2,13 @@ package byteplus.sdk.general;
 
 import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
+import byteplus.sdk.common.protocol.ByteplusCommon.DoneResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.general.protocol.ByteplusGeneral.CallbackRequest;
 import byteplus.sdk.general.protocol.ByteplusGeneral.CallbackResponse;
-import byteplus.sdk.general.protocol.ByteplusGeneral.DoneResponse;
 import byteplus.sdk.general.protocol.ByteplusGeneral.PredictRequest;
 import byteplus.sdk.general.protocol.ByteplusGeneral.PredictResponse;
 import byteplus.sdk.general.protocol.ByteplusGeneral.WriteResponse;
@@ -79,13 +79,8 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     public DoneResponse done(List<LocalDate> dateList, String topic,
                              Option... opts) throws NetException, BizException {
         List<Map<String, String>> dateMapList = new ArrayList<>();
-        if (Objects.isNull(dateList) || dateList.isEmpty()) {
-            LocalDate previousDay = LocalDate.now().plusDays(-1);
-            addDoneDate(dateMapList, previousDay);
-        } else {
-            for (LocalDate date : dateList) {
-                addDoneDate(dateMapList, date);
-            }
+        for (LocalDate date : dateList) {
+            addDoneDate(dateMapList, date);
         }
         String urlFormat = generalURL.getDoneUrlFormat();
         String url = urlFormat.replace("{}", topic);

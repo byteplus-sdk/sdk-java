@@ -7,8 +7,6 @@ import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.byteair.protocol.ByteplusByteair.*;
 
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -36,15 +34,6 @@ public interface ByteairClient extends CommonClient {
     // In this case, please make sure you provide all fields.
     OperationResponse importData(List<Map<String, Object>> dataList, String topic,
                                  Option... opts) throws NetException, BizException;
-
-    // Done
-    //
-    // When the data of a day is imported completely,
-    // you should notify bytedance through `done` method,
-    // then bytedance will start handling the data in this day
-    // @param dateList, optional, if dataList is empty, indicate target date is previous day
-    DoneResponse done(List<LocalDate> dateList, String topic,
-                      Option... opts) throws NetException, BizException;
 
 
     // Predict

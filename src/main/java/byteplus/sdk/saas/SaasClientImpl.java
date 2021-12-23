@@ -4,7 +4,6 @@ import byteplus.sdk.common.CommonClientImpl;
 import byteplus.sdk.core.*;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
@@ -28,18 +27,25 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         this.SaasUrl = new SaasURL(context);
     }
 
+    private boolean noneEmptySting(String str) {
+        if (str != null && str.length() != 0) {
+            return true;
+        }
+        return false;
+    }
+
     private void checkProjectIdAndModelId(String projectId, String modelId) throws BizException {
         final String ERR_MSG_FORMAT = "%s,field can not empty";
         final String ERR_FIELD_PROJECT_ID = "projectId";
         final String ERR_FIELD_MODEL_ID = "modelId";
-        if (StringUtils.isNoneEmpty(projectId) && StringUtils.isNoneEmpty(modelId)) {
+        if (noneEmptySting(projectId) && noneEmptySting(modelId)) {
             return;
         }
         List<String> emptyParams = new ArrayList<>();
-        if (StringUtils.isEmpty(projectId)) {
+        if (noneEmptySting(projectId)) {
             emptyParams.add(ERR_FIELD_PROJECT_ID);
         }
-        if (StringUtils.isEmpty(modelId)) {
+        if (noneEmptySting(modelId)) {
             emptyParams.add(ERR_FIELD_MODEL_ID);
         }
         throw new BizException(String.format(ERR_MSG_FORMAT, String.join(",", emptyParams)));
@@ -49,21 +55,24 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         final String ERR_MSG_FORMAT = "%s,field can not empty";
         final String ERR_FIELD_PROJECT_ID = "projectId";
         final String ERR_FIELD_STAGE = "stage";
-        if (StringUtils.isNoneEmpty(projectId) && StringUtils.isNoneEmpty(stage)) {
+        if (noneEmptySting(projectId) && noneEmptySting(stage)) {
             return;
         }
         List<String> emptyParams = new ArrayList<>();
-        if (StringUtils.isEmpty(projectId)) {
+        if (noneEmptySting(projectId)) {
             emptyParams.add(ERR_FIELD_PROJECT_ID);
         }
-        if (StringUtils.isEmpty(stage)) {
+        if (noneEmptySting(stage)) {
             emptyParams.add(ERR_FIELD_STAGE);
         }
         throw new BizException(String.format(ERR_MSG_FORMAT, String.join(",", emptyParams)));
     }
 
-    private void addSaasFlag(Option[] opts) {
+    private Option[] addSaasFlag(Option[] opts) {
+        Option[] newOpts = new Option[opts.length + DATE_INIT_OPTIONS_COUNT];
+        System.arraycopy(opts, 0, newOpts, 0, opts.length);
         opts[opts.length - 1] = withSaasHeader();
+        return newOpts;
     }
 
     static Option withSaasHeader() {
@@ -95,9 +104,7 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         if (request.getDataCount() > MAX_IMPORT_WRITE_ITEM_COUNT) {
             throw new BizException(ERR_MSG_TOO_MANY_WRITE_ITEMS);
         }
-        Option[] newOpts = new Option[opts.length + DATE_INIT_OPTIONS_COUNT];
-        System.arraycopy(opts, 0, newOpts, 0, opts.length);
-        addSaasFlag(newOpts);
+        Option[] newOpts = addSaasFlag(opts);
         Parser<WriteResponse> parser = WriteResponse.parser();
         WriteResponse response = httpCaller.doPbRequest(url, request, parser, newOpts);
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
@@ -123,9 +130,7 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
     public PredictResponse predict(
             PredictRequest request, Option... opts) throws NetException, BizException {
         checkProjectIdAndModelId(request.getProjectId(), request.getModelId());
-        Option[] newOpts = new Option[opts.length + PREDICT_INIT_OPTIONS_COUNT];
-        System.arraycopy(opts, 0, newOpts, 0, opts.length);
-        addSaasFlag(newOpts);
+        Option[] newOpts = addSaasFlag(opts);
         Parser<PredictResponse> parser = PredictResponse.parser();
         PredictResponse response = httpCaller.doPbRequest(SaasUrl.getPredictUrl(), request, parser, newOpts);
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
@@ -137,9 +142,7 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
             AckServerImpressionsRequest request, Option... opts) throws NetException, BizException {
         checkProjectIdAndModelId(request.getProjectId(), request.getModelId());
         Parser<AckServerImpressionsResponse> parser = AckServerImpressionsResponse.parser();
-        Option[] newOpts = new Option[opts.length + PREDICT_INIT_OPTIONS_COUNT];
-        System.arraycopy(opts, 0, newOpts, 0, opts.length);
-        addSaasFlag(newOpts);
+        Option[] newOpts = addSaasFlag(opts);
         AckServerImpressionsResponse response = httpCaller.doPbRequest(SaasUrl.getAckImpressionUrl(), request, parser, newOpts);
         log.debug("[ByteplusSDK][AckImpressions] rsp:\n{}", response);
         return response;
