@@ -152,7 +152,7 @@ message WriteUsersResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -236,7 +236,7 @@ message ImportUsersResponse {
   // When `status.code` is 0, all payload are successfully imported.
   // If `status.code` is 1001, `error_samples` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -503,7 +503,7 @@ message WriteProductsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -556,7 +556,7 @@ message ImportProductsResponse {
   // When `status.code` is 0, all payload are successfully imported.
   // If `status.code` is 1001, `error_samples` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -809,7 +809,7 @@ message WriteUserEventsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -861,7 +861,7 @@ message ImportUserEventsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `error_samples` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -957,7 +957,7 @@ message PredictResult {
 message PredictResponse {
   // Output only.
   // The status of the call.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This is same as the request id of request.
@@ -1018,7 +1018,7 @@ message AckServerImpressionsRequest {
 message AckServerImpressionsResponse {
   // Output only.
   // The status of this response.
-  Status status = 1;
+  common.Status status = 1;
 }
 
 // The Byteplus Retail service.
@@ -1045,7 +1045,7 @@ service ByteplusRetailService {
   // Note: This can also be used to update the existing data by providing the
   // existing ids. In this case, please make sure you provide all fields.
   // Refer to [this](../docs/rpcs) for how to use RPCs.
-  rpc ImportUsers(ImportUsersRequest) returns (OperationResponse);
+  rpc ImportUsers(ImportUsersRequest) returns (common.OperationResponse);
 
   // WriteProducts
   //
@@ -1072,7 +1072,7 @@ service ByteplusRetailService {
   // Note: This can also be used to update the existing data by providing the
   // existing ids. In this case, please make sure you provide all fields.
   // Refer to [this](../docs/rpcs) for how to use RPCs.
-  rpc ImportProducts(ImportProductsRequest) returns (OperationResponse);
+  rpc ImportProducts(ImportProductsRequest) returns (common.OperationResponse);
 
   // WriteUserEvents
   //
@@ -1097,7 +1097,7 @@ service ByteplusRetailService {
   // check the status.
   // Please make sure the requests are deduplicated before sending over.
   // Refer to [this](../docs/rpcs) for how to use RPCs.
-  rpc ImportUserEvents(ImportUserEventsRequest) returns (OperationResponse);
+  rpc ImportUserEvents(ImportUserEventsRequest) returns (common.OperationResponse);
 
   // Predict
   //

@@ -6540,7 +6540,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -6552,7 +6552,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -6564,7 +6564,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -6740,7 +6740,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -6755,7 +6755,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -6770,7 +6770,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -7234,7 +7234,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -7248,7 +7248,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -7266,7 +7266,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -7289,7 +7289,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -7310,7 +7310,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -7335,7 +7335,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -7356,7 +7356,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -7371,7 +7371,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -7389,7 +7389,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -12747,7 +12747,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -12760,7 +12760,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -12773,7 +12773,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -12950,7 +12950,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -12966,7 +12966,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -12982,7 +12982,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -13447,7 +13447,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -13462,7 +13462,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -13481,7 +13481,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -13505,7 +13505,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -13527,7 +13527,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -13553,7 +13553,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -13575,7 +13575,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -13591,7 +13591,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -13610,7 +13610,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -27756,7 +27756,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -27768,7 +27768,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -27780,7 +27780,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -27956,7 +27956,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -27971,7 +27971,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -27986,7 +27986,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -28450,7 +28450,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -28464,7 +28464,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -28482,7 +28482,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -28505,7 +28505,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -28526,7 +28526,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -28551,7 +28551,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -28572,7 +28572,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -28587,7 +28587,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -28605,7 +28605,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -32465,7 +32465,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -32478,7 +32478,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -32491,7 +32491,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -32668,7 +32668,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -32684,7 +32684,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -32700,7 +32700,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -33165,7 +33165,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -33180,7 +33180,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -33199,7 +33199,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -33223,7 +33223,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -33245,7 +33245,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -33271,7 +33271,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -33293,7 +33293,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -33309,7 +33309,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -33328,7 +33328,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -43678,7 +43678,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -43690,7 +43690,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -43702,7 +43702,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -43878,7 +43878,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -43893,7 +43893,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -43908,7 +43908,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -44372,7 +44372,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -44386,7 +44386,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -44404,7 +44404,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -44427,7 +44427,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -44448,7 +44448,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -44473,7 +44473,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -44494,7 +44494,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -44509,7 +44509,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -44527,7 +44527,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -48386,7 +48386,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -48398,7 +48398,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -48410,7 +48410,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
@@ -48586,7 +48586,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -48601,7 +48601,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -48616,7 +48616,7 @@ public final class ByteplusRetail {
      * Other non-zero values indicate all payload failed.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -49080,7 +49080,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -49094,7 +49094,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -49112,7 +49112,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -49135,7 +49135,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -49156,7 +49156,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -49181,7 +49181,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -49202,7 +49202,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -49217,7 +49217,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -49235,7 +49235,7 @@ public final class ByteplusRetail {
        * Other non-zero values indicate all payload failed.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -55534,7 +55534,7 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -55544,7 +55544,7 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -55554,14 +55554,14 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
 
     /**
      * <pre>
      * Output only.
-     * This is same as `PredictRequest.request_id`.
+     * This is same as the request id of request.
      * </pre>
      *
      * <code>string request_id = 2;</code>
@@ -55571,7 +55571,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Output only.
-     * This is same as `PredictRequest.request_id`.
+     * This is same as the request id of request.
      * </pre>
      *
      * <code>string request_id = 2;</code>
@@ -55732,7 +55732,7 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -55745,7 +55745,7 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -55758,7 +55758,7 @@ public final class ByteplusRetail {
      * The status of the call.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -55770,7 +55770,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Output only.
-     * This is same as `PredictRequest.request_id`.
+     * This is same as the request id of request.
      * </pre>
      *
      * <code>string request_id = 2;</code>
@@ -55792,7 +55792,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Output only.
-     * This is same as `PredictRequest.request_id`.
+     * This is same as the request id of request.
      * </pre>
      *
      * <code>string request_id = 2;</code>
@@ -56229,7 +56229,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -56241,7 +56241,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -56257,7 +56257,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -56278,7 +56278,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -56297,7 +56297,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -56320,7 +56320,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -56339,7 +56339,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -56352,7 +56352,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -56368,7 +56368,7 @@ public final class ByteplusRetail {
        * The status of the call.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -56388,7 +56388,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Output only.
-       * This is same as `PredictRequest.request_id`.
+       * This is same as the request id of request.
        * </pre>
        *
        * <code>string request_id = 2;</code>
@@ -56409,7 +56409,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Output only.
-       * This is same as `PredictRequest.request_id`.
+       * This is same as the request id of request.
        * </pre>
        *
        * <code>string request_id = 2;</code>
@@ -56431,7 +56431,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Output only.
-       * This is same as `PredictRequest.request_id`.
+       * This is same as the request id of request.
        * </pre>
        *
        * <code>string request_id = 2;</code>
@@ -56451,7 +56451,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Output only.
-       * This is same as `PredictRequest.request_id`.
+       * This is same as the request id of request.
        * </pre>
        *
        * <code>string request_id = 2;</code>
@@ -56466,7 +56466,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Output only.
-       * This is same as `PredictRequest.request_id`.
+       * This is same as the request id of request.
        * </pre>
        *
        * <code>string request_id = 2;</code>
@@ -56708,7 +56708,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * This should be same as `PredictRequest.request_id`.
+     * This should be same as `PredictResponse.request_id`.
      * </pre>
      *
      * <code>string predict_request_id = 1;</code>
@@ -56718,7 +56718,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * This should be same as `PredictRequest.request_id`.
+     * This should be same as `PredictResponse.request_id`.
      * </pre>
      *
      * <code>string predict_request_id = 1;</code>
@@ -57943,7 +57943,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * This should be same as `PredictRequest.request_id`.
+     * This should be same as `PredictResponse.request_id`.
      * </pre>
      *
      * <code>string predict_request_id = 1;</code>
@@ -57965,7 +57965,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * This should be same as `PredictRequest.request_id`.
+     * This should be same as `PredictResponse.request_id`.
      * </pre>
      *
      * <code>string predict_request_id = 1;</code>
@@ -58626,7 +58626,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * This should be same as `PredictRequest.request_id`.
+       * This should be same as `PredictResponse.request_id`.
        * </pre>
        *
        * <code>string predict_request_id = 1;</code>
@@ -58647,7 +58647,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * This should be same as `PredictRequest.request_id`.
+       * This should be same as `PredictResponse.request_id`.
        * </pre>
        *
        * <code>string predict_request_id = 1;</code>
@@ -58669,7 +58669,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * This should be same as `PredictRequest.request_id`.
+       * This should be same as `PredictResponse.request_id`.
        * </pre>
        *
        * <code>string predict_request_id = 1;</code>
@@ -58689,7 +58689,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * This should be same as `PredictRequest.request_id`.
+       * This should be same as `PredictResponse.request_id`.
        * </pre>
        *
        * <code>string predict_request_id = 1;</code>
@@ -58704,7 +58704,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * This should be same as `PredictRequest.request_id`.
+       * This should be same as `PredictResponse.request_id`.
        * </pre>
        *
        * <code>string predict_request_id = 1;</code>
@@ -59500,7 +59500,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
@@ -59510,7 +59510,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
@@ -59520,7 +59520,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
   }
@@ -59626,7 +59626,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -59639,7 +59639,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -59652,7 +59652,7 @@ public final class ByteplusRetail {
      * The status of this response.
      * </pre>
      *
-     * <code>.bytedance.byteplus.Status status = 1;</code>
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
      */
     @java.lang.Override
     public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
@@ -59987,7 +59987,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
@@ -59999,7 +59999,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        * @return The status.
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
@@ -60015,7 +60015,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -60036,7 +60036,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder setStatus(
           byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
@@ -60055,7 +60055,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
         if (statusBuilder_ == null) {
@@ -60078,7 +60078,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -60097,7 +60097,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
         
@@ -60110,7 +60110,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -60126,7 +60126,7 @@ public final class ByteplusRetail {
        * The status of this response.
        * </pre>
        *
-       * <code>.bytedance.byteplus.Status status = 1;</code>
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
@@ -60506,195 +60506,197 @@ public final class ByteplusRetail {
       "sersRequest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003" +
       "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"K\n\tUserErro" +
       "r\022\017\n\007message\030\001 \001(\t\022-\n\004user\030\002 \001(\0132\037.byted" +
-      "ance.byteplus.retail.User\"v\n\022WriteUsersR" +
-      "esponse\022*\n\006status\030\001 \001(\0132\032.bytedance.byte" +
-      "plus.Status\0224\n\006errors\030\002 \003(\0132$.bytedance." +
-      "byteplus.retail.UserError\"C\n\021UsersInline" +
-      "Source\022.\n\005users\030\001 \003(\0132\037.bytedance.bytepl" +
-      "us.retail.User\"i\n\020UsersInputConfig\022K\n\023us" +
-      "ers_inline_source\030\001 \001(\0132,.bytedance.byte" +
-      "plus.retail.UsersInlineSourceH\000B\010\n\006sourc" +
-      "e\"*\n\nDateConfig\022\014\n\004date\030\002 \001(\t\022\016\n\006is_end\030" +
-      "\003 \001(\010\"@\n\022ImportErrorsConfig\022\033\n\021empty_des" +
-      "tination\030\001 \001(\tH\000B\r\n\013destination\"\320\002\n\022Impo" +
-      "rtUsersRequest\022A\n\014input_config\030\001 \001(\0132+.b" +
-      "ytedance.byteplus.retail.UsersInputConfi" +
-      "g\022:\n\013date_config\030\002 \001(\0132%.bytedance.bytep" +
-      "lus.retail.DateConfig\022D\n\rerrors_config\030\003" +
-      " \001(\0132-.bytedance.byteplus.retail.ImportE" +
-      "rrorsConfig\022G\n\005extra\030d \003(\01328.bytedance.b" +
-      "yteplus.retail.ImportUsersRequest.ExtraE" +
-      "ntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"~\n\023ImportUsersResponse\022*\n\006sta" +
-      "tus\030\001 \001(\0132\032.bytedance.byteplus.Status\022;\n" +
-      "\rerror_samples\030\002 \003(\0132$.bytedance.byteplu" +
-      "s.retail.UserError\"\241\t\n\007Product\022\022\n\nproduc" +
-      "t_id\030\001 \001(\t\022?\n\ncategories\030\002 \003(\0132+.bytedan" +
-      "ce.byteplus.retail.Product.Category\0228\n\006b" +
-      "rands\030\003 \003(\0132(.bytedance.byteplus.retail." +
-      "Product.Brand\0227\n\005price\030\004 \001(\0132(.bytedance" +
-      ".byteplus.retail.Product.Price\022\030\n\020is_rec" +
-      "ommendable\030\005 \001(\010\022\r\n\005title\030\006 \001(\t\022\025\n\rquali" +
-      "ty_score\030\007 \001(\001\022\014\n\004tags\030\010 \003(\t\022;\n\007display\030" +
-      "\t \001(\0132*.bytedance.byteplus.retail.Produc" +
-      "t.Display\022D\n\014product_spec\030\n \001(\0132..byteda" +
-      "nce.byteplus.retail.Product.ProductSpec\022" +
-      "9\n\006seller\030\013 \001(\0132).bytedance.byteplus.ret" +
-      "ail.Product.Seller\022<\n\005extra\030d \003(\0132-.byte" +
-      "dance.byteplus.retail.Product.ExtraEntry" +
-      "\032\230\001\n\010Category\022\026\n\016category_depth\030\001 \001(\005\022P\n" +
-      "\016category_nodes\030\002 \003(\01328.bytedance.bytepl" +
-      "us.retail.Product.Category.CategoryNode\032" +
-      "\"\n\014CategoryNode\022\022\n\nid_or_name\030\001 \001(\t\0320\n\005B" +
-      "rand\022\023\n\013brand_depth\030\001 \001(\005\022\022\n\nid_or_name\030" +
-      "\002 \001(\t\0324\n\005Price\022\025\n\rcurrent_price\030\001 \001(\003\022\024\n" +
-      "\014origin_price\030\002 \001(\003\032\217\001\n\007Display\022!\n\031listi" +
-      "ng_page_display_tags\030\001 \003(\t\022 \n\030detail_pag" +
-      "e_display_tags\030\002 \003(\t\022!\n\031listing_page_dis" +
-      "play_type\030\003 \001(\t\022\034\n\024cover_multimedia_url\030" +
-      "\004 \001(\t\032~\n\013ProductSpec\022\030\n\020product_group_id" +
-      "\030\001 \001(\t\022\023\n\013user_rating\030\002 \001(\001\022\025\n\rcomment_c" +
-      "ount\030\003 \001(\005\022\016\n\006source\030\004 \001(\t\022\031\n\021publish_ti" +
-      "mestamp\030\005 \001(\003\032A\n\006Seller\022\n\n\002id\030\001 \001(\t\022\024\n\014s" +
-      "eller_level\030\002 \001(\t\022\025\n\rseller_rating\030\003 \001(\001" +
-      "\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"\305\001\n\024WriteProductsRequest\0224\n\010produ" +
-      "cts\030\001 \003(\0132\".bytedance.byteplus.retail.Pr" +
-      "oduct\022I\n\005extra\030d \003(\0132:.bytedance.byteplu" +
-      "s.retail.WriteProductsRequest.ExtraEntry" +
-      "\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"T\n\014ProductError\022\017\n\007message\030\001 \001(\t\022" +
-      "3\n\007product\030\002 \001(\0132\".bytedance.byteplus.re" +
-      "tail.Product\"|\n\025WriteProductsResponse\022*\n" +
-      "\006status\030\001 \001(\0132\032.bytedance.byteplus.Statu" +
-      "s\0227\n\006errors\030\002 \003(\0132\'.bytedance.byteplus.r" +
-      "etail.ProductError\"L\n\024ProductsInlineSour" +
-      "ce\0224\n\010products\030\001 \003(\0132\".bytedance.byteplu" +
-      "s.retail.Product\"r\n\023ProductsInputConfig\022" +
-      "Q\n\026products_inline_source\030\001 \001(\0132/.byteda" +
-      "nce.byteplus.retail.ProductsInlineSource" +
-      "H\000B\010\n\006source\"\331\002\n\025ImportProductsRequest\022D" +
-      "\n\014input_config\030\001 \001(\0132..bytedance.byteplu" +
-      "s.retail.ProductsInputConfig\022:\n\013date_con" +
-      "fig\030\002 \001(\0132%.bytedance.byteplus.retail.Da" +
-      "teConfig\022D\n\rerrors_config\030\003 \001(\0132-.byteda" +
-      "nce.byteplus.retail.ImportErrorsConfig\022J" +
-      "\n\005extra\030d \003(\0132;.bytedance.byteplus.retai" +
-      "l.ImportProductsRequest.ExtraEntry\032,\n\nEx" +
-      "traEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"\204\001\n\026ImportProductsResponse\022*\n\006status\030\001 " +
-      "\001(\0132\032.bytedance.byteplus.Status\022>\n\rerror" +
-      "_samples\030\002 \003(\0132\'.bytedance.byteplus.reta" +
-      "il.ProductError\"\261\006\n\tUserEvent\022\017\n\007user_id" +
-      "\030\001 \001(\t\022\022\n\nevent_type\030\002 \001(\t\022\027\n\017event_time" +
-      "stamp\030\003 \001(\003\0229\n\005scene\030\004 \001(\0132*.bytedance.b" +
-      "yteplus.retail.UserEvent.Scene\022\022\n\nproduc" +
-      "t_id\030\005 \001(\t\022;\n\006device\030\006 \001(\0132+.bytedance.b" +
-      "yteplus.retail.UserEvent.Device\022=\n\007conte" +
-      "xt\030\007 \001(\0132,.bytedance.byteplus.retail.Use" +
-      "rEvent.Context\022\031\n\021attribution_token\030\010 \001(" +
-      "\t\022\020\n\010rec_info\030\t \001(\t\022\026\n\016traffic_source\030\n " +
-      "\001(\t\022\026\n\016purchase_count\030\013 \001(\005\022\035\n\025detail_pa" +
-      "ge_stay_time\030\014 \001(\005\022>\n\005extra\030d \003(\0132/.byte" +
-      "dance.byteplus.retail.UserEvent.ExtraEnt" +
-      "ry\032@\n\005Scene\022\022\n\nscene_name\030\001 \001(\t\022\023\n\013page_" +
-      "number\030\002 \001(\005\022\016\n\006offset\030\003 \001(\005\032\273\001\n\006Device\022" +
-      "\020\n\010platform\030\001 \001(\t\022\017\n\007os_type\030\002 \001(\t\022\023\n\013ap" +
-      "p_version\030\003 \001(\t\022\024\n\014device_model\030\004 \001(\t\022\024\n" +
-      "\014device_brand\030\005 \001(\t\022\022\n\nos_version\030\006 \001(\t\022" +
-      "\024\n\014browser_type\030\007 \001(\t\022\022\n\nuser_agent\030\010 \001(" +
-      "\t\022\017\n\007network\030\t \001(\t\0321\n\007Context\022\r\n\005query\030\001" +
-      " \001(\t\022\027\n\017root_product_id\030\002 \001(\t\032,\n\nExtraEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\026" +
-      "WriteUserEventsRequest\0229\n\013user_events\030\001 " +
-      "\003(\0132$.bytedance.byteplus.retail.UserEven" +
-      "t\022K\n\005extra\030d \003(\0132<.bytedance.byteplus.re" +
-      "tail.WriteUserEventsRequest.ExtraEntry\032," +
-      "\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"[\n\016UserEventError\022\017\n\007message\030\001 \001(\t\022" +
-      "8\n\nuser_event\030\002 \001(\0132$.bytedance.byteplus" +
-      ".retail.UserEvent\"\200\001\n\027WriteUserEventsRes" +
-      "ponse\022*\n\006status\030\001 \001(\0132\032.bytedance.bytepl" +
-      "us.Status\0229\n\006errors\030\002 \003(\0132).bytedance.by" +
-      "teplus.retail.UserEventError\"S\n\026UserEven" +
-      "tsInlineSource\0229\n\013user_events\030\001 \003(\0132$.by" +
-      "tedance.byteplus.retail.UserEvent\"y\n\025Use" +
-      "rEventsInputConfig\022V\n\031user_events_inline" +
-      "_source\030\001 \001(\01321.bytedance.byteplus.retai" +
-      "l.UserEventsInlineSourceH\000B\010\n\006source\"\337\002\n" +
-      "\027ImportUserEventsRequest\022F\n\014input_config" +
-      "\030\001 \001(\01320.bytedance.byteplus.retail.UserE" +
-      "ventsInputConfig\022:\n\013date_config\030\002 \001(\0132%." +
-      "bytedance.byteplus.retail.DateConfig\022D\n\r" +
-      "errors_config\030\003 \001(\0132-.bytedance.byteplus" +
-      ".retail.ImportErrorsConfig\022L\n\005extra\030d \003(" +
-      "\0132=.bytedance.byteplus.retail.ImportUser" +
-      "EventsRequest.ExtraEntry\032,\n\nExtraEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\210\001\n\030Impor" +
-      "tUserEventsResponse\022*\n\006status\030\001 \001(\0132\032.by" +
-      "tedance.byteplus.Status\022@\n\rerror_samples" +
-      "\030\002 \003(\0132).bytedance.byteplus.retail.UserE" +
-      "ventError\"\303\003\n\016PredictRequest\022\017\n\007user_id\030" +
-      "\001 \001(\t\022\014\n\004size\030\002 \001(\005\0229\n\005scene\030\003 \001(\0132*.byt" +
-      "edance.byteplus.retail.UserEvent.Scene\022B" +
-      "\n\007context\030\004 \001(\01321.bytedance.byteplus.ret" +
-      "ail.PredictRequest.Context\022C\n\005extra\030d \003(" +
-      "\01324.bytedance.byteplus.retail.PredictReq" +
-      "uest.ExtraEntry\032\237\001\n\007Context\0228\n\014root_prod" +
-      "uct\030\001 \001(\0132\".bytedance.byteplus.retail.Pr" +
-      "oduct\022;\n\006device\030\002 \001(\0132+.bytedance.bytepl" +
-      "us.retail.UserEvent.Device\022\035\n\025candidate_" +
-      "product_ids\030\003 \003(\t\032,\n\nExtraEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\274\003\n\rPredictResul" +
-      "t\022S\n\021response_products\030\001 \003(\01328.bytedance" +
-      ".byteplus.retail.PredictResult.ResponseP" +
-      "roduct\022B\n\005extra\030d \003(\01323.bytedance.bytepl" +
-      "us.retail.PredictResult.ExtraEntry\032\343\001\n\017R" +
-      "esponseProduct\022\022\n\nproduct_id\030\001 \001(\t\022\014\n\004ra" +
-      "nk\030\002 \001(\005\022\014\n\004pctr\030\003 \001(\001\022\014\n\004pcvr\030\004 \001(\001\022\020\n\010" +
-      "rec_info\030\005 \001(\t\022R\n\005extra\030d \003(\0132C.bytedanc" +
-      "e.byteplus.retail.PredictResult.Response" +
-      "Product.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032,\n\nExtraEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\212\001\n\017Predi" +
-      "ctResponse\022*\n\006status\030\001 \001(\0132\032.bytedance.b" +
-      "yteplus.Status\022\022\n\nrequest_id\030\002 \001(\t\0227\n\005va" +
-      "lue\030\003 \001(\0132(.bytedance.byteplus.retail.Pr" +
-      "edictResult\"\312\002\n\033AckServerImpressionsRequ" +
-      "est\022\032\n\022predict_request_id\030\001 \001(\t\022\017\n\007user_" +
-      "id\030\002 \001(\t\022\026\n\016traffic_source\030\003 \001(\t\0229\n\005scen" +
-      "e\030\004 \001(\0132*.bytedance.byteplus.retail.User" +
-      "Event.Scene\022_\n\020altered_products\030\005 \003(\0132E." +
-      "bytedance.byteplus.retail.AckServerImpre" +
-      "ssionsRequest.AlteredProduct\032J\n\016AlteredP" +
-      "roduct\022\022\n\nproduct_id\030\001 \001(\t\022\026\n\016altered_re" +
-      "ason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005\"J\n\034AckServerImp" +
-      "ressionsResponse\022*\n\006status\030\001 \001(\0132\032.byted" +
-      "ance.byteplus.Status2\233\007\n\025ByteplusRetailS" +
-      "ervice\022i\n\nWriteUsers\022,.bytedance.byteplu" +
-      "s.retail.WriteUsersRequest\032-.bytedance.b" +
-      "yteplus.retail.WriteUsersResponse\022c\n\013Imp" +
-      "ortUsers\022-.bytedance.byteplus.retail.Imp" +
-      "ortUsersRequest\032%.bytedance.byteplus.Ope" +
-      "rationResponse\022r\n\rWriteProducts\022/.byteda" +
-      "nce.byteplus.retail.WriteProductsRequest" +
-      "\0320.bytedance.byteplus.retail.WriteProduc" +
-      "tsResponse\022i\n\016ImportProducts\0220.bytedance" +
-      ".byteplus.retail.ImportProductsRequest\032%" +
-      ".bytedance.byteplus.OperationResponse\022x\n" +
-      "\017WriteUserEvents\0221.bytedance.byteplus.re" +
-      "tail.WriteUserEventsRequest\0322.bytedance." +
-      "byteplus.retail.WriteUserEventsResponse\022" +
-      "m\n\020ImportUserEvents\0222.bytedance.byteplus" +
-      ".retail.ImportUserEventsRequest\032%.byteda" +
-      "nce.byteplus.OperationResponse\022`\n\007Predic" +
-      "t\022).bytedance.byteplus.retail.PredictReq" +
-      "uest\032*.bytedance.byteplus.retail.Predict" +
-      "Response\022\207\001\n\024AckServerImpressions\0226.byte" +
-      "dance.byteplus.retail.AckServerImpressio" +
-      "nsRequest\0327.bytedance.byteplus.retail.Ac" +
-      "kServerImpressionsResponseB\036\n\034byteplus.s" +
-      "dk.retail.protocolb\006proto3"
+      "ance.byteplus.retail.User\"}\n\022WriteUsersR" +
+      "esponse\0221\n\006status\030\001 \001(\0132!.bytedance.byte" +
+      "plus.common.Status\0224\n\006errors\030\002 \003(\0132$.byt" +
+      "edance.byteplus.retail.UserError\"C\n\021User" +
+      "sInlineSource\022.\n\005users\030\001 \003(\0132\037.bytedance" +
+      ".byteplus.retail.User\"i\n\020UsersInputConfi" +
+      "g\022K\n\023users_inline_source\030\001 \001(\0132,.bytedan" +
+      "ce.byteplus.retail.UsersInlineSourceH\000B\010" +
+      "\n\006source\"*\n\nDateConfig\022\014\n\004date\030\002 \001(\t\022\016\n\006" +
+      "is_end\030\003 \001(\010\"@\n\022ImportErrorsConfig\022\033\n\021em" +
+      "pty_destination\030\001 \001(\tH\000B\r\n\013destination\"\320" +
+      "\002\n\022ImportUsersRequest\022A\n\014input_config\030\001 " +
+      "\001(\0132+.bytedance.byteplus.retail.UsersInp" +
+      "utConfig\022:\n\013date_config\030\002 \001(\0132%.bytedanc" +
+      "e.byteplus.retail.DateConfig\022D\n\rerrors_c" +
+      "onfig\030\003 \001(\0132-.bytedance.byteplus.retail." +
+      "ImportErrorsConfig\022G\n\005extra\030d \003(\01328.byte" +
+      "dance.byteplus.retail.ImportUsersRequest" +
+      ".ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"\205\001\n\023ImportUsersRespons" +
+      "e\0221\n\006status\030\001 \001(\0132!.bytedance.byteplus.c" +
+      "ommon.Status\022;\n\rerror_samples\030\002 \003(\0132$.by" +
+      "tedance.byteplus.retail.UserError\"\241\t\n\007Pr" +
+      "oduct\022\022\n\nproduct_id\030\001 \001(\t\022?\n\ncategories\030" +
+      "\002 \003(\0132+.bytedance.byteplus.retail.Produc" +
+      "t.Category\0228\n\006brands\030\003 \003(\0132(.bytedance.b" +
+      "yteplus.retail.Product.Brand\0227\n\005price\030\004 " +
+      "\001(\0132(.bytedance.byteplus.retail.Product." +
+      "Price\022\030\n\020is_recommendable\030\005 \001(\010\022\r\n\005title" +
+      "\030\006 \001(\t\022\025\n\rquality_score\030\007 \001(\001\022\014\n\004tags\030\010 " +
+      "\003(\t\022;\n\007display\030\t \001(\0132*.bytedance.byteplu" +
+      "s.retail.Product.Display\022D\n\014product_spec" +
+      "\030\n \001(\0132..bytedance.byteplus.retail.Produ" +
+      "ct.ProductSpec\0229\n\006seller\030\013 \001(\0132).bytedan" +
+      "ce.byteplus.retail.Product.Seller\022<\n\005ext" +
+      "ra\030d \003(\0132-.bytedance.byteplus.retail.Pro" +
+      "duct.ExtraEntry\032\230\001\n\010Category\022\026\n\016category" +
+      "_depth\030\001 \001(\005\022P\n\016category_nodes\030\002 \003(\01328.b" +
+      "ytedance.byteplus.retail.Product.Categor" +
+      "y.CategoryNode\032\"\n\014CategoryNode\022\022\n\nid_or_" +
+      "name\030\001 \001(\t\0320\n\005Brand\022\023\n\013brand_depth\030\001 \001(\005" +
+      "\022\022\n\nid_or_name\030\002 \001(\t\0324\n\005Price\022\025\n\rcurrent" +
+      "_price\030\001 \001(\003\022\024\n\014origin_price\030\002 \001(\003\032\217\001\n\007D" +
+      "isplay\022!\n\031listing_page_display_tags\030\001 \003(" +
+      "\t\022 \n\030detail_page_display_tags\030\002 \003(\t\022!\n\031l" +
+      "isting_page_display_type\030\003 \001(\t\022\034\n\024cover_" +
+      "multimedia_url\030\004 \001(\t\032~\n\013ProductSpec\022\030\n\020p" +
+      "roduct_group_id\030\001 \001(\t\022\023\n\013user_rating\030\002 \001" +
+      "(\001\022\025\n\rcomment_count\030\003 \001(\005\022\016\n\006source\030\004 \001(" +
+      "\t\022\031\n\021publish_timestamp\030\005 \001(\003\032A\n\006Seller\022\n" +
+      "\n\002id\030\001 \001(\t\022\024\n\014seller_level\030\002 \001(\t\022\025\n\rsell" +
+      "er_rating\030\003 \001(\001\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\305\001\n\024WriteProductsR" +
+      "equest\0224\n\010products\030\001 \003(\0132\".bytedance.byt" +
+      "eplus.retail.Product\022I\n\005extra\030d \003(\0132:.by" +
+      "tedance.byteplus.retail.WriteProductsReq" +
+      "uest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\014ProductError\022\017\n" +
+      "\007message\030\001 \001(\t\0223\n\007product\030\002 \001(\0132\".byteda" +
+      "nce.byteplus.retail.Product\"\203\001\n\025WritePro" +
+      "ductsResponse\0221\n\006status\030\001 \001(\0132!.bytedanc" +
+      "e.byteplus.common.Status\0227\n\006errors\030\002 \003(\013" +
+      "2\'.bytedance.byteplus.retail.ProductErro" +
+      "r\"L\n\024ProductsInlineSource\0224\n\010products\030\001 " +
+      "\003(\0132\".bytedance.byteplus.retail.Product\"" +
+      "r\n\023ProductsInputConfig\022Q\n\026products_inlin" +
+      "e_source\030\001 \001(\0132/.bytedance.byteplus.reta" +
+      "il.ProductsInlineSourceH\000B\010\n\006source\"\331\002\n\025" +
+      "ImportProductsRequest\022D\n\014input_config\030\001 " +
+      "\001(\0132..bytedance.byteplus.retail.Products" +
+      "InputConfig\022:\n\013date_config\030\002 \001(\0132%.byted" +
+      "ance.byteplus.retail.DateConfig\022D\n\rerror" +
+      "s_config\030\003 \001(\0132-.bytedance.byteplus.reta" +
+      "il.ImportErrorsConfig\022J\n\005extra\030d \003(\0132;.b" +
+      "ytedance.byteplus.retail.ImportProductsR" +
+      "equest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\213\001\n\026ImportProduc" +
+      "tsResponse\0221\n\006status\030\001 \001(\0132!.bytedance.b" +
+      "yteplus.common.Status\022>\n\rerror_samples\030\002" +
+      " \003(\0132\'.bytedance.byteplus.retail.Product" +
+      "Error\"\261\006\n\tUserEvent\022\017\n\007user_id\030\001 \001(\t\022\022\n\n" +
+      "event_type\030\002 \001(\t\022\027\n\017event_timestamp\030\003 \001(" +
+      "\003\0229\n\005scene\030\004 \001(\0132*.bytedance.byteplus.re" +
+      "tail.UserEvent.Scene\022\022\n\nproduct_id\030\005 \001(\t" +
+      "\022;\n\006device\030\006 \001(\0132+.bytedance.byteplus.re" +
+      "tail.UserEvent.Device\022=\n\007context\030\007 \001(\0132," +
+      ".bytedance.byteplus.retail.UserEvent.Con" +
+      "text\022\031\n\021attribution_token\030\010 \001(\t\022\020\n\010rec_i" +
+      "nfo\030\t \001(\t\022\026\n\016traffic_source\030\n \001(\t\022\026\n\016pur" +
+      "chase_count\030\013 \001(\005\022\035\n\025detail_page_stay_ti" +
+      "me\030\014 \001(\005\022>\n\005extra\030d \003(\0132/.bytedance.byte" +
+      "plus.retail.UserEvent.ExtraEntry\032@\n\005Scen" +
+      "e\022\022\n\nscene_name\030\001 \001(\t\022\023\n\013page_number\030\002 \001" +
+      "(\005\022\016\n\006offset\030\003 \001(\005\032\273\001\n\006Device\022\020\n\010platfor" +
+      "m\030\001 \001(\t\022\017\n\007os_type\030\002 \001(\t\022\023\n\013app_version\030" +
+      "\003 \001(\t\022\024\n\014device_model\030\004 \001(\t\022\024\n\014device_br" +
+      "and\030\005 \001(\t\022\022\n\nos_version\030\006 \001(\t\022\024\n\014browser" +
+      "_type\030\007 \001(\t\022\022\n\nuser_agent\030\010 \001(\t\022\017\n\007netwo" +
+      "rk\030\t \001(\t\0321\n\007Context\022\r\n\005query\030\001 \001(\t\022\027\n\017ro" +
+      "ot_product_id\030\002 \001(\t\032,\n\nExtraEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\026WriteUserE" +
+      "ventsRequest\0229\n\013user_events\030\001 \003(\0132$.byte" +
+      "dance.byteplus.retail.UserEvent\022K\n\005extra" +
+      "\030d \003(\0132<.bytedance.byteplus.retail.Write" +
+      "UserEventsRequest.ExtraEntry\032,\n\nExtraEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\016Us" +
+      "erEventError\022\017\n\007message\030\001 \001(\t\0228\n\nuser_ev" +
+      "ent\030\002 \001(\0132$.bytedance.byteplus.retail.Us" +
+      "erEvent\"\207\001\n\027WriteUserEventsResponse\0221\n\006s" +
+      "tatus\030\001 \001(\0132!.bytedance.byteplus.common." +
+      "Status\0229\n\006errors\030\002 \003(\0132).bytedance.bytep" +
+      "lus.retail.UserEventError\"S\n\026UserEventsI" +
+      "nlineSource\0229\n\013user_events\030\001 \003(\0132$.byted" +
+      "ance.byteplus.retail.UserEvent\"y\n\025UserEv" +
+      "entsInputConfig\022V\n\031user_events_inline_so" +
+      "urce\030\001 \001(\01321.bytedance.byteplus.retail.U" +
+      "serEventsInlineSourceH\000B\010\n\006source\"\337\002\n\027Im" +
+      "portUserEventsRequest\022F\n\014input_config\030\001 " +
+      "\001(\01320.bytedance.byteplus.retail.UserEven" +
+      "tsInputConfig\022:\n\013date_config\030\002 \001(\0132%.byt" +
+      "edance.byteplus.retail.DateConfig\022D\n\rerr" +
+      "ors_config\030\003 \001(\0132-.bytedance.byteplus.re" +
+      "tail.ImportErrorsConfig\022L\n\005extra\030d \003(\0132=" +
+      ".bytedance.byteplus.retail.ImportUserEve" +
+      "ntsRequest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\217\001\n\030ImportUs" +
+      "erEventsResponse\0221\n\006status\030\001 \001(\0132!.byted" +
+      "ance.byteplus.common.Status\022@\n\rerror_sam" +
+      "ples\030\002 \003(\0132).bytedance.byteplus.retail.U" +
+      "serEventError\"\303\003\n\016PredictRequest\022\017\n\007user" +
+      "_id\030\001 \001(\t\022\014\n\004size\030\002 \001(\005\0229\n\005scene\030\003 \001(\0132*" +
+      ".bytedance.byteplus.retail.UserEvent.Sce" +
+      "ne\022B\n\007context\030\004 \001(\01321.bytedance.byteplus" +
+      ".retail.PredictRequest.Context\022C\n\005extra\030" +
+      "d \003(\01324.bytedance.byteplus.retail.Predic" +
+      "tRequest.ExtraEntry\032\237\001\n\007Context\0228\n\014root_" +
+      "product\030\001 \001(\0132\".bytedance.byteplus.retai" +
+      "l.Product\022;\n\006device\030\002 \001(\0132+.bytedance.by" +
+      "teplus.retail.UserEvent.Device\022\035\n\025candid" +
+      "ate_product_ids\030\003 \003(\t\032,\n\nExtraEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\274\003\n\rPredictR" +
+      "esult\022S\n\021response_products\030\001 \003(\01328.byted" +
+      "ance.byteplus.retail.PredictResult.Respo" +
+      "nseProduct\022B\n\005extra\030d \003(\01323.bytedance.by" +
+      "teplus.retail.PredictResult.ExtraEntry\032\343" +
+      "\001\n\017ResponseProduct\022\022\n\nproduct_id\030\001 \001(\t\022\014" +
+      "\n\004rank\030\002 \001(\005\022\014\n\004pctr\030\003 \001(\001\022\014\n\004pcvr\030\004 \001(\001" +
+      "\022\020\n\010rec_info\030\005 \001(\t\022R\n\005extra\030d \003(\0132C.byte" +
+      "dance.byteplus.retail.PredictResult.Resp" +
+      "onseProduct.ExtraEntry\032,\n\nExtraEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032,\n\nExtraEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\017P" +
+      "redictResponse\0221\n\006status\030\001 \001(\0132!.bytedan" +
+      "ce.byteplus.common.Status\022\022\n\nrequest_id\030" +
+      "\002 \001(\t\0227\n\005value\030\003 \001(\0132(.bytedance.byteplu" +
+      "s.retail.PredictResult\"\312\002\n\033AckServerImpr" +
+      "essionsRequest\022\032\n\022predict_request_id\030\001 \001" +
+      "(\t\022\017\n\007user_id\030\002 \001(\t\022\026\n\016traffic_source\030\003 " +
+      "\001(\t\0229\n\005scene\030\004 \001(\0132*.bytedance.byteplus." +
+      "retail.UserEvent.Scene\022_\n\020altered_produc" +
+      "ts\030\005 \003(\0132E.bytedance.byteplus.retail.Ack" +
+      "ServerImpressionsRequest.AlteredProduct\032" +
+      "J\n\016AlteredProduct\022\022\n\nproduct_id\030\001 \001(\t\022\026\n" +
+      "\016altered_reason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005\"Q\n\034A" +
+      "ckServerImpressionsResponse\0221\n\006status\030\001 " +
+      "\001(\0132!.bytedance.byteplus.common.Status2\260" +
+      "\007\n\025ByteplusRetailService\022i\n\nWriteUsers\022," +
+      ".bytedance.byteplus.retail.WriteUsersReq" +
+      "uest\032-.bytedance.byteplus.retail.WriteUs" +
+      "ersResponse\022j\n\013ImportUsers\022-.bytedance.b" +
+      "yteplus.retail.ImportUsersRequest\032,.byte" +
+      "dance.byteplus.common.OperationResponse\022" +
+      "r\n\rWriteProducts\022/.bytedance.byteplus.re" +
+      "tail.WriteProductsRequest\0320.bytedance.by" +
+      "teplus.retail.WriteProductsResponse\022p\n\016I" +
+      "mportProducts\0220.bytedance.byteplus.retai" +
+      "l.ImportProductsRequest\032,.bytedance.byte" +
+      "plus.common.OperationResponse\022x\n\017WriteUs" +
+      "erEvents\0221.bytedance.byteplus.retail.Wri" +
+      "teUserEventsRequest\0322.bytedance.byteplus" +
+      ".retail.WriteUserEventsResponse\022t\n\020Impor" +
+      "tUserEvents\0222.bytedance.byteplus.retail." +
+      "ImportUserEventsRequest\032,.bytedance.byte" +
+      "plus.common.OperationResponse\022`\n\007Predict" +
+      "\022).bytedance.byteplus.retail.PredictRequ" +
+      "est\032*.bytedance.byteplus.retail.PredictR" +
+      "esponse\022\207\001\n\024AckServerImpressions\0226.byted" +
+      "ance.byteplus.retail.AckServerImpression" +
+      "sRequest\0327.bytedance.byteplus.retail.Ack" +
+      "ServerImpressionsResponseB\036\n\034byteplus.sd" +
+      "k.retail.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
