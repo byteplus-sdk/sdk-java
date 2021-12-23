@@ -4,6 +4,10 @@ import byteplus.sdk.common.protocol.ByteplusCommon.*;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
+import byteplus.sdk.general.protocol.ByteplusGeneral;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public interface CommonClient {
     // GetOperation
@@ -20,9 +24,12 @@ public interface CommonClient {
 
     // Done
     //
-    // Pass a date list to mark the completion of data synchronization for these days
-    // suitable for new API
-    Response done(DoneRequest request, String topic, Option... opts) throws NetException, BizException;
+    // When the data of a day is imported completely,
+    // you should notify bytedance through `done` method,
+    // then bytedance will start handling the data in this day
+    // @param dateList, optional, if dataList is empty, indicate target date is previous day
+    DoneResponse done(List<LocalDate> dateList, String topic,
+                                      Option... opts) throws NetException, BizException;
 
     void release();
 }
