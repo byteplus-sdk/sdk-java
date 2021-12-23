@@ -5,6 +5,10 @@ import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.util.List;
+
 import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.AckServerImpressionsRequest;
 import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.AckServerImpressionsResponse;
 import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.PredictRequest;
