@@ -58,6 +58,11 @@ public class ByteairClientBuilder {
         return this;
     }
 
+    public ByteairClientBuilder useAirAuth() {
+        this.param.setUseAirAuth(true);
+        return this;
+    }
+
     public ByteairClient build() {
         return new ByteairClientImpl(this.param);
     }

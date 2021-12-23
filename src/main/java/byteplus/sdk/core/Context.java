@@ -23,9 +23,8 @@ public class Context {
 
     private Credential volcCredential;
 
-    // A unique token assigned by bytedance, which is used to
-    // generate an authenticated signature when building a request.
-    // It is sometimes called "secret".
+    private final boolean useAirAuth;
+
     private final String tenantId;
 
     // A unique identity assigned by Bytedance, which is need to fill in URL.
@@ -57,6 +56,8 @@ public class Context {
 
         private String sk; // SecretKey of a volcengin tenant
 
+        private boolean useAirAuth;
+
         private String schema;
 
         private List<String> hosts;
@@ -80,6 +81,7 @@ public class Context {
         if (Objects.nonNull(param.headers)) {
             this.customerHeaders = param.headers;
         }
+        this.useAirAuth = param.useAirAuth;
     }
 
     private void checkRequiredField(Param param) {
@@ -96,18 +98,19 @@ public class Context {
     }
 
     private void checkAuthRequiredField(Param param) {
-        // air auth only need token for signature， ak will be ignored
-        if ((Objects.isNull(param.token) || param.token.equals("")) &&
-                (Objects.isNull(param.ak) || param.ak.equals(""))) {
-            throw new RuntimeException("token and ak are null");
+        // air auth need token
+        if (param.useAirAuth) {
+            if (Objects.isNull(param.token)) {
+                throw new RuntimeException("token cannot be null");
+            }
+            return;
         }
-        // if token is absent, then use volc auth for signature, ak and sdk are required
-        if ((Objects.nonNull(param.ak) && !param.ak.equals("")) &&
-                (Objects.isNull(param.sk) || param.sk.equals(""))) {
-            throw new RuntimeException("sk is null");
+        // volc auth need ak and sk
+        if (Objects.isNull(param.ak) || param.ak.equals("") ||
+                Objects.isNull(param.sk) || param.sk.equals("")) {
+            throw new RuntimeException("ak and sk cannot be null");
         }
     }
-
 
     private void fillHosts(Param param) {
         if (Objects.nonNull(param.hosts) && !param.hosts.isEmpty()) {
