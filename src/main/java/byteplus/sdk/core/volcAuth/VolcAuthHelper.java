@@ -1,6 +1,6 @@
 package byteplus.sdk.core.volcAuth;
 
-import org.apache.commons.codec.binary.Hex;
+import byteplus.sdk.core.Helper;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -11,7 +11,7 @@ public class VolcAuthHelper {
     static String hashSHA256(byte[] content) throws Exception {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            return Hex.encodeHexString(md.digest(content));
+            return Helper.bytes2Hex(md.digest(content));
         } catch (Exception e) {
             throw new Exception(
                     "Unable to compute hash while signing request: "

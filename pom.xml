@@ -16,15 +16,11 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <lombok.version>1.18.16</lombok.version>
-        <okhttp.verison>4.9.1</okhttp.verison>
-        <protobuf-java.version>3.17.3</protobuf-java.version>
-        <slf4j-api.version>1.7.30</slf4j-api.version>
-        <slf4j-log4j12.version>1.7.30</slf4j-log4j12.version>
-        <fastjson.version>1.2.76</fastjson.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <httpclient.version>4.5.13</httpclient.version>
-
+        <lombok.version>1.18.22</lombok.version>
+        <okhttp.verison>4.9.3</okhttp.verison>
+        <protobuf-java.version>3.19.1</protobuf-java.version>
+        <slf4j-api.version>1.7.32</slf4j-api.version>
+        <fastjson.version>1.2.79</fastjson.version>
     </properties>
 
     <dependencies>
@@ -57,29 +53,11 @@
             <version>${slf4j-api.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j-log4j12.version}</version>
-            <optional>true</optional>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
         </dependency>
 
     </dependencies>
