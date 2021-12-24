@@ -184,8 +184,8 @@ public class HttpCaller {
                 .build();
         // append auth headers
         headers = withAuthHeaders(request, bodyBytes);
-        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, headers);
         request = request.newBuilder().headers(headers).build();
+        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, request.headers());
         Call call = selectHttpClient(timeout).newCall(request);
         LocalDateTime startTime = LocalDateTime.now();
         try {
