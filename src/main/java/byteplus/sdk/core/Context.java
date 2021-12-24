@@ -48,6 +48,10 @@ public class Context {
 
         private String token;
 
+        private String ak;
+
+        private String sk;
+
         private String schema;
 
         private List<String> hosts;
@@ -106,6 +110,9 @@ public class Context {
         }
         if (param.region == Region.AIR) {
             hosts = Constant.AIR_HOSTS;
+        }
+        if (param.region == Region.SAAS_SG) {
+            hosts = Constant.SAAS_SG_HOSTS;
         }
     }
 }

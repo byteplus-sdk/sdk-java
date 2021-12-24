@@ -1,6 +1,7 @@
 syntax = "proto3";
 package bytedance.byteplus.byteair;
 option java_package = "byteplus.sdk.byteair.protocol";
+option go_package = "github.com/byteplus-sdk/sdk-go/byteair/protocol";
 
 import "byteplus_common.proto";
 import "google/protobuf/any.proto";
