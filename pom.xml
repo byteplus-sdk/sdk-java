@@ -20,9 +20,7 @@
         <okhttp.verison>4.9.1</okhttp.verison>
         <protobuf-java.version>3.19.1</protobuf-java.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
-        <slf4j-log4j12.version>1.7.30</slf4j-log4j12.version>
         <fastjson.version>1.2.76</fastjson.version>
-        <commons-lang.version>2.5</commons-lang.version>
     </properties>
 
     <dependencies>
