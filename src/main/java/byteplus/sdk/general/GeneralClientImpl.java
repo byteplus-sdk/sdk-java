@@ -76,29 +76,6 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     }
 
     @Override
-    public DoneResponse done(List<LocalDate> dateList, String topic,
-                             Option... opts) throws NetException, BizException {
-        List<Map<String, String>> dateMapList = new ArrayList<>();
-        for (LocalDate date : dateList) {
-            addDoneDate(dateMapList, date);
-        }
-        String urlFormat = generalURL.getDoneUrlFormat();
-        String url = urlFormat.replace("{}", topic);
-        Parser<DoneResponse> parser = DoneResponse.parser();
-        DoneResponse response = httpCaller.doJsonRequest(url, dateMapList, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
-        return response;
-    }
-
-    private void addDoneDate(List<Map<String, String>> dateMapList, LocalDate date) {
-        dateMapList.add(Collections.singletonMap("partition_date", formatDoneDate(date)));
-    }
-
-    private String formatDoneDate(LocalDate date) {
-        return date.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-    }
-
-    @Override
     public PredictResponse predict(PredictRequest request, String scene,
                                    Option... opts) throws NetException, BizException {
         String url = generalURL.getPredictUrlFormat().replace("{}", scene);
