@@ -1,6 +1,5 @@
 package byteplus.sdk.core;
 
-import byteplus.sdk.core.volcAuth.RequestAdapter;
 import byteplus.sdk.core.volcAuth.VoclAuth;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -170,20 +169,7 @@ public class HttpCaller {
         digest.update(ts.getBytes(StandardCharsets.UTF_8));
         digest.update(nonce.getBytes(StandardCharsets.UTF_8));
 
-        return bytes2Hex(digest.digest());
-    }
-
-    private String bytes2Hex(byte[] bts) {
-        StringBuilder sb = new StringBuilder();
-        String hex;
-        for (byte bt : bts) {
-            hex = (Integer.toHexString(bt & 0xff));
-            if (hex.length() == 1) {
-                sb.append("0");
-            }
-            sb.append(hex);
-        }
-        return sb.toString();
+        return Helper.bytes2Hex(digest.digest());
     }
 
 
@@ -191,16 +177,15 @@ public class HttpCaller {
                                  Headers headers,
                                  byte[] bodyBytes,
                                  Duration timeout) throws NetException, BizException {
-
-//        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, headers);
-
-        Request.Builder requestBuilder = new Request.Builder()
+        Request request = new Request.Builder()
                 .url(url)
                 .headers(headers)
-                .post(RequestBody.create(bodyBytes));
-        withAuthHeaders(requestBuilder, new RequestAdapter(url, headers, bodyBytes), bodyBytes);
-        // build request after append auth headers
-        Request request = requestBuilder.build();
+                .post(RequestBody.create(bodyBytes))
+                .build();
+        // append auth headers
+        headers = withAuthHeaders(request, bodyBytes);
+        request = request.newBuilder().headers(headers).build();
+        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, request.headers());
         Call call = selectHttpClient(timeout).newCall(request);
         LocalDateTime startTime = LocalDateTime.now();
         try {
@@ -232,22 +217,21 @@ public class HttpCaller {
         }
     }
 
-    private void withAuthHeaders(Request.Builder request, RequestAdapter requestAdapter, byte[] bodyBytes) throws BizException {
+    private Headers withAuthHeaders(Request request, byte[] bodyBytes) throws BizException {
         //air_auth
         if (context.isUseAirAuth()) {
-            withAirAuthHeaders(request, bodyBytes);
-            return;
+            Headers originHeaders = request.headers();
+            return withAirAuthHeaders(originHeaders, bodyBytes);
         }
         //volc_auth
         try {
-            VoclAuth.sign(requestAdapter.getAuthRequest(), context.getVolcCredential());
-            requestAdapter.copyHeaders(request);
+            return VoclAuth.sign(request, bodyBytes, context.getVolcCredential());
         } catch (Exception e) {
             throw new BizException(e.getMessage());
         }
     }
 
-    private void withAirAuthHeaders(Request.Builder request, byte[] reqBytes) {
+    private Headers withAirAuthHeaders(Headers originHeaders, byte[] reqBytes) {
         // Gets the second-level timestamp of the current time.
         // The server only supports the second-level timestamp.
         // The 'ts' must be the current time.
@@ -260,10 +244,12 @@ public class HttpCaller {
         // calculate the authentication signature
         String signature = calSignature(reqBytes, ts, nonce);
 
-        request.header("Tenant-Id", context.getTenantId());
-        request.header("Tenant-Ts", ts);
-        request.header("Tenant-Nonce", nonce);
-        request.header("Tenant-Signature", signature);
+        return originHeaders.newBuilder()
+                .set("Tenant-Id", context.getTenantId())
+                .set("Tenant-Ts", ts)
+                .set("Tenant-Nonce", nonce)
+                .set("Tenant-Signature", signature)
+                .build();
     }
 
     private OkHttpClient selectHttpClient(Duration timeout) {
