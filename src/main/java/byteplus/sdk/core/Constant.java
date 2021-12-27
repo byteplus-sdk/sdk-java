@@ -8,6 +8,8 @@ public final class Constant {
 
     public final static int MAX_WRITE_ITEM_COUNT = 100;
 
+    public final static int MAX_IMPORT_WRITE_ITEM_COUNT = 2000;
+
     public final static int MAX_IMPORT_ITEM_COUNT = 10000;
 
     final static List<String> CN_HOSTS = Arrays.asList("rec-b.volcengineapi.com", "rec.volcengineapi.com");
@@ -19,6 +21,8 @@ public final class Constant {
     final static List<String> AIR_CN_HOSTS = Collections.singletonList("byteair-api-cn1.snssdk.com");
 
     final static List<String> AIR_SG_HOSTS = Collections.singletonList("byteair-api-sg1.byteintlapi.com");
+
+    final static List<String> SAAS_SG_HOSTS = Collections.singletonList("byteair-api-sg1.recplusapi.com");
 
     /**
      * All requests will have a XXXResponse corresponding to them,

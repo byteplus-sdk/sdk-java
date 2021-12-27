@@ -135,6 +135,10 @@ public class Context {
         }
         if (param.region == Region.AIR_SG) {
             hosts = Constant.AIR_SG_HOSTS;
+            return;
+        }
+        if (param.region == Region.SAAS_SG) {
+            hosts = Constant.SAAS_SG_HOSTS;
         }
     }
 
