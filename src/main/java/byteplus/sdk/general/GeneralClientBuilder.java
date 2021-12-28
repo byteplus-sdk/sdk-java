@@ -49,6 +49,8 @@ public class GeneralClientBuilder {
     }
 
     public GeneralClient build() {
+        // Except for air, all other environments default to airAuth
+        this.param.setUseAirAuth(true);
         return new GeneralClientImpl(this.param);
     }
 }

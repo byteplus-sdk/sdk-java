@@ -106,7 +106,7 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         }
         Option[] newOpts = addSaasFlag(opts);
         Parser<WriteResponse> parser = WriteResponse.parser();
-        WriteResponse response = httpCaller.doPbRequest(url, request, parser, newOpts);
+        WriteResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(newOpts));
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
         return response;
     }
@@ -132,7 +132,8 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         checkProjectIdAndModelId(request.getProjectId(), request.getModelId());
         Option[] newOpts = addSaasFlag(opts);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(SaasUrl.getPredictUrl(), request, parser, newOpts);
+        PredictResponse response = httpCaller.doPbRequest(SaasUrl.getPredictUrl(), request, parser,
+                Option.conv2Options(newOpts));
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -143,7 +144,8 @@ class SaasClientImpl extends CommonClientImpl implements SaasClient {
         checkProjectIdAndModelId(request.getProjectId(), request.getModelId());
         Parser<AckServerImpressionsResponse> parser = AckServerImpressionsResponse.parser();
         Option[] newOpts = addSaasFlag(opts);
-        AckServerImpressionsResponse response = httpCaller.doPbRequest(SaasUrl.getAckImpressionUrl(), request, parser, newOpts);
+        AckServerImpressionsResponse response = httpCaller.doPbRequest(SaasUrl.getAckImpressionUrl(), request,
+                parser, Option.conv2Options(newOpts));
         log.debug("[ByteplusSDK][AckImpressions] rsp:\n{}", response);
         return response;
     }

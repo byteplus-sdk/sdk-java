@@ -57,7 +57,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
             GetOperationRequest request, Option... opts) throws NetException, BizException {
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = commonURL.getGetOperationUrl();
-        OperationResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        OperationResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][GetOperations] rsp:\n{}", response);
         return response;
     }
@@ -67,7 +67,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
             ListOperationsRequest request, Option... opts) throws NetException, BizException {
         Parser<ListOperationsResponse> parser = ListOperationsResponse.parser();
         String url = commonURL.getListOperationsUrl();
-        ListOperationsResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        ListOperationsResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][ListOperations] rsp:\n{}", response);
         return response;
     }
@@ -82,7 +82,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
         String url = urlFormat.replace("{}", topic);
         DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
         Parser<DoneResponse> parser =  DoneResponse.parser();
-        DoneResponse response = httpCaller.doPbRequest(url, request, parser, opts);
+        DoneResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }

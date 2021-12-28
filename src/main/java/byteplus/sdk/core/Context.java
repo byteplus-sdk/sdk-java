@@ -1,5 +1,6 @@
 package byteplus.sdk.core;
 
+import byteplus.sdk.core.volcAuth.Credential;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -10,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import static byteplus.sdk.core.Constant.VOLC_AUTH_SERVICE;
+
 @Getter
 public class Context {
 
@@ -18,9 +21,10 @@ public class Context {
     // It is sometimes called "secret".
     private final String token;
 
-    // A unique token assigned by bytedance, which is used to
-    // generate an authenticated signature when building a request.
-    // It is sometimes called "secret".
+    private Credential volcCredential;
+
+    private final boolean useAirAuth;
+
     private final String tenantId;
 
     // A unique identity assigned by Bytedance, which is need to fill in URL.
@@ -48,9 +52,11 @@ public class Context {
 
         private String token;
 
-        private String ak;
+        private String ak; // AccessKey of a volcengin tenant
 
-        private String sk;
+        private String sk; // SecretKey of a volcengin tenant
+
+        private boolean useAirAuth;
 
         private String schema;
 
@@ -67,6 +73,7 @@ public class Context {
         this.tenantId = param.tenantId;
         this.token = param.token;
         fillHosts(param);
+        fillVolcCredential(param);
 
         if (Objects.nonNull(param.schema)) {
             this.schema = param.schema;
@@ -74,6 +81,7 @@ public class Context {
         if (Objects.nonNull(param.headers)) {
             this.customerHeaders = param.headers;
         }
+        this.useAirAuth = param.useAirAuth;
     }
 
     private void checkRequiredField(Param param) {
@@ -83,11 +91,24 @@ public class Context {
         if (Objects.isNull(param.tenantId)) {
             throw new RuntimeException("Tenant id is null");
         }
-        if (Objects.isNull(param.token)) {
-            throw new RuntimeException("Token is null");
-        }
         if (Objects.isNull(param.region)) {
             throw new RuntimeException("Region is null");
+        }
+        checkAuthRequiredField(param);
+    }
+
+    private void checkAuthRequiredField(Param param) {
+        // air auth need token
+        if (param.useAirAuth) {
+            if (Objects.isNull(param.token)) {
+                throw new RuntimeException("token cannot be null");
+            }
+            return;
+        }
+        // volc auth need ak and sk
+        if (Objects.isNull(param.ak) || param.ak.equals("") ||
+                Objects.isNull(param.sk) || param.sk.equals("")) {
+            throw new RuntimeException("ak and sk cannot be null");
         }
     }
 
@@ -108,11 +129,32 @@ public class Context {
             hosts = Constant.SG_HOSTS;
             return;
         }
-        if (param.region == Region.AIR) {
-            hosts = Constant.AIR_HOSTS;
+        if (param.region == Region.AIR_CN) {
+            hosts = Constant.AIR_CN_HOSTS;
+            return;
+        }
+        if (param.region == Region.AIR_SG) {
+            hosts = Constant.AIR_SG_HOSTS;
+            return;
         }
         if (param.region == Region.SAAS_SG) {
             hosts = Constant.SAAS_SG_HOSTS;
         }
+    }
+
+    private void fillVolcCredential(Param param) {
+        String region = "";
+        switch (param.region) {
+            case SG:
+            case AIR_SG:
+                region = "ap-singapore-1";
+                break;
+            case US:
+                region =  "us-east-1";
+                break;
+            default: //Region "CN" and "AIR_CN" belong to "cn-north-1"
+                region =  "cn-north-1";
+        }
+        this.volcCredential = new Credential(param.ak, param.sk, VOLC_AUTH_SERVICE, region);
     }
 }

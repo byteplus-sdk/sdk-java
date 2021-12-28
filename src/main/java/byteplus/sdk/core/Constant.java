@@ -18,7 +18,9 @@ public final class Constant {
 
     final static List<String> US_HOSTS = Collections.singletonList("rec-us-east-1.byteplusapi.com");
 
-    final static List<String> AIR_HOSTS = Collections.singletonList("byteair-api-cn1.snssdk.com");
+    final static List<String> AIR_CN_HOSTS = Collections.singletonList("byteair-api-cn1.snssdk.com");
+
+    final static List<String> AIR_SG_HOSTS = Collections.singletonList("byteair-api-sg1.byteintlapi.com");
 
     final static List<String> SAAS_SG_HOSTS = Collections.singletonList("byteair-api-sg1.recplusapi.com");
 
@@ -36,4 +38,6 @@ public final class Constant {
     public final static int STATUS_CODE_OPERATION_LOSS = 410;
     // The server hope slow down request frequency, and this request was rejected
     public final static int STATUS_CODE_TOO_MANY_REQUEST = 429;
+
+    public final static String VOLC_AUTH_SERVICE = "air";
 }

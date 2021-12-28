@@ -1,7 +1,6 @@
 package byteplus.sdk.byteair;
 
 import byteplus.sdk.common.CommonClient;
-import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
@@ -19,22 +18,6 @@ public interface ByteairClient extends CommonClient {
     WriteResponse writeData(List<Map<String, Object>> dataList, String topic,
                             Option... opts) throws NetException, BizException;
 
-    // Import
-    //
-    // Bulk import of data.
-    //
-    // `Operation.response` is of type ImportResponse. Note that it is
-    // possible for a subset of the items to be successfully inserted.
-    // Operation.metadata is of type Metadata.
-    // This call returns immediately after the server finishes the
-    // preliminary validations and persists the request. The caller should
-    // keep polling `OperationResponse.operation.name` using `GetOperation`
-    // call below to check the status.
-    // Note: This can also be used to update the existing data(some data type not support).
-    // In this case, please make sure you provide all fields.
-    OperationResponse importData(List<Map<String, Object>> dataList, String topic,
-                                 Option... opts) throws NetException, BizException;
-
 
     // Predict
     //
@@ -43,10 +26,6 @@ public interface ByteairClient extends CommonClient {
     // The updated product data will take effect in 30 mins.
     // Depending how (realtime or batch) the UserEvents are sent back, it will
     // be fed into the models and take effect after that.
-    PredictResponse predict(PredictRequest request, String scene,
-                            Option... opts) throws NetException, BizException;
-
-    // Predict with "default" scene
     PredictResponse predict(PredictRequest request,
                             Option... opts) throws NetException, BizException;
 

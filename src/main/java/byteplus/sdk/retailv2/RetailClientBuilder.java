@@ -49,6 +49,8 @@ public final class RetailClientBuilder {
     }
 
     public RetailClient build() {
+        // Except for air, all other environments default to airAuth
+        this.param.setUseAirAuth(true);
         return new RetailClientImpl(this.param);
     }
 }
