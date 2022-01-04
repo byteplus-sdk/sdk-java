@@ -1,5 +1,6 @@
 package byteplus.sdk.core;
 
+import byteplus.sdk.core.volcAuth.VoclAuth;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
@@ -45,32 +46,32 @@ public class HttpCaller {
             String url,
             Req request,
             Parser<Rsp> rspParser,
-            Option... opts) throws NetException, BizException {
+            Options options) throws NetException, BizException {
         byte[] reqBytes = request.toByteArray();
         String contentType = "application/x-protobuf";
-        return doRequest(url, reqBytes, rspParser, contentType, opts);
+        return doRequest(url, reqBytes, rspParser, contentType, options);
     }
 
     public <Rsp extends Message> Rsp doJsonRequest(
             String url,
             Object request,
             Parser<Rsp> rspParser,
-            Option... opts) throws NetException, BizException {
+            Options options) throws NetException, BizException {
         byte[] reqBytes = JSON.toJSONBytes(request);
         String contentType = "application/json";
-        return doRequest(url, reqBytes, rspParser, contentType, opts);
+        return doRequest(url, reqBytes, rspParser, contentType, options);
     }
 
     private <Rsp extends Message> Rsp doRequest(String url,
                                                 byte[] reqBytes,
                                                 Parser<Rsp> rspParser,
                                                 String contentType,
-                                                Option... opts) throws NetException, BizException {
+                                                Options options) throws NetException, BizException {
         reqBytes = gzipCompress(reqBytes);
-        Options options = Option.conv2Options(opts);
-        Headers headers = buildHeaders(options, reqBytes, contentType);
+        Headers headers = buildHeaders(options, contentType);
         url = buildUrlWithQueries(options, url);
         byte[] rspBytes = doHttpRequest(url, headers, reqBytes, options.getTimeout());
+
         try {
             return rspParser.parseFrom(rspBytes);
         } catch (InvalidProtocolBufferException e) {
@@ -97,14 +98,14 @@ public class HttpCaller {
         return out.toByteArray();
     }
 
-    private Headers buildHeaders(Options options, byte[] bodyBytes, String contentType) {
+    private Headers buildHeaders(Options options, String contentType) {
         Headers.Builder builder = new Headers.Builder();
         builder.set("Content-Encoding", "gzip");
         builder.set("Accept-Encoding", "gzip");
         builder.set("Content-Type", contentType);
-        builder.set("Accept", "application/x-protobuf");
+        builder.set("Accept", "application/x-protobuf"); //response parser only accept pb format
+        builder.set("Tenant-Id", context.getTenantId());
         withOptionHeaders(builder, options);
-        withAuthHeaders(builder, bodyBytes);
         return builder.build();
     }
 
@@ -152,25 +153,6 @@ public class HttpCaller {
         }
     }
 
-    private void withAuthHeaders(Headers.Builder headerBuilder, byte[] httpBody) {
-        // Gets the second-level timestamp of the current time.
-        // The server only supports the second-level timestamp.
-        // The 'ts' must be the current time.
-        // When current time exceeds a certain time, such as 5 seconds, of 'ts',
-        // the signature will be invalid and cannot pass authentication
-        String ts = "" + (System.currentTimeMillis() / 1000);
-        // Use sub string of UUID as "nonce",  too long will be wasted.
-        // You can also use 'ts' as' nonce'
-        String nonce = UUID.randomUUID().toString().substring(0, 8);
-        // calculate the authentication signature
-        String signature = calSignature(httpBody, ts, nonce);
-
-        headerBuilder.set("Tenant-Id", context.getTenantId());
-        headerBuilder.set("Tenant-Ts", ts);
-        headerBuilder.set("Tenant-Nonce", nonce);
-        headerBuilder.set("Tenant-Signature", signature);
-    }
-
     private String calSignature(byte[] httpBody, String ts, String nonce) {
         MessageDigest digest;
         try {
@@ -187,20 +169,7 @@ public class HttpCaller {
         digest.update(ts.getBytes(StandardCharsets.UTF_8));
         digest.update(nonce.getBytes(StandardCharsets.UTF_8));
 
-        return bytes2Hex(digest.digest());
-    }
-
-    private String bytes2Hex(byte[] bts) {
-        StringBuilder sb = new StringBuilder();
-        String hex;
-        for (byte bt : bts) {
-            hex = (Integer.toHexString(bt & 0xff));
-            if (hex.length() == 1) {
-                sb.append("0");
-            }
-            sb.append(hex);
-        }
-        return sb.toString();
+        return Helper.bytes2Hex(digest.digest());
     }
 
 
@@ -208,13 +177,15 @@ public class HttpCaller {
                                  Headers headers,
                                  byte[] bodyBytes,
                                  Duration timeout) throws NetException, BizException {
-
-//        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, headers);
         Request request = new Request.Builder()
                 .url(url)
                 .headers(headers)
                 .post(RequestBody.create(bodyBytes))
                 .build();
+        // append auth headers
+        headers = withAuthHeaders(request, bodyBytes);
+        request = request.newBuilder().headers(headers).build();
+        log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, request.headers());
         Call call = selectHttpClient(timeout).newCall(request);
         LocalDateTime startTime = LocalDateTime.now();
         try {
@@ -224,7 +195,6 @@ public class HttpCaller {
                 logHttpResponse(url, response);
                 throw new BizException(response.message());
             }
-//            log.debug("[ByteplusSDK][HTTPCaller] URL:{} Response Headers:\n{}", url, response.headers());
             if (Objects.isNull(rspBody)) {
                 return null;
             }
@@ -245,6 +215,41 @@ public class HttpCaller {
             log.debug("[ByteplusSDK] http url:{}, cost:{}ms",
                     url, Duration.between(startTime, LocalDateTime.now()).toMillis());
         }
+    }
+
+    private Headers withAuthHeaders(Request request, byte[] bodyBytes) throws BizException {
+        //air_auth
+        if (context.isUseAirAuth()) {
+            Headers originHeaders = request.headers();
+            return withAirAuthHeaders(originHeaders, bodyBytes);
+        }
+        //volc_auth
+        try {
+            return VoclAuth.sign(request, bodyBytes, context.getVolcCredential());
+        } catch (Exception e) {
+            throw new BizException(e.getMessage());
+        }
+    }
+
+    private Headers withAirAuthHeaders(Headers originHeaders, byte[] reqBytes) {
+        // Gets the second-level timestamp of the current time.
+        // The server only supports the second-level timestamp.
+        // The 'ts' must be the current time.
+        // When current time exceeds a certain time, such as 5 seconds, of 'ts',
+        // the signature will be invalid and cannot pass authentication
+        String ts = "" + (System.currentTimeMillis() / 1000);
+        // Use sub string of UUID as "nonce",  too long will be wasted.
+        // You can also use 'ts' as' nonce'
+        String nonce = UUID.randomUUID().toString().substring(0, 8);
+        // calculate the authentication signature
+        String signature = calSignature(reqBytes, ts, nonce);
+
+        return originHeaders.newBuilder()
+                .set("Tenant-Id", context.getTenantId())
+                .set("Tenant-Ts", ts)
+                .set("Tenant-Nonce", nonce)
+                .set("Tenant-Signature", signature)
+                .build();
     }
 
     private OkHttpClient selectHttpClient(Duration timeout) {

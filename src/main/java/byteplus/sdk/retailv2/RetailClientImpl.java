@@ -1,28 +1,28 @@
-package byteplus.sdk.retail;
+package byteplus.sdk.retailv2;
 
 import byteplus.sdk.common.CommonClientImpl;
-import byteplus.sdk.common.protocol.ByteplusCommon.OperationResponse;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
-import byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsResponse;
-import byteplus.sdk.retail.protocol.ByteplusRetail.ImportProductsRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.ImportUserEventsRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.ImportUsersRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.PredictRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.PredictResponse;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteProductsResponse;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUserEventsResponse;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersRequest;
-import byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersResponse;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.AckServerImpressionsRequest;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.AckServerImpressionsResponse;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.PredictRequest;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.PredictResponse;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteProductsRequest;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteProductsResponse;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteUserEventsRequest;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteUserEventsResponse;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteUsersRequest;
+import static byteplus.sdk.retailv2.protocol.ByteplusRetailv2.WriteUsersResponse;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
-import static byteplus.sdk.core.Constant.MAX_IMPORT_ITEM_COUNT;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 
 
@@ -30,9 +30,6 @@ import static byteplus.sdk.core.Constant.MAX_WRITE_ITEM_COUNT;
 class RetailClientImpl extends CommonClientImpl implements RetailClient {
     private final static String ERR_MSG_TOO_MANY_WRITE_ITEMS =
             String.format("Only can receive max to %d items in one write request", MAX_WRITE_ITEM_COUNT);
-
-    private final static String ERR_MSG_TOO_MANY_IMPORT_ITEMS =
-            String.format("Only can receive max to %d items in one import request", MAX_IMPORT_ITEM_COUNT);
 
     private final RetailURL retailUrl;
 
@@ -60,19 +57,6 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
     }
 
     @Override
-    public OperationResponse importUsers(
-            ImportUsersRequest request, Option... opts) throws NetException, BizException {
-        if (request.getInputConfig().getUsersInlineSource().getUsersCount() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(ERR_MSG_TOO_MANY_IMPORT_ITEMS);
-        }
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        String url = retailUrl.getImportUsersUrl();
-        OperationResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][ImportUsers] rsp:\n{}", response);
-        return response;
-    }
-
-    @Override
     public WriteProductsResponse writeProducts(
             WriteProductsRequest request, Option... opts) throws NetException, BizException {
         if (request.getProductsCount() > MAX_WRITE_ITEM_COUNT) {
@@ -83,19 +67,6 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         WriteProductsResponse response =
                 httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteProducts] rsp:\n{}", response);
-        return response;
-    }
-
-    @Override
-    public OperationResponse importProducts(
-            ImportProductsRequest request, Option... opts) throws NetException, BizException {
-        if (request.getInputConfig().getProductsInlineSource().getProductsCount() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(ERR_MSG_TOO_MANY_IMPORT_ITEMS);
-        }
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        String url = retailUrl.getImportProductsUrl();
-        OperationResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][ImportProducts] rsp:\n{}", response);
         return response;
     }
 
@@ -111,17 +82,6 @@ class RetailClientImpl extends CommonClientImpl implements RetailClient {
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n{}", response);
         return response;
     }
-
-    @Override
-    public OperationResponse importUserEvents(
-            ImportUserEventsRequest request, Option... opts) throws NetException, BizException {
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        String url = retailUrl.getImportUserEventsUrl();
-        OperationResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][ImportUserEvents] rsp:\n{}", response);
-        return response;
-    }
-
 
     @Override
     public PredictResponse predict(

@@ -1,4 +1,4 @@
-package byteplus.sdk.retail;
+package byteplus.sdk.retailv2;
 
 import byteplus.sdk.core.Region;
 import byteplus.sdk.core.Context.Param;

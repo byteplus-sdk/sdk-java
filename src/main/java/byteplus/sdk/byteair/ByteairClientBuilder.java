@@ -48,6 +48,21 @@ public class ByteairClientBuilder {
         return this;
     }
 
+    public ByteairClientBuilder ak(String ak) {
+        this.param.setAk(ak);
+        return this;
+    }
+
+    public ByteairClientBuilder sk(String sk) {
+        this.param.setSk(sk);
+        return this;
+    }
+
+    public ByteairClientBuilder useAirAuth() {
+        this.param.setUseAirAuth(true);
+        return this;
+    }
+
     public ByteairClient build() {
         return new ByteairClientImpl(this.param);
     }

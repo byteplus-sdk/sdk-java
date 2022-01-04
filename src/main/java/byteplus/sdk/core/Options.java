@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Map;
 
 @Data
-class Options {
+public class Options {
     private Duration timeout;
 
     private String RequestId;
@@ -23,4 +23,6 @@ class Options {
     private Duration serverTimeout;
 
     private String stage;
+
+    private String scene;
 }
