@@ -1,126 +1,80 @@
 package byteplus.sdk.core.metrics;
 
+import com.sun.deploy.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.InterfaceAddress;
-import java.net.NetworkInterface;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.*;
 
+import static byteplus.sdk.core.metrics.Constant.DELIMITER;
+
+@Slf4j
 public class Helper {
-
-    public static String processTags(TreeMap<String, String> treeMap) {
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, String> entry : treeMap.entrySet()) {
-            if (sb.length() > 0) {
-                sb.append("|");
-            }
-            sb.append(entry.getKey()).append("=").append(entry.getValue());
-        }
-        return sb.toString();
+    /**
+     * @description: Store tagKvs should be formatted as "key:value"
+     * example: Store("goroutine.count", 400, "ip:127.0.0.1")
+     */
+    public static void Store(String key, double value, String... tagKvs) {
+        Collector.emitStore(key, value, tagKvs);
     }
 
+    /**
+     * @description: Store tagKvs should be formatted as "key:value"
+     * example: Counter("request.qps", 1, "method:user", "type:upload")
+     */
+    public static void Counter(String key, double value, String... tagKvs) {
+        Collector.emitCounter(key, value, tagKvs);
+    }
+
+    /**
+     * @param value :The unit of `value` is milliseconds
+     *              example: Timer("request.cost", 100, "method:user", "type:upload")
+     * @description: Store tagKvs should be formatted as "key:value"
+     */
+    public static void timer(String key, double value, String... tagKvs) {
+        Collector.emitTimer(key, value, tagKvs);
+    }
+
+    /**
+     * @param begin :The unit of `begin` is milliseconds
+     *              example: Latency("request.latency", startTime, "method:user", "type:upload")
+     * @description: Store tagKvs should be formatted as "key:value"
+     */
+    public static void Latency(String key, long begin, String... tagKvs) {
+        Collector.emitTimer(key, System.currentTimeMillis() - begin, tagKvs);
+    }
+
+
+    public static String buildCollectKey(String name, String... tags) {
+        return name + DELIMITER + tags2String(tags);
+    }
+
+    public static String tags2String(String... tags) {
+        Arrays.sort(tags); //todo:测试是否可用
+        return StringUtils.join(Arrays.asList(tags), "|");
+    }
+
+    public static List<String> parseNameAndTags(String src) {
+        int index = src.indexOf(DELIMITER);
+        if (index == -1) {
+            return null;
+        }
+        ArrayList<String> res = new ArrayList<>();
+        res.add(src.substring(0, index)); //metrics name as first element
+        res.add(src.substring(index + DELIMITER.length()));  //tagString as second element
+        return res;
+    }
+
+    // recover tagString to origin Tags map
     public static Map<String, String> recoverTags(String tagString) {
         Map<String, String> tags = new HashMap<>();
         for (String entry : tagString.split("\\|")) {
-            String[] keyValue = entry.split("=");
+            String[] keyValue = entry.split(":");
             if (keyValue.length != 2) {
                 continue;
             }
-
             tags.put(keyValue[0], keyValue[1]);
         }
         return tags;
-    }
-
-    public static TreeMap<String, String> appendTags(Map<String, String> baseTags, String[] tagKvs) {
-        TreeMap<String, String> tags = new TreeMap<>(baseTags);
-        for (String kv : tagKvs) {
-            String[] tagFields = kv.split(":", 2);
-            tags.put(tagFields[0], tagFields[1]);
-        }
-        return tags;
-    }
-
-    @Slf4j
-    public static class LocalHostUtil {
-        private static String ip;
-
-        public static String getHostAddr() {
-            if (ip != null) return ip;
-            try {
-                for (Enumeration<NetworkInterface> e = NetworkInterface.getNetworkInterfaces(); e.hasMoreElements(); ) {
-                    NetworkInterface item = e.nextElement();
-                    for (InterfaceAddress address : item.getInterfaceAddresses()) {
-                        if (item.isLoopback() || !item.isUp()) {
-                            continue;
-                        }
-                        if (address.getAddress() instanceof Inet4Address) {
-                            Inet4Address inet4Address = (Inet4Address) address.getAddress();
-                            ip = inet4Address.getHostAddress();
-                            return ip;
-                        }
-                    }
-                }
-                return InetAddress.getLocalHost().getHostAddress();
-            } catch (Exception e) {
-                log.error("get local ip failed: {} \n {}", e.getMessage(), ExceptionUtil.getTrace(e));
-            }
-            return "localhost";
-        }
-    }
-
-    public static class ExceptionUtil {
-        public static String getTrace(Throwable throwable) {
-            if (throwable == null) {
-                return "";
-            }
-            StringWriter sw = new StringWriter();
-            PrintWriter pw = new PrintWriter(sw);
-            throwable.printStackTrace(pw);
-            return sw.getBuffer().toString();
-        }
-    }
-
-    public static class NamedThreadFactory implements ThreadFactory {
-
-        private final ThreadGroup group;
-
-        private final AtomicInteger threadNum = new AtomicInteger(1);
-
-        private final String namePrefix;
-
-        private final boolean daemon;
-
-        public NamedThreadFactory(String name) {
-            this(name, false);
-        }
-
-        public NamedThreadFactory(String name, boolean daemon) {
-            final SecurityManager sm = System.getSecurityManager();
-            this.group = (sm != null) ? sm.getThreadGroup() : Thread.currentThread().getThreadGroup();
-            this.namePrefix = "byteplus-" + name + "-thread-";
-            this.daemon = daemon;
-        }
-
-        @Override
-        public Thread newThread(@NotNull Runnable r) {
-            final Thread t = new Thread(group, r, namePrefix + threadNum.getAndIncrement(), 0);
-            t.setDaemon(daemon);
-            if (t.getPriority() != Thread.NORM_PRIORITY) {
-                t.setPriority(Thread.NORM_PRIORITY);
-            }
-            return t;
-        }
     }
 
 }

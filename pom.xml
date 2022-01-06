@@ -21,6 +21,8 @@
         <protobuf-java.version>3.19.1</protobuf-java.version>
         <slf4j-api.version>1.7.32</slf4j-api.version>
         <fastjson.version>1.2.79</fastjson.version>
+        <metrics-core.version>4.0.1</metrics-core.version>
+        <guava.version>14.0.1</guava.version>
     </properties>
 
     <dependencies>
@@ -58,6 +60,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
     </dependencies>

@@ -1,84 +1,81 @@
 package byteplus.sdk.core.metrics;
 
+
 import java.util.TreeMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import static byteplus.sdk.core.metrics.Helper.*;
 
 public class MetricsTest {
+    static int times = 150000;
+
     static {
         metricsInit();
     }
 
     public static void metricsInit() {
-        Config.setPrintLog(false);
+        Collector.Init(
+                MetricsOption.withMetricsLog(),
+                MetricsOption.withFlushIntervalMs(10 * 1000)
+        );
     }
 
     // test demo for store report
-    public static void TestStoreReport() {
-        TreeMap<String, String> baseTags = new TreeMap<>();
-        baseTags.put("tenant", "metrics_demo");
-        Reporter reporter = new Reporter.ReporterBuilder().
-                enableMetrics(true).
-                baseTags(baseTags).build();
-        for (int i = 0; i < 100000; i++) {
-            reporter.store("request.store", 200, "type:test_metrics1");
-            reporter.store("request.store", 100, "type:test_metrics2");
+    public static void StoreReport() {
+        for (int i = 0; i < times; i++) {
+            Store("java.request.store", 200, "type:test_metrics1");
+            Store("java.request.store", 100, "type:test_metrics2");
             try {
-                Thread.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        System.out.println("stop store reporting");
     }
 
-    // test demo for store report
-    public static void TestCounterReport() {
-        TreeMap<String, String> baseTags = new TreeMap<>();
-        baseTags.put("tenant", "metrics_demo");
-        Reporter reporter = new Reporter.ReporterBuilder().
-                enableMetrics(true).
-                baseTags(baseTags).build();
-        for (int i = 0; i < 100000; i++) {
-            reporter.counter("request.qps", 1, "type:test_metrics1");
-            reporter.counter("request.qps", 1, "type:test_metrics2");
+    // test demo for counter report
+    public static void CounterReport() {
+        for (int i = 0; i < times; i++) {
+            Counter("java.request.counter", 1, "type:test_metrics1");
+            Counter("java.request.counter", 1, "type:test_metrics2");
             try {
-                Thread.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
+        System.out.println("stop counter reporting");
     }
 
     // test demo for timer report
-    public static void TestTimerReport() {
-        TreeMap<String, String> baseTags = new TreeMap<>();
-        baseTags.put("tenant", "metrics_demo");
-        Reporter reporter = new Reporter.ReporterBuilder().
-                enableMetrics(true).
-                baseTags(baseTags).build();
-        for (int i = 0; i < 100000; i++) {
+    public static void TimerReport() {
+        for (int i = 0; i < times; i++) {
             long begin = System.currentTimeMillis();
             try {
-                Thread.sleep(100);
-                reporter.latency("request.latency", begin, "type:test_metrics1");
+                TimeUnit.MILLISECONDS.sleep(100);
+                Latency("java.request.timer", begin, "type:test_metrics1");
                 begin = System.currentTimeMillis();
-                Thread.sleep(150);
-                reporter.latency("request.latency", begin, "type:test_metrics2");
-            } catch (InterruptedException e) {
+                TimeUnit.MILLISECONDS.sleep(150);
+                Latency("java.request.timer", begin, "type:test_metrics2");
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+
         }
+        System.out.println("stop timer reporting");
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
-        executorService.submit(MetricsTest::TestStoreReport);
-        executorService.submit(MetricsTest::TestCounterReport);
-        executorService.submit(MetricsTest::TestTimerReport);
+        executorService.submit(MetricsTest::StoreReport);
+        executorService.submit(MetricsTest::CounterReport);
+        executorService.submit(MetricsTest::TimerReport);
 
-//        TestCounterReport();
-//        TestStoreReport();
-//        TestTimerReport();
+//        CounterReport();
+//        StoreReport();
+//        TimerReport();
     }
 }
