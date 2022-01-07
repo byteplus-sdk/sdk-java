@@ -30,9 +30,6 @@ public class Collector {
 
     public static void Init(MetricsOption... opts) {
         metricsCfg = new MetricsCfg();
-        if (Objects.isNull(opts) || opts.length == 0) {
-            return;
-        }
         // apply options
         for (MetricsOption opt : opts) {
             opt.fill((metricsCfg));
