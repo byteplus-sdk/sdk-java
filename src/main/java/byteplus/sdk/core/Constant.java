@@ -6,9 +6,7 @@ import java.util.List;
 
 public final class Constant {
 
-    public final static int MAX_WRITE_ITEM_COUNT = 100;
-
-    public final static int MAX_IMPORT_WRITE_ITEM_COUNT = 2000;
+    public final static int MAX_WRITE_ITEM_COUNT = 2000;
 
     public final static int MAX_IMPORT_ITEM_COUNT = 10000;
 
