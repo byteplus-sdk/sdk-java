@@ -389,7 +389,7 @@ message CallbackRequest {
   string predict_request_id = 4;
 
   // optional.
-  // 额外的字段,json格式
+  // All the callback extra info here.
   map<string, string> extra = 100;
 }
 

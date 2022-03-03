@@ -24344,7 +24344,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24353,7 +24353,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24369,7 +24369,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24379,7 +24379,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24391,7 +24391,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24777,7 +24777,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24800,7 +24800,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24813,7 +24813,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -24831,7 +24831,7 @@ public final class ByteplusGeneral {
     /**
      * <pre>
      * optional.
-     * 额外的字段,json格式
+     * All the callback extra info here.
      * </pre>
      *
      * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -25958,7 +25958,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -25981,7 +25981,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -25994,7 +25994,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -26012,7 +26012,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -26038,7 +26038,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -26062,7 +26062,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
@@ -26079,7 +26079,7 @@ public final class ByteplusGeneral {
       /**
        * <pre>
        * optional.
-       * 额外的字段,json格式
+       * All the callback extra info here.
        * </pre>
        *
        * <code>map&lt;string, string&gt; extra = 100;</code>
