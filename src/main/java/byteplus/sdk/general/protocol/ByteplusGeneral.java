@@ -24340,6 +24340,65 @@ public final class ByteplusGeneral {
      */
     com.google.protobuf.ByteString
         getPredictRequestIdBytes();
+
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    int getExtraCount();
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    boolean containsExtra(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtra();
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtraMap();
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code bytedance.byteplus.general.CallbackRequest}
@@ -24418,6 +24477,19 @@ public final class ByteplusGeneral {
               predictRequestId_ = s;
               break;
             }
+            case 802: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                extra_ = com.google.protobuf.MapField.newMapField(
+                    ExtraDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              extra__ = input.readMessage(
+                  ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              extra_.getMutableMap().put(
+                  extra__.getKey(), extra__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -24445,6 +24517,18 @@ public final class ByteplusGeneral {
       return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_CallbackRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 100:
+          return internalGetExtra();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -24664,6 +24748,107 @@ public final class ByteplusGeneral {
       }
     }
 
+    public static final int EXTRA_FIELD_NUMBER = 100;
+    private static final class ExtraDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extra_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExtra() {
+      if (extra_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtraDefaultEntryHolder.defaultEntry);
+      }
+      return extra_;
+    }
+
+    public int getExtraCount() {
+      return internalGetExtra().getMap().size();
+    }
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExtra(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExtra().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+      return getExtraMap();
+    }
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+      return internalGetExtra().getMap();
+    }
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * optional.
+     * All the callback extra info here.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -24690,6 +24875,12 @@ public final class ByteplusGeneral {
       if (!getPredictRequestIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, predictRequestId_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExtra(),
+          ExtraDefaultEntryHolder.defaultEntry,
+          100);
       unknownFields.writeTo(output);
     }
 
@@ -24711,6 +24902,16 @@ public final class ByteplusGeneral {
       }
       if (!getPredictRequestIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, predictRequestId_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExtra().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(100, extra__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24735,6 +24936,8 @@ public final class ByteplusGeneral {
           .equals(other.getItemsList())) return false;
       if (!getPredictRequestId()
           .equals(other.getPredictRequestId())) return false;
+      if (!internalGetExtra().equals(
+          other.internalGetExtra())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24756,6 +24959,10 @@ public final class ByteplusGeneral {
       }
       hash = (37 * hash) + PREDICT_REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPredictRequestId().hashCode();
+      if (!internalGetExtra().getMap().isEmpty()) {
+        hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExtra().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -24863,6 +25070,28 @@ public final class ByteplusGeneral {
         return byteplus.sdk.general.protocol.ByteplusGeneral.internal_static_bytedance_byteplus_general_CallbackRequest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetMutableExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -24902,6 +25131,7 @@ public final class ByteplusGeneral {
         }
         predictRequestId_ = "";
 
+        internalGetMutableExtra().clear();
         return this;
       }
 
@@ -24941,6 +25171,8 @@ public final class ByteplusGeneral {
           result.items_ = itemsBuilder_.build();
         }
         result.predictRequestId_ = predictRequestId_;
+        result.extra_ = internalGetExtra();
+        result.extra_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -25027,6 +25259,8 @@ public final class ByteplusGeneral {
           predictRequestId_ = other.predictRequestId_;
           onChanged();
         }
+        internalGetMutableExtra().mergeFrom(
+            other.internalGetExtra());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -25692,6 +25926,169 @@ public final class ByteplusGeneral {
         
         predictRequestId_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExtra() {
+        onChanged();;
+        if (extra_ == null) {
+          extra_ = com.google.protobuf.MapField.newMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        if (!extra_.isMutable()) {
+          extra_ = extra_.copy();
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExtra() {
+        internalGetMutableExtra().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder removeExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExtra() {
+        return internalGetMutableExtra().getMutableMap();
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      public Builder putExtra(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * optional.
+       * All the callback extra info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder putAllExtra(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExtra().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -26606,6 +27003,11 @@ public final class ByteplusGeneral {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_general_CallbackRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_general_CallbackResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -26699,24 +27101,27 @@ public final class ByteplusGeneral {
       "(\t\0228\n\005value\030\003 \001(\0132).bytedance.byteplus.g" +
       "eneral.PredictResult\022\022\n\nrequest_id\030\004 \001(\t" +
       "\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos\030\002 \001(" +
-      "\t\022\r\n\005extra\030\003 \001(\t\"\202\001\n\017CallbackRequest\022\013\n\003" +
+      "\t\022\r\n\005extra\030\003 \001(\t\"\367\001\n\017CallbackRequest\022\013\n\003" +
       "uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003 \003(\0132" +
       "(.bytedance.byteplus.general.CallbackIte" +
-      "m\022\032\n\022predict_request_id\030\004 \001(\t\"1\n\020Callbac" +
-      "kResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
-      "2\312\003\n\026ByteplusGeneralService\022L\n\tWriteData" +
-      "\022\024.google.protobuf.Any\032).bytedance.bytep" +
-      "lus.general.WriteResponse\022P\n\nImportData\022" +
-      "\024.google.protobuf.Any\032,.bytedance.bytepl" +
-      "us.common.OperationResponse\022E\n\004Done\022\024.go" +
-      "ogle.protobuf.Any\032\'.bytedance.byteplus.c" +
-      "ommon.DoneResponse\022b\n\007Predict\022*.bytedanc" +
-      "e.byteplus.general.PredictRequest\032+.byte" +
-      "dance.byteplus.general.PredictResponse\022e" +
-      "\n\010Callback\022+.bytedance.byteplus.general." +
-      "CallbackRequest\032,.bytedance.byteplus.gen" +
-      "eral.CallbackResponseB\037\n\035byteplus.sdk.ge" +
-      "neral.protocolb\006proto3"
+      "m\022\032\n\022predict_request_id\030\004 \001(\t\022E\n\005extra\030d" +
+      " \003(\01326.bytedance.byteplus.general.Callba" +
+      "ckRequest.ExtraEntry\032,\n\nExtraEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"1\n\020CallbackRe" +
+      "sponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t2\312\003" +
+      "\n\026ByteplusGeneralService\022L\n\tWriteData\022\024." +
+      "google.protobuf.Any\032).bytedance.byteplus" +
+      ".general.WriteResponse\022P\n\nImportData\022\024.g" +
+      "oogle.protobuf.Any\032,.bytedance.byteplus." +
+      "common.OperationResponse\022E\n\004Done\022\024.googl" +
+      "e.protobuf.Any\032\'.bytedance.byteplus.comm" +
+      "on.DoneResponse\022b\n\007Predict\022*.bytedance.b" +
+      "yteplus.general.PredictRequest\032+.bytedan" +
+      "ce.byteplus.general.PredictResponse\022e\n\010C" +
+      "allback\022+.bytedance.byteplus.general.Cal" +
+      "lbackRequest\032,.bytedance.byteplus.genera" +
+      "l.CallbackResponseB\037\n\035byteplus.sdk.gener" +
+      "al.protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -26885,7 +27290,13 @@ public final class ByteplusGeneral {
     internal_static_bytedance_byteplus_general_CallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_general_CallbackRequest_descriptor,
-        new java.lang.String[] { "Uid", "Scene", "Items", "PredictRequestId", });
+        new java.lang.String[] { "Uid", "Scene", "Items", "PredictRequestId", "Extra", });
+    internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_general_CallbackRequest_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_general_CallbackRequest_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_general_CallbackResponse_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_bytedance_byteplus_general_CallbackResponse_fieldAccessorTable = new
