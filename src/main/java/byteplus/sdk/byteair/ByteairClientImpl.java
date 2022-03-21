@@ -50,7 +50,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = byteairURL.getWriteDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
-        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
+        WriteResponse response = httpCaller.doJSONRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
         return response;
     }
@@ -62,7 +62,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
         String scene = getSceneFromOpts(options);
         String url = byteairURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(url, request, parser, options);
+        PredictResponse response = httpCaller.doPBRequest(url, request, parser, options);
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -79,7 +79,7 @@ public class ByteairClientImpl extends CommonClientImpl implements ByteairClient
                                      Option... opts) throws NetException, BizException {
         Parser<CallbackResponse> parser = CallbackResponse.parser();
         String url = byteairURL.getCallbackUrl();
-        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        CallbackResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Callback] rsp:\n{}", response);
         return response;
     }

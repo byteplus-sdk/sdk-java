@@ -12,3 +12,6 @@ gen_retail:
 
 gen_retailv2:
 	protoc --java_out=src/main/java -I=src/main/resources src/main/resources/byteplus_retailv2.proto
+
+gen_media:
+	protoc --java_out=src/main/java -I=src/main/resources src/main/resources/byteplus_media.proto
