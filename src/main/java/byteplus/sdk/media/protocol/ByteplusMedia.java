@@ -284,11 +284,11 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
-     * @return A list containing the history.
+     * <code>repeated string view_history = 9;</code>
+     * @return A list containing the viewHistory.
      */
     java.util.List<java.lang.String>
-        getHistoryList();
+        getViewHistoryList();
     /**
      * <pre>
      * Optional.
@@ -296,10 +296,10 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
-     * @return The count of history.
+     * <code>repeated string view_history = 9;</code>
+     * @return The count of viewHistory.
      */
-    int getHistoryCount();
+    int getViewHistoryCount();
     /**
      * <pre>
      * Optional.
@@ -307,11 +307,11 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
+     * <code>repeated string view_history = 9;</code>
      * @param index The index of the element to return.
-     * @return The history at the given index.
+     * @return The viewHistory at the given index.
      */
-    java.lang.String getHistory(int index);
+    java.lang.String getViewHistory(int index);
     /**
      * <pre>
      * Optional.
@@ -319,12 +319,12 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
+     * <code>repeated string view_history = 9;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the history at the given index.
+     * @return The bytes of the viewHistory at the given index.
      */
     com.google.protobuf.ByteString
-        getHistoryBytes(int index);
+        getViewHistoryBytes(int index);
 
     /**
      * <pre>
@@ -590,7 +590,7 @@ public final class ByteplusMedia {
       deviceType_ = "";
       subscriberType_ = "";
       language_ = "";
-      history_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      viewHistory_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       activationChannel_ = "";
       membershipLevel_ = "";
       country_ = "";
@@ -684,10 +684,10 @@ public final class ByteplusMedia {
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                history_ = new com.google.protobuf.LazyStringArrayList();
+                viewHistory_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              history_.add(s);
+              viewHistory_.add(s);
               break;
             }
             case 82: {
@@ -763,7 +763,7 @@ public final class ByteplusMedia {
           tags_ = tags_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          history_ = history_.getUnmodifiableView();
+          viewHistory_ = viewHistory_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1245,8 +1245,8 @@ public final class ByteplusMedia {
       }
     }
 
-    public static final int HISTORY_FIELD_NUMBER = 9;
-    private com.google.protobuf.LazyStringList history_;
+    public static final int VIEW_HISTORY_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList viewHistory_;
     /**
      * <pre>
      * Optional.
@@ -1254,12 +1254,12 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
-     * @return A list containing the history.
+     * <code>repeated string view_history = 9;</code>
+     * @return A list containing the viewHistory.
      */
     public com.google.protobuf.ProtocolStringList
-        getHistoryList() {
-      return history_;
+        getViewHistoryList() {
+      return viewHistory_;
     }
     /**
      * <pre>
@@ -1268,11 +1268,11 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
-     * @return The count of history.
+     * <code>repeated string view_history = 9;</code>
+     * @return The count of viewHistory.
      */
-    public int getHistoryCount() {
-      return history_.size();
+    public int getViewHistoryCount() {
+      return viewHistory_.size();
     }
     /**
      * <pre>
@@ -1281,12 +1281,12 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
+     * <code>repeated string view_history = 9;</code>
      * @param index The index of the element to return.
-     * @return The history at the given index.
+     * @return The viewHistory at the given index.
      */
-    public java.lang.String getHistory(int index) {
-      return history_.get(index);
+    public java.lang.String getViewHistory(int index) {
+      return viewHistory_.get(index);
     }
     /**
      * <pre>
@@ -1295,13 +1295,13 @@ public final class ByteplusMedia {
      * Some sample values are ["123","124"], etc.
      * </pre>
      *
-     * <code>repeated string history = 9;</code>
+     * <code>repeated string view_history = 9;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the history at the given index.
+     * @return The bytes of the viewHistory at the given index.
      */
     public com.google.protobuf.ByteString
-        getHistoryBytes(int index) {
-      return history_.getByteString(index);
+        getViewHistoryBytes(int index) {
+      return viewHistory_.getByteString(index);
     }
 
     public static final int ACTIVATION_CHANNEL_FIELD_NUMBER = 10;
@@ -1783,8 +1783,8 @@ public final class ByteplusMedia {
       if (!getLanguageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, language_);
       }
-      for (int i = 0; i < history_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, history_.getRaw(i));
+      for (int i = 0; i < viewHistory_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, viewHistory_.getRaw(i));
       }
       if (!getActivationChannelBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, activationChannel_);
@@ -1853,11 +1853,11 @@ public final class ByteplusMedia {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < history_.size(); i++) {
-          dataSize += computeStringSizeNoTag(history_.getRaw(i));
+        for (int i = 0; i < viewHistory_.size(); i++) {
+          dataSize += computeStringSizeNoTag(viewHistory_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getHistoryList().size();
+        size += 1 * getViewHistoryList().size();
       }
       if (!getActivationChannelBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, activationChannel_);
@@ -1922,8 +1922,8 @@ public final class ByteplusMedia {
           .equals(other.getSubscriberType())) return false;
       if (!getLanguage()
           .equals(other.getLanguage())) return false;
-      if (!getHistoryList()
-          .equals(other.getHistoryList())) return false;
+      if (!getViewHistoryList()
+          .equals(other.getViewHistoryList())) return false;
       if (!getActivationChannel()
           .equals(other.getActivationChannel())) return false;
       if (!getMembershipLevel()
@@ -1969,9 +1969,9 @@ public final class ByteplusMedia {
       hash = (53 * hash) + getSubscriberType().hashCode();
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + getLanguage().hashCode();
-      if (getHistoryCount() > 0) {
-        hash = (37 * hash) + HISTORY_FIELD_NUMBER;
-        hash = (53 * hash) + getHistoryList().hashCode();
+      if (getViewHistoryCount() > 0) {
+        hash = (37 * hash) + VIEW_HISTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getViewHistoryList().hashCode();
       }
       hash = (37 * hash) + ACTIVATION_CHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getActivationChannel().hashCode();
@@ -2167,7 +2167,7 @@ public final class ByteplusMedia {
 
         language_ = "";
 
-        history_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        viewHistory_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         activationChannel_ = "";
 
@@ -2224,10 +2224,10 @@ public final class ByteplusMedia {
         result.subscriberType_ = subscriberType_;
         result.language_ = language_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          history_ = history_.getUnmodifiableView();
+          viewHistory_ = viewHistory_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.history_ = history_;
+        result.viewHistory_ = viewHistory_;
         result.activationChannel_ = activationChannel_;
         result.membershipLevel_ = membershipLevel_;
         result.registrationTimestamp_ = registrationTimestamp_;
@@ -2323,13 +2323,13 @@ public final class ByteplusMedia {
           language_ = other.language_;
           onChanged();
         }
-        if (!other.history_.isEmpty()) {
-          if (history_.isEmpty()) {
-            history_ = other.history_;
+        if (!other.viewHistory_.isEmpty()) {
+          if (viewHistory_.isEmpty()) {
+            viewHistory_ = other.viewHistory_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureHistoryIsMutable();
-            history_.addAll(other.history_);
+            ensureViewHistoryIsMutable();
+            viewHistory_.addAll(other.viewHistory_);
           }
           onChanged();
         }
@@ -3399,10 +3399,10 @@ public final class ByteplusMedia {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList history_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureHistoryIsMutable() {
+      private com.google.protobuf.LazyStringList viewHistory_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureViewHistoryIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          history_ = new com.google.protobuf.LazyStringArrayList(history_);
+          viewHistory_ = new com.google.protobuf.LazyStringArrayList(viewHistory_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -3413,12 +3413,12 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
-       * @return A list containing the history.
+       * <code>repeated string view_history = 9;</code>
+       * @return A list containing the viewHistory.
        */
       public com.google.protobuf.ProtocolStringList
-          getHistoryList() {
-        return history_.getUnmodifiableView();
+          getViewHistoryList() {
+        return viewHistory_.getUnmodifiableView();
       }
       /**
        * <pre>
@@ -3427,11 +3427,11 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
-       * @return The count of history.
+       * <code>repeated string view_history = 9;</code>
+       * @return The count of viewHistory.
        */
-      public int getHistoryCount() {
-        return history_.size();
+      public int getViewHistoryCount() {
+        return viewHistory_.size();
       }
       /**
        * <pre>
@@ -3440,12 +3440,12 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
+       * <code>repeated string view_history = 9;</code>
        * @param index The index of the element to return.
-       * @return The history at the given index.
+       * @return The viewHistory at the given index.
        */
-      public java.lang.String getHistory(int index) {
-        return history_.get(index);
+      public java.lang.String getViewHistory(int index) {
+        return viewHistory_.get(index);
       }
       /**
        * <pre>
@@ -3454,13 +3454,13 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
+       * <code>repeated string view_history = 9;</code>
        * @param index The index of the value to return.
-       * @return The bytes of the history at the given index.
+       * @return The bytes of the viewHistory at the given index.
        */
       public com.google.protobuf.ByteString
-          getHistoryBytes(int index) {
-        return history_.getByteString(index);
+          getViewHistoryBytes(int index) {
+        return viewHistory_.getByteString(index);
       }
       /**
        * <pre>
@@ -3469,18 +3469,18 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
+       * <code>repeated string view_history = 9;</code>
        * @param index The index to set the value at.
-       * @param value The history to set.
+       * @param value The viewHistory to set.
        * @return This builder for chaining.
        */
-      public Builder setHistory(
+      public Builder setViewHistory(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureHistoryIsMutable();
-        history_.set(index, value);
+  ensureViewHistoryIsMutable();
+        viewHistory_.set(index, value);
         onChanged();
         return this;
       }
@@ -3491,17 +3491,17 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
-       * @param value The history to add.
+       * <code>repeated string view_history = 9;</code>
+       * @param value The viewHistory to add.
        * @return This builder for chaining.
        */
-      public Builder addHistory(
+      public Builder addViewHistory(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureHistoryIsMutable();
-        history_.add(value);
+  ensureViewHistoryIsMutable();
+        viewHistory_.add(value);
         onChanged();
         return this;
       }
@@ -3512,15 +3512,15 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
-       * @param values The history to add.
+       * <code>repeated string view_history = 9;</code>
+       * @param values The viewHistory to add.
        * @return This builder for chaining.
        */
-      public Builder addAllHistory(
+      public Builder addAllViewHistory(
           java.lang.Iterable<java.lang.String> values) {
-        ensureHistoryIsMutable();
+        ensureViewHistoryIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, history_);
+            values, viewHistory_);
         onChanged();
         return this;
       }
@@ -3531,11 +3531,11 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
+       * <code>repeated string view_history = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHistory() {
-        history_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearViewHistory() {
+        viewHistory_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -3547,18 +3547,18 @@ public final class ByteplusMedia {
        * Some sample values are ["123","124"], etc.
        * </pre>
        *
-       * <code>repeated string history = 9;</code>
-       * @param value The bytes of the history to add.
+       * <code>repeated string view_history = 9;</code>
+       * @param value The bytes of the viewHistory to add.
        * @return This builder for chaining.
        */
-      public Builder addHistoryBytes(
+      public Builder addViewHistoryBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureHistoryIsMutable();
-        history_.add(value);
+        ensureViewHistoryIsMutable();
+        viewHistory_.add(value);
         onChanged();
         return this;
       }
@@ -30024,105 +30024,105 @@ public final class ByteplusMedia {
   static {
     java.lang.String[] descriptorData = {
       "\n\024byteplus_media.proto\022\030bytedance.bytepl" +
-      "us.media\032\025byteplus_common.proto\"\257\003\n\004User" +
+      "us.media\032\025byteplus_common.proto\"\264\003\n\004User" +
       "\022\017\n\007user_id\030\001 \001(\t\022\016\n\006gender\030\002 \001(\t\022\013\n\003age" +
       "\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\022\021\n\tdevice_id\030\005 \001(\t\022" +
       "\023\n\013device_type\030\006 \001(\t\022\027\n\017subscriber_type\030" +
-      "\007 \001(\t\022\020\n\010language\030\010 \001(\t\022\017\n\007history\030\t \003(\t" +
-      "\022\032\n\022activation_channel\030\n \001(\t\022\030\n\020membersh" +
-      "ip_level\030\013 \001(\t\022\036\n\026registration_timestamp" +
-      "\030\014 \001(\003\022\017\n\007country\030\r \001(\t\022\014\n\004city\030\016 \001(\t\022\030\n" +
-      "\020district_or_area\030\017 \001(\t\022\020\n\010postcode\030\020 \001(" +
-      "\t\0228\n\005extra\030d \003(\0132).bytedance.byteplus.me" +
-      "dia.User.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\267\001\n\021WriteUsers" +
-      "Request\022-\n\005users\030\001 \003(\0132\036.bytedance.bytep" +
-      "lus.media.User\022E\n\005extra\030d \003(\01326.bytedanc" +
-      "e.byteplus.media.WriteUsersRequest.Extra" +
-      "Entry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"J\n\tUserError\022\017\n\007message\030\001 \001(" +
-      "\t\022,\n\004user\030\002 \001(\0132\036.bytedance.byteplus.med" +
-      "ia.User\"|\n\022WriteUsersResponse\0221\n\006status\030" +
-      "\001 \001(\0132!.bytedance.byteplus.common.Status" +
-      "\0223\n\006errors\030\002 \003(\0132#.bytedance.byteplus.me" +
-      "dia.UserError\"\221\010\n\007Content\022\022\n\ncontent_id\030" +
-      "\001 \001(\t\022\030\n\020is_recommendable\030\002 \001(\005\022\022\n\ncateg" +
-      "ories\030\003 \001(\t\022\025\n\rcontent_title\030\004 \001(\t\022\024\n\014co" +
-      "ntent_type\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\025\n" +
-      "\rcontent_owner\030\007 \001(\t\022\020\n\010language\030\010 \001(\t\022\014" +
-      "\n\004tags\030\t \003(\t\022!\n\031listing_page_display_tag" +
-      "s\030\n \003(\t\022 \n\030detail_page_display_tags\030\013 \003(" +
-      "\t\022!\n\031listing_page_display_type\030\014 \001(\t\022\034\n\024" +
-      "cover_multimedia_url\030\r \001(\t\022\023\n\013user_ratin" +
-      "g\030\016 \001(\001\022\023\n\013views_count\030\017 \001(\005\022\026\n\016comments" +
-      "_count\030\020 \001(\005\022\023\n\013likes_count\030\021 \001(\005\022\024\n\014sha" +
-      "res_count\030\022 \001(\005\022\027\n\017is_paid_content\030\023 \001(\005" +
-      "\022\024\n\014origin_price\030\024 \001(\003\022\025\n\rcurrent_price\030" +
-      "\025 \001(\003\022\026\n\016publish_region\030\026 \001(\t\022\030\n\020availab" +
-      "le_region\030\027 \003(\t\022\021\n\tentity_id\030\030 \001(\t\022\023\n\013en" +
-      "tity_name\030\031 \001(\t\022\021\n\tseries_id\030\032 \001(\t\022\024\n\014se" +
-      "ries_index\030\033 \001(\005\022\023\n\013series_name\030\034 \001(\t\022\024\n" +
-      "\014series_count\030\035 \001(\005\022\020\n\010video_id\030\036 \001(\t\022\023\n" +
-      "\013video_index\030\037 \001(\005\022\022\n\nvideo_name\030  \001(\t\022\023" +
-      "\n\013video_count\030! \001(\005\022\022\n\nvideo_type\030\" \001(\t\022" +
-      "\026\n\016video_duration\030# \001(\003\022\031\n\021publish_times" +
-      "tamp\030$ \001(\003\022!\n\031copyright_start_timestamp\030" +
-      "% \001(\003\022\037\n\027copyright_end_timestamp\030& \001(\003\022\016" +
-      "\n\006actors\030\' \003(\t\022\016\n\006source\030( \001(\t\022;\n\005extra\030" +
-      "d \003(\0132,.bytedance.byteplus.media.Content" +
+      "\007 \001(\t\022\020\n\010language\030\010 \001(\t\022\024\n\014view_history\030" +
+      "\t \003(\t\022\032\n\022activation_channel\030\n \001(\t\022\030\n\020mem" +
+      "bership_level\030\013 \001(\t\022\036\n\026registration_time" +
+      "stamp\030\014 \001(\003\022\017\n\007country\030\r \001(\t\022\014\n\004city\030\016 \001" +
+      "(\t\022\030\n\020district_or_area\030\017 \001(\t\022\020\n\010postcode" +
+      "\030\020 \001(\t\0228\n\005extra\030d \003(\0132).bytedance.bytepl" +
+      "us.media.User.ExtraEntry\032,\n\nExtraEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\267\001\n\021Write" +
+      "UsersRequest\022-\n\005users\030\001 \003(\0132\036.bytedance." +
+      "byteplus.media.User\022E\n\005extra\030d \003(\01326.byt" +
+      "edance.byteplus.media.WriteUsersRequest." +
+      "ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"J\n\tUserError\022\017\n\007message" +
+      "\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036.bytedance.byteplu" +
+      "s.media.User\"|\n\022WriteUsersResponse\0221\n\006st" +
+      "atus\030\001 \001(\0132!.bytedance.byteplus.common.S" +
+      "tatus\0223\n\006errors\030\002 \003(\0132#.bytedance.bytepl" +
+      "us.media.UserError\"\221\010\n\007Content\022\022\n\nconten" +
+      "t_id\030\001 \001(\t\022\030\n\020is_recommendable\030\002 \001(\005\022\022\n\n" +
+      "categories\030\003 \001(\t\022\025\n\rcontent_title\030\004 \001(\t\022" +
+      "\024\n\014content_type\030\005 \001(\t\022\023\n\013description\030\006 \001" +
+      "(\t\022\025\n\rcontent_owner\030\007 \001(\t\022\020\n\010language\030\010 " +
+      "\001(\t\022\014\n\004tags\030\t \003(\t\022!\n\031listing_page_displa" +
+      "y_tags\030\n \003(\t\022 \n\030detail_page_display_tags" +
+      "\030\013 \003(\t\022!\n\031listing_page_display_type\030\014 \001(" +
+      "\t\022\034\n\024cover_multimedia_url\030\r \001(\t\022\023\n\013user_" +
+      "rating\030\016 \001(\001\022\023\n\013views_count\030\017 \001(\005\022\026\n\016com" +
+      "ments_count\030\020 \001(\005\022\023\n\013likes_count\030\021 \001(\005\022\024" +
+      "\n\014shares_count\030\022 \001(\005\022\027\n\017is_paid_content\030" +
+      "\023 \001(\005\022\024\n\014origin_price\030\024 \001(\003\022\025\n\rcurrent_p" +
+      "rice\030\025 \001(\003\022\026\n\016publish_region\030\026 \001(\t\022\030\n\020av" +
+      "ailable_region\030\027 \003(\t\022\021\n\tentity_id\030\030 \001(\t\022" +
+      "\023\n\013entity_name\030\031 \001(\t\022\021\n\tseries_id\030\032 \001(\t\022" +
+      "\024\n\014series_index\030\033 \001(\005\022\023\n\013series_name\030\034 \001" +
+      "(\t\022\024\n\014series_count\030\035 \001(\005\022\020\n\010video_id\030\036 \001" +
+      "(\t\022\023\n\013video_index\030\037 \001(\005\022\022\n\nvideo_name\030  " +
+      "\001(\t\022\023\n\013video_count\030! \001(\005\022\022\n\nvideo_type\030\"" +
+      " \001(\t\022\026\n\016video_duration\030# \001(\003\022\031\n\021publish_" +
+      "timestamp\030$ \001(\003\022!\n\031copyright_start_times" +
+      "tamp\030% \001(\003\022\037\n\027copyright_end_timestamp\030& " +
+      "\001(\003\022\016\n\006actors\030\' \003(\t\022\016\n\006source\030( \001(\t\022;\n\005e" +
+      "xtra\030d \003(\0132,.bytedance.byteplus.media.Co" +
+      "ntent.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\303\001\n\024WriteContents" +
+      "Request\0223\n\010contents\030\001 \003(\0132!.bytedance.by" +
+      "teplus.media.Content\022H\n\005extra\030d \003(\01329.by" +
+      "tedance.byteplus.media.WriteContentsRequ" +
+      "est.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"S\n\014ContentError\022\017\n\007" +
+      "message\030\001 \001(\t\0222\n\007content\030\002 \001(\0132!.bytedan" +
+      "ce.byteplus.media.Content\"\202\001\n\025WriteConte" +
+      "ntsResponse\0221\n\006status\030\001 \001(\0132!.bytedance." +
+      "byteplus.common.Status\0226\n\006errors\030\002 \003(\0132&" +
+      ".bytedance.byteplus.media.ContentError\"\331" +
+      "\005\n\tUserEvent\022\017\n\007user_id\030\001 \001(\t\022\022\n\nevent_t" +
+      "ype\030\002 \001(\t\022\027\n\017event_timestamp\030\003 \001(\003\022\022\n\nco" +
+      "ntent_id\030\004 \001(\t\022\026\n\016traffic_source\030\005 \001(\t\022\022" +
+      "\n\nrequest_id\030\006 \001(\t\022\020\n\010rec_info\030\007 \001(\t\022\031\n\021" +
+      "attribution_token\030\010 \001(\t\022\022\n\nscene_name\030\t " +
+      "\001(\t\022\023\n\013page_number\030\n \001(\005\022\016\n\006offset\030\013 \001(\005" +
+      "\022\021\n\tplay_type\030\014 \001(\t\022\025\n\rplay_duration\030\r \001" +
+      "(\003\022\022\n\nstart_time\030\016 \001(\005\022\020\n\010end_time\030\017 \001(\005" +
+      "\022\021\n\tentity_id\030\020 \001(\t\022\021\n\tseries_id\030\021 \001(\t\022\020" +
+      "\n\010video_id\030\022 \001(\t\022\031\n\021parent_content_id\030\023 " +
+      "\001(\t\022\030\n\020detail_stay_time\030\024 \001(\005\022\r\n\005query\030\025" +
+      " \001(\t\022\016\n\006device\030\026 \001(\t\022\017\n\007os_type\030\027 \001(\t\022\023\n" +
+      "\013app_version\030\030 \001(\t\022\024\n\014device_model\030\031 \001(\t" +
+      "\022\024\n\014device_brand\030\032 \001(\t\022\022\n\nos_version\030\033 \001" +
+      "(\t\022\024\n\014browser_type\030\034 \001(\t\022\022\n\nuser_agent\030\035" +
+      " \001(\t\022\017\n\007network\030\036 \001(\t\022=\n\005extra\030d \003(\0132..b" +
+      "ytedance.byteplus.media.UserEvent.ExtraE" +
+      "ntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"\314\001\n\026WriteUserEventsRequest\0228\n" +
+      "\013user_events\030\001 \003(\0132#.bytedance.byteplus." +
+      "media.UserEvent\022J\n\005extra\030d \003(\0132;.bytedan" +
+      "ce.byteplus.media.WriteUserEventsRequest" +
       ".ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"\303\001\n\024WriteContentsReque" +
-      "st\0223\n\010contents\030\001 \003(\0132!.bytedance.byteplu" +
-      "s.media.Content\022H\n\005extra\030d \003(\01329.bytedan" +
-      "ce.byteplus.media.WriteContentsRequest.E" +
-      "xtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"S\n\014ContentError\022\017\n\007messa" +
-      "ge\030\001 \001(\t\0222\n\007content\030\002 \001(\0132!.bytedance.by" +
-      "teplus.media.Content\"\202\001\n\025WriteContentsRe" +
-      "sponse\0221\n\006status\030\001 \001(\0132!.bytedance.bytep" +
-      "lus.common.Status\0226\n\006errors\030\002 \003(\0132&.byte" +
-      "dance.byteplus.media.ContentError\"\331\005\n\tUs" +
-      "erEvent\022\017\n\007user_id\030\001 \001(\t\022\022\n\nevent_type\030\002" +
-      " \001(\t\022\027\n\017event_timestamp\030\003 \001(\003\022\022\n\ncontent" +
-      "_id\030\004 \001(\t\022\026\n\016traffic_source\030\005 \001(\t\022\022\n\nreq" +
-      "uest_id\030\006 \001(\t\022\020\n\010rec_info\030\007 \001(\t\022\031\n\021attri" +
-      "bution_token\030\010 \001(\t\022\022\n\nscene_name\030\t \001(\t\022\023" +
-      "\n\013page_number\030\n \001(\005\022\016\n\006offset\030\013 \001(\005\022\021\n\tp" +
-      "lay_type\030\014 \001(\t\022\025\n\rplay_duration\030\r \001(\003\022\022\n" +
-      "\nstart_time\030\016 \001(\005\022\020\n\010end_time\030\017 \001(\005\022\021\n\te" +
-      "ntity_id\030\020 \001(\t\022\021\n\tseries_id\030\021 \001(\t\022\020\n\010vid" +
-      "eo_id\030\022 \001(\t\022\031\n\021parent_content_id\030\023 \001(\t\022\030" +
-      "\n\020detail_stay_time\030\024 \001(\005\022\r\n\005query\030\025 \001(\t\022" +
-      "\016\n\006device\030\026 \001(\t\022\017\n\007os_type\030\027 \001(\t\022\023\n\013app_" +
-      "version\030\030 \001(\t\022\024\n\014device_model\030\031 \001(\t\022\024\n\014d" +
-      "evice_brand\030\032 \001(\t\022\022\n\nos_version\030\033 \001(\t\022\024\n" +
-      "\014browser_type\030\034 \001(\t\022\022\n\nuser_agent\030\035 \001(\t\022" +
-      "\017\n\007network\030\036 \001(\t\022=\n\005extra\030d \003(\0132..byteda" +
-      "nce.byteplus.media.UserEvent.ExtraEntry\032" +
-      ",\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"\314\001\n\026WriteUserEventsRequest\0228\n\013user" +
-      "_events\030\001 \003(\0132#.bytedance.byteplus.media" +
-      ".UserEvent\022J\n\005extra\030d \003(\0132;.bytedance.by" +
-      "teplus.media.WriteUserEventsRequest.Extr" +
-      "aEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"Z\n\016UserEventError\022\017\n\007messag" +
-      "e\030\001 \001(\t\0227\n\nuser_event\030\002 \001(\0132#.bytedance." +
-      "byteplus.media.UserEvent\"\206\001\n\027WriteUserEv" +
-      "entsResponse\0221\n\006status\030\001 \001(\0132!.bytedance" +
-      ".byteplus.common.Status\0228\n\006errors\030\002 \003(\0132" +
-      "(.bytedance.byteplus.media.UserEventErro" +
-      "r2\351\002\n\024BytePlusMediaService\022g\n\nWriteUsers" +
-      "\022+.bytedance.byteplus.media.WriteUsersRe" +
-      "quest\032,.bytedance.byteplus.media.WriteUs" +
-      "ersResponse\022p\n\rWriteContents\022..bytedance" +
-      ".byteplus.media.WriteContentsRequest\032/.b" +
-      "ytedance.byteplus.media.WriteContentsRes" +
-      "ponse\022v\n\017WriteUserEvents\0220.bytedance.byt" +
-      "eplus.media.WriteUserEventsRequest\0321.byt" +
-      "edance.byteplus.media.WriteUserEventsRes" +
-      "ponseBL\n\033byteplus.sdk.media.protocolZ-gi" +
-      "thub.com/byteplus-sdk/sdk-go/media/proto" +
-      "colb\006proto3"
+      "\n\005value\030\002 \001(\t:\0028\001\"Z\n\016UserEventError\022\017\n\007m" +
+      "essage\030\001 \001(\t\0227\n\nuser_event\030\002 \001(\0132#.byted" +
+      "ance.byteplus.media.UserEvent\"\206\001\n\027WriteU" +
+      "serEventsResponse\0221\n\006status\030\001 \001(\0132!.byte" +
+      "dance.byteplus.common.Status\0228\n\006errors\030\002" +
+      " \003(\0132(.bytedance.byteplus.media.UserEven" +
+      "tError2\351\002\n\024BytePlusMediaService\022g\n\nWrite" +
+      "Users\022+.bytedance.byteplus.media.WriteUs" +
+      "ersRequest\032,.bytedance.byteplus.media.Wr" +
+      "iteUsersResponse\022p\n\rWriteContents\022..byte" +
+      "dance.byteplus.media.WriteContentsReques" +
+      "t\032/.bytedance.byteplus.media.WriteConten" +
+      "tsResponse\022v\n\017WriteUserEvents\0220.bytedanc" +
+      "e.byteplus.media.WriteUserEventsRequest\032" +
+      "1.bytedance.byteplus.media.WriteUserEven" +
+      "tsResponseBL\n\033byteplus.sdk.media.protoco" +
+      "lZ-github.com/byteplus-sdk/sdk-go/media/" +
+      "protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30134,7 +30134,7 @@ public final class ByteplusMedia {
     internal_static_bytedance_byteplus_media_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_media_User_descriptor,
-        new java.lang.String[] { "UserId", "Gender", "Age", "Tags", "DeviceId", "DeviceType", "SubscriberType", "Language", "History", "ActivationChannel", "MembershipLevel", "RegistrationTimestamp", "Country", "City", "DistrictOrArea", "Postcode", "Extra", });
+        new java.lang.String[] { "UserId", "Gender", "Age", "Tags", "DeviceId", "DeviceType", "SubscriberType", "Language", "ViewHistory", "ActivationChannel", "MembershipLevel", "RegistrationTimestamp", "Country", "City", "DistrictOrArea", "Postcode", "Extra", });
     internal_static_bytedance_byteplus_media_User_ExtraEntry_descriptor =
       internal_static_bytedance_byteplus_media_User_descriptor.getNestedTypes().get(0);
     internal_static_bytedance_byteplus_media_User_ExtraEntry_fieldAccessorTable = new

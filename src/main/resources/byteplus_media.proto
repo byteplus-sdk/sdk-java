@@ -70,7 +70,7 @@ message User {
   // Optional.
   // List of content_ids consumed by this user.
   // Some sample values are ["123","124"], etc.
-  repeated string history = 9;
+  repeated string view_history = 9;
 
   // Optional.
   // The channel where the given user is acquired.
