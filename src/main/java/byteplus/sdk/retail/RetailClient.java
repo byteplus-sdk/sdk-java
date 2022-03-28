@@ -23,7 +23,7 @@ import static byteplus.sdk.retail.protocol.ByteplusRetail.WriteUsersResponse;
 public interface RetailClient extends CommonClient {
     // WriteUsers
     //
-    // Writes at most 100 users at a time. Exceeding 100 in a request results in
+    // Writes at most 2000 users at a time. Exceeding 2000 in a request results in
     // a rejection. One can use this to upload new users, or update existing
     // users (by providing all the fields).
     WriteUsersResponse writeUsers(
@@ -47,7 +47,7 @@ public interface RetailClient extends CommonClient {
 
     // WriteProducts
     //
-    // Writes at most 100 products at a time. Exceeding 100 in a request results
+    // Writes at most 2000 products at a time. Exceeding 2000 in a request results
     // in a rejection.
     // One can use this to upload new products, or update existing products (by
     // providing all the fields).  Deleting a product is unsupported. One can
@@ -74,7 +74,7 @@ public interface RetailClient extends CommonClient {
 
     // WriteUserEvents
     //
-    // Writes at most 100 UserEvents at a time. Exceeding 100 in a request
+    // Writes at most 2000 UserEvents at a time. Exceeding 2000 in a request
     // results in a rejection. One should use this to upload new realtime
     // UserEvents.  Note: This is processing realtime data, so we won't dedupe
     // the requests.

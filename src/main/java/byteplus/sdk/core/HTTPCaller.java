@@ -28,7 +28,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 @Slf4j
-public class HttpCaller {
+public class HTTPCaller {
     // The http request was executed successfully without any net exception
     private final static int SUCCESS_HTTP_CODE = 200;
 
@@ -38,11 +38,11 @@ public class HttpCaller {
 
     private final Context context;
 
-    public HttpCaller(Context context) {
+    public HTTPCaller(Context context) {
         this.context = context;
     }
 
-    public <Rsp extends Message, Req extends Message> Rsp doPbRequest(
+    public <Rsp extends Message, Req extends Message> Rsp doPBRequest(
             String url,
             Req request,
             Parser<Rsp> rspParser,
@@ -52,7 +52,7 @@ public class HttpCaller {
         return doRequest(url, reqBytes, rspParser, contentType, options);
     }
 
-    public <Rsp extends Message> Rsp doJsonRequest(
+    public <Rsp extends Message> Rsp doJSONRequest(
             String url,
             Object request,
             Parser<Rsp> rspParser,
@@ -260,7 +260,7 @@ public class HttpCaller {
         if (Objects.nonNull(httpClient)) {
             return httpClient;
         }
-        synchronized (HttpCaller.class) {
+        synchronized (HTTPCaller.class) {
             // 二次检查，防止并发导致重复进入
             httpClient = timeoutHttpCliMap.get(timeout);
             if (Objects.nonNull(httpClient)) {
@@ -283,10 +283,18 @@ public class HttpCaller {
         if (Objects.nonNull(rspBody)) {
             log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} headers:\n{} body:\n{}",
                     url, response.code(), response.message(), response.headers(), rspBody.string());
-        } else {
-            log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} headers:\n{}",
-                    url, response.code(), response.message(), response.headers());
+            return;
         }
+        String rspEncoding = response.header("Content-Encoding");
+        byte[] rspBodyBytes;
+        if (Objects.isNull(rspEncoding) || !rspEncoding.contains("gzip")) {
+            rspBodyBytes = rspBody.bytes();
+        } else {
+            rspBodyBytes = gzipDecompress(rspBody.bytes(), url);
+        }
+        log.error("[ByteplusSDK] http status not 200, url:{} code:{} msg:{} headers:\n{} body:\n{}",
+                url, response.code(), response.message(),
+                response.headers(), new String(rspBodyBytes, StandardCharsets.UTF_8));
     }
 
     private byte[] gzipDecompress(byte[] bodyBytes, String url) {
