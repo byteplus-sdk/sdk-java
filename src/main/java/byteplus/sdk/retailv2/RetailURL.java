@@ -18,7 +18,7 @@ public final class RetailURL extends CommonURL implements URLCenter {
     private final static String ACK_IMPRESSION_URL_FORMAT = "%s://%s/predict/api/retail/%s/ack_server_impressions";
 
     // The URL format of data uploading
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
+    // Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user?method=write
     private final static String UPLOAD_URL_FORMAT = "%s://%s/data/api/retail/v2/%s/%s?method=%s";
 
     // The URL template of "predict" request, which need fill with "scene" info when use
@@ -30,15 +30,15 @@ public final class RetailURL extends CommonURL implements URLCenter {
     private volatile String ackImpressionUrl;
 
     // The URL of uploading real-time user data
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
+    // Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user?method=write
     private volatile String writeUsersUrl;
 
     // The URL of uploading real-time product data
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/product?method=write
+    // Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/product?method=write
     private volatile String writeProductsUrl;
 
     // The URL of uploading real-time user event data
-    // Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=write
+    // Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user_event?method=write
     private volatile String writeUserEventsUrl;
 
     public RetailURL(Context context) {

@@ -47,31 +47,14 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
     @Override
     public WriteResponse writeData(List<Map<String, Object>> dataList, String topic,
                                    Option... opts) throws NetException, BizException {
-        if (Objects.nonNull(dataList) && dataList.size() > MAX_WRITE_ITEM_COUNT) {
-            log.warn("[ByteplusSDK][WriteData] item count more than '{}'", MAX_WRITE_ITEM_COUNT);
-            if (dataList.size() > MAX_IMPORT_ITEM_COUNT) {
-                throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
-            }
+        if (Objects.nonNull(dataList) && dataList.size() > MAX_IMPORT_ITEM_COUNT) {
+            throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
         }
         Parser<WriteResponse> parser = WriteResponse.parser();
         String urlFormat = generalURL.getWriteDataUrlFormat();
         String url = urlFormat.replace("{}", topic);
-        WriteResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
+        WriteResponse response = httpCaller.doJSONRequest(url, dataList, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteData] rsp:\n{}", response);
-        return response;
-    }
-
-    @Override
-    public OperationResponse importData(List<Map<String, Object>> dataList, String topic,
-                                        Option... opts) throws NetException, BizException {
-        if (Objects.nonNull(dataList) && dataList.size() > MAX_IMPORT_ITEM_COUNT) {
-            throw new BizException(ERR_MSG_TOO_MANY_ITEMS);
-        }
-        String urlFormat = generalURL.getImportDataUrlFormat();
-        String url = urlFormat.replace("{}", topic);
-        Parser<OperationResponse> parser = OperationResponse.parser();
-        OperationResponse response = httpCaller.doJsonRequest(url, dataList, parser, Option.conv2Options(opts));
-        log.debug("[ByteplusSDK][ImportData] rsp:\n{}", response);
         return response;
     }
 
@@ -80,7 +63,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                    Option... opts) throws NetException, BizException {
         String url = generalURL.getPredictUrlFormat().replace("{}", scene);
         Parser<PredictResponse> parser = PredictResponse.parser();
-        PredictResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        PredictResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
         return response;
     }
@@ -90,7 +73,7 @@ public class GeneralClientImpl extends CommonClientImpl implements GeneralClient
                                      Option... opts) throws NetException, BizException {
         Parser<CallbackResponse> parser = CallbackResponse.parser();
         String url = generalURL.getCallbackUrl();
-        CallbackResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        CallbackResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Callback] rsp:\n{}", response);
         return response;
     }

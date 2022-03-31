@@ -1,11 +1,10 @@
 package byteplus.sdk.common;
 
-import byteplus.sdk.common.protocol.ByteplusCommon;
 import byteplus.sdk.common.protocol.ByteplusCommon.*;
 import byteplus.sdk.core.BizException;
 import byteplus.sdk.core.Context;
 import byteplus.sdk.core.HostAvailabler;
-import byteplus.sdk.core.HttpCaller;
+import byteplus.sdk.core.HTTPCaller;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.core.URLCenter;
@@ -15,14 +14,13 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Slf4j
 public abstract class CommonClientImpl implements CommonClient, URLCenter {
 
     protected final Context context;
 
-    protected final HttpCaller httpCaller;
+    protected final HTTPCaller httpCaller;
 
     protected CommonURL commonURL;
 
@@ -30,7 +28,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
 
     protected CommonClientImpl(Context.Param param) {
         this.context = new Context(param);
-        this.httpCaller = new HttpCaller(context);
+        this.httpCaller = new HTTPCaller(context);
         this.commonURL = new CommonURL(context);
         this.hostAvailabler = new HostAvailabler(context, this);
     }
@@ -57,7 +55,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
             GetOperationRequest request, Option... opts) throws NetException, BizException {
         Parser<OperationResponse> parser = OperationResponse.parser();
         String url = commonURL.getGetOperationUrl();
-        OperationResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        OperationResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][GetOperations] rsp:\n{}", response);
         return response;
     }
@@ -67,7 +65,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
             ListOperationsRequest request, Option... opts) throws NetException, BizException {
         Parser<ListOperationsResponse> parser = ListOperationsResponse.parser();
         String url = commonURL.getListOperationsUrl();
-        ListOperationsResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        ListOperationsResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][ListOperations] rsp:\n{}", response);
         return response;
     }
@@ -82,7 +80,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
         String url = urlFormat.replace("{}", topic);
         DoneRequest request = DoneRequest.newBuilder().addAllDataDates(dates).build();
         Parser<DoneResponse> parser =  DoneResponse.parser();
-        DoneResponse response = httpCaller.doPbRequest(url, request, parser, Option.conv2Options(opts));
+        DoneResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][Done] rsp:\n{}", response);
         return response;
     }
