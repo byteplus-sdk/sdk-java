@@ -1,14 +1,13 @@
 package byteplus.sdk.core.metrics;
 
 
-import java.util.TreeMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import static byteplus.sdk.core.metrics.Helper.*;
 
-public class MetricsTest {
+public class MetricsExample {
     static int times = 150000;
 
     static {
@@ -70,9 +69,9 @@ public class MetricsTest {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
-        executorService.submit(MetricsTest::StoreReport);
-        executorService.submit(MetricsTest::CounterReport);
-        executorService.submit(MetricsTest::TimerReport);
+        executorService.submit(MetricsExample::StoreReport);
+        executorService.submit(MetricsExample::CounterReport);
+        executorService.submit(MetricsExample::TimerReport);
 
 //        CounterReport();
 //        StoreReport();

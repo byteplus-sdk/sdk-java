@@ -8,8 +8,7 @@ import okhttp3.OkHttpClient;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import com.google.common.util.concurrent.AtomicDouble;
+import java.util.concurrent.atomic.AtomicLong;
 
 import static byteplus.sdk.core.metrics.Constant.*;
 import static byteplus.sdk.core.metrics.Helper.*;
@@ -73,7 +72,7 @@ public class Collector {
         return metricsCfg.isPrintLog();
     }
 
-    public static void emitStore(String name, double value, String... tagKvs) {
+    public static void emitStore(String name, long value, String... tagKvs) {
         if (!isEnableMetrics()) {
             return;
         }
@@ -81,7 +80,7 @@ public class Collector {
         updateMetric(MetricsType.metricsTypeStore, collectKey, value);
     }
 
-    public static void emitCounter(String name, double value, String... tagKvs) {
+    public static void emitCounter(String name, long value, String... tagKvs) {
         if (!isEnableMetrics()) {
             return;
         }
@@ -89,7 +88,7 @@ public class Collector {
         updateMetric(MetricsType.metricsTypeCounter, collectKey, value);
     }
 
-    public static void emitTimer(String name, double value, String... tagKvs) {
+    public static void emitTimer(String name, long value, String... tagKvs) {
         if (!isEnableMetrics()) {
             return;
         }
@@ -97,17 +96,17 @@ public class Collector {
         updateMetric(MetricsType.metricsTypeTimer, collectKey, value);
     }
 
-    private static void updateMetric(MetricsType metricsType, String collectKey, double value) {
+    private static void updateMetric(MetricsType metricsType, String collectKey, long value) {
         MetricValue metric = getOrCreateMetric(metricsType, collectKey);
         switch (metricsType) {
             case metricsTypeStore:
                 metric.value = value;
                 break;
             case metricsTypeCounter:
-                ((AtomicDouble) metric.value).addAndGet(value);
+                ((AtomicLong) metric.value).addAndGet(value);
                 break;
             case metricsTypeTimer:
-                ((Sample) metric.value).update((long) value);
+                ((Sample) metric.value).update(value);
                 break;
         }
         metric.updated = true;
@@ -131,9 +130,9 @@ public class Collector {
             case metricsTypeTimer:
                 return new MetricValue(new Sample(RESERVOIR_SIZE), null);
             case metricsTypeCounter:
-                return new MetricValue(new AtomicDouble(0D), new AtomicDouble(0D));
+                return new MetricValue(new AtomicLong(0), new AtomicLong(0));
         }
-        return new MetricValue((double) 0, null);
+        return new MetricValue((long) 0, null);
     }
 
     private static void report() {
@@ -167,19 +166,7 @@ public class Collector {
         });
         if (metricsRequests.size() > 0) {
             String url = OTHER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
-            try {
-                MetricsRequest.send(Metrics.MetricMessage.newBuilder().
-                        addAllMetrics(metricsRequests).
-                        build(), url);
-                if (isEnablePrintLog()) {
-                    log.debug("[Metrics] exec store success, url:{}, metricsRequests:{}", url, metricsRequests);
-                }
-            } catch (BizException e) {
-                if (isEnablePrintLog()) {
-                    log.error("[Metrics] exec store exception, msg:{}, url:{}, metricsRequests:{}", e.getMessage(),
-                            url, metricsRequests);
-                }
-            }
+            sendMetrics(metricsRequests, url);
         }
     }
 
@@ -194,38 +181,26 @@ public class Collector {
                 }
                 String name = nameAndTags.get(0);
                 Map<String, String> tagKvs = recoverTags(nameAndTags.get(1));
-                double valueCopy = ((AtomicDouble) metric.value).doubleValue();
+                double valueCopy = ((AtomicLong) metric.value).doubleValue();
                 Metrics.Metric metricsRequest = Metrics.Metric.newBuilder().
                         setMetric(metricsCfg.getPrefix() + "." + name).
                         putAllTags(tagKvs).
-                        setValue(valueCopy - ((AtomicDouble) (metric.flushedValue)).doubleValue()).
+                        setValue(valueCopy - ((AtomicLong) (metric.flushedValue)).doubleValue()).
                         setTimestamp(System.currentTimeMillis() / 1000).
                         build();
                 metricsRequests.add(metricsRequest);
                 // after each flushInterval of the counter is reported, the accumulated metric needs to be cleared
-                ((AtomicDouble) metric.flushedValue).set(valueCopy);
+                ((AtomicLong) metric.flushedValue).set((long) valueCopy);
                 // if the value is too large, reset it
-                if (valueCopy >= Double.MAX_VALUE / 2) {
-                    ((AtomicDouble) metric.value).set(0);
-                    ((AtomicDouble) metric.flushedValue).set(0);
+                if ((long) valueCopy >= Long.MAX_VALUE / 2) {
+                    ((AtomicLong) metric.value).set(0);
+                    ((AtomicLong) metric.flushedValue).set(0);
                 }
             }
         });
         if (metricsRequests.size() > 0) {
             String url = COUNTER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
-            try {
-                MetricsRequest.send(Metrics.MetricMessage.newBuilder().
-                        addAllMetrics(metricsRequests).
-                        build(), url);
-                if (isEnablePrintLog()) {
-                    log.debug("[Metrics] exec counter success, url:{}, metricsRequests:{}", url, metricsRequests);
-                }
-            } catch (BizException e) {
-                if (isEnablePrintLog()) {
-                    log.error("[Metrics] exec counter exception, msg:{}, url:{}, metricsRequests:{}", e.getMessage(),
-                            url, metricsRequests);
-                }
-            }
+            sendMetrics(metricsRequests, url);
         }
     }
 
@@ -248,19 +223,20 @@ public class Collector {
         });
         if (metricsRequests.size() > 0) {
             String url = OTHER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
-            try {
-                MetricsRequest.send(Metrics.MetricMessage.newBuilder().
-                        addAllMetrics(metricsRequests).
-                        build(), url);
-                if (isEnablePrintLog()) {
-                    log.debug("[Metrics] exec timer success, url:{}, metricsRequests:{}", url, metricsRequests);
-                }
-            } catch (BizException e) {
-                if (isEnablePrintLog()) {
-                    log.error("[Metrics] exec timer exception, msg:{}, url:{}, metricsRequests:{}", e.getMessage(),
-                            url, metricsRequests);
-                }
+            sendMetrics(metricsRequests, url);
+        }
+    }
+
+    private static void sendMetrics(ArrayList<Metrics.Metric> metricsRequests, String url) {
+        Metrics.MetricMessage request = Metrics.MetricMessage.newBuilder().addAllMetrics(metricsRequests).build();
+        try {
+            MetricsRequest.send(request, url);
+            if (isEnablePrintLog()) {
+                log.debug("[BytePlusSDK][Metrics] send metrics success, url:{}, metricsRequests:{}", url, metricsRequests);
             }
+        } catch (BizException e) {
+            log.error("[BytePlusSDK][Metrics] send metrics exception, msg:{}, url:{}, metricsRequests:{}", e.getMessage(),
+                    url, metricsRequests);
         }
     }
 

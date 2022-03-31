@@ -13,7 +13,7 @@ public class Helper {
      * @description: Store tagKvs should be formatted as "key:value"
      * example: Store("goroutine.count", 400, "ip:127.0.0.1")
      */
-    public static void Store(String key, double value, String... tagKvs) {
+    public static void Store(String key, long value, String... tagKvs) {
         Collector.emitStore(key, value, tagKvs);
     }
 
@@ -21,7 +21,7 @@ public class Helper {
      * @description: Store tagKvs should be formatted as "key:value"
      * example: Counter("request.qps", 1, "method:user", "type:upload")
      */
-    public static void Counter(String key, double value, String... tagKvs) {
+    public static void Counter(String key, long value, String... tagKvs) {
         Collector.emitCounter(key, value, tagKvs);
     }
 
@@ -30,7 +30,7 @@ public class Helper {
      *              example: Timer("request.cost", 100, "method:user", "type:upload")
      * @description: Store tagKvs should be formatted as "key:value"
      */
-    public static void timer(String key, double value, String... tagKvs) {
+    public static void timer(String key, long value, String... tagKvs) {
         Collector.emitTimer(key, value, tagKvs);
     }
 
