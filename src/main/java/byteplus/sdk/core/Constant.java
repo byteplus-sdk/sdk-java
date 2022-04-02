@@ -38,4 +38,13 @@ public final class Constant {
     public final static int STATUS_CODE_TOO_MANY_REQUEST = 429;
 
     public final static String VOLC_AUTH_SERVICE = "air";
+
+
+    // metric name for  byteplus sdk
+    public static final String METRICS_KEY_INVOKE_SUCCESS = "invoke.success";
+    public static final String METRICS_KEY_INVOKE_ERROR = "invoke.error";
+
+    public static final String METRICS_KEY_PING_SUCCESS = "ping.success";
+    public static final String METRICS_KEY_PING_ERROR = "ping.error";
+
 }

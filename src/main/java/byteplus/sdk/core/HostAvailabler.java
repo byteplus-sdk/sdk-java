@@ -18,6 +18,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+
+import static byteplus.sdk.core.Constant.METRICS_KEY_PING_SUCCESS;
+import static byteplus.sdk.core.Constant.METRICS_KEY_PING_ERROR;
+
 @Slf4j
 public class HostAvailabler {
     private static final Duration INTERVAL = Duration.ofMillis(1000);
@@ -117,8 +121,14 @@ public class HostAvailabler {
         Call httpCall = httpCli.newCall(httpReq);
         long start = System.currentTimeMillis();
         try (Response httpRsp = httpCall.execute()) {
+            if (httpRsp.code() != 200) {
+                Helper.reportRequestError(METRICS_KEY_PING_ERROR, url, start, httpRsp.code(), "ping-fail");
+            } else {
+                Helper.reportRequestSuccess(METRICS_KEY_PING_SUCCESS, url, start);
+            }
             return httpRsp.code() == 200;
         } catch (Throwable e) {
+            Helper.reportRequestException(METRICS_KEY_PING_ERROR, url, start, e);
             log.warn("[ByteplusSDK] ping find err, host:{} err:{}", host, e.getMessage());
             return false;
         } finally {
