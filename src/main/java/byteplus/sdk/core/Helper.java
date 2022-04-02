@@ -30,7 +30,7 @@ public final class Helper {
     //report fail request
     public static void reportRequestError(String metricsPrefix, String url, long begin, int code, String message) {
         String[] urlTag = buildUrlTags(url);
-        String[] tagKvs = appendTags(urlTag, "url:" + adjustUrlTag(url), "code:" + code, "message:" + message);
+        String[] tagKvs = appendTags(urlTag, "code:" + code, "message:" + message);
         Latency(buildLatencyKey(metricsPrefix), begin, tagKvs);
         Counter(buildCountKey(metricsPrefix), 1, tagKvs);
     }
