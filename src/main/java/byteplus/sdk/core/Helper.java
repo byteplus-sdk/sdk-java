@@ -66,15 +66,15 @@ public final class Helper {
     }
 
     /**
-     * Parsing the url tag, replace the "=" in the url with "<eq>",
+     * Parsing the url tag, replace the "=" in the url with "_is_",
      * because "=" is a special delimiter in metrics server
      * For example, url=http://xxxx?query=yyy, the direct report will fail,
-     * instead, using url=http://xxxx?query<eq>yyy.
+     * instead, using url=http://xxxx?query_is_yyy.
      *
      * @param url full request url
      */
     private static String adjustUrlTag(String url) {
-        return url.replaceAll("=", "<eq>");
+        return url.replaceAll("=", "_is_");
     }
 
     private static String[] appendTags(String[] oldTags, String... tags) {
