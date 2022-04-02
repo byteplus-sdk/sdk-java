@@ -32,7 +32,7 @@ public class HostAvailabler {
 
     private static final String PING_URL_FORMAT = "{}://%s/predict/api/ping";
 
-    private static final Duration PING_TIMEOUT = Duration.ofMillis(200);
+    private static final Duration PING_TIMEOUT = Duration.ofMillis(300);
 
     private static final OkHttpClient httpCli = new OkHttpClient()
             .newBuilder()

@@ -31,6 +31,8 @@ public class MetricsExample {
         for (int i = 0; i < times; i++) {
             Store("java.request.store", 200, "type:test_metrics1","url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy","error:");
             Store("java.request.store", 100, "type:test_metrics2","url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy","error");
+            Store("java.request.store", 200, "type:test_metrics3","url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy","error:");
+            Store("java.request.store", 100, "type:test_metrics4","url:https://asfwe.sds.com/test?qu1<eq>xxx&qu2<eq>yyy","error");
             try {
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
