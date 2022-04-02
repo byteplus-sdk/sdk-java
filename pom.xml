@@ -6,7 +6,7 @@
 
     <groupId>com.volcengine</groupId>
     <artifactId>byteplus-sdk</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.13</version>
     <packaging>jar</packaging>
 
     <name>byteplus-sdk</name>
