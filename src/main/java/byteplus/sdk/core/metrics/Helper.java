@@ -68,8 +68,8 @@ public class Helper {
     public static Map<String, String> recoverTags(String tagString) {
         Map<String, String> tags = new HashMap<>();
         for (String entry : tagString.split("\\|")) {
-            String[] keyValue = entry.split(":");
-            if (keyValue.length != 2) {
+            String[] keyValue = entry.split(":", 2);
+            if (keyValue.length < 2) {
                 continue;
             }
             tags.put(keyValue[0], keyValue[1]);

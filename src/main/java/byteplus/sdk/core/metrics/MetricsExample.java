@@ -29,8 +29,8 @@ public class MetricsExample {
     public static void StoreReport() {
         System.out.println("start store reporting...");
         for (int i = 0; i < times; i++) {
-            Store("java.request.store", 200, "type:test_metrics1");
-            Store("java.request.store", 100, "type:test_metrics2");
+            Store("java.request.store", 200, "type:test_metrics1","url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy","error:");
+            Store("java.request.store", 100, "type:test_metrics2","url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy","error");
             try {
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
@@ -75,13 +75,13 @@ public class MetricsExample {
     }
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        executorService.submit(MetricsExample::StoreReport);
-        executorService.submit(MetricsExample::CounterReport);
-        executorService.submit(MetricsExample::TimerReport);
+//        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//        executorService.submit(MetricsExample::StoreReport);
+//        executorService.submit(MetricsExample::CounterReport);
+//        executorService.submit(MetricsExample::TimerReport);
 
 //        CounterReport();
-//        StoreReport();
+        StoreReport();
 //        TimerReport();
     }
 }
