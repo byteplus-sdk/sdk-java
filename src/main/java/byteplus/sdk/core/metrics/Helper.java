@@ -1,46 +1,46 @@
 package byteplus.sdk.core.metrics;
 
-import com.sun.deploy.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
-import static byteplus.sdk.core.metrics.Constant.DELIMITER;
+import static byteplus.sdk.core.metrics.Constant.*;
 
 @Slf4j
 public class Helper {
+
     /**
-     * @description: Store tagKvs should be formatted as "key:value"
+     * description: Store tagKvs should be formatted as "key:value"
      * example: Store("goroutine.count", 400, "ip:127.0.0.1")
      */
     public static void Store(String key, long value, String... tagKvs) {
-        Collector.emitStore(key, value, tagKvs);
+        MetricsCollector.emitStore(key, value, tagKvs);
     }
 
     /**
-     * @description: Store tagKvs should be formatted as "key:value"
+     * description: Store tagKvs should be formatted as "key:value"
      * example: Counter("request.qps", 1, "method:user", "type:upload")
      */
     public static void Counter(String key, long value, String... tagKvs) {
-        Collector.emitCounter(key, value, tagKvs);
+        MetricsCollector.emitCounter(key, value, tagKvs);
     }
 
     /**
      * @param value :The unit of `value` is milliseconds
      *              example: Timer("request.cost", 100, "method:user", "type:upload")
-     * @description: Store tagKvs should be formatted as "key:value"
+     *              description: Store tagKvs should be formatted as "key:value"
      */
-    public static void timer(String key, long value, String... tagKvs) {
-        Collector.emitTimer(key, value, tagKvs);
+    public static void Timer(String key, long value, String... tagKvs) {
+        MetricsCollector.emitTimer(key, value, tagKvs);
     }
 
     /**
      * @param begin :The unit of `begin` is milliseconds
      *              example: Latency("request.latency", startTime, "method:user", "type:upload")
-     * @description: Store tagKvs should be formatted as "key:value"
+     *              description: Store tagKvs should be formatted as "key:value"
      */
     public static void Latency(String key, long begin, String... tagKvs) {
-        Collector.emitTimer(key, System.currentTimeMillis() - begin, tagKvs);
+        MetricsCollector.emitTimer(key, System.currentTimeMillis() - begin, tagKvs);
     }
 
 
@@ -50,7 +50,7 @@ public class Helper {
 
     public static String tags2String(String... tags) {
         Arrays.sort(tags); //todo:测试是否可用
-        return StringUtils.join(Arrays.asList(tags), "|");
+        return String.join("|", Arrays.asList(tags));
     }
 
     public static List<String> parseNameAndTags(String src) {

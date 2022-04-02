@@ -27,6 +27,9 @@ import java.util.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import static byteplus.sdk.core.Constant.METRICS_KEY_INVOKE_ERROR;
+import static byteplus.sdk.core.Constant.METRICS_KEY_INVOKE_SUCCESS;
+
 @Slf4j
 public class HTTPCaller {
     // The http request was executed successfully without any net exception
@@ -188,22 +191,27 @@ public class HTTPCaller {
         log.debug("[ByteplusSDK][HTTPCaller] URL:{} Request Headers:\n{}", url, request.headers());
         Call call = selectHttpClient(timeout).newCall(request);
         LocalDateTime startTime = LocalDateTime.now();
+        long begin = System.currentTimeMillis();
         try {
             Response response = call.execute();
             ResponseBody rspBody = response.body();
             if (response.code() != SUCCESS_HTTP_CODE) {
                 logHttpResponse(url, response);
+                Helper.reportRequestError(METRICS_KEY_INVOKE_ERROR, url, begin, response.code(), "invoke-fail");
                 throw new BizException(response.message());
             }
             if (Objects.isNull(rspBody)) {
+                Helper.reportRequestError(METRICS_KEY_INVOKE_ERROR, url, begin, response.code(), "empty-rsp");
                 return null;
             }
+            Helper.reportRequestSuccess(METRICS_KEY_INVOKE_SUCCESS, url, begin);
             String rspEncoding = response.header("Content-Encoding");
             if (Objects.isNull(rspEncoding) || !rspEncoding.contains("gzip")) {
                 return rspBody.bytes();
             }
             return gzipDecompress(rspBody.bytes(), url);
         } catch (IOException e) {
+            Helper.reportRequestException(METRICS_KEY_INVOKE_ERROR, url, begin, e);
             if (e.getMessage().toLowerCase().contains("timeout")) {
                 log.error("[ByteplusSDK] do http request timeout, cost:{} msg:{} url:{}",
                         Duration.between(startTime, LocalDateTime.now()).toMillis(), e, url);

@@ -15,7 +15,7 @@ import static byteplus.sdk.core.metrics.Helper.*;
 
 
 @Slf4j
-public class Collector {
+public class MetricsCollector {
     private static MetricsCfg metricsCfg;
     private static Map<MetricsType, Map<String, MetricValue>> metricsCollector;
     private static OkHttpClient httpCli;
@@ -40,16 +40,16 @@ public class Collector {
         metricsCollector.put(MetricsType.metricsTypeTimer, new HashMap<>());
 
         httpCli = new OkHttpClient.Builder()
-                .connectTimeout(DEFAULT_HTTP_TIMEOUT_MS, TimeUnit.MILLISECONDS)
-                .writeTimeout(DEFAULT_HTTP_TIMEOUT_MS, TimeUnit.MILLISECONDS)
-                .readTimeout(DEFAULT_HTTP_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+                .connectTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
+                .writeTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
+                .readTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
                 .retryOnConnectionFailure(true)
                 .build();
 
         if (!initialed.get()) {
             initialed.set(true);
             executor = Executors.newSingleThreadScheduledExecutor();
-            executor.scheduleAtFixedRate(Collector::report, DEFAULT_FLUSH_INTERVAL_MS,
+            executor.scheduleAtFixedRate(MetricsCollector::report, DEFAULT_FLUSH_INTERVAL_MS,
                     DEFAULT_FLUSH_INTERVAL_MS, TimeUnit.MILLISECONDS);
         }
     }
@@ -132,7 +132,7 @@ public class Collector {
             case metricsTypeCounter:
                 return new MetricValue(new AtomicLong(0), new AtomicLong(0));
         }
-        return new MetricValue((long) 0, null);
+        return new MetricValue((long) 0, (long) 0);
     }
 
     private static void report() {
@@ -158,7 +158,7 @@ public class Collector {
                 Metrics.Metric metricsRequest = Metrics.Metric.newBuilder().
                         setMetric(metricsCfg.getPrefix() + "." + name).
                         putAllTags(tagKvs).
-                        setValue((double) (metric.value)).
+                        setValue((long) metric.value).
                         setTimestamp(System.currentTimeMillis() / 1000).
                         build();
                 metricsRequests.add(metricsRequest);
@@ -288,6 +288,7 @@ public class Collector {
         private String prefix;
         private boolean printLog;
         private long flushIntervalMs;
+        private long httpTimeoutMs;
 
         // build default metricsCfg
         public MetricsCfg() {
@@ -295,6 +296,7 @@ public class Collector {
             this.setDomain(DEFAULT_METRICS_DOMAIN);
             this.setPrefix(DEFAULT_METRICS_PREFIX);
             this.setFlushIntervalMs(DEFAULT_FLUSH_INTERVAL_MS);
+            this.setHttpTimeoutMs(DEFAULT_HTTP_TIMEOUT_MS);
         }
     }
 

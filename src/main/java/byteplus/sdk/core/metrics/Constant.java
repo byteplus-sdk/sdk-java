@@ -25,4 +25,5 @@ public class Constant {
     enum MetricsType {
         metricsTypeCounter, metricsTypeTimer, metricsTypeStore
     }
+
 }

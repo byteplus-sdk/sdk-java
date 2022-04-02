@@ -1,9 +1,10 @@
 package byteplus.sdk.core.metrics;
 
 import java.util.Objects;
+import static byteplus.sdk.core.metrics.Constant.DEFAULT_HTTP_TIMEOUT_MS;
 
 public interface MetricsOption {
-    void fill(Collector.MetricsCfg options);
+    void fill(MetricsCollector.MetricsCfg options);
 
     static MetricsOption withMetricsDomain(String domain) {
         return options -> {
@@ -32,6 +33,13 @@ public interface MetricsOption {
             if (flushIntervalMs > 500) { // flushInterval should not be too small
                 options.setFlushIntervalMs(flushIntervalMs);
             }
+        };
+    }
+
+    static MetricsOption withMetricsTimeout(long timeoutMs) {
+        return options -> {
+            if (timeoutMs > DEFAULT_HTTP_TIMEOUT_MS)
+                options.setHttpTimeoutMs(timeoutMs);
         };
     }
 

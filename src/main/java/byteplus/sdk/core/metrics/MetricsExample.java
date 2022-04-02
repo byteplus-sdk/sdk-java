@@ -15,14 +15,19 @@ public class MetricsExample {
     }
 
     public static void metricsInit() {
-        Collector.Init(
+        MetricsCollector.Init(
                 MetricsOption.withMetricsLog(),
-                MetricsOption.withFlushIntervalMs(10 * 1000)
+                MetricsOption.withFlushIntervalMs(5 * 1000),
+                MetricsOption.withMetricsTimeout(1000), //metrics http request timeout
+//                MetricsOption.withMetricsDomain("rec-us-east-1.byteplusapi.com") //us metrics domain
+//                MetricsOption.withMetricsDomain("rec-ap-singapore-1.byteplusapi.com") //sg metrics domain
+                MetricsOption.withMetricsDomain("bot.snssdk.com") //cn metrics domain
         );
     }
 
     // test demo for store report
     public static void StoreReport() {
+        System.out.println("start store reporting...");
         for (int i = 0; i < times; i++) {
             Store("java.request.store", 200, "type:test_metrics1");
             Store("java.request.store", 100, "type:test_metrics2");
@@ -37,6 +42,7 @@ public class MetricsExample {
 
     // test demo for counter report
     public static void CounterReport() {
+        System.out.println("start counter reporting...");
         for (int i = 0; i < times; i++) {
             Counter("java.request.counter", 1, "type:test_metrics1");
             Counter("java.request.counter", 1, "type:test_metrics2");
@@ -51,6 +57,7 @@ public class MetricsExample {
 
     // test demo for timer report
     public static void TimerReport() {
+        System.out.println("start timer reporting...");
         for (int i = 0; i < times; i++) {
             long begin = System.currentTimeMillis();
             try {

@@ -18,7 +18,7 @@ public class MetricsRequest {
         Response response = null;
         for (int i = 0; i < MAX_TRY_TIMES; i++) {
             try {
-                response = Collector.getHttpCli().newCall(request).execute();
+                response = MetricsCollector.getHttpCli().newCall(request).execute();
                 if (response.code() == SUCCESS_HTTP_CODE) {
                     return;
                 }
@@ -26,7 +26,7 @@ public class MetricsRequest {
                 if (Objects.isNull(rspBody)) {
                     throw new BizException("rsp body is null");
                 }
-                throw new BizException(String.format("do http request fail, url:%s， rsp:%s", url, rspBody.toString()));
+                throw new BizException(String.format("do http request fail, code:%d, rsp:%s", response.code(), rspBody));
             } catch (Throwable e) {
                 String msg = e.getMessage().toLowerCase();
                 // timeout exception need retry
