@@ -49,7 +49,7 @@ public class Helper {
     }
 
     public static String tags2String(String... tags) {
-        Arrays.sort(tags); //todo:测试是否可用
+        Arrays.sort(tags);
         return String.join("|", Arrays.asList(tags));
     }
 
