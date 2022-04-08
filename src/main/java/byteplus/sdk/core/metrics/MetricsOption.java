@@ -30,7 +30,7 @@ public interface MetricsOption {
     //set the interval of reporting metrics
     static MetricsOption withFlushIntervalMs(long flushIntervalMs) {
         return options -> {
-            if (flushIntervalMs > 500) { // flushInterval should not be too small
+            if (flushIntervalMs > 5000) { // flushInterval should not be too small
                 options.setFlushIntervalMs(flushIntervalMs);
             }
         };

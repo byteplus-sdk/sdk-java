@@ -37,11 +37,12 @@ public final class Helper {
 
     // report exception
     public static void reportRequestException(String metricsPrefix, String url, long begin, Throwable e) {
-        String[] urlTag = buildUrlTags(url);
-        exception(metricsPrefix, begin, e, urlTag);
+        String[] tagKvs = withExceptionTags(buildUrlTags(url), e);
+        Latency(buildLatencyKey(metricsPrefix), begin, tagKvs);
+        Counter(buildCountKey(metricsPrefix), 1, tagKvs);
     }
 
-    public static void exception(String metricsPrefix, long begin, Throwable e, String... tagKvs) {
+    public static String[] withExceptionTags(String[] tagKvs, Throwable e) {
         String msgTag;
         String msg = e.getMessage().toLowerCase();
         if (msg.contains("time") && msg.contains("out")) {
@@ -55,9 +56,7 @@ public final class Helper {
         } else {
             msgTag = "message:other";
         }
-        String[] newTagKvs = appendTags(tagKvs, msgTag);
-        Latency(buildLatencyKey(metricsPrefix), begin, newTagKvs);
-        Counter(buildCountKey(metricsPrefix), 1, newTagKvs);
+        return appendTags(tagKvs, msgTag);
     }
 
 
