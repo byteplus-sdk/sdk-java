@@ -11,6 +11,10 @@ import byteplus.sdk.media.protocol.ByteplusMedia.WriteContentsRequest;
 import byteplus.sdk.media.protocol.ByteplusMedia.WriteContentsResponse;
 import byteplus.sdk.media.protocol.ByteplusMedia.WriteUserEventsRequest;
 import byteplus.sdk.media.protocol.ByteplusMedia.WriteUserEventsResponse;
+import byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest;
+import byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse;
+import byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest;
+import byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
@@ -70,6 +74,27 @@ public class MediaClientImpl extends CommonClientImpl implements MediaClient{
         String url = mediaURL.getWriteUserEventsUrl();
         WriteUserEventsResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n{}", response);
+        return response;
+    }
+
+    @Override
+    public PredictResponse predict(
+            PredictRequest request, String scene, Option... opts) throws NetException, BizException {
+        String urlFormat = mediaURL.getPredictUrlFormat();
+        String url = urlFormat.replace("{}", scene);
+        Parser<PredictResponse> parser = PredictResponse.parser();
+        PredictResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
+        log.debug("[ByteplusSDK][Predict] rsp:\n{}", response);
+        return response;
+    }
+
+    @Override
+    public AckServerImpressionsResponse ackServerImpressions(
+            AckServerImpressionsRequest request, Option... opts) throws NetException, BizException {
+        Parser<AckServerImpressionsResponse> parser = AckServerImpressionsResponse.parser();
+        String url = mediaURL.getAckImpressionUrl();
+        AckServerImpressionsResponse response = httpCaller.doPBRequest(url, request, parser, Option.conv2Options(opts));
+        log.debug("[ByteplusSDK][AckImpressions] rsp:\n{}", response);
         return response;
     }
 }
