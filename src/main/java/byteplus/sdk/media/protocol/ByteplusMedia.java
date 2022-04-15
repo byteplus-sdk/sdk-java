@@ -19620,7 +19620,7 @@ public final class ByteplusMedia {
      * like:       Optional. When a content is liked by a user.
      *             Note:
      *                * content_id must be non-empty.
-     * comment:    Optional. If content_type is video, when a user plays a video.
+     * comment:    Optional. When a user leaves a comment on a content.
      *             Note:
      *                * content_id must be non-empty.
      * purchase:   Required. When a user completed a purchase.
@@ -19687,7 +19687,7 @@ public final class ByteplusMedia {
      * like:       Optional. When a content is liked by a user.
      *             Note:
      *                * content_id must be non-empty.
-     * comment:    Optional. If content_type is video, when a user plays a video.
+     * comment:    Optional. When a user leaves a comment on a content.
      *             Note:
      *                * content_id must be non-empty.
      * purchase:   Required. When a user completed a purchase.
@@ -20783,7 +20783,7 @@ public final class ByteplusMedia {
      * like:       Optional. When a content is liked by a user.
      *             Note:
      *                * content_id must be non-empty.
-     * comment:    Optional. If content_type is video, when a user plays a video.
+     * comment:    Optional. When a user leaves a comment on a content.
      *             Note:
      *                * content_id must be non-empty.
      * purchase:   Required. When a user completed a purchase.
@@ -20862,7 +20862,7 @@ public final class ByteplusMedia {
      * like:       Optional. When a content is liked by a user.
      *             Note:
      *                * content_id must be non-empty.
-     * comment:    Optional. If content_type is video, when a user plays a video.
+     * comment:    Optional. When a user leaves a comment on a content.
      *             Note:
      *                * content_id must be non-empty.
      * purchase:   Required. When a user completed a purchase.
@@ -23196,7 +23196,7 @@ public final class ByteplusMedia {
        * like:       Optional. When a content is liked by a user.
        *             Note:
        *                * content_id must be non-empty.
-       * comment:    Optional. If content_type is video, when a user plays a video.
+       * comment:    Optional. When a user leaves a comment on a content.
        *             Note:
        *                * content_id must be non-empty.
        * purchase:   Required. When a user completed a purchase.
@@ -23274,7 +23274,7 @@ public final class ByteplusMedia {
        * like:       Optional. When a content is liked by a user.
        *             Note:
        *                * content_id must be non-empty.
-       * comment:    Optional. If content_type is video, when a user plays a video.
+       * comment:    Optional. When a user leaves a comment on a content.
        *             Note:
        *                * content_id must be non-empty.
        * purchase:   Required. When a user completed a purchase.
@@ -23353,7 +23353,7 @@ public final class ByteplusMedia {
        * like:       Optional. When a content is liked by a user.
        *             Note:
        *                * content_id must be non-empty.
-       * comment:    Optional. If content_type is video, when a user plays a video.
+       * comment:    Optional. When a user leaves a comment on a content.
        *             Note:
        *                * content_id must be non-empty.
        * purchase:   Required. When a user completed a purchase.
@@ -23430,7 +23430,7 @@ public final class ByteplusMedia {
        * like:       Optional. When a content is liked by a user.
        *             Note:
        *                * content_id must be non-empty.
-       * comment:    Optional. If content_type is video, when a user plays a video.
+       * comment:    Optional. When a user leaves a comment on a content.
        *             Note:
        *                * content_id must be non-empty.
        * purchase:   Required. When a user completed a purchase.
@@ -23502,7 +23502,7 @@ public final class ByteplusMedia {
        * like:       Optional. When a content is liked by a user.
        *             Note:
        *                * content_id must be non-empty.
-       * comment:    Optional. If content_type is video, when a user plays a video.
+       * comment:    Optional. When a user leaves a comment on a content.
        *             Note:
        *                * content_id must be non-empty.
        * purchase:   Required. When a user completed a purchase.
@@ -29924,6 +29924,13420 @@ public final class ByteplusMedia {
 
   }
 
+  public interface PredictRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Required.
+     * This is same as `User.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * Required.
+     * This is same as `User.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
+     * Required.
+     * The maximum number of contents returned.
+     * The actual # of contents returned is the min of:
+     * `size`
+     * length(`context.candidates_content_ids`)
+     * total # of contents with `is_recommendable=True`
+     * </pre>
+     *
+     * <code>int32 size = 2;</code>
+     * @return The size.
+     */
+    int getSize();
+
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     * @return Whether the scene field is set.
+     */
+    boolean hasScene();
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     * @return The scene.
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene();
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder();
+
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     * @return Whether the context field is set.
+     */
+    boolean hasContext();
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     * @return The context.
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getContext();
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder getContextOrBuilder();
+
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    int getExtraCount();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    boolean containsExtra(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtra();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtraMap();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * The request proto for `Predict` call.
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.media.PredictRequest}
+   */
+  public static final class PredictRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictRequest)
+      PredictRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PredictRequest.newBuilder() to construct.
+    private PredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PredictRequest() {
+      userId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PredictRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PredictRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 16: {
+
+              size_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder subBuilder = null;
+              if (scene_ != null) {
+                subBuilder = scene_.toBuilder();
+              }
+              scene_ = input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scene_);
+                scene_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder subBuilder = null;
+              if (context_ != null) {
+                subBuilder = context_.toBuilder();
+              }
+              context_ = input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(context_);
+                context_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 802: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                extra_ = com.google.protobuf.MapField.newMapField(
+                    ExtraDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              extra__ = input.readMessage(
+                  ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              extra_.getMutableMap().put(
+                  extra__.getKey(), extra__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 100:
+          return internalGetExtra();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Builder.class);
+    }
+
+    public interface SceneOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictRequest.Scene)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Required.
+       * This is same as `UserEvent.scene_name`.
+       * </pre>
+       *
+       * <code>string scene_name = 1;</code>
+       * @return The sceneName.
+       */
+      java.lang.String getSceneName();
+      /**
+       * <pre>
+       * Required.
+       * This is same as `UserEvent.scene_name`.
+       * </pre>
+       *
+       * <code>string scene_name = 1;</code>
+       * @return The bytes for sceneName.
+       */
+      com.google.protobuf.ByteString
+          getSceneNameBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The page number.
+       * It can be:
+       * 1. Users swipe the screen for X times then see the content.
+       * 2. Users go to page X and see the content.
+       * In this case, X is the page number.
+       * This should default to be 0. That means everything fits into 1 page.
+       * </pre>
+       *
+       * <code>int32 page_number = 2;</code>
+       * @return The pageNumber.
+       */
+      int getPageNumber();
+
+      /**
+       * <pre>
+       * Optional.
+       * The offset starting from 1 within the page above.
+       * </pre>
+       *
+       * <code>int32 offset = 3;</code>
+       * @return The offset.
+       */
+      int getOffset();
+    }
+    /**
+     * <pre>
+     * Required.
+     * The scene for the recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictRequest.Scene}
+     */
+    public static final class Scene extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictRequest.Scene)
+        SceneOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Scene.newBuilder() to construct.
+      private Scene(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Scene() {
+        sceneName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Scene();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Scene(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                sceneName_ = s;
+                break;
+              }
+              case 16: {
+
+                pageNumber_ = input.readInt32();
+                break;
+              }
+              case 24: {
+
+                offset_ = input.readInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Scene_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder.class);
+      }
+
+      public static final int SCENE_NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object sceneName_;
+      /**
+       * <pre>
+       * Required.
+       * This is same as `UserEvent.scene_name`.
+       * </pre>
+       *
+       * <code>string scene_name = 1;</code>
+       * @return The sceneName.
+       */
+      @java.lang.Override
+      public java.lang.String getSceneName() {
+        java.lang.Object ref = sceneName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sceneName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `UserEvent.scene_name`.
+       * </pre>
+       *
+       * <code>string scene_name = 1;</code>
+       * @return The bytes for sceneName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getSceneNameBytes() {
+        java.lang.Object ref = sceneName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sceneName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PAGE_NUMBER_FIELD_NUMBER = 2;
+      private int pageNumber_;
+      /**
+       * <pre>
+       * Optional.
+       * The page number.
+       * It can be:
+       * 1. Users swipe the screen for X times then see the content.
+       * 2. Users go to page X and see the content.
+       * In this case, X is the page number.
+       * This should default to be 0. That means everything fits into 1 page.
+       * </pre>
+       *
+       * <code>int32 page_number = 2;</code>
+       * @return The pageNumber.
+       */
+      @java.lang.Override
+      public int getPageNumber() {
+        return pageNumber_;
+      }
+
+      public static final int OFFSET_FIELD_NUMBER = 3;
+      private int offset_;
+      /**
+       * <pre>
+       * Optional.
+       * The offset starting from 1 within the page above.
+       * </pre>
+       *
+       * <code>int32 offset = 3;</code>
+       * @return The offset.
+       */
+      @java.lang.Override
+      public int getOffset() {
+        return offset_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getSceneNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sceneName_);
+        }
+        if (pageNumber_ != 0) {
+          output.writeInt32(2, pageNumber_);
+        }
+        if (offset_ != 0) {
+          output.writeInt32(3, offset_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getSceneNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sceneName_);
+        }
+        if (pageNumber_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, pageNumber_);
+        }
+        if (offset_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, offset_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene)) {
+          return super.equals(obj);
+        }
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene) obj;
+
+        if (!getSceneName()
+            .equals(other.getSceneName())) return false;
+        if (getPageNumber()
+            != other.getPageNumber()) return false;
+        if (getOffset()
+            != other.getOffset()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SCENE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getSceneName().hashCode();
+        hash = (37 * hash) + PAGE_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getPageNumber();
+        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+        hash = (53 * hash) + getOffset();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene for the recommendation.
+       * </pre>
+       *
+       * Protobuf type {@code bytedance.byteplus.media.PredictRequest.Scene}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictRequest.Scene)
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Scene_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder.class);
+        }
+
+        // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          sceneName_ = "";
+
+          pageNumber_ = 0;
+
+          offset_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getDefaultInstanceForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene build() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene buildPartial() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene(this);
+          result.sceneName_ = sceneName_;
+          result.pageNumber_ = pageNumber_;
+          result.offset_ = offset_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene) {
+            return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene other) {
+          if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance()) return this;
+          if (!other.getSceneName().isEmpty()) {
+            sceneName_ = other.sceneName_;
+            onChanged();
+          }
+          if (other.getPageNumber() != 0) {
+            setPageNumber(other.getPageNumber());
+          }
+          if (other.getOffset() != 0) {
+            setOffset(other.getOffset());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object sceneName_ = "";
+        /**
+         * <pre>
+         * Required.
+         * This is same as `UserEvent.scene_name`.
+         * </pre>
+         *
+         * <code>string scene_name = 1;</code>
+         * @return The sceneName.
+         */
+        public java.lang.String getSceneName() {
+          java.lang.Object ref = sceneName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            sceneName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `UserEvent.scene_name`.
+         * </pre>
+         *
+         * <code>string scene_name = 1;</code>
+         * @return The bytes for sceneName.
+         */
+        public com.google.protobuf.ByteString
+            getSceneNameBytes() {
+          java.lang.Object ref = sceneName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            sceneName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `UserEvent.scene_name`.
+         * </pre>
+         *
+         * <code>string scene_name = 1;</code>
+         * @param value The sceneName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSceneName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          sceneName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `UserEvent.scene_name`.
+         * </pre>
+         *
+         * <code>string scene_name = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearSceneName() {
+          
+          sceneName_ = getDefaultInstance().getSceneName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `UserEvent.scene_name`.
+         * </pre>
+         *
+         * <code>string scene_name = 1;</code>
+         * @param value The bytes for sceneName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSceneNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          sceneName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int pageNumber_ ;
+        /**
+         * <pre>
+         * Optional.
+         * The page number.
+         * It can be:
+         * 1. Users swipe the screen for X times then see the content.
+         * 2. Users go to page X and see the content.
+         * In this case, X is the page number.
+         * This should default to be 0. That means everything fits into 1 page.
+         * </pre>
+         *
+         * <code>int32 page_number = 2;</code>
+         * @return The pageNumber.
+         */
+        @java.lang.Override
+        public int getPageNumber() {
+          return pageNumber_;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The page number.
+         * It can be:
+         * 1. Users swipe the screen for X times then see the content.
+         * 2. Users go to page X and see the content.
+         * In this case, X is the page number.
+         * This should default to be 0. That means everything fits into 1 page.
+         * </pre>
+         *
+         * <code>int32 page_number = 2;</code>
+         * @param value The pageNumber to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPageNumber(int value) {
+          
+          pageNumber_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The page number.
+         * It can be:
+         * 1. Users swipe the screen for X times then see the content.
+         * 2. Users go to page X and see the content.
+         * In this case, X is the page number.
+         * This should default to be 0. That means everything fits into 1 page.
+         * </pre>
+         *
+         * <code>int32 page_number = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPageNumber() {
+          
+          pageNumber_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int offset_ ;
+        /**
+         * <pre>
+         * Optional.
+         * The offset starting from 1 within the page above.
+         * </pre>
+         *
+         * <code>int32 offset = 3;</code>
+         * @return The offset.
+         */
+        @java.lang.Override
+        public int getOffset() {
+          return offset_;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The offset starting from 1 within the page above.
+         * </pre>
+         *
+         * <code>int32 offset = 3;</code>
+         * @param value The offset to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOffset(int value) {
+          
+          offset_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The offset starting from 1 within the page above.
+         * </pre>
+         *
+         * <code>int32 offset = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOffset() {
+          
+          offset_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictRequest.Scene)
+      }
+
+      // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest.Scene)
+      private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene();
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Scene>
+          PARSER = new com.google.protobuf.AbstractParser<Scene>() {
+        @java.lang.Override
+        public Scene parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Scene(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Scene> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Scene> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface ContextOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictRequest.Context)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       * @return Whether the rootContent field is set.
+       */
+      boolean hasRootContent();
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       * @return The rootContent.
+       */
+      byteplus.sdk.media.protocol.ByteplusMedia.Content getRootContent();
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       */
+      byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder getRootContentOrBuilder();
+
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @return A list containing the candidateContentIds.
+       */
+      java.util.List<java.lang.String>
+          getCandidateContentIdsList();
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @return The count of candidateContentIds.
+       */
+      int getCandidateContentIdsCount();
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @param index The index of the element to return.
+       * @return The candidateContentIds at the given index.
+       */
+      java.lang.String getCandidateContentIds(int index);
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the candidateContentIds at the given index.
+       */
+      com.google.protobuf.ByteString
+          getCandidateContentIdsBytes(int index);
+
+      /**
+       * <pre>
+       * Required.
+       * The platform used by the user.
+       * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+       *  app: user use APP.
+       *  desktop-web: user use desktop web.
+       *  mobile-web: user use mobile web.
+       * </pre>
+       *
+       * <code>string device = 22;</code>
+       * @return The device.
+       */
+      java.lang.String getDevice();
+      /**
+       * <pre>
+       * Required.
+       * The platform used by the user.
+       * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+       *  app: user use APP.
+       *  desktop-web: user use desktop web.
+       *  mobile-web: user use mobile web.
+       * </pre>
+       *
+       * <code>string device = 22;</code>
+       * @return The bytes for device.
+       */
+      com.google.protobuf.ByteString
+          getDeviceBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The platform used by the user.
+       * The acceptable values are "android", "ios", "windows", "other".
+       * </pre>
+       *
+       * <code>string os_type = 23;</code>
+       * @return The osType.
+       */
+      java.lang.String getOsType();
+      /**
+       * <pre>
+       * Optional.
+       * The platform used by the user.
+       * The acceptable values are "android", "ios", "windows", "other".
+       * </pre>
+       *
+       * <code>string os_type = 23;</code>
+       * @return The bytes for osType.
+       */
+      com.google.protobuf.ByteString
+          getOsTypeBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * Your application version.
+       * e.g. V9.0.8.
+       * </pre>
+       *
+       * <code>string app_version = 24;</code>
+       * @return The appVersion.
+       */
+      java.lang.String getAppVersion();
+      /**
+       * <pre>
+       * Optional.
+       * Your application version.
+       * e.g. V9.0.8.
+       * </pre>
+       *
+       * <code>string app_version = 24;</code>
+       * @return The bytes for appVersion.
+       */
+      com.google.protobuf.ByteString
+          getAppVersionBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The device model.
+       * e.g. "iPhone10", "Pixel 4".
+       * </pre>
+       *
+       * <code>string device_model = 25;</code>
+       * @return The deviceModel.
+       */
+      java.lang.String getDeviceModel();
+      /**
+       * <pre>
+       * Optional.
+       * The device model.
+       * e.g. "iPhone10", "Pixel 4".
+       * </pre>
+       *
+       * <code>string device_model = 25;</code>
+       * @return The bytes for deviceModel.
+       */
+      com.google.protobuf.ByteString
+          getDeviceModelBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The brand of the device.
+       * e.g. "Samsung".
+       * </pre>
+       *
+       * <code>string device_brand = 26;</code>
+       * @return The deviceBrand.
+       */
+      java.lang.String getDeviceBrand();
+      /**
+       * <pre>
+       * Optional.
+       * The brand of the device.
+       * e.g. "Samsung".
+       * </pre>
+       *
+       * <code>string device_brand = 26;</code>
+       * @return The bytes for deviceBrand.
+       */
+      com.google.protobuf.ByteString
+          getDeviceBrandBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The operating system version.
+       * e.g. "14.4.2".
+       * </pre>
+       *
+       * <code>string os_version = 27;</code>
+       * @return The osVersion.
+       */
+      java.lang.String getOsVersion();
+      /**
+       * <pre>
+       * Optional.
+       * The operating system version.
+       * e.g. "14.4.2".
+       * </pre>
+       *
+       * <code>string os_version = 27;</code>
+       * @return The bytes for osVersion.
+       */
+      com.google.protobuf.ByteString
+          getOsVersionBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The type of the browser.
+       * e.g. "chrome", "firefox", etc.
+       * </pre>
+       *
+       * <code>string browser_type = 28;</code>
+       * @return The browserType.
+       */
+      java.lang.String getBrowserType();
+      /**
+       * <pre>
+       * Optional.
+       * The type of the browser.
+       * e.g. "chrome", "firefox", etc.
+       * </pre>
+       *
+       * <code>string browser_type = 28;</code>
+       * @return The bytes for browserType.
+       */
+      com.google.protobuf.ByteString
+          getBrowserTypeBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The UserAgent for the browser.
+       * </pre>
+       *
+       * <code>string user_agent = 29;</code>
+       * @return The userAgent.
+       */
+      java.lang.String getUserAgent();
+      /**
+       * <pre>
+       * Optional.
+       * The UserAgent for the browser.
+       * </pre>
+       *
+       * <code>string user_agent = 29;</code>
+       * @return The bytes for userAgent.
+       */
+      com.google.protobuf.ByteString
+          getUserAgentBytes();
+
+      /**
+       * <pre>
+       * Optional.
+       * The network used.
+       * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+       * </pre>
+       *
+       * <code>string network = 30;</code>
+       * @return The network.
+       */
+      java.lang.String getNetwork();
+      /**
+       * <pre>
+       * Optional.
+       * The network used.
+       * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+       * </pre>
+       *
+       * <code>string network = 30;</code>
+       * @return The bytes for network.
+       */
+      com.google.protobuf.ByteString
+          getNetworkBytes();
+    }
+    /**
+     * <pre>
+     * The context of this request.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictRequest.Context}
+     */
+    public static final class Context extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictRequest.Context)
+        ContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Context.newBuilder() to construct.
+      private Context(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Context() {
+        candidateContentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        device_ = "";
+        osType_ = "";
+        appVersion_ = "";
+        deviceModel_ = "";
+        deviceBrand_ = "";
+        osVersion_ = "";
+        browserType_ = "";
+        userAgent_ = "";
+        network_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Context();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Context(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder subBuilder = null;
+                if (rootContent_ != null) {
+                  subBuilder = rootContent_.toBuilder();
+                }
+                rootContent_ = input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.Content.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(rootContent_);
+                  rootContent_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  candidateContentIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                candidateContentIds_.add(s);
+                break;
+              }
+              case 178: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                device_ = s;
+                break;
+              }
+              case 186: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                osType_ = s;
+                break;
+              }
+              case 194: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                appVersion_ = s;
+                break;
+              }
+              case 202: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                deviceModel_ = s;
+                break;
+              }
+              case 210: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                deviceBrand_ = s;
+                break;
+              }
+              case 218: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                osVersion_ = s;
+                break;
+              }
+              case 226: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                browserType_ = s;
+                break;
+              }
+              case 234: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                userAgent_ = s;
+                break;
+              }
+              case 242: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                network_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            candidateContentIds_ = candidateContentIds_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Context_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder.class);
+      }
+
+      public static final int ROOT_CONTENT_FIELD_NUMBER = 1;
+      private byteplus.sdk.media.protocol.ByteplusMedia.Content rootContent_;
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       * @return Whether the rootContent field is set.
+       */
+      @java.lang.Override
+      public boolean hasRootContent() {
+        return rootContent_ != null;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       * @return The rootContent.
+       */
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.Content getRootContent() {
+        return rootContent_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.Content.getDefaultInstance() : rootContent_;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is only required for content details page.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+       */
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder getRootContentOrBuilder() {
+        return getRootContent();
+      }
+
+      public static final int CANDIDATE_CONTENT_IDS_FIELD_NUMBER = 3;
+      private com.google.protobuf.LazyStringList candidateContentIds_;
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @return A list containing the candidateContentIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCandidateContentIdsList() {
+        return candidateContentIds_;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @return The count of candidateContentIds.
+       */
+      public int getCandidateContentIdsCount() {
+        return candidateContentIds_.size();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @param index The index of the element to return.
+       * @return The candidateContentIds at the given index.
+       */
+      public java.lang.String getCandidateContentIds(int index) {
+        return candidateContentIds_.get(index);
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The list of candidates for the recommendation.
+       * If this is empty, all contents are the candidates.
+       * </pre>
+       *
+       * <code>repeated string candidate_content_ids = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the candidateContentIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCandidateContentIdsBytes(int index) {
+        return candidateContentIds_.getByteString(index);
+      }
+
+      public static final int DEVICE_FIELD_NUMBER = 22;
+      private volatile java.lang.Object device_;
+      /**
+       * <pre>
+       * Required.
+       * The platform used by the user.
+       * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+       *  app: user use APP.
+       *  desktop-web: user use desktop web.
+       *  mobile-web: user use mobile web.
+       * </pre>
+       *
+       * <code>string device = 22;</code>
+       * @return The device.
+       */
+      @java.lang.Override
+      public java.lang.String getDevice() {
+        java.lang.Object ref = device_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          device_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The platform used by the user.
+       * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+       *  app: user use APP.
+       *  desktop-web: user use desktop web.
+       *  mobile-web: user use mobile web.
+       * </pre>
+       *
+       * <code>string device = 22;</code>
+       * @return The bytes for device.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getDeviceBytes() {
+        java.lang.Object ref = device_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          device_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int OS_TYPE_FIELD_NUMBER = 23;
+      private volatile java.lang.Object osType_;
+      /**
+       * <pre>
+       * Optional.
+       * The platform used by the user.
+       * The acceptable values are "android", "ios", "windows", "other".
+       * </pre>
+       *
+       * <code>string os_type = 23;</code>
+       * @return The osType.
+       */
+      @java.lang.Override
+      public java.lang.String getOsType() {
+        java.lang.Object ref = osType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osType_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The platform used by the user.
+       * The acceptable values are "android", "ios", "windows", "other".
+       * </pre>
+       *
+       * <code>string os_type = 23;</code>
+       * @return The bytes for osType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getOsTypeBytes() {
+        java.lang.Object ref = osType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int APP_VERSION_FIELD_NUMBER = 24;
+      private volatile java.lang.Object appVersion_;
+      /**
+       * <pre>
+       * Optional.
+       * Your application version.
+       * e.g. V9.0.8.
+       * </pre>
+       *
+       * <code>string app_version = 24;</code>
+       * @return The appVersion.
+       */
+      @java.lang.Override
+      public java.lang.String getAppVersion() {
+        java.lang.Object ref = appVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appVersion_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * Your application version.
+       * e.g. V9.0.8.
+       * </pre>
+       *
+       * <code>string app_version = 24;</code>
+       * @return The bytes for appVersion.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAppVersionBytes() {
+        java.lang.Object ref = appVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DEVICE_MODEL_FIELD_NUMBER = 25;
+      private volatile java.lang.Object deviceModel_;
+      /**
+       * <pre>
+       * Optional.
+       * The device model.
+       * e.g. "iPhone10", "Pixel 4".
+       * </pre>
+       *
+       * <code>string device_model = 25;</code>
+       * @return The deviceModel.
+       */
+      @java.lang.Override
+      public java.lang.String getDeviceModel() {
+        java.lang.Object ref = deviceModel_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceModel_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The device model.
+       * e.g. "iPhone10", "Pixel 4".
+       * </pre>
+       *
+       * <code>string device_model = 25;</code>
+       * @return The bytes for deviceModel.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getDeviceModelBytes() {
+        java.lang.Object ref = deviceModel_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceModel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DEVICE_BRAND_FIELD_NUMBER = 26;
+      private volatile java.lang.Object deviceBrand_;
+      /**
+       * <pre>
+       * Optional.
+       * The brand of the device.
+       * e.g. "Samsung".
+       * </pre>
+       *
+       * <code>string device_brand = 26;</code>
+       * @return The deviceBrand.
+       */
+      @java.lang.Override
+      public java.lang.String getDeviceBrand() {
+        java.lang.Object ref = deviceBrand_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceBrand_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The brand of the device.
+       * e.g. "Samsung".
+       * </pre>
+       *
+       * <code>string device_brand = 26;</code>
+       * @return The bytes for deviceBrand.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getDeviceBrandBytes() {
+        java.lang.Object ref = deviceBrand_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceBrand_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int OS_VERSION_FIELD_NUMBER = 27;
+      private volatile java.lang.Object osVersion_;
+      /**
+       * <pre>
+       * Optional.
+       * The operating system version.
+       * e.g. "14.4.2".
+       * </pre>
+       *
+       * <code>string os_version = 27;</code>
+       * @return The osVersion.
+       */
+      @java.lang.Override
+      public java.lang.String getOsVersion() {
+        java.lang.Object ref = osVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osVersion_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The operating system version.
+       * e.g. "14.4.2".
+       * </pre>
+       *
+       * <code>string os_version = 27;</code>
+       * @return The bytes for osVersion.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getOsVersionBytes() {
+        java.lang.Object ref = osVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int BROWSER_TYPE_FIELD_NUMBER = 28;
+      private volatile java.lang.Object browserType_;
+      /**
+       * <pre>
+       * Optional.
+       * The type of the browser.
+       * e.g. "chrome", "firefox", etc.
+       * </pre>
+       *
+       * <code>string browser_type = 28;</code>
+       * @return The browserType.
+       */
+      @java.lang.Override
+      public java.lang.String getBrowserType() {
+        java.lang.Object ref = browserType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          browserType_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The type of the browser.
+       * e.g. "chrome", "firefox", etc.
+       * </pre>
+       *
+       * <code>string browser_type = 28;</code>
+       * @return The bytes for browserType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getBrowserTypeBytes() {
+        java.lang.Object ref = browserType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          browserType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int USER_AGENT_FIELD_NUMBER = 29;
+      private volatile java.lang.Object userAgent_;
+      /**
+       * <pre>
+       * Optional.
+       * The UserAgent for the browser.
+       * </pre>
+       *
+       * <code>string user_agent = 29;</code>
+       * @return The userAgent.
+       */
+      @java.lang.Override
+      public java.lang.String getUserAgent() {
+        java.lang.Object ref = userAgent_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userAgent_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The UserAgent for the browser.
+       * </pre>
+       *
+       * <code>string user_agent = 29;</code>
+       * @return The bytes for userAgent.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getUserAgentBytes() {
+        java.lang.Object ref = userAgent_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userAgent_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int NETWORK_FIELD_NUMBER = 30;
+      private volatile java.lang.Object network_;
+      /**
+       * <pre>
+       * Optional.
+       * The network used.
+       * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+       * </pre>
+       *
+       * <code>string network = 30;</code>
+       * @return The network.
+       */
+      @java.lang.Override
+      public java.lang.String getNetwork() {
+        java.lang.Object ref = network_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          network_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The network used.
+       * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+       * </pre>
+       *
+       * <code>string network = 30;</code>
+       * @return The bytes for network.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNetworkBytes() {
+        java.lang.Object ref = network_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          network_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (rootContent_ != null) {
+          output.writeMessage(1, getRootContent());
+        }
+        for (int i = 0; i < candidateContentIds_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, candidateContentIds_.getRaw(i));
+        }
+        if (!getDeviceBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 22, device_);
+        }
+        if (!getOsTypeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 23, osType_);
+        }
+        if (!getAppVersionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 24, appVersion_);
+        }
+        if (!getDeviceModelBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 25, deviceModel_);
+        }
+        if (!getDeviceBrandBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 26, deviceBrand_);
+        }
+        if (!getOsVersionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 27, osVersion_);
+        }
+        if (!getBrowserTypeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 28, browserType_);
+        }
+        if (!getUserAgentBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 29, userAgent_);
+        }
+        if (!getNetworkBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 30, network_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (rootContent_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getRootContent());
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < candidateContentIds_.size(); i++) {
+            dataSize += computeStringSizeNoTag(candidateContentIds_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getCandidateContentIdsList().size();
+        }
+        if (!getDeviceBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, device_);
+        }
+        if (!getOsTypeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, osType_);
+        }
+        if (!getAppVersionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, appVersion_);
+        }
+        if (!getDeviceModelBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, deviceModel_);
+        }
+        if (!getDeviceBrandBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, deviceBrand_);
+        }
+        if (!getOsVersionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, osVersion_);
+        }
+        if (!getBrowserTypeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, browserType_);
+        }
+        if (!getUserAgentBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, userAgent_);
+        }
+        if (!getNetworkBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, network_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context)) {
+          return super.equals(obj);
+        }
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context) obj;
+
+        if (hasRootContent() != other.hasRootContent()) return false;
+        if (hasRootContent()) {
+          if (!getRootContent()
+              .equals(other.getRootContent())) return false;
+        }
+        if (!getCandidateContentIdsList()
+            .equals(other.getCandidateContentIdsList())) return false;
+        if (!getDevice()
+            .equals(other.getDevice())) return false;
+        if (!getOsType()
+            .equals(other.getOsType())) return false;
+        if (!getAppVersion()
+            .equals(other.getAppVersion())) return false;
+        if (!getDeviceModel()
+            .equals(other.getDeviceModel())) return false;
+        if (!getDeviceBrand()
+            .equals(other.getDeviceBrand())) return false;
+        if (!getOsVersion()
+            .equals(other.getOsVersion())) return false;
+        if (!getBrowserType()
+            .equals(other.getBrowserType())) return false;
+        if (!getUserAgent()
+            .equals(other.getUserAgent())) return false;
+        if (!getNetwork()
+            .equals(other.getNetwork())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasRootContent()) {
+          hash = (37 * hash) + ROOT_CONTENT_FIELD_NUMBER;
+          hash = (53 * hash) + getRootContent().hashCode();
+        }
+        if (getCandidateContentIdsCount() > 0) {
+          hash = (37 * hash) + CANDIDATE_CONTENT_IDS_FIELD_NUMBER;
+          hash = (53 * hash) + getCandidateContentIdsList().hashCode();
+        }
+        hash = (37 * hash) + DEVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getDevice().hashCode();
+        hash = (37 * hash) + OS_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getOsType().hashCode();
+        hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getAppVersion().hashCode();
+        hash = (37 * hash) + DEVICE_MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceModel().hashCode();
+        hash = (37 * hash) + DEVICE_BRAND_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceBrand().hashCode();
+        hash = (37 * hash) + OS_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getOsVersion().hashCode();
+        hash = (37 * hash) + BROWSER_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getBrowserType().hashCode();
+        hash = (37 * hash) + USER_AGENT_FIELD_NUMBER;
+        hash = (53 * hash) + getUserAgent().hashCode();
+        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+        hash = (53 * hash) + getNetwork().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The context of this request.
+       * </pre>
+       *
+       * Protobuf type {@code bytedance.byteplus.media.PredictRequest.Context}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictRequest.Context)
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Context_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder.class);
+        }
+
+        // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (rootContentBuilder_ == null) {
+            rootContent_ = null;
+          } else {
+            rootContent_ = null;
+            rootContentBuilder_ = null;
+          }
+          candidateContentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          device_ = "";
+
+          osType_ = "";
+
+          appVersion_ = "";
+
+          deviceModel_ = "";
+
+          deviceBrand_ = "";
+
+          osVersion_ = "";
+
+          browserType_ = "";
+
+          userAgent_ = "";
+
+          network_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getDefaultInstanceForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context build() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context buildPartial() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context(this);
+          int from_bitField0_ = bitField0_;
+          if (rootContentBuilder_ == null) {
+            result.rootContent_ = rootContent_;
+          } else {
+            result.rootContent_ = rootContentBuilder_.build();
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            candidateContentIds_ = candidateContentIds_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.candidateContentIds_ = candidateContentIds_;
+          result.device_ = device_;
+          result.osType_ = osType_;
+          result.appVersion_ = appVersion_;
+          result.deviceModel_ = deviceModel_;
+          result.deviceBrand_ = deviceBrand_;
+          result.osVersion_ = osVersion_;
+          result.browserType_ = browserType_;
+          result.userAgent_ = userAgent_;
+          result.network_ = network_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context) {
+            return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context other) {
+          if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.getDefaultInstance()) return this;
+          if (other.hasRootContent()) {
+            mergeRootContent(other.getRootContent());
+          }
+          if (!other.candidateContentIds_.isEmpty()) {
+            if (candidateContentIds_.isEmpty()) {
+              candidateContentIds_ = other.candidateContentIds_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCandidateContentIdsIsMutable();
+              candidateContentIds_.addAll(other.candidateContentIds_);
+            }
+            onChanged();
+          }
+          if (!other.getDevice().isEmpty()) {
+            device_ = other.device_;
+            onChanged();
+          }
+          if (!other.getOsType().isEmpty()) {
+            osType_ = other.osType_;
+            onChanged();
+          }
+          if (!other.getAppVersion().isEmpty()) {
+            appVersion_ = other.appVersion_;
+            onChanged();
+          }
+          if (!other.getDeviceModel().isEmpty()) {
+            deviceModel_ = other.deviceModel_;
+            onChanged();
+          }
+          if (!other.getDeviceBrand().isEmpty()) {
+            deviceBrand_ = other.deviceBrand_;
+            onChanged();
+          }
+          if (!other.getOsVersion().isEmpty()) {
+            osVersion_ = other.osVersion_;
+            onChanged();
+          }
+          if (!other.getBrowserType().isEmpty()) {
+            browserType_ = other.browserType_;
+            onChanged();
+          }
+          if (!other.getUserAgent().isEmpty()) {
+            userAgent_ = other.userAgent_;
+            onChanged();
+          }
+          if (!other.getNetwork().isEmpty()) {
+            network_ = other.network_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private byteplus.sdk.media.protocol.ByteplusMedia.Content rootContent_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            byteplus.sdk.media.protocol.ByteplusMedia.Content, byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder, byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder> rootContentBuilder_;
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         * @return Whether the rootContent field is set.
+         */
+        public boolean hasRootContent() {
+          return rootContentBuilder_ != null || rootContent_ != null;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         * @return The rootContent.
+         */
+        public byteplus.sdk.media.protocol.ByteplusMedia.Content getRootContent() {
+          if (rootContentBuilder_ == null) {
+            return rootContent_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.Content.getDefaultInstance() : rootContent_;
+          } else {
+            return rootContentBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public Builder setRootContent(byteplus.sdk.media.protocol.ByteplusMedia.Content value) {
+          if (rootContentBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            rootContent_ = value;
+            onChanged();
+          } else {
+            rootContentBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public Builder setRootContent(
+            byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder builderForValue) {
+          if (rootContentBuilder_ == null) {
+            rootContent_ = builderForValue.build();
+            onChanged();
+          } else {
+            rootContentBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public Builder mergeRootContent(byteplus.sdk.media.protocol.ByteplusMedia.Content value) {
+          if (rootContentBuilder_ == null) {
+            if (rootContent_ != null) {
+              rootContent_ =
+                byteplus.sdk.media.protocol.ByteplusMedia.Content.newBuilder(rootContent_).mergeFrom(value).buildPartial();
+            } else {
+              rootContent_ = value;
+            }
+            onChanged();
+          } else {
+            rootContentBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public Builder clearRootContent() {
+          if (rootContentBuilder_ == null) {
+            rootContent_ = null;
+            onChanged();
+          } else {
+            rootContent_ = null;
+            rootContentBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder getRootContentBuilder() {
+          
+          onChanged();
+          return getRootContentFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        public byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder getRootContentOrBuilder() {
+          if (rootContentBuilder_ != null) {
+            return rootContentBuilder_.getMessageOrBuilder();
+          } else {
+            return rootContent_ == null ?
+                byteplus.sdk.media.protocol.ByteplusMedia.Content.getDefaultInstance() : rootContent_;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is only required for content details page.
+         * </pre>
+         *
+         * <code>.bytedance.byteplus.media.Content root_content = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            byteplus.sdk.media.protocol.ByteplusMedia.Content, byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder, byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder> 
+            getRootContentFieldBuilder() {
+          if (rootContentBuilder_ == null) {
+            rootContentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                byteplus.sdk.media.protocol.ByteplusMedia.Content, byteplus.sdk.media.protocol.ByteplusMedia.Content.Builder, byteplus.sdk.media.protocol.ByteplusMedia.ContentOrBuilder>(
+                    getRootContent(),
+                    getParentForChildren(),
+                    isClean());
+            rootContent_ = null;
+          }
+          return rootContentBuilder_;
+        }
+
+        private com.google.protobuf.LazyStringList candidateContentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureCandidateContentIdsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            candidateContentIds_ = new com.google.protobuf.LazyStringArrayList(candidateContentIds_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @return A list containing the candidateContentIds.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getCandidateContentIdsList() {
+          return candidateContentIds_.getUnmodifiableView();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @return The count of candidateContentIds.
+         */
+        public int getCandidateContentIdsCount() {
+          return candidateContentIds_.size();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param index The index of the element to return.
+         * @return The candidateContentIds at the given index.
+         */
+        public java.lang.String getCandidateContentIds(int index) {
+          return candidateContentIds_.get(index);
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the candidateContentIds at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getCandidateContentIdsBytes(int index) {
+          return candidateContentIds_.getByteString(index);
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param index The index to set the value at.
+         * @param value The candidateContentIds to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCandidateContentIds(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCandidateContentIdsIsMutable();
+          candidateContentIds_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param value The candidateContentIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addCandidateContentIds(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCandidateContentIdsIsMutable();
+          candidateContentIds_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param values The candidateContentIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllCandidateContentIds(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureCandidateContentIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, candidateContentIds_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCandidateContentIds() {
+          candidateContentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The list of candidates for the recommendation.
+         * If this is empty, all contents are the candidates.
+         * </pre>
+         *
+         * <code>repeated string candidate_content_ids = 3;</code>
+         * @param value The bytes of the candidateContentIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addCandidateContentIdsBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          ensureCandidateContentIdsIsMutable();
+          candidateContentIds_.add(value);
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object device_ = "";
+        /**
+         * <pre>
+         * Required.
+         * The platform used by the user.
+         * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+         *  app: user use APP.
+         *  desktop-web: user use desktop web.
+         *  mobile-web: user use mobile web.
+         * </pre>
+         *
+         * <code>string device = 22;</code>
+         * @return The device.
+         */
+        public java.lang.String getDevice() {
+          java.lang.Object ref = device_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            device_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * The platform used by the user.
+         * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+         *  app: user use APP.
+         *  desktop-web: user use desktop web.
+         *  mobile-web: user use mobile web.
+         * </pre>
+         *
+         * <code>string device = 22;</code>
+         * @return The bytes for device.
+         */
+        public com.google.protobuf.ByteString
+            getDeviceBytes() {
+          java.lang.Object ref = device_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            device_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * The platform used by the user.
+         * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+         *  app: user use APP.
+         *  desktop-web: user use desktop web.
+         *  mobile-web: user use mobile web.
+         * </pre>
+         *
+         * <code>string device = 22;</code>
+         * @param value The device to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDevice(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          device_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The platform used by the user.
+         * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+         *  app: user use APP.
+         *  desktop-web: user use desktop web.
+         *  mobile-web: user use mobile web.
+         * </pre>
+         *
+         * <code>string device = 22;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDevice() {
+          
+          device_ = getDefaultInstance().getDevice();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The platform used by the user.
+         * The acceptable values are "app", "desktop-web", "mobile-web", "other".
+         *  app: user use APP.
+         *  desktop-web: user use desktop web.
+         *  mobile-web: user use mobile web.
+         * </pre>
+         *
+         * <code>string device = 22;</code>
+         * @param value The bytes for device to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          device_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object osType_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The platform used by the user.
+         * The acceptable values are "android", "ios", "windows", "other".
+         * </pre>
+         *
+         * <code>string os_type = 23;</code>
+         * @return The osType.
+         */
+        public java.lang.String getOsType() {
+          java.lang.Object ref = osType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            osType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The platform used by the user.
+         * The acceptable values are "android", "ios", "windows", "other".
+         * </pre>
+         *
+         * <code>string os_type = 23;</code>
+         * @return The bytes for osType.
+         */
+        public com.google.protobuf.ByteString
+            getOsTypeBytes() {
+          java.lang.Object ref = osType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            osType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The platform used by the user.
+         * The acceptable values are "android", "ios", "windows", "other".
+         * </pre>
+         *
+         * <code>string os_type = 23;</code>
+         * @param value The osType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOsType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          osType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The platform used by the user.
+         * The acceptable values are "android", "ios", "windows", "other".
+         * </pre>
+         *
+         * <code>string os_type = 23;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOsType() {
+          
+          osType_ = getDefaultInstance().getOsType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The platform used by the user.
+         * The acceptable values are "android", "ios", "windows", "other".
+         * </pre>
+         *
+         * <code>string os_type = 23;</code>
+         * @param value The bytes for osType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOsTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          osType_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object appVersion_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * Your application version.
+         * e.g. V9.0.8.
+         * </pre>
+         *
+         * <code>string app_version = 24;</code>
+         * @return The appVersion.
+         */
+        public java.lang.String getAppVersion() {
+          java.lang.Object ref = appVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            appVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * Your application version.
+         * e.g. V9.0.8.
+         * </pre>
+         *
+         * <code>string app_version = 24;</code>
+         * @return The bytes for appVersion.
+         */
+        public com.google.protobuf.ByteString
+            getAppVersionBytes() {
+          java.lang.Object ref = appVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            appVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * Your application version.
+         * e.g. V9.0.8.
+         * </pre>
+         *
+         * <code>string app_version = 24;</code>
+         * @param value The appVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppVersion(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          appVersion_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * Your application version.
+         * e.g. V9.0.8.
+         * </pre>
+         *
+         * <code>string app_version = 24;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAppVersion() {
+          
+          appVersion_ = getDefaultInstance().getAppVersion();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * Your application version.
+         * e.g. V9.0.8.
+         * </pre>
+         *
+         * <code>string app_version = 24;</code>
+         * @param value The bytes for appVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppVersionBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          appVersion_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object deviceModel_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The device model.
+         * e.g. "iPhone10", "Pixel 4".
+         * </pre>
+         *
+         * <code>string device_model = 25;</code>
+         * @return The deviceModel.
+         */
+        public java.lang.String getDeviceModel() {
+          java.lang.Object ref = deviceModel_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deviceModel_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The device model.
+         * e.g. "iPhone10", "Pixel 4".
+         * </pre>
+         *
+         * <code>string device_model = 25;</code>
+         * @return The bytes for deviceModel.
+         */
+        public com.google.protobuf.ByteString
+            getDeviceModelBytes() {
+          java.lang.Object ref = deviceModel_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            deviceModel_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The device model.
+         * e.g. "iPhone10", "Pixel 4".
+         * </pre>
+         *
+         * <code>string device_model = 25;</code>
+         * @param value The deviceModel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceModel(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          deviceModel_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The device model.
+         * e.g. "iPhone10", "Pixel 4".
+         * </pre>
+         *
+         * <code>string device_model = 25;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDeviceModel() {
+          
+          deviceModel_ = getDefaultInstance().getDeviceModel();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The device model.
+         * e.g. "iPhone10", "Pixel 4".
+         * </pre>
+         *
+         * <code>string device_model = 25;</code>
+         * @param value The bytes for deviceModel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceModelBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          deviceModel_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object deviceBrand_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The brand of the device.
+         * e.g. "Samsung".
+         * </pre>
+         *
+         * <code>string device_brand = 26;</code>
+         * @return The deviceBrand.
+         */
+        public java.lang.String getDeviceBrand() {
+          java.lang.Object ref = deviceBrand_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deviceBrand_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The brand of the device.
+         * e.g. "Samsung".
+         * </pre>
+         *
+         * <code>string device_brand = 26;</code>
+         * @return The bytes for deviceBrand.
+         */
+        public com.google.protobuf.ByteString
+            getDeviceBrandBytes() {
+          java.lang.Object ref = deviceBrand_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            deviceBrand_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The brand of the device.
+         * e.g. "Samsung".
+         * </pre>
+         *
+         * <code>string device_brand = 26;</code>
+         * @param value The deviceBrand to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceBrand(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          deviceBrand_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The brand of the device.
+         * e.g. "Samsung".
+         * </pre>
+         *
+         * <code>string device_brand = 26;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDeviceBrand() {
+          
+          deviceBrand_ = getDefaultInstance().getDeviceBrand();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The brand of the device.
+         * e.g. "Samsung".
+         * </pre>
+         *
+         * <code>string device_brand = 26;</code>
+         * @param value The bytes for deviceBrand to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceBrandBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          deviceBrand_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object osVersion_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The operating system version.
+         * e.g. "14.4.2".
+         * </pre>
+         *
+         * <code>string os_version = 27;</code>
+         * @return The osVersion.
+         */
+        public java.lang.String getOsVersion() {
+          java.lang.Object ref = osVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            osVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The operating system version.
+         * e.g. "14.4.2".
+         * </pre>
+         *
+         * <code>string os_version = 27;</code>
+         * @return The bytes for osVersion.
+         */
+        public com.google.protobuf.ByteString
+            getOsVersionBytes() {
+          java.lang.Object ref = osVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            osVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The operating system version.
+         * e.g. "14.4.2".
+         * </pre>
+         *
+         * <code>string os_version = 27;</code>
+         * @param value The osVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOsVersion(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          osVersion_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The operating system version.
+         * e.g. "14.4.2".
+         * </pre>
+         *
+         * <code>string os_version = 27;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOsVersion() {
+          
+          osVersion_ = getDefaultInstance().getOsVersion();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The operating system version.
+         * e.g. "14.4.2".
+         * </pre>
+         *
+         * <code>string os_version = 27;</code>
+         * @param value The bytes for osVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOsVersionBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          osVersion_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object browserType_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The type of the browser.
+         * e.g. "chrome", "firefox", etc.
+         * </pre>
+         *
+         * <code>string browser_type = 28;</code>
+         * @return The browserType.
+         */
+        public java.lang.String getBrowserType() {
+          java.lang.Object ref = browserType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            browserType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The type of the browser.
+         * e.g. "chrome", "firefox", etc.
+         * </pre>
+         *
+         * <code>string browser_type = 28;</code>
+         * @return The bytes for browserType.
+         */
+        public com.google.protobuf.ByteString
+            getBrowserTypeBytes() {
+          java.lang.Object ref = browserType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            browserType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The type of the browser.
+         * e.g. "chrome", "firefox", etc.
+         * </pre>
+         *
+         * <code>string browser_type = 28;</code>
+         * @param value The browserType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBrowserType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          browserType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The type of the browser.
+         * e.g. "chrome", "firefox", etc.
+         * </pre>
+         *
+         * <code>string browser_type = 28;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearBrowserType() {
+          
+          browserType_ = getDefaultInstance().getBrowserType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The type of the browser.
+         * e.g. "chrome", "firefox", etc.
+         * </pre>
+         *
+         * <code>string browser_type = 28;</code>
+         * @param value The bytes for browserType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBrowserTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          browserType_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object userAgent_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The UserAgent for the browser.
+         * </pre>
+         *
+         * <code>string user_agent = 29;</code>
+         * @return The userAgent.
+         */
+        public java.lang.String getUserAgent() {
+          java.lang.Object ref = userAgent_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            userAgent_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The UserAgent for the browser.
+         * </pre>
+         *
+         * <code>string user_agent = 29;</code>
+         * @return The bytes for userAgent.
+         */
+        public com.google.protobuf.ByteString
+            getUserAgentBytes() {
+          java.lang.Object ref = userAgent_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            userAgent_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The UserAgent for the browser.
+         * </pre>
+         *
+         * <code>string user_agent = 29;</code>
+         * @param value The userAgent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUserAgent(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          userAgent_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The UserAgent for the browser.
+         * </pre>
+         *
+         * <code>string user_agent = 29;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUserAgent() {
+          
+          userAgent_ = getDefaultInstance().getUserAgent();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The UserAgent for the browser.
+         * </pre>
+         *
+         * <code>string user_agent = 29;</code>
+         * @param value The bytes for userAgent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUserAgentBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          userAgent_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object network_ = "";
+        /**
+         * <pre>
+         * Optional.
+         * The network used.
+         * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+         * </pre>
+         *
+         * <code>string network = 30;</code>
+         * @return The network.
+         */
+        public java.lang.String getNetwork() {
+          java.lang.Object ref = network_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            network_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The network used.
+         * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+         * </pre>
+         *
+         * <code>string network = 30;</code>
+         * @return The bytes for network.
+         */
+        public com.google.protobuf.ByteString
+            getNetworkBytes() {
+          java.lang.Object ref = network_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            network_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The network used.
+         * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+         * </pre>
+         *
+         * <code>string network = 30;</code>
+         * @param value The network to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNetwork(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          network_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The network used.
+         * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+         * </pre>
+         *
+         * <code>string network = 30;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearNetwork() {
+          
+          network_ = getDefaultInstance().getNetwork();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * The network used.
+         * The acceptable values are "2g", "3g", "4g", "5g", "wifi", "other".
+         * </pre>
+         *
+         * <code>string network = 30;</code>
+         * @param value The bytes for network to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNetworkBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          network_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictRequest.Context)
+      }
+
+      // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest.Context)
+      private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context();
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Context>
+          PARSER = new com.google.protobuf.AbstractParser<Context>() {
+        @java.lang.Override
+        public Context parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Context(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Context> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Context> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * Required.
+     * This is same as `User.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Required.
+     * This is same as `User.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 2;
+    private int size_;
+    /**
+     * <pre>
+     * Required.
+     * The maximum number of contents returned.
+     * The actual # of contents returned is the min of:
+     * `size`
+     * length(`context.candidates_content_ids`)
+     * total # of contents with `is_recommendable=True`
+     * </pre>
+     *
+     * <code>int32 size = 2;</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public int getSize() {
+      return size_;
+    }
+
+    public static final int SCENE_FIELD_NUMBER = 3;
+    private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene scene_;
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     * @return Whether the scene field is set.
+     */
+    @java.lang.Override
+    public boolean hasScene() {
+      return scene_ != null;
+    }
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     * @return The scene.
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene() {
+      return scene_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+    }
+    /**
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder() {
+      return getScene();
+    }
+
+    public static final int CONTEXT_FIELD_NUMBER = 4;
+    private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context context_;
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     * @return Whether the context field is set.
+     */
+    @java.lang.Override
+    public boolean hasContext() {
+      return context_ != null;
+    }
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     * @return The context.
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getContext() {
+      return context_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.getDefaultInstance() : context_;
+    }
+    /**
+     * <pre>
+     * Optional.
+     * The context of this request.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder getContextOrBuilder() {
+      return getContext();
+    }
+
+    public static final int EXTRA_FIELD_NUMBER = 100;
+    private static final class ExtraDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extra_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExtra() {
+      if (extra_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtraDefaultEntryHolder.defaultEntry);
+      }
+      return extra_;
+    }
+
+    public int getExtraCount() {
+      return internalGetExtra().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExtra(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExtra().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+      return getExtraMap();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+      return internalGetExtra().getMap();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (size_ != 0) {
+        output.writeInt32(2, size_);
+      }
+      if (scene_ != null) {
+        output.writeMessage(3, getScene());
+      }
+      if (context_ != null) {
+        output.writeMessage(4, getContext());
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExtra(),
+          ExtraDefaultEntryHolder.defaultEntry,
+          100);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (size_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, size_);
+      }
+      if (scene_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getScene());
+      }
+      if (context_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getContext());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExtra().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(100, extra__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (getSize()
+          != other.getSize()) return false;
+      if (hasScene() != other.hasScene()) return false;
+      if (hasScene()) {
+        if (!getScene()
+            .equals(other.getScene())) return false;
+      }
+      if (hasContext() != other.hasContext()) return false;
+      if (hasContext()) {
+        if (!getContext()
+            .equals(other.getContext())) return false;
+      }
+      if (!internalGetExtra().equals(
+          other.internalGetExtra())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getSize();
+      if (hasScene()) {
+        hash = (37 * hash) + SCENE_FIELD_NUMBER;
+        hash = (53 * hash) + getScene().hashCode();
+      }
+      if (hasContext()) {
+        hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getContext().hashCode();
+      }
+      if (!internalGetExtra().getMap().isEmpty()) {
+        hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExtra().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The request proto for `Predict` call.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictRequest)
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetMutableExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        size_ = 0;
+
+        if (sceneBuilder_ == null) {
+          scene_ = null;
+        } else {
+          scene_ = null;
+          sceneBuilder_ = null;
+        }
+        if (contextBuilder_ == null) {
+          context_ = null;
+        } else {
+          context_ = null;
+          contextBuilder_ = null;
+        }
+        internalGetMutableExtra().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest getDefaultInstanceForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest build() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest buildPartial() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest(this);
+        int from_bitField0_ = bitField0_;
+        result.userId_ = userId_;
+        result.size_ = size_;
+        if (sceneBuilder_ == null) {
+          result.scene_ = scene_;
+        } else {
+          result.scene_ = sceneBuilder_.build();
+        }
+        if (contextBuilder_ == null) {
+          result.context_ = context_;
+        } else {
+          result.context_ = contextBuilder_.build();
+        }
+        result.extra_ = internalGetExtra();
+        result.extra_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest) {
+          return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest other) {
+        if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.getSize() != 0) {
+          setSize(other.getSize());
+        }
+        if (other.hasScene()) {
+          mergeScene(other.getScene());
+        }
+        if (other.hasContext()) {
+          mergeContext(other.getContext());
+        }
+        internalGetMutableExtra().mergeFrom(
+            other.internalGetExtra());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * Required.
+       * This is same as `User.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `User.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `User.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `User.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `User.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int size_ ;
+      /**
+       * <pre>
+       * Required.
+       * The maximum number of contents returned.
+       * The actual # of contents returned is the min of:
+       * `size`
+       * length(`context.candidates_content_ids`)
+       * total # of contents with `is_recommendable=True`
+       * </pre>
+       *
+       * <code>int32 size = 2;</code>
+       * @return The size.
+       */
+      @java.lang.Override
+      public int getSize() {
+        return size_;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The maximum number of contents returned.
+       * The actual # of contents returned is the min of:
+       * `size`
+       * length(`context.candidates_content_ids`)
+       * total # of contents with `is_recommendable=True`
+       * </pre>
+       *
+       * <code>int32 size = 2;</code>
+       * @param value The size to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSize(int value) {
+        
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The maximum number of contents returned.
+       * The actual # of contents returned is the min of:
+       * `size`
+       * length(`context.candidates_content_ids`)
+       * total # of contents with `is_recommendable=True`
+       * </pre>
+       *
+       * <code>int32 size = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSize() {
+        
+        size_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene scene_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder> sceneBuilder_;
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       * @return Whether the scene field is set.
+       */
+      public boolean hasScene() {
+        return sceneBuilder_ != null || scene_ != null;
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       * @return The scene.
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene() {
+        if (sceneBuilder_ == null) {
+          return scene_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+        } else {
+          return sceneBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public Builder setScene(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene value) {
+        if (sceneBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scene_ = value;
+          onChanged();
+        } else {
+          sceneBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public Builder setScene(
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder builderForValue) {
+        if (sceneBuilder_ == null) {
+          scene_ = builderForValue.build();
+          onChanged();
+        } else {
+          sceneBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public Builder mergeScene(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene value) {
+        if (sceneBuilder_ == null) {
+          if (scene_ != null) {
+            scene_ =
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.newBuilder(scene_).mergeFrom(value).buildPartial();
+          } else {
+            scene_ = value;
+          }
+          onChanged();
+        } else {
+          sceneBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public Builder clearScene() {
+        if (sceneBuilder_ == null) {
+          scene_ = null;
+          onChanged();
+        } else {
+          scene_ = null;
+          sceneBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder getSceneBuilder() {
+        
+        onChanged();
+        return getSceneFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder() {
+        if (sceneBuilder_ != null) {
+          return sceneBuilder_.getMessageOrBuilder();
+        } else {
+          return scene_ == null ?
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+        }
+      }
+      /**
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder> 
+          getSceneFieldBuilder() {
+        if (sceneBuilder_ == null) {
+          sceneBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder>(
+                  getScene(),
+                  getParentForChildren(),
+                  isClean());
+          scene_ = null;
+        }
+        return sceneBuilder_;
+      }
+
+      private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context context_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder> contextBuilder_;
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       * @return Whether the context field is set.
+       */
+      public boolean hasContext() {
+        return contextBuilder_ != null || context_ != null;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       * @return The context.
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context getContext() {
+        if (contextBuilder_ == null) {
+          return context_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.getDefaultInstance() : context_;
+        } else {
+          return contextBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public Builder setContext(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context value) {
+        if (contextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          context_ = value;
+          onChanged();
+        } else {
+          contextBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public Builder setContext(
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder builderForValue) {
+        if (contextBuilder_ == null) {
+          context_ = builderForValue.build();
+          onChanged();
+        } else {
+          contextBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public Builder mergeContext(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context value) {
+        if (contextBuilder_ == null) {
+          if (context_ != null) {
+            context_ =
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.newBuilder(context_).mergeFrom(value).buildPartial();
+          } else {
+            context_ = value;
+          }
+          onChanged();
+        } else {
+          contextBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public Builder clearContext() {
+        if (contextBuilder_ == null) {
+          context_ = null;
+          onChanged();
+        } else {
+          context_ = null;
+          contextBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder getContextBuilder() {
+        
+        onChanged();
+        return getContextFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder getContextOrBuilder() {
+        if (contextBuilder_ != null) {
+          return contextBuilder_.getMessageOrBuilder();
+        } else {
+          return context_ == null ?
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.getDefaultInstance() : context_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional.
+       * The context of this request.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Context context = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder> 
+          getContextFieldBuilder() {
+        if (contextBuilder_ == null) {
+          contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Context.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.ContextOrBuilder>(
+                  getContext(),
+                  getParentForChildren(),
+                  isClean());
+          context_ = null;
+        }
+        return contextBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExtra() {
+        onChanged();;
+        if (extra_ == null) {
+          extra_ = com.google.protobuf.MapField.newMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        if (!extra_.isMutable()) {
+          extra_ = extra_.copy();
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExtra() {
+        internalGetMutableExtra().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder removeExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExtra() {
+        return internalGetMutableExtra().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      public Builder putExtra(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder putAllExtra(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExtra().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest)
+    private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest();
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PredictRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PredictRequest>() {
+      @java.lang.Override
+      public PredictRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PredictRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PredictRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PredictRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PredictResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> 
+        getResponseContentsList();
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getResponseContents(int index);
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    int getResponseContentsCount();
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder> 
+        getResponseContentsOrBuilderList();
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder getResponseContentsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    int getExtraCount();
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    boolean containsExtra(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtra();
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtraMap();
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * A single predict call result.
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.media.PredictResult}
+   */
+  public static final class PredictResult extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictResult)
+      PredictResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PredictResult.newBuilder() to construct.
+    private PredictResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PredictResult() {
+      responseContents_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PredictResult();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PredictResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                responseContents_ = new java.util.ArrayList<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              responseContents_.add(
+                  input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.parser(), extensionRegistry));
+              break;
+            }
+            case 802: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                extra_ = com.google.protobuf.MapField.newMapField(
+                    ExtraDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              extra__ = input.readMessage(
+                  ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              extra_.getMutableMap().put(
+                  extra__.getKey(), extra__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          responseContents_ = java.util.Collections.unmodifiableList(responseContents_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 100:
+          return internalGetExtra();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder.class);
+    }
+
+    public interface ResponseContentOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictResult.ResponseContent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Output only.
+       * The content id.
+       * This is consistent with `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The contentId.
+       */
+      java.lang.String getContentId();
+      /**
+       * <pre>
+       * Output only.
+       * The content id.
+       * This is consistent with `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The bytes for contentId.
+       */
+      com.google.protobuf.ByteString
+          getContentIdBytes();
+
+      /**
+       * <pre>
+       * Output only.
+       * This is the 1-based ranking of the content.
+       * </pre>
+       *
+       * <code>int32 rank = 2;</code>
+       * @return The rank.
+       */
+      int getRank();
+
+      /**
+       * <pre>
+       * Output only.
+       * The is the predicted CTR.
+       * </pre>
+       *
+       * <code>double pctr = 3;</code>
+       * @return The pctr.
+       */
+      double getPctr();
+
+      /**
+       * <pre>
+       * Output only.
+       * This is the predicted CVR.
+       * </pre>
+       *
+       * <code>double pcvr = 4;</code>
+       * @return The pcvr.
+       */
+      double getPcvr();
+
+      /**
+       * <pre>
+       * Output only.
+       * The strategy used for this particular recommendation result.
+       * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+       * </pre>
+       *
+       * <code>string rec_info = 5;</code>
+       * @return The recInfo.
+       */
+      java.lang.String getRecInfo();
+      /**
+       * <pre>
+       * Output only.
+       * The strategy used for this particular recommendation result.
+       * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+       * </pre>
+       *
+       * <code>string rec_info = 5;</code>
+       * @return The bytes for recInfo.
+       */
+      com.google.protobuf.ByteString
+          getRecInfoBytes();
+
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      int getExtraCount();
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      boolean containsExtra(
+          java.lang.String key);
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getExtra();
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getExtraMap();
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue);
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      java.lang.String getExtraOrThrow(
+          java.lang.String key);
+    }
+    /**
+     * <pre>
+     * The response of a content.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictResult.ResponseContent}
+     */
+    public static final class ResponseContent extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictResult.ResponseContent)
+        ResponseContentOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ResponseContent.newBuilder() to construct.
+      private ResponseContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ResponseContent() {
+        contentId_ = "";
+        recInfo_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new ResponseContent();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ResponseContent(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                contentId_ = s;
+                break;
+              }
+              case 16: {
+
+                rank_ = input.readInt32();
+                break;
+              }
+              case 25: {
+
+                pctr_ = input.readDouble();
+                break;
+              }
+              case 33: {
+
+                pcvr_ = input.readDouble();
+                break;
+              }
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                recInfo_ = s;
+                break;
+              }
+              case 802: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  extra_ = com.google.protobuf.MapField.newMapField(
+                      ExtraDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                extra__ = input.readMessage(
+                    ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                extra_.getMutableMap().put(
+                    extra__.getKey(), extra__.getValue());
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder.class);
+      }
+
+      public static final int CONTENT_ID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object contentId_;
+      /**
+       * <pre>
+       * Output only.
+       * The content id.
+       * This is consistent with `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The contentId.
+       */
+      @java.lang.Override
+      public java.lang.String getContentId() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The content id.
+       * This is consistent with `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The bytes for contentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getContentIdBytes() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RANK_FIELD_NUMBER = 2;
+      private int rank_;
+      /**
+       * <pre>
+       * Output only.
+       * This is the 1-based ranking of the content.
+       * </pre>
+       *
+       * <code>int32 rank = 2;</code>
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      public static final int PCTR_FIELD_NUMBER = 3;
+      private double pctr_;
+      /**
+       * <pre>
+       * Output only.
+       * The is the predicted CTR.
+       * </pre>
+       *
+       * <code>double pctr = 3;</code>
+       * @return The pctr.
+       */
+      @java.lang.Override
+      public double getPctr() {
+        return pctr_;
+      }
+
+      public static final int PCVR_FIELD_NUMBER = 4;
+      private double pcvr_;
+      /**
+       * <pre>
+       * Output only.
+       * This is the predicted CVR.
+       * </pre>
+       *
+       * <code>double pcvr = 4;</code>
+       * @return The pcvr.
+       */
+      @java.lang.Override
+      public double getPcvr() {
+        return pcvr_;
+      }
+
+      public static final int REC_INFO_FIELD_NUMBER = 5;
+      private volatile java.lang.Object recInfo_;
+      /**
+       * <pre>
+       * Output only.
+       * The strategy used for this particular recommendation result.
+       * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+       * </pre>
+       *
+       * <code>string rec_info = 5;</code>
+       * @return The recInfo.
+       */
+      @java.lang.Override
+      public java.lang.String getRecInfo() {
+        java.lang.Object ref = recInfo_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          recInfo_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The strategy used for this particular recommendation result.
+       * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+       * </pre>
+       *
+       * <code>string rec_info = 5;</code>
+       * @return The bytes for recInfo.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getRecInfoBytes() {
+        java.lang.Object ref = recInfo_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          recInfo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int EXTRA_FIELD_NUMBER = 100;
+      private static final class ExtraDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * All the extra debug info here.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getContentIdBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contentId_);
+        }
+        if (rank_ != 0) {
+          output.writeInt32(2, rank_);
+        }
+        if (pctr_ != 0D) {
+          output.writeDouble(3, pctr_);
+        }
+        if (pcvr_ != 0D) {
+          output.writeDouble(4, pcvr_);
+        }
+        if (!getRecInfoBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, recInfo_);
+        }
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetExtra(),
+            ExtraDefaultEntryHolder.defaultEntry,
+            100);
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getContentIdBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contentId_);
+        }
+        if (rank_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, rank_);
+        }
+        if (pctr_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(3, pctr_);
+        }
+        if (pcvr_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(4, pcvr_);
+        }
+        if (!getRecInfoBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, recInfo_);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetExtra().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(100, extra__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent)) {
+          return super.equals(obj);
+        }
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent) obj;
+
+        if (!getContentId()
+            .equals(other.getContentId())) return false;
+        if (getRank()
+            != other.getRank()) return false;
+        if (java.lang.Double.doubleToLongBits(getPctr())
+            != java.lang.Double.doubleToLongBits(
+                other.getPctr())) return false;
+        if (java.lang.Double.doubleToLongBits(getPcvr())
+            != java.lang.Double.doubleToLongBits(
+                other.getPcvr())) return false;
+        if (!getRecInfo()
+            .equals(other.getRecInfo())) return false;
+        if (!internalGetExtra().equals(
+            other.internalGetExtra())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getContentId().hashCode();
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+        hash = (37 * hash) + PCTR_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getPctr()));
+        hash = (37 * hash) + PCVR_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getPcvr()));
+        hash = (37 * hash) + REC_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRecInfo().hashCode();
+        if (!internalGetExtra().getMap().isEmpty()) {
+          hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetExtra().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The response of a content.
+       * </pre>
+       *
+       * Protobuf type {@code bytedance.byteplus.media.PredictResult.ResponseContent}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictResult.ResponseContent)
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 100:
+              return internalGetExtra();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 100:
+              return internalGetMutableExtra();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder.class);
+        }
+
+        // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          contentId_ = "";
+
+          rank_ = 0;
+
+          pctr_ = 0D;
+
+          pcvr_ = 0D;
+
+          recInfo_ = "";
+
+          internalGetMutableExtra().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getDefaultInstanceForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent build() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent buildPartial() {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent(this);
+          int from_bitField0_ = bitField0_;
+          result.contentId_ = contentId_;
+          result.rank_ = rank_;
+          result.pctr_ = pctr_;
+          result.pcvr_ = pcvr_;
+          result.recInfo_ = recInfo_;
+          result.extra_ = internalGetExtra();
+          result.extra_.makeImmutable();
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent) {
+            return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent other) {
+          if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.getDefaultInstance()) return this;
+          if (!other.getContentId().isEmpty()) {
+            contentId_ = other.contentId_;
+            onChanged();
+          }
+          if (other.getRank() != 0) {
+            setRank(other.getRank());
+          }
+          if (other.getPctr() != 0D) {
+            setPctr(other.getPctr());
+          }
+          if (other.getPcvr() != 0D) {
+            setPcvr(other.getPcvr());
+          }
+          if (!other.getRecInfo().isEmpty()) {
+            recInfo_ = other.recInfo_;
+            onChanged();
+          }
+          internalGetMutableExtra().mergeFrom(
+              other.internalGetExtra());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object contentId_ = "";
+        /**
+         * <pre>
+         * Output only.
+         * The content id.
+         * This is consistent with `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return The contentId.
+         */
+        public java.lang.String getContentId() {
+          java.lang.Object ref = contentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            contentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The content id.
+         * This is consistent with `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return The bytes for contentId.
+         */
+        public com.google.protobuf.ByteString
+            getContentIdBytes() {
+          java.lang.Object ref = contentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            contentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The content id.
+         * This is consistent with `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @param value The contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          contentId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The content id.
+         * This is consistent with `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearContentId() {
+          
+          contentId_ = getDefaultInstance().getContentId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The content id.
+         * This is consistent with `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @param value The bytes for contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          contentId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int rank_ ;
+        /**
+         * <pre>
+         * Output only.
+         * This is the 1-based ranking of the content.
+         * </pre>
+         *
+         * <code>int32 rank = 2;</code>
+         * @return The rank.
+         */
+        @java.lang.Override
+        public int getRank() {
+          return rank_;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * This is the 1-based ranking of the content.
+         * </pre>
+         *
+         * <code>int32 rank = 2;</code>
+         * @param value The rank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRank(int value) {
+          
+          rank_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * This is the 1-based ranking of the content.
+         * </pre>
+         *
+         * <code>int32 rank = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRank() {
+          
+          rank_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double pctr_ ;
+        /**
+         * <pre>
+         * Output only.
+         * The is the predicted CTR.
+         * </pre>
+         *
+         * <code>double pctr = 3;</code>
+         * @return The pctr.
+         */
+        @java.lang.Override
+        public double getPctr() {
+          return pctr_;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The is the predicted CTR.
+         * </pre>
+         *
+         * <code>double pctr = 3;</code>
+         * @param value The pctr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPctr(double value) {
+          
+          pctr_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The is the predicted CTR.
+         * </pre>
+         *
+         * <code>double pctr = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPctr() {
+          
+          pctr_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double pcvr_ ;
+        /**
+         * <pre>
+         * Output only.
+         * This is the predicted CVR.
+         * </pre>
+         *
+         * <code>double pcvr = 4;</code>
+         * @return The pcvr.
+         */
+        @java.lang.Override
+        public double getPcvr() {
+          return pcvr_;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * This is the predicted CVR.
+         * </pre>
+         *
+         * <code>double pcvr = 4;</code>
+         * @param value The pcvr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPcvr(double value) {
+          
+          pcvr_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * This is the predicted CVR.
+         * </pre>
+         *
+         * <code>double pcvr = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPcvr() {
+          
+          pcvr_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object recInfo_ = "";
+        /**
+         * <pre>
+         * Output only.
+         * The strategy used for this particular recommendation result.
+         * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+         * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+         * </pre>
+         *
+         * <code>string rec_info = 5;</code>
+         * @return The recInfo.
+         */
+        public java.lang.String getRecInfo() {
+          java.lang.Object ref = recInfo_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            recInfo_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The strategy used for this particular recommendation result.
+         * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+         * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+         * </pre>
+         *
+         * <code>string rec_info = 5;</code>
+         * @return The bytes for recInfo.
+         */
+        public com.google.protobuf.ByteString
+            getRecInfoBytes() {
+          java.lang.Object ref = recInfo_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            recInfo_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The strategy used for this particular recommendation result.
+         * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+         * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+         * </pre>
+         *
+         * <code>string rec_info = 5;</code>
+         * @param value The recInfo to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRecInfo(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          recInfo_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The strategy used for this particular recommendation result.
+         * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+         * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+         * </pre>
+         *
+         * <code>string rec_info = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRecInfo() {
+          
+          recInfo_ = getDefaultInstance().getRecInfo();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * The strategy used for this particular recommendation result.
+         * Please refer to [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+         * / 只用作返回值。base64编码的字符串，记录了该次推荐的一些模型和策略信息，建议将此字段携带到行为数据中，用来辅助提升推荐效果。如base64编码不能满足要求，可联系对接同学调整编码方式。
+         * </pre>
+         *
+         * <code>string rec_info = 5;</code>
+         * @param value The bytes for recInfo to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRecInfoBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          recInfo_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> extra_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetExtra() {
+          if (extra_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ExtraDefaultEntryHolder.defaultEntry);
+          }
+          return extra_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableExtra() {
+          onChanged();;
+          if (extra_ == null) {
+            extra_ = com.google.protobuf.MapField.newMapField(
+                ExtraDefaultEntryHolder.defaultEntry);
+          }
+          if (!extra_.isMutable()) {
+            extra_ = extra_.copy();
+          }
+          return extra_;
+        }
+
+        public int getExtraCount() {
+          return internalGetExtra().getMap().size();
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsExtra(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetExtra().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getExtraMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+          return getExtraMap();
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+          return internalGetExtra().getMap();
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getExtraOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetExtra().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getExtraOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetExtra().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearExtra() {
+          internalGetMutableExtra().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+
+        public Builder removeExtra(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableExtra().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableExtra() {
+          return internalGetMutableExtra().getMutableMap();
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+        public Builder putExtra(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (value == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableExtra().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * Output only.
+         * All the extra debug info here.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 100;</code>
+         */
+
+        public Builder putAllExtra(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableExtra().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictResult.ResponseContent)
+      }
+
+      // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult.ResponseContent)
+      private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent();
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ResponseContent>
+          PARSER = new com.google.protobuf.AbstractParser<ResponseContent>() {
+        @java.lang.Override
+        public ResponseContent parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ResponseContent(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<ResponseContent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ResponseContent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int RESPONSE_CONTENTS_FIELD_NUMBER = 1;
+    private java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> responseContents_;
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> getResponseContentsList() {
+      return responseContents_;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder> 
+        getResponseContentsOrBuilderList() {
+      return responseContents_;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    @java.lang.Override
+    public int getResponseContentsCount() {
+      return responseContents_.size();
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getResponseContents(int index) {
+      return responseContents_.get(index);
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The list of predicted contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder getResponseContentsOrBuilder(
+        int index) {
+      return responseContents_.get(index);
+    }
+
+    public static final int EXTRA_FIELD_NUMBER = 100;
+    private static final class ExtraDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extra_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExtra() {
+      if (extra_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtraDefaultEntryHolder.defaultEntry);
+      }
+      return extra_;
+    }
+
+    public int getExtraCount() {
+      return internalGetExtra().getMap().size();
+    }
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExtra(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExtra().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+      return getExtraMap();
+    }
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+      return internalGetExtra().getMap();
+    }
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * Extra debug info.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < responseContents_.size(); i++) {
+        output.writeMessage(1, responseContents_.get(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExtra(),
+          ExtraDefaultEntryHolder.defaultEntry,
+          100);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < responseContents_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, responseContents_.get(i));
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExtra().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(100, extra__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResult)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.media.protocol.ByteplusMedia.PredictResult other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResult) obj;
+
+      if (!getResponseContentsList()
+          .equals(other.getResponseContentsList())) return false;
+      if (!internalGetExtra().equals(
+          other.internalGetExtra())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getResponseContentsCount() > 0) {
+        hash = (37 * hash) + RESPONSE_CONTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getResponseContentsList().hashCode();
+      }
+      if (!internalGetExtra().getMap().isEmpty()) {
+        hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExtra().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A single predict call result.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictResult)
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetMutableExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getResponseContentsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (responseContentsBuilder_ == null) {
+          responseContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          responseContentsBuilder_.clear();
+        }
+        internalGetMutableExtra().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResult_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getDefaultInstanceForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult build() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult buildPartial() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResult result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResult(this);
+        int from_bitField0_ = bitField0_;
+        if (responseContentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            responseContents_ = java.util.Collections.unmodifiableList(responseContents_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.responseContents_ = responseContents_;
+        } else {
+          result.responseContents_ = responseContentsBuilder_.build();
+        }
+        result.extra_ = internalGetExtra();
+        result.extra_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResult) {
+          return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult other) {
+        if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.getDefaultInstance()) return this;
+        if (responseContentsBuilder_ == null) {
+          if (!other.responseContents_.isEmpty()) {
+            if (responseContents_.isEmpty()) {
+              responseContents_ = other.responseContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResponseContentsIsMutable();
+              responseContents_.addAll(other.responseContents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.responseContents_.isEmpty()) {
+            if (responseContentsBuilder_.isEmpty()) {
+              responseContentsBuilder_.dispose();
+              responseContentsBuilder_ = null;
+              responseContents_ = other.responseContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              responseContentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResponseContentsFieldBuilder() : null;
+            } else {
+              responseContentsBuilder_.addAllMessages(other.responseContents_);
+            }
+          }
+        }
+        internalGetMutableExtra().mergeFrom(
+            other.internalGetExtra());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResult) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> responseContents_ =
+        java.util.Collections.emptyList();
+      private void ensureResponseContentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          responseContents_ = new java.util.ArrayList<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent>(responseContents_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder> responseContentsBuilder_;
+
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> getResponseContentsList() {
+        if (responseContentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(responseContents_);
+        } else {
+          return responseContentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public int getResponseContentsCount() {
+        if (responseContentsBuilder_ == null) {
+          return responseContents_.size();
+        } else {
+          return responseContentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent getResponseContents(int index) {
+        if (responseContentsBuilder_ == null) {
+          return responseContents_.get(index);
+        } else {
+          return responseContentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder setResponseContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent value) {
+        if (responseContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponseContentsIsMutable();
+          responseContents_.set(index, value);
+          onChanged();
+        } else {
+          responseContentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder setResponseContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder builderForValue) {
+        if (responseContentsBuilder_ == null) {
+          ensureResponseContentsIsMutable();
+          responseContents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          responseContentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder addResponseContents(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent value) {
+        if (responseContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponseContentsIsMutable();
+          responseContents_.add(value);
+          onChanged();
+        } else {
+          responseContentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder addResponseContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent value) {
+        if (responseContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponseContentsIsMutable();
+          responseContents_.add(index, value);
+          onChanged();
+        } else {
+          responseContentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder addResponseContents(
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder builderForValue) {
+        if (responseContentsBuilder_ == null) {
+          ensureResponseContentsIsMutable();
+          responseContents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          responseContentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder addResponseContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder builderForValue) {
+        if (responseContentsBuilder_ == null) {
+          ensureResponseContentsIsMutable();
+          responseContents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          responseContentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder addAllResponseContents(
+          java.lang.Iterable<? extends byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent> values) {
+        if (responseContentsBuilder_ == null) {
+          ensureResponseContentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, responseContents_);
+          onChanged();
+        } else {
+          responseContentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder clearResponseContents() {
+        if (responseContentsBuilder_ == null) {
+          responseContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          responseContentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public Builder removeResponseContents(int index) {
+        if (responseContentsBuilder_ == null) {
+          ensureResponseContentsIsMutable();
+          responseContents_.remove(index);
+          onChanged();
+        } else {
+          responseContentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder getResponseContentsBuilder(
+          int index) {
+        return getResponseContentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder getResponseContentsOrBuilder(
+          int index) {
+        if (responseContentsBuilder_ == null) {
+          return responseContents_.get(index);  } else {
+          return responseContentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder> 
+           getResponseContentsOrBuilderList() {
+        if (responseContentsBuilder_ != null) {
+          return responseContentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(responseContents_);
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder addResponseContentsBuilder() {
+        return getResponseContentsFieldBuilder().addBuilder(
+            byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder addResponseContentsBuilder(
+          int index) {
+        return getResponseContentsFieldBuilder().addBuilder(
+            index, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The list of predicted contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.PredictResult.ResponseContent response_contents = 1;</code>
+       */
+      public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder> 
+           getResponseContentsBuilderList() {
+        return getResponseContentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder> 
+          getResponseContentsFieldBuilder() {
+        if (responseContentsBuilder_ == null) {
+          responseContentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.ResponseContentOrBuilder>(
+                  responseContents_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          responseContents_ = null;
+        }
+        return responseContentsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExtra() {
+        onChanged();;
+        if (extra_ == null) {
+          extra_ = com.google.protobuf.MapField.newMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        if (!extra_.isMutable()) {
+          extra_ = extra_.copy();
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExtra() {
+        internalGetMutableExtra().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder removeExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExtra() {
+        return internalGetMutableExtra().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      public Builder putExtra(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * Extra debug info.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder putAllExtra(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExtra().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult)
+    private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResult();
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PredictResult>
+        PARSER = new com.google.protobuf.AbstractParser<PredictResult>() {
+      @java.lang.Override
+      public PredictResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PredictResult(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PredictResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PredictResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PredictResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.PredictResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    boolean hasStatus();
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return The status.
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
+
+    /**
+     * <pre>
+     * Output only.
+     * This is same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string request_id = 2;</code>
+     * @return The requestId.
+     */
+    java.lang.String getRequestId();
+    /**
+     * <pre>
+     * Output only.
+     * This is same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string request_id = 2;</code>
+     * @return The bytes for requestId.
+     */
+    com.google.protobuf.ByteString
+        getRequestIdBytes();
+
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     * @return The value.
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getValue();
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder getValueOrBuilder();
+  }
+  /**
+   * <pre>
+   * The response proto the predict call.
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.media.PredictResponse}
+   */
+  public static final class PredictResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.PredictResponse)
+      PredictResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PredictResponse.newBuilder() to construct.
+    private PredictResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PredictResponse() {
+      requestId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PredictResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PredictResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(byteplus.sdk.common.protocol.ByteplusCommon.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+            case 26: {
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder subBuilder = null;
+              if (value_ != null) {
+                subBuilder = value_.toBuilder();
+              }
+              value_ = input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(value_);
+                value_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+      return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The status of the call.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object requestId_;
+    /**
+     * <pre>
+     * Output only.
+     * This is same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string request_id = 2;</code>
+     * @return The requestId.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Output only.
+     * This is same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string request_id = 2;</code>
+     * @return The bytes for requestId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private byteplus.sdk.media.protocol.ByteplusMedia.PredictResult value_;
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return value_ != null;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getValue() {
+      return value_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.getDefaultInstance() : value_;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * This is only populated when `PredictResponse.status.code` is not 0.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder getValueOrBuilder() {
+      return getValue();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != null) {
+        output.writeMessage(1, getStatus());
+      }
+      if (!getRequestIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
+      }
+      if (value_ != null) {
+        output.writeMessage(3, getValue());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getStatus());
+      }
+      if (!getRequestIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
+      }
+      if (value_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getValue());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse other = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse) obj;
+
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
+      if (!getRequestId()
+          .equals(other.getRequestId())) return false;
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (!getValue()
+            .equals(other.getValue())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The response proto the predict call.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.PredictResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.PredictResponse)
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.class, byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        requestId_ = "";
+
+        if (valueBuilder_ == null) {
+          value_ = null;
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_PredictResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse getDefaultInstanceForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse build() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse buildPartial() {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse result = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse(this);
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        result.requestId_ = requestId_;
+        if (valueBuilder_ == null) {
+          result.value_ = value_;
+        } else {
+          result.value_ = valueBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse) {
+          return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse other) {
+        if (other == byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse.getDefaultInstance()) return this;
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        if (!other.getRequestId().isEmpty()) {
+          requestId_ = other.requestId_;
+          onChanged();
+        }
+        if (other.hasValue()) {
+          mergeValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> statusBuilder_;
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       * @return Whether the status field is set.
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       * @return The status.
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder setStatus(
+          byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of the call.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+
+      private java.lang.Object requestId_ = "";
+      /**
+       * <pre>
+       * Output only.
+       * This is same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string request_id = 2;</code>
+       * @return The requestId.
+       */
+      public java.lang.String getRequestId() {
+        java.lang.Object ref = requestId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string request_id = 2;</code>
+       * @return The bytes for requestId.
+       */
+      public com.google.protobuf.ByteString
+          getRequestIdBytes() {
+        java.lang.Object ref = requestId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string request_id = 2;</code>
+       * @param value The requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string request_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = getDefaultInstance().getRequestId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string request_id = 2;</code>
+       * @param value The bytes for requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private byteplus.sdk.media.protocol.ByteplusMedia.PredictResult value_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder> valueBuilder_;
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       * @return Whether the value field is set.
+       */
+      public boolean hasValue() {
+        return valueBuilder_ != null || value_ != null;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       * @return The value.
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult getValue() {
+        if (valueBuilder_ == null) {
+          return value_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.getDefaultInstance() : value_;
+        } else {
+          return valueBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public Builder setValue(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult value) {
+        if (valueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public Builder setValue(
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder builderForValue) {
+        if (valueBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public Builder mergeValue(byteplus.sdk.media.protocol.ByteplusMedia.PredictResult value) {
+        if (valueBuilder_ == null) {
+          if (value_ != null) {
+            value_ =
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.newBuilder(value_).mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          valueBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public Builder clearValue() {
+        if (valueBuilder_ == null) {
+          value_ = null;
+          onChanged();
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder getValueBuilder() {
+        
+        onChanged();
+        return getValueFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder getValueOrBuilder() {
+        if (valueBuilder_ != null) {
+          return valueBuilder_.getMessageOrBuilder();
+        } else {
+          return value_ == null ?
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.getDefaultInstance() : value_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * This is only populated when `PredictResponse.status.code` is not 0.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictResult value = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictResult, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder> 
+          getValueFieldBuilder() {
+        if (valueBuilder_ == null) {
+          valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictResult, byteplus.sdk.media.protocol.ByteplusMedia.PredictResult.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictResultOrBuilder>(
+                  getValue(),
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        return valueBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.PredictResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResponse)
+    private static final byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse();
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PredictResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PredictResponse>() {
+      @java.lang.Override
+      public PredictResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PredictResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PredictResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PredictResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AckServerImpressionsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.AckServerImpressionsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string predict_request_id = 1;</code>
+     * @return The predictRequestId.
+     */
+    java.lang.String getPredictRequestId();
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string predict_request_id = 1;</code>
+     * @return The bytes for predictRequestId.
+     */
+    com.google.protobuf.ByteString
+        getPredictRequestIdBytes();
+
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 2;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 2;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
+     * Required.
+     * This should be the traffic source.
+     * Please refer to
+     * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+     * </pre>
+     *
+     * <code>string traffic_source = 3;</code>
+     * @return The trafficSource.
+     */
+    java.lang.String getTrafficSource();
+    /**
+     * <pre>
+     * Required.
+     * This should be the traffic source.
+     * Please refer to
+     * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+     * </pre>
+     *
+     * <code>string traffic_source = 3;</code>
+     * @return The bytes for trafficSource.
+     */
+    com.google.protobuf.ByteString
+        getTrafficSourceBytes();
+
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     * @return Whether the scene field is set.
+     */
+    boolean hasScene();
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     * @return The scene.
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene();
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder();
+
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> 
+        getAlteredContentsList();
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getAlteredContents(int index);
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    int getAlteredContentsCount();
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder> 
+        getAlteredContentsOrBuilderList();
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder getAlteredContentsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    int getExtraCount();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    boolean containsExtra(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtra();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtraMap();
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    java.lang.String getExtraOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * The request proto for AckServerImpressions call.
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsRequest}
+   */
+  public static final class AckServerImpressionsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.AckServerImpressionsRequest)
+      AckServerImpressionsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AckServerImpressionsRequest.newBuilder() to construct.
+    private AckServerImpressionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AckServerImpressionsRequest() {
+      predictRequestId_ = "";
+      userId_ = "";
+      trafficSource_ = "";
+      alteredContents_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AckServerImpressionsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AckServerImpressionsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              predictRequestId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              trafficSource_ = s;
+              break;
+            }
+            case 34: {
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder subBuilder = null;
+              if (scene_ != null) {
+                subBuilder = scene_.toBuilder();
+              }
+              scene_ = input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scene_);
+                scene_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                alteredContents_ = new java.util.ArrayList<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              alteredContents_.add(
+                  input.readMessage(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.parser(), extensionRegistry));
+              break;
+            }
+            case 802: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                extra_ = com.google.protobuf.MapField.newMapField(
+                    ExtraDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              extra__ = input.readMessage(
+                  ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              extra_.getMutableMap().put(
+                  extra__.getKey(), extra__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          alteredContents_ = java.util.Collections.unmodifiableList(alteredContents_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 100:
+          return internalGetExtra();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.Builder.class);
+    }
+
+    public interface AlteredContentOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Required.
+       * This is same as `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The contentId.
+       */
+      java.lang.String getContentId();
+      /**
+       * <pre>
+       * Required.
+       * This is same as `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The bytes for contentId.
+       */
+      com.google.protobuf.ByteString
+          getContentIdBytes();
+
+      /**
+       * <pre>
+       * Required.
+       * The final state of the content.
+       * The acceptable values are "kept", "filtered", "inserted".
+       * kept     : The content was kept as is.
+       * filtered : The content is filtered by the caller's own logic.
+       * inserted : The content is inserted by the caller's own logic.
+       * filled   : The content is filled by the caller's own logic.
+       * </pre>
+       *
+       * <code>string altered_reason = 2;</code>
+       * @return The alteredReason.
+       */
+      java.lang.String getAlteredReason();
+      /**
+       * <pre>
+       * Required.
+       * The final state of the content.
+       * The acceptable values are "kept", "filtered", "inserted".
+       * kept     : The content was kept as is.
+       * filtered : The content is filtered by the caller's own logic.
+       * inserted : The content is inserted by the caller's own logic.
+       * filled   : The content is filled by the caller's own logic.
+       * </pre>
+       *
+       * <code>string altered_reason = 2;</code>
+       * @return The bytes for alteredReason.
+       */
+      com.google.protobuf.ByteString
+          getAlteredReasonBytes();
+
+      /**
+       * <pre>
+       * Required.
+       * The final rank.
+       * If this is unset (or 0), we assume it is filtered in actual impression.
+       * </pre>
+       *
+       * <code>int32 rank = 3;</code>
+       * @return The rank.
+       */
+      int getRank();
+
+      /**
+       * <pre>
+       * Internal.
+       * If `content_id` is a number, `content_id_hash` equals to `content_id`
+       * If `content_id` is not a number, `content_id_hash` equals to `fnv(content_id)`
+       * </pre>
+       *
+       * <code>int64 content_id_hash = 100;</code>
+       * @return The contentIdHash.
+       */
+      long getContentIdHash();
+    }
+    /**
+     * <pre>
+     * The content that was altered.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent}
+     */
+    public static final class AlteredContent extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+        AlteredContentOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use AlteredContent.newBuilder() to construct.
+      private AlteredContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private AlteredContent() {
+        contentId_ = "";
+        alteredReason_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new AlteredContent();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private AlteredContent(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                contentId_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                alteredReason_ = s;
+                break;
+              }
+              case 24: {
+
+                rank_ = input.readInt32();
+                break;
+              }
+              case 800: {
+
+                contentIdHash_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder.class);
+      }
+
+      public static final int CONTENT_ID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object contentId_;
+      /**
+       * <pre>
+       * Required.
+       * This is same as `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The contentId.
+       */
+      @java.lang.Override
+      public java.lang.String getContentId() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This is same as `Content.content_id`.
+       * </pre>
+       *
+       * <code>string content_id = 1;</code>
+       * @return The bytes for contentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getContentIdBytes() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ALTERED_REASON_FIELD_NUMBER = 2;
+      private volatile java.lang.Object alteredReason_;
+      /**
+       * <pre>
+       * Required.
+       * The final state of the content.
+       * The acceptable values are "kept", "filtered", "inserted".
+       * kept     : The content was kept as is.
+       * filtered : The content is filtered by the caller's own logic.
+       * inserted : The content is inserted by the caller's own logic.
+       * filled   : The content is filled by the caller's own logic.
+       * </pre>
+       *
+       * <code>string altered_reason = 2;</code>
+       * @return The alteredReason.
+       */
+      @java.lang.Override
+      public java.lang.String getAlteredReason() {
+        java.lang.Object ref = alteredReason_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          alteredReason_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The final state of the content.
+       * The acceptable values are "kept", "filtered", "inserted".
+       * kept     : The content was kept as is.
+       * filtered : The content is filtered by the caller's own logic.
+       * inserted : The content is inserted by the caller's own logic.
+       * filled   : The content is filled by the caller's own logic.
+       * </pre>
+       *
+       * <code>string altered_reason = 2;</code>
+       * @return The bytes for alteredReason.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAlteredReasonBytes() {
+        java.lang.Object ref = alteredReason_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alteredReason_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RANK_FIELD_NUMBER = 3;
+      private int rank_;
+      /**
+       * <pre>
+       * Required.
+       * The final rank.
+       * If this is unset (or 0), we assume it is filtered in actual impression.
+       * </pre>
+       *
+       * <code>int32 rank = 3;</code>
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      public static final int CONTENT_ID_HASH_FIELD_NUMBER = 100;
+      private long contentIdHash_;
+      /**
+       * <pre>
+       * Internal.
+       * If `content_id` is a number, `content_id_hash` equals to `content_id`
+       * If `content_id` is not a number, `content_id_hash` equals to `fnv(content_id)`
+       * </pre>
+       *
+       * <code>int64 content_id_hash = 100;</code>
+       * @return The contentIdHash.
+       */
+      @java.lang.Override
+      public long getContentIdHash() {
+        return contentIdHash_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getContentIdBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contentId_);
+        }
+        if (!getAlteredReasonBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, alteredReason_);
+        }
+        if (rank_ != 0) {
+          output.writeInt32(3, rank_);
+        }
+        if (contentIdHash_ != 0L) {
+          output.writeInt64(100, contentIdHash_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getContentIdBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contentId_);
+        }
+        if (!getAlteredReasonBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, alteredReason_);
+        }
+        if (rank_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, rank_);
+        }
+        if (contentIdHash_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(100, contentIdHash_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent)) {
+          return super.equals(obj);
+        }
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent other = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent) obj;
+
+        if (!getContentId()
+            .equals(other.getContentId())) return false;
+        if (!getAlteredReason()
+            .equals(other.getAlteredReason())) return false;
+        if (getRank()
+            != other.getRank()) return false;
+        if (getContentIdHash()
+            != other.getContentIdHash()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getContentId().hashCode();
+        hash = (37 * hash) + ALTERED_REASON_FIELD_NUMBER;
+        hash = (53 * hash) + getAlteredReason().hashCode();
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+        hash = (37 * hash) + CONTENT_ID_HASH_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getContentIdHash());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The content that was altered.
+       * </pre>
+       *
+       * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder.class);
+        }
+
+        // Construct using byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          contentId_ = "";
+
+          alteredReason_ = "";
+
+          rank_ = 0;
+
+          contentIdHash_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getDefaultInstanceForType() {
+          return byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent build() {
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent buildPartial() {
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent result = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent(this);
+          result.contentId_ = contentId_;
+          result.alteredReason_ = alteredReason_;
+          result.rank_ = rank_;
+          result.contentIdHash_ = contentIdHash_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent) {
+            return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent other) {
+          if (other == byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.getDefaultInstance()) return this;
+          if (!other.getContentId().isEmpty()) {
+            contentId_ = other.contentId_;
+            onChanged();
+          }
+          if (!other.getAlteredReason().isEmpty()) {
+            alteredReason_ = other.alteredReason_;
+            onChanged();
+          }
+          if (other.getRank() != 0) {
+            setRank(other.getRank());
+          }
+          if (other.getContentIdHash() != 0L) {
+            setContentIdHash(other.getContentIdHash());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object contentId_ = "";
+        /**
+         * <pre>
+         * Required.
+         * This is same as `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return The contentId.
+         */
+        public java.lang.String getContentId() {
+          java.lang.Object ref = contentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            contentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return The bytes for contentId.
+         */
+        public com.google.protobuf.ByteString
+            getContentIdBytes() {
+          java.lang.Object ref = contentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            contentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @param value The contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          contentId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearContentId() {
+          
+          contentId_ = getDefaultInstance().getContentId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * This is same as `Content.content_id`.
+         * </pre>
+         *
+         * <code>string content_id = 1;</code>
+         * @param value The bytes for contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          contentId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object alteredReason_ = "";
+        /**
+         * <pre>
+         * Required.
+         * The final state of the content.
+         * The acceptable values are "kept", "filtered", "inserted".
+         * kept     : The content was kept as is.
+         * filtered : The content is filtered by the caller's own logic.
+         * inserted : The content is inserted by the caller's own logic.
+         * filled   : The content is filled by the caller's own logic.
+         * </pre>
+         *
+         * <code>string altered_reason = 2;</code>
+         * @return The alteredReason.
+         */
+        public java.lang.String getAlteredReason() {
+          java.lang.Object ref = alteredReason_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            alteredReason_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final state of the content.
+         * The acceptable values are "kept", "filtered", "inserted".
+         * kept     : The content was kept as is.
+         * filtered : The content is filtered by the caller's own logic.
+         * inserted : The content is inserted by the caller's own logic.
+         * filled   : The content is filled by the caller's own logic.
+         * </pre>
+         *
+         * <code>string altered_reason = 2;</code>
+         * @return The bytes for alteredReason.
+         */
+        public com.google.protobuf.ByteString
+            getAlteredReasonBytes() {
+          java.lang.Object ref = alteredReason_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            alteredReason_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final state of the content.
+         * The acceptable values are "kept", "filtered", "inserted".
+         * kept     : The content was kept as is.
+         * filtered : The content is filtered by the caller's own logic.
+         * inserted : The content is inserted by the caller's own logic.
+         * filled   : The content is filled by the caller's own logic.
+         * </pre>
+         *
+         * <code>string altered_reason = 2;</code>
+         * @param value The alteredReason to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAlteredReason(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          alteredReason_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final state of the content.
+         * The acceptable values are "kept", "filtered", "inserted".
+         * kept     : The content was kept as is.
+         * filtered : The content is filtered by the caller's own logic.
+         * inserted : The content is inserted by the caller's own logic.
+         * filled   : The content is filled by the caller's own logic.
+         * </pre>
+         *
+         * <code>string altered_reason = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAlteredReason() {
+          
+          alteredReason_ = getDefaultInstance().getAlteredReason();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final state of the content.
+         * The acceptable values are "kept", "filtered", "inserted".
+         * kept     : The content was kept as is.
+         * filtered : The content is filtered by the caller's own logic.
+         * inserted : The content is inserted by the caller's own logic.
+         * filled   : The content is filled by the caller's own logic.
+         * </pre>
+         *
+         * <code>string altered_reason = 2;</code>
+         * @param value The bytes for alteredReason to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAlteredReasonBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          alteredReason_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int rank_ ;
+        /**
+         * <pre>
+         * Required.
+         * The final rank.
+         * If this is unset (or 0), we assume it is filtered in actual impression.
+         * </pre>
+         *
+         * <code>int32 rank = 3;</code>
+         * @return The rank.
+         */
+        @java.lang.Override
+        public int getRank() {
+          return rank_;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final rank.
+         * If this is unset (or 0), we assume it is filtered in actual impression.
+         * </pre>
+         *
+         * <code>int32 rank = 3;</code>
+         * @param value The rank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRank(int value) {
+          
+          rank_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required.
+         * The final rank.
+         * If this is unset (or 0), we assume it is filtered in actual impression.
+         * </pre>
+         *
+         * <code>int32 rank = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRank() {
+          
+          rank_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long contentIdHash_ ;
+        /**
+         * <pre>
+         * Internal.
+         * If `content_id` is a number, `content_id_hash` equals to `content_id`
+         * If `content_id` is not a number, `content_id_hash` equals to `fnv(content_id)`
+         * </pre>
+         *
+         * <code>int64 content_id_hash = 100;</code>
+         * @return The contentIdHash.
+         */
+        @java.lang.Override
+        public long getContentIdHash() {
+          return contentIdHash_;
+        }
+        /**
+         * <pre>
+         * Internal.
+         * If `content_id` is a number, `content_id_hash` equals to `content_id`
+         * If `content_id` is not a number, `content_id_hash` equals to `fnv(content_id)`
+         * </pre>
+         *
+         * <code>int64 content_id_hash = 100;</code>
+         * @param value The contentIdHash to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentIdHash(long value) {
+          
+          contentIdHash_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Internal.
+         * If `content_id` is a number, `content_id_hash` equals to `content_id`
+         * If `content_id` is not a number, `content_id_hash` equals to `fnv(content_id)`
+         * </pre>
+         *
+         * <code>int64 content_id_hash = 100;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearContentIdHash() {
+          
+          contentIdHash_ = 0L;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+      }
+
+      // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+      private static final byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent();
+      }
+
+      public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AlteredContent>
+          PARSER = new com.google.protobuf.AbstractParser<AlteredContent>() {
+        @java.lang.Override
+        public AlteredContent parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AlteredContent(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<AlteredContent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AlteredContent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int PREDICT_REQUEST_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object predictRequestId_;
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string predict_request_id = 1;</code>
+     * @return The predictRequestId.
+     */
+    @java.lang.Override
+    public java.lang.String getPredictRequestId() {
+      java.lang.Object ref = predictRequestId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        predictRequestId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.request_id`.
+     * </pre>
+     *
+     * <code>string predict_request_id = 1;</code>
+     * @return The bytes for predictRequestId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPredictRequestIdBytes() {
+      java.lang.Object ref = predictRequestId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        predictRequestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Required.
+     * This should be same as `PredictRequest.user_id`.
+     * </pre>
+     *
+     * <code>string user_id = 2;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TRAFFIC_SOURCE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object trafficSource_;
+    /**
+     * <pre>
+     * Required.
+     * This should be the traffic source.
+     * Please refer to
+     * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+     * </pre>
+     *
+     * <code>string traffic_source = 3;</code>
+     * @return The trafficSource.
+     */
+    @java.lang.Override
+    public java.lang.String getTrafficSource() {
+      java.lang.Object ref = trafficSource_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trafficSource_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Required.
+     * This should be the traffic source.
+     * Please refer to
+     * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+     * </pre>
+     *
+     * <code>string traffic_source = 3;</code>
+     * @return The bytes for trafficSource.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTrafficSourceBytes() {
+      java.lang.Object ref = trafficSource_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trafficSource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCENE_FIELD_NUMBER = 4;
+    private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene scene_;
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     * @return Whether the scene field is set.
+     */
+    @java.lang.Override
+    public boolean hasScene() {
+      return scene_ != null;
+    }
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     * @return The scene.
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene() {
+      return scene_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+    }
+    /**
+     * <pre>
+     * Required.
+     * The scene info.
+     * Please make sure this is as close to PredictRequest.scene as possible.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder() {
+      return getScene();
+    }
+
+    public static final int ALTERED_CONTENTS_FIELD_NUMBER = 5;
+    private java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> alteredContents_;
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> getAlteredContentsList() {
+      return alteredContents_;
+    }
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder> 
+        getAlteredContentsOrBuilderList() {
+      return alteredContents_;
+    }
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    @java.lang.Override
+    public int getAlteredContentsCount() {
+      return alteredContents_.size();
+    }
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getAlteredContents(int index) {
+      return alteredContents_.get(index);
+    }
+    /**
+     * <pre>
+     * Required.
+     * The list of altered contents.
+     * </pre>
+     *
+     * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder getAlteredContentsOrBuilder(
+        int index) {
+      return alteredContents_.get(index);
+    }
+
+    public static final int EXTRA_FIELD_NUMBER = 100;
+    private static final class ExtraDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extra_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExtra() {
+      if (extra_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtraDefaultEntryHolder.defaultEntry);
+      }
+      return extra_;
+    }
+
+    public int getExtraCount() {
+      return internalGetExtra().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExtra(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExtra().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtraMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+      return getExtraMap();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+      return internalGetExtra().getMap();
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional.
+     * This is a catch-all field to pass all the additional information.
+     * Please provide as much information as possible.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; extra = 100;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtra().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPredictRequestIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, predictRequestId_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
+      if (!getTrafficSourceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trafficSource_);
+      }
+      if (scene_ != null) {
+        output.writeMessage(4, getScene());
+      }
+      for (int i = 0; i < alteredContents_.size(); i++) {
+        output.writeMessage(5, alteredContents_.get(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExtra(),
+          ExtraDefaultEntryHolder.defaultEntry,
+          100);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPredictRequestIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, predictRequestId_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
+      if (!getTrafficSourceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trafficSource_);
+      }
+      if (scene_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getScene());
+      }
+      for (int i = 0; i < alteredContents_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, alteredContents_.get(i));
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExtra().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(100, extra__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest other = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest) obj;
+
+      if (!getPredictRequestId()
+          .equals(other.getPredictRequestId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getTrafficSource()
+          .equals(other.getTrafficSource())) return false;
+      if (hasScene() != other.hasScene()) return false;
+      if (hasScene()) {
+        if (!getScene()
+            .equals(other.getScene())) return false;
+      }
+      if (!getAlteredContentsList()
+          .equals(other.getAlteredContentsList())) return false;
+      if (!internalGetExtra().equals(
+          other.internalGetExtra())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PREDICT_REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictRequestId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + TRAFFIC_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getTrafficSource().hashCode();
+      if (hasScene()) {
+        hash = (37 * hash) + SCENE_FIELD_NUMBER;
+        hash = (53 * hash) + getScene().hashCode();
+      }
+      if (getAlteredContentsCount() > 0) {
+        hash = (37 * hash) + ALTERED_CONTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAlteredContentsList().hashCode();
+      }
+      if (!internalGetExtra().getMap().isEmpty()) {
+        hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExtra().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The request proto for AckServerImpressions call.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.AckServerImpressionsRequest)
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 100:
+            return internalGetMutableExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAlteredContentsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        predictRequestId_ = "";
+
+        userId_ = "";
+
+        trafficSource_ = "";
+
+        if (sceneBuilder_ == null) {
+          scene_ = null;
+        } else {
+          scene_ = null;
+          sceneBuilder_ = null;
+        }
+        if (alteredContentsBuilder_ == null) {
+          alteredContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          alteredContentsBuilder_.clear();
+        }
+        internalGetMutableExtra().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest getDefaultInstanceForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest build() {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest buildPartial() {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest result = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest(this);
+        int from_bitField0_ = bitField0_;
+        result.predictRequestId_ = predictRequestId_;
+        result.userId_ = userId_;
+        result.trafficSource_ = trafficSource_;
+        if (sceneBuilder_ == null) {
+          result.scene_ = scene_;
+        } else {
+          result.scene_ = sceneBuilder_.build();
+        }
+        if (alteredContentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            alteredContents_ = java.util.Collections.unmodifiableList(alteredContents_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.alteredContents_ = alteredContents_;
+        } else {
+          result.alteredContents_ = alteredContentsBuilder_.build();
+        }
+        result.extra_ = internalGetExtra();
+        result.extra_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest) {
+          return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest other) {
+        if (other == byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.getDefaultInstance()) return this;
+        if (!other.getPredictRequestId().isEmpty()) {
+          predictRequestId_ = other.predictRequestId_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getTrafficSource().isEmpty()) {
+          trafficSource_ = other.trafficSource_;
+          onChanged();
+        }
+        if (other.hasScene()) {
+          mergeScene(other.getScene());
+        }
+        if (alteredContentsBuilder_ == null) {
+          if (!other.alteredContents_.isEmpty()) {
+            if (alteredContents_.isEmpty()) {
+              alteredContents_ = other.alteredContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAlteredContentsIsMutable();
+              alteredContents_.addAll(other.alteredContents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.alteredContents_.isEmpty()) {
+            if (alteredContentsBuilder_.isEmpty()) {
+              alteredContentsBuilder_.dispose();
+              alteredContentsBuilder_ = null;
+              alteredContents_ = other.alteredContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              alteredContentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAlteredContentsFieldBuilder() : null;
+            } else {
+              alteredContentsBuilder_.addAllMessages(other.alteredContents_);
+            }
+          }
+        }
+        internalGetMutableExtra().mergeFrom(
+            other.internalGetExtra());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object predictRequestId_ = "";
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string predict_request_id = 1;</code>
+       * @return The predictRequestId.
+       */
+      public java.lang.String getPredictRequestId() {
+        java.lang.Object ref = predictRequestId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          predictRequestId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string predict_request_id = 1;</code>
+       * @return The bytes for predictRequestId.
+       */
+      public com.google.protobuf.ByteString
+          getPredictRequestIdBytes() {
+        java.lang.Object ref = predictRequestId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          predictRequestId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string predict_request_id = 1;</code>
+       * @param value The predictRequestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPredictRequestId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        predictRequestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string predict_request_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPredictRequestId() {
+        
+        predictRequestId_ = getDefaultInstance().getPredictRequestId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.request_id`.
+       * </pre>
+       *
+       * <code>string predict_request_id = 1;</code>
+       * @param value The bytes for predictRequestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPredictRequestIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        predictRequestId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 2;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 2;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be same as `PredictRequest.user_id`.
+       * </pre>
+       *
+       * <code>string user_id = 2;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object trafficSource_ = "";
+      /**
+       * <pre>
+       * Required.
+       * This should be the traffic source.
+       * Please refer to
+       * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * </pre>
+       *
+       * <code>string traffic_source = 3;</code>
+       * @return The trafficSource.
+       */
+      public java.lang.String getTrafficSource() {
+        java.lang.Object ref = trafficSource_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trafficSource_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be the traffic source.
+       * Please refer to
+       * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * </pre>
+       *
+       * <code>string traffic_source = 3;</code>
+       * @return The bytes for trafficSource.
+       */
+      public com.google.protobuf.ByteString
+          getTrafficSourceBytes() {
+        java.lang.Object ref = trafficSource_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          trafficSource_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be the traffic source.
+       * Please refer to
+       * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * </pre>
+       *
+       * <code>string traffic_source = 3;</code>
+       * @param value The trafficSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficSource(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        trafficSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be the traffic source.
+       * Please refer to
+       * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * </pre>
+       *
+       * <code>string traffic_source = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrafficSource() {
+        
+        trafficSource_ = getDefaultInstance().getTrafficSource();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * This should be the traffic source.
+       * Please refer to
+       * [this](../docs/ways-to-improve-recommendation-performance#use-usereventrec_info-and-usereventtraffic_source) for more details.
+       * </pre>
+       *
+       * <code>string traffic_source = 3;</code>
+       * @param value The bytes for trafficSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        trafficSource_ = value;
+        onChanged();
+        return this;
+      }
+
+      private byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene scene_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder> sceneBuilder_;
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       * @return Whether the scene field is set.
+       */
+      public boolean hasScene() {
+        return sceneBuilder_ != null || scene_ != null;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       * @return The scene.
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene getScene() {
+        if (sceneBuilder_ == null) {
+          return scene_ == null ? byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+        } else {
+          return sceneBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public Builder setScene(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene value) {
+        if (sceneBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scene_ = value;
+          onChanged();
+        } else {
+          sceneBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public Builder setScene(
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder builderForValue) {
+        if (sceneBuilder_ == null) {
+          scene_ = builderForValue.build();
+          onChanged();
+        } else {
+          sceneBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public Builder mergeScene(byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene value) {
+        if (sceneBuilder_ == null) {
+          if (scene_ != null) {
+            scene_ =
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.newBuilder(scene_).mergeFrom(value).buildPartial();
+          } else {
+            scene_ = value;
+          }
+          onChanged();
+        } else {
+          sceneBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public Builder clearScene() {
+        if (sceneBuilder_ == null) {
+          scene_ = null;
+          onChanged();
+        } else {
+          scene_ = null;
+          sceneBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder getSceneBuilder() {
+        
+        onChanged();
+        return getSceneFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder getSceneOrBuilder() {
+        if (sceneBuilder_ != null) {
+          return sceneBuilder_.getMessageOrBuilder();
+        } else {
+          return scene_ == null ?
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.getDefaultInstance() : scene_;
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The scene info.
+       * Please make sure this is as close to PredictRequest.scene as possible.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.media.PredictRequest.Scene scene = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder> 
+          getSceneFieldBuilder() {
+        if (sceneBuilder_ == null) {
+          sceneBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.Scene.Builder, byteplus.sdk.media.protocol.ByteplusMedia.PredictRequest.SceneOrBuilder>(
+                  getScene(),
+                  getParentForChildren(),
+                  isClean());
+          scene_ = null;
+        }
+        return sceneBuilder_;
+      }
+
+      private java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> alteredContents_ =
+        java.util.Collections.emptyList();
+      private void ensureAlteredContentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          alteredContents_ = new java.util.ArrayList<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent>(alteredContents_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder> alteredContentsBuilder_;
+
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> getAlteredContentsList() {
+        if (alteredContentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(alteredContents_);
+        } else {
+          return alteredContentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public int getAlteredContentsCount() {
+        if (alteredContentsBuilder_ == null) {
+          return alteredContents_.size();
+        } else {
+          return alteredContentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent getAlteredContents(int index) {
+        if (alteredContentsBuilder_ == null) {
+          return alteredContents_.get(index);
+        } else {
+          return alteredContentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder setAlteredContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent value) {
+        if (alteredContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAlteredContentsIsMutable();
+          alteredContents_.set(index, value);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder setAlteredContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder builderForValue) {
+        if (alteredContentsBuilder_ == null) {
+          ensureAlteredContentsIsMutable();
+          alteredContents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          alteredContentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder addAlteredContents(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent value) {
+        if (alteredContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAlteredContentsIsMutable();
+          alteredContents_.add(value);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder addAlteredContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent value) {
+        if (alteredContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAlteredContentsIsMutable();
+          alteredContents_.add(index, value);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder addAlteredContents(
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder builderForValue) {
+        if (alteredContentsBuilder_ == null) {
+          ensureAlteredContentsIsMutable();
+          alteredContents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          alteredContentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder addAlteredContents(
+          int index, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder builderForValue) {
+        if (alteredContentsBuilder_ == null) {
+          ensureAlteredContentsIsMutable();
+          alteredContents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          alteredContentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder addAllAlteredContents(
+          java.lang.Iterable<? extends byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent> values) {
+        if (alteredContentsBuilder_ == null) {
+          ensureAlteredContentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, alteredContents_);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder clearAlteredContents() {
+        if (alteredContentsBuilder_ == null) {
+          alteredContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public Builder removeAlteredContents(int index) {
+        if (alteredContentsBuilder_ == null) {
+          ensureAlteredContentsIsMutable();
+          alteredContents_.remove(index);
+          onChanged();
+        } else {
+          alteredContentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder getAlteredContentsBuilder(
+          int index) {
+        return getAlteredContentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder getAlteredContentsOrBuilder(
+          int index) {
+        if (alteredContentsBuilder_ == null) {
+          return alteredContents_.get(index);  } else {
+          return alteredContentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public java.util.List<? extends byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder> 
+           getAlteredContentsOrBuilderList() {
+        if (alteredContentsBuilder_ != null) {
+          return alteredContentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(alteredContents_);
+        }
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder addAlteredContentsBuilder() {
+        return getAlteredContentsFieldBuilder().addBuilder(
+            byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder addAlteredContentsBuilder(
+          int index) {
+        return getAlteredContentsFieldBuilder().addBuilder(
+            index, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Required.
+       * The list of altered contents.
+       * </pre>
+       *
+       * <code>repeated .bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent altered_contents = 5;</code>
+       */
+      public java.util.List<byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder> 
+           getAlteredContentsBuilderList() {
+        return getAlteredContentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder> 
+          getAlteredContentsFieldBuilder() {
+        if (alteredContentsBuilder_ == null) {
+          alteredContentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContent.Builder, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest.AlteredContentOrBuilder>(
+                  alteredContents_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          alteredContents_ = null;
+        }
+        return alteredContentsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExtra() {
+        onChanged();;
+        if (extra_ == null) {
+          extra_ = com.google.protobuf.MapField.newMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        if (!extra_.isMutable()) {
+          extra_ = extra_.copy();
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExtra() {
+        internalGetMutableExtra().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder removeExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExtra() {
+        return internalGetMutableExtra().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+      public Builder putExtra(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExtra().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 100;</code>
+       */
+
+      public Builder putAllExtra(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExtra().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.AckServerImpressionsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsRequest)
+    private static final byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest();
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AckServerImpressionsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AckServerImpressionsRequest>() {
+      @java.lang.Override
+      public AckServerImpressionsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AckServerImpressionsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AckServerImpressionsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AckServerImpressionsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AckServerImpressionsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.media.AckServerImpressionsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    boolean hasStatus();
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return The status.
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus();
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     */
+    byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder();
+  }
+  /**
+   * <pre>
+   * The response message for AckServerImpressions.
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsResponse}
+   */
+  public static final class AckServerImpressionsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.media.AckServerImpressionsResponse)
+      AckServerImpressionsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AckServerImpressionsResponse.newBuilder() to construct.
+    private AckServerImpressionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AckServerImpressionsResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AckServerImpressionsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AckServerImpressionsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(byteplus.sdk.common.protocol.ByteplusCommon.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+      return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+    }
+    /**
+     * <pre>
+     * Output only.
+     * The status of this response.
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.common.Status status = 1;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != null) {
+        output.writeMessage(1, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse other = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse) obj;
+
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The response message for AckServerImpressions.
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.media.AckServerImpressionsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.media.AckServerImpressionsResponse)
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.class, byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse getDefaultInstanceForType() {
+        return byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse build() {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse buildPartial() {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse result = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse(this);
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse) {
+          return mergeFrom((byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse other) {
+        if (other == byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse.getDefaultInstance()) return this;
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private byteplus.sdk.common.protocol.ByteplusCommon.Status status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> statusBuilder_;
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       * @return Whether the status field is set.
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       * @return The status.
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder setStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder setStatus(
+          byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder mergeStatus(byteplus.sdk.common.protocol.ByteplusCommon.Status value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      public byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              byteplus.sdk.common.protocol.ByteplusCommon.Status.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only.
+       * The status of this response.
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.common.Status status = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.common.protocol.ByteplusCommon.Status, byteplus.sdk.common.protocol.ByteplusCommon.Status.Builder, byteplus.sdk.common.protocol.ByteplusCommon.StatusOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.media.AckServerImpressionsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsResponse)
+    private static final byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse();
+    }
+
+    public static byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AckServerImpressionsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AckServerImpressionsResponse>() {
+      @java.lang.Override
+      public AckServerImpressionsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AckServerImpressionsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AckServerImpressionsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AckServerImpressionsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.media.protocol.ByteplusMedia.AckServerImpressionsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_media_User_descriptor;
   private static final 
@@ -30014,6 +43428,71 @@ public final class ByteplusMedia {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_media_WriteUserEventsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictRequest_Scene_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictRequest_Context_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_PredictResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_PredictResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -30111,18 +43590,69 @@ public final class ByteplusMedia {
       "serEventsResponse\0221\n\006status\030\001 \001(\0132!.byte" +
       "dance.byteplus.common.Status\0228\n\006errors\030\002" +
       " \003(\0132(.bytedance.byteplus.media.UserEven" +
-      "tError2\351\002\n\024BytePlusMediaService\022g\n\nWrite" +
-      "Users\022+.bytedance.byteplus.media.WriteUs" +
-      "ersRequest\032,.bytedance.byteplus.media.Wr" +
-      "iteUsersResponse\022p\n\rWriteContents\022..byte" +
-      "dance.byteplus.media.WriteContentsReques" +
-      "t\032/.bytedance.byteplus.media.WriteConten" +
-      "tsResponse\022v\n\017WriteUserEvents\0220.bytedanc" +
-      "e.byteplus.media.WriteUserEventsRequest\032" +
-      "1.bytedance.byteplus.media.WriteUserEven" +
-      "tsResponseBL\n\033byteplus.sdk.media.protoco" +
-      "lZ-github.com/byteplus-sdk/sdk-go/media/" +
-      "protocolb\006proto3"
+      "tError\"\372\004\n\016PredictRequest\022\017\n\007user_id\030\001 \001" +
+      "(\t\022\014\n\004size\030\002 \001(\005\022=\n\005scene\030\003 \001(\0132..byteda" +
+      "nce.byteplus.media.PredictRequest.Scene\022" +
+      "A\n\007context\030\004 \001(\01320.bytedance.byteplus.me" +
+      "dia.PredictRequest.Context\022B\n\005extra\030d \003(" +
+      "\01323.bytedance.byteplus.media.PredictRequ" +
+      "est.ExtraEntry\032@\n\005Scene\022\022\n\nscene_name\030\001 " +
+      "\001(\t\022\023\n\013page_number\030\002 \001(\005\022\016\n\006offset\030\003 \001(\005" +
+      "\032\222\002\n\007Context\0227\n\014root_content\030\001 \001(\0132!.byt" +
+      "edance.byteplus.media.Content\022\035\n\025candida" +
+      "te_content_ids\030\003 \003(\t\022\016\n\006device\030\026 \001(\t\022\017\n\007" +
+      "os_type\030\027 \001(\t\022\023\n\013app_version\030\030 \001(\t\022\024\n\014de" +
+      "vice_model\030\031 \001(\t\022\024\n\014device_brand\030\032 \001(\t\022\022" +
+      "\n\nos_version\030\033 \001(\t\022\024\n\014browser_type\030\034 \001(\t" +
+      "\022\022\n\nuser_agent\030\035 \001(\t\022\017\n\007network\030\036 \001(\t\032,\n" +
+      "\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"\271\003\n\rPredictResult\022R\n\021response_conten" +
+      "ts\030\001 \003(\01327.bytedance.byteplus.media.Pred" +
+      "ictResult.ResponseContent\022A\n\005extra\030d \003(\013" +
+      "22.bytedance.byteplus.media.PredictResul" +
+      "t.ExtraEntry\032\342\001\n\017ResponseContent\022\022\n\ncont" +
+      "ent_id\030\001 \001(\t\022\014\n\004rank\030\002 \001(\005\022\014\n\004pctr\030\003 \001(\001" +
+      "\022\014\n\004pcvr\030\004 \001(\001\022\020\n\010rec_info\030\005 \001(\t\022Q\n\005extr" +
+      "a\030d \003(\0132B.bytedance.byteplus.media.Predi" +
+      "ctResult.ResponseContent.ExtraEntry\032,\n\nE" +
+      "xtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\t:\0028\001\"\220\001\n\017PredictResponse\0221\n\006status\030\001 " +
+      "\001(\0132!.bytedance.byteplus.common.Status\022\022" +
+      "\n\nrequest_id\030\002 \001(\t\0226\n\005value\030\003 \001(\0132\'.byte" +
+      "dance.byteplus.media.PredictResult\"\345\003\n\033A" +
+      "ckServerImpressionsRequest\022\032\n\022predict_re" +
+      "quest_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\026\n\016traff" +
+      "ic_source\030\003 \001(\t\022=\n\005scene\030\004 \001(\0132..bytedan" +
+      "ce.byteplus.media.PredictRequest.Scene\022^" +
+      "\n\020altered_contents\030\005 \003(\0132D.bytedance.byt" +
+      "eplus.media.AckServerImpressionsRequest." +
+      "AlteredContent\022O\n\005extra\030d \003(\0132@.bytedanc" +
+      "e.byteplus.media.AckServerImpressionsReq" +
+      "uest.ExtraEntry\032c\n\016AlteredContent\022\022\n\ncon" +
+      "tent_id\030\001 \001(\t\022\026\n\016altered_reason\030\002 \001(\t\022\014\n" +
+      "\004rank\030\003 \001(\005\022\027\n\017content_id_hash\030d \001(\003\032,\n\n" +
+      "ExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"Q\n\034AckServerImpressionsResponse\0221\n\006st" +
+      "atus\030\001 \001(\0132!.bytedance.byteplus.common.S" +
+      "tatus2\321\004\n\024BytePlusMediaService\022g\n\nWriteU" +
+      "sers\022+.bytedance.byteplus.media.WriteUse" +
+      "rsRequest\032,.bytedance.byteplus.media.Wri" +
+      "teUsersResponse\022p\n\rWriteContents\022..byted" +
+      "ance.byteplus.media.WriteContentsRequest" +
+      "\032/.bytedance.byteplus.media.WriteContent" +
+      "sResponse\022v\n\017WriteUserEvents\0220.bytedance" +
+      ".byteplus.media.WriteUserEventsRequest\0321" +
+      ".bytedance.byteplus.media.WriteUserEvent" +
+      "sResponse\022^\n\007Predict\022(.bytedance.byteplu" +
+      "s.media.PredictRequest\032).bytedance.bytep" +
+      "lus.media.PredictResponse\022\205\001\n\024AckServerI" +
+      "mpressions\0225.bytedance.byteplus.media.Ac" +
+      "kServerImpressionsRequest\0326.bytedance.by" +
+      "teplus.media.AckServerImpressionsRespons" +
+      "eBL\n\033byteplus.sdk.media.protocolZ-github" +
+      ".com/byteplus-sdk/sdk-go/media/protocolb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30237,6 +43767,84 @@ public final class ByteplusMedia {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_media_WriteUserEventsResponse_descriptor,
         new java.lang.String[] { "Status", "Errors", });
+    internal_static_bytedance_byteplus_media_PredictRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_bytedance_byteplus_media_PredictRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictRequest_descriptor,
+        new java.lang.String[] { "UserId", "Size", "Scene", "Context", "Extra", });
+    internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor =
+      internal_static_bytedance_byteplus_media_PredictRequest_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_media_PredictRequest_Scene_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictRequest_Scene_descriptor,
+        new java.lang.String[] { "SceneName", "PageNumber", "Offset", });
+    internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor =
+      internal_static_bytedance_byteplus_media_PredictRequest_descriptor.getNestedTypes().get(1);
+    internal_static_bytedance_byteplus_media_PredictRequest_Context_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictRequest_Context_descriptor,
+        new java.lang.String[] { "RootContent", "CandidateContentIds", "Device", "OsType", "AppVersion", "DeviceModel", "DeviceBrand", "OsVersion", "BrowserType", "UserAgent", "Network", });
+    internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_media_PredictRequest_descriptor.getNestedTypes().get(2);
+    internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictRequest_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_media_PredictResult_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_bytedance_byteplus_media_PredictResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictResult_descriptor,
+        new java.lang.String[] { "ResponseContents", "Extra", });
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor =
+      internal_static_bytedance_byteplus_media_PredictResult_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor,
+        new java.lang.String[] { "ContentId", "Rank", "Pctr", "Pcvr", "RecInfo", "Extra", });
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictResult_ResponseContent_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_media_PredictResult_descriptor.getNestedTypes().get(1);
+    internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictResult_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_media_PredictResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_bytedance_byteplus_media_PredictResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_PredictResponse_descriptor,
+        new java.lang.String[] { "Status", "RequestId", "Value", });
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor,
+        new java.lang.String[] { "PredictRequestId", "UserId", "TrafficSource", "Scene", "AlteredContents", "Extra", });
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor =
+      internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_AlteredContent_descriptor,
+        new java.lang.String[] { "ContentId", "AlteredReason", "Rank", "ContentIdHash", });
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_descriptor.getNestedTypes().get(1);
+    internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_AckServerImpressionsRequest_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_media_AckServerImpressionsResponse_descriptor,
+        new java.lang.String[] { "Status", });
     byteplus.sdk.common.protocol.ByteplusCommon.getDescriptor();
   }
 
