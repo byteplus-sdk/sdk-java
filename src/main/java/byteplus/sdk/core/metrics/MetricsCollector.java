@@ -165,7 +165,7 @@ public class MetricsCollector {
             }
         });
         if (metricsRequests.size() > 0) {
-            String url = OTHER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
+            String url = String.format(OTHER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
             sendMetrics(metricsRequests, url);
         }
     }
@@ -199,7 +199,7 @@ public class MetricsCollector {
             }
         });
         if (metricsRequests.size() > 0) {
-            String url = COUNTER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
+            String url = String.format(COUNTER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
             sendMetrics(metricsRequests, url);
         }
     }
@@ -222,7 +222,7 @@ public class MetricsCollector {
             }
         });
         if (metricsRequests.size() > 0) {
-            String url = OTHER_URL_FORMAT.replace("{}", metricsCfg.getDomain());
+            String url = String.format(OTHER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
             sendMetrics(metricsRequests, url);
         }
     }
@@ -286,6 +286,7 @@ public class MetricsCollector {
         private boolean enableMetrics;
         private String domain;
         private String prefix;
+        private String httpSchema;
         private boolean printLog;
         private long flushIntervalMs;
         private long httpTimeoutMs;
@@ -295,6 +296,7 @@ public class MetricsCollector {
             this.setEnableMetrics(true);
             this.setDomain(DEFAULT_METRICS_DOMAIN);
             this.setPrefix(DEFAULT_METRICS_PREFIX);
+            this.setHttpSchema(DEFAULT_METRICS_HTTP_SCHEMA);
             this.setFlushIntervalMs(DEFAULT_FLUSH_INTERVAL_MS);
             this.setHttpTimeoutMs(DEFAULT_HTTP_TIMEOUT_MS);
         }
