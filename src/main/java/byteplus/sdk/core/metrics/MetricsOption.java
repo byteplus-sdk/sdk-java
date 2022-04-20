@@ -20,6 +20,14 @@ public interface MetricsOption {
         };
     }
 
+    static MetricsOption withMetricsHttpSchema(String schema) {
+        return options -> {
+            // only support "http" and "https"
+            if ("http".equals(schema) || "https".equals(schema))
+                options.setHttpSchema(schema);
+        };
+    }
+
     //if not set, will not print metrics log
     static MetricsOption withMetricsLog() {
         return options -> {

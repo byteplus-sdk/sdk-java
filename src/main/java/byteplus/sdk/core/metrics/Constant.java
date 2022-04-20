@@ -5,9 +5,10 @@ public class Constant {
     // metrics default domain and prefix
     public static final String DEFAULT_METRICS_DOMAIN = "bot.snssdk.com";
     public static final String DEFAULT_METRICS_PREFIX = "byteplus.rec.sdk";
+    public static final String DEFAULT_METRICS_HTTP_SCHEMA = "https";
 
-    public static final String COUNTER_URL_FORMAT = "https://{}/api/counter";
-    public static final String OTHER_URL_FORMAT = "https://{}/api/put";
+    public static final String COUNTER_URL_FORMAT = "%s://%s/api/counter";
+    public static final String OTHER_URL_FORMAT = "%s://%s/api/put";
 
     // metrics flush interval
     public static final int DEFAULT_FLUSH_INTERVAL_MS = 15 * 1000;
