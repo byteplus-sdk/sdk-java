@@ -11931,6 +11931,60 @@ public final class ByteplusByteair {
 
     /**
      * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     * @return Whether the feature field is set.
+     */
+    boolean hasFeature();
+    /**
+     * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     * @return The feature.
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getFeature();
+    /**
+     * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder getFeatureOrBuilder();
+
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     * @return Whether the filter field is set.
+     */
+    boolean hasFilter();
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     * @return The filter.
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getFilter();
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     */
+    byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder getFilterOrBuilder();
+
+    /**
+     * <pre>
      * Optional.
      * This is a catch-all field to pass all the additional information.
      * Please provide as much information as possible.
@@ -12049,6 +12103,32 @@ public final class ByteplusByteair {
             case 16: {
 
               closePersonalizedRecommend_ = input.readBool();
+              break;
+            }
+            case 26: {
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder subBuilder = null;
+              if (feature_ != null) {
+                subBuilder = feature_.toBuilder();
+              }
+              feature_ = input.readMessage(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(feature_);
+                feature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder subBuilder = null;
+              if (filter_ != null) {
+                subBuilder = filter_.toBuilder();
+              }
+              filter_ = input.readMessage(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(filter_);
+                filter_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 802: {
@@ -12171,6 +12251,82 @@ public final class ByteplusByteair {
     @java.lang.Override
     public boolean getClosePersonalizedRecommend() {
       return closePersonalizedRecommend_;
+    }
+
+    public static final int FEATURE_FIELD_NUMBER = 3;
+    private byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature feature_;
+    /**
+     * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     * @return Whether the feature field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeature() {
+      return feature_ != null;
+    }
+    /**
+     * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     * @return The feature.
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getFeature() {
+      return feature_ == null ? byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.getDefaultInstance() : feature_;
+    }
+    /**
+     * <pre>
+     * client input feature
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder getFeatureOrBuilder() {
+      return getFeature();
+    }
+
+    public static final int FILTER_FIELD_NUMBER = 4;
+    private byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter filter_;
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     * @return Whether the filter field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilter() {
+      return filter_ != null;
+    }
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     * @return The filter.
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getFilter() {
+      return filter_ == null ? byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.getDefaultInstance() : filter_;
+    }
+    /**
+     * <pre>
+     * client input filter
+     * </pre>
+     *
+     * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+     */
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder getFilterOrBuilder() {
+      return getFilter();
     }
 
     public static final int EXTRA_FIELD_NUMBER = 100;
@@ -12298,6 +12454,12 @@ public final class ByteplusByteair {
       if (closePersonalizedRecommend_ != false) {
         output.writeBool(2, closePersonalizedRecommend_);
       }
+      if (feature_ != null) {
+        output.writeMessage(3, getFeature());
+      }
+      if (filter_ != null) {
+        output.writeMessage(4, getFilter());
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
@@ -12319,6 +12481,14 @@ public final class ByteplusByteair {
       if (closePersonalizedRecommend_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, closePersonalizedRecommend_);
+      }
+      if (feature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getFeature());
+      }
+      if (filter_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getFilter());
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetExtra().getMap().entrySet()) {
@@ -12349,6 +12519,16 @@ public final class ByteplusByteair {
           .equals(other.getSpm())) return false;
       if (getClosePersonalizedRecommend()
           != other.getClosePersonalizedRecommend()) return false;
+      if (hasFeature() != other.hasFeature()) return false;
+      if (hasFeature()) {
+        if (!getFeature()
+            .equals(other.getFeature())) return false;
+      }
+      if (hasFilter() != other.hasFilter()) return false;
+      if (hasFilter()) {
+        if (!getFilter()
+            .equals(other.getFilter())) return false;
+      }
       if (!internalGetExtra().equals(
           other.internalGetExtra())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -12367,6 +12547,14 @@ public final class ByteplusByteair {
       hash = (37 * hash) + CLOSEPERSONALIZEDRECOMMEND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getClosePersonalizedRecommend());
+      if (hasFeature()) {
+        hash = (37 * hash) + FEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getFeature().hashCode();
+      }
+      if (hasFilter()) {
+        hash = (37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFilter().hashCode();
+      }
       if (!internalGetExtra().getMap().isEmpty()) {
         hash = (37 * hash) + EXTRA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetExtra().hashCode();
@@ -12530,6 +12718,18 @@ public final class ByteplusByteair {
 
         closePersonalizedRecommend_ = false;
 
+        if (featureBuilder_ == null) {
+          feature_ = null;
+        } else {
+          feature_ = null;
+          featureBuilder_ = null;
+        }
+        if (filterBuilder_ == null) {
+          filter_ = null;
+        } else {
+          filter_ = null;
+          filterBuilder_ = null;
+        }
         internalGetMutableExtra().clear();
         return this;
       }
@@ -12560,6 +12760,16 @@ public final class ByteplusByteair {
         int from_bitField0_ = bitField0_;
         result.spm_ = spm_;
         result.closePersonalizedRecommend_ = closePersonalizedRecommend_;
+        if (featureBuilder_ == null) {
+          result.feature_ = feature_;
+        } else {
+          result.feature_ = featureBuilder_.build();
+        }
+        if (filterBuilder_ == null) {
+          result.filter_ = filter_;
+        } else {
+          result.filter_ = filterBuilder_.build();
+        }
         result.extra_ = internalGetExtra();
         result.extra_.makeImmutable();
         onBuilt();
@@ -12616,6 +12826,12 @@ public final class ByteplusByteair {
         }
         if (other.getClosePersonalizedRecommend() != false) {
           setClosePersonalizedRecommend(other.getClosePersonalizedRecommend());
+        }
+        if (other.hasFeature()) {
+          mergeFeature(other.getFeature());
+        }
+        if (other.hasFilter()) {
+          mergeFilter(other.getFilter());
         }
         internalGetMutableExtra().mergeFrom(
             other.internalGetExtra());
@@ -12796,6 +13012,316 @@ public final class ByteplusByteair {
         closePersonalizedRecommend_ = false;
         onChanged();
         return this;
+      }
+
+      private byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature feature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder> featureBuilder_;
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       * @return Whether the feature field is set.
+       */
+      public boolean hasFeature() {
+        return featureBuilder_ != null || feature_ != null;
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       * @return The feature.
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getFeature() {
+        if (featureBuilder_ == null) {
+          return feature_ == null ? byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.getDefaultInstance() : feature_;
+        } else {
+          return featureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public Builder setFeature(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature value) {
+        if (featureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          feature_ = value;
+          onChanged();
+        } else {
+          featureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public Builder setFeature(
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder builderForValue) {
+        if (featureBuilder_ == null) {
+          feature_ = builderForValue.build();
+          onChanged();
+        } else {
+          featureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public Builder mergeFeature(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature value) {
+        if (featureBuilder_ == null) {
+          if (feature_ != null) {
+            feature_ =
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.newBuilder(feature_).mergeFrom(value).buildPartial();
+          } else {
+            feature_ = value;
+          }
+          onChanged();
+        } else {
+          featureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public Builder clearFeature() {
+        if (featureBuilder_ == null) {
+          feature_ = null;
+          onChanged();
+        } else {
+          feature_ = null;
+          featureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder getFeatureBuilder() {
+        
+        onChanged();
+        return getFeatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder getFeatureOrBuilder() {
+        if (featureBuilder_ != null) {
+          return featureBuilder_.getMessageOrBuilder();
+        } else {
+          return feature_ == null ?
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.getDefaultInstance() : feature_;
+        }
+      }
+      /**
+       * <pre>
+       * client input feature
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFeature feature = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder> 
+          getFeatureFieldBuilder() {
+        if (featureBuilder_ == null) {
+          featureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder>(
+                  getFeature(),
+                  getParentForChildren(),
+                  isClean());
+          feature_ = null;
+        }
+        return featureBuilder_;
+      }
+
+      private byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter filter_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder> filterBuilder_;
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       * @return Whether the filter field is set.
+       */
+      public boolean hasFilter() {
+        return filterBuilder_ != null || filter_ != null;
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       * @return The filter.
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getFilter() {
+        if (filterBuilder_ == null) {
+          return filter_ == null ? byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.getDefaultInstance() : filter_;
+        } else {
+          return filterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public Builder setFilter(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter value) {
+        if (filterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          filter_ = value;
+          onChanged();
+        } else {
+          filterBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public Builder setFilter(
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder builderForValue) {
+        if (filterBuilder_ == null) {
+          filter_ = builderForValue.build();
+          onChanged();
+        } else {
+          filterBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public Builder mergeFilter(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter value) {
+        if (filterBuilder_ == null) {
+          if (filter_ != null) {
+            filter_ =
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
+          } else {
+            filter_ = value;
+          }
+          onChanged();
+        } else {
+          filterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public Builder clearFilter() {
+        if (filterBuilder_ == null) {
+          filter_ = null;
+          onChanged();
+        } else {
+          filter_ = null;
+          filterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder getFilterBuilder() {
+        
+        onChanged();
+        return getFilterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder getFilterOrBuilder() {
+        if (filterBuilder_ != null) {
+          return filterBuilder_.getMessageOrBuilder();
+        } else {
+          return filter_ == null ?
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.getDefaultInstance() : filter_;
+        }
+      }
+      /**
+       * <pre>
+       * client input filter
+       * </pre>
+       *
+       * <code>.bytedance.byteplus.byteair.PredictFilter filter = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder> 
+          getFilterFieldBuilder() {
+        if (filterBuilder_ == null) {
+          filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder>(
+                  getFilter(),
+                  getParentForChildren(),
+                  isClean());
+          filter_ = null;
+        }
+        return filterBuilder_;
       }
 
       private com.google.protobuf.MapField<
@@ -13015,6 +13541,6552 @@ public final class ByteplusByteair {
 
     @java.lang.Override
     public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictContext getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PredictFeatureOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.PredictFeature)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    int getStringFeatureCount();
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    boolean containsStringFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getStringFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getStringFeature();
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getStringFeatureMap();
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+
+    java.lang.String getStringFeatureOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+
+    java.lang.String getStringFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    int getIntFeatureCount();
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    boolean containsIntFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getIntFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Long>
+    getIntFeature();
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Long>
+    getIntFeatureMap();
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+
+    long getIntFeatureOrDefault(
+        java.lang.String key,
+        long defaultValue);
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+
+    long getIntFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    int getFloatFeatureCount();
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    boolean containsFloatFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getFloatFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Float>
+    getFloatFeature();
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Float>
+    getFloatFeatureMap();
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+
+    float getFloatFeatureOrDefault(
+        java.lang.String key,
+        float defaultValue);
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+
+    float getFloatFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    int getDoubleFeatureCount();
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    boolean containsDoubleFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getDoubleFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Double>
+    getDoubleFeature();
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Double>
+    getDoubleFeatureMap();
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+
+    double getDoubleFeatureOrDefault(
+        java.lang.String key,
+        double defaultValue);
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+
+    double getDoubleFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    int getStringArrayFeatureCount();
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    boolean containsStringArrayFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getStringArrayFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    getStringArrayFeature();
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    getStringArrayFeatureMap();
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue);
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    int getIntArrayFeatureCount();
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    boolean containsIntArrayFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getIntArrayFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    getIntArrayFeature();
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    getIntArrayFeatureMap();
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue);
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    int getFloatArrayFeatureCount();
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    boolean containsFloatArrayFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getFloatArrayFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    getFloatArrayFeature();
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    getFloatArrayFeatureMap();
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue);
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    int getDoubleArrayFeatureCount();
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    boolean containsDoubleArrayFeature(
+        java.lang.String key);
+    /**
+     * Use {@link #getDoubleArrayFeatureMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    getDoubleArrayFeature();
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    getDoubleArrayFeatureMap();
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue);
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.PredictFeature}
+   */
+  public static final class PredictFeature extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.PredictFeature)
+      PredictFeatureOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PredictFeature.newBuilder() to construct.
+    private PredictFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PredictFeature() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PredictFeature();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PredictFeature(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stringFeature_ = com.google.protobuf.MapField.newMapField(
+                    StringFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              stringFeature__ = input.readMessage(
+                  StringFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              stringFeature_.getMutableMap().put(
+                  stringFeature__.getKey(), stringFeature__.getValue());
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                intFeature_ = com.google.protobuf.MapField.newMapField(
+                    IntFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+              intFeature__ = input.readMessage(
+                  IntFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              intFeature_.getMutableMap().put(
+                  intFeature__.getKey(), intFeature__.getValue());
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                floatFeature_ = com.google.protobuf.MapField.newMapField(
+                    FloatFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Float>
+              floatFeature__ = input.readMessage(
+                  FloatFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              floatFeature_.getMutableMap().put(
+                  floatFeature__.getKey(), floatFeature__.getValue());
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                doubleFeature_ = com.google.protobuf.MapField.newMapField(
+                    DoubleFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+              doubleFeature__ = input.readMessage(
+                  DoubleFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              doubleFeature_.getMutableMap().put(
+                  doubleFeature__.getKey(), doubleFeature__.getValue());
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                stringArrayFeature_ = com.google.protobuf.MapField.newMapField(
+                    StringArrayFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+              stringArrayFeature__ = input.readMessage(
+                  StringArrayFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              stringArrayFeature_.getMutableMap().put(
+                  stringArrayFeature__.getKey(), stringArrayFeature__.getValue());
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                intArrayFeature_ = com.google.protobuf.MapField.newMapField(
+                    IntArrayFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+              intArrayFeature__ = input.readMessage(
+                  IntArrayFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              intArrayFeature_.getMutableMap().put(
+                  intArrayFeature__.getKey(), intArrayFeature__.getValue());
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                floatArrayFeature_ = com.google.protobuf.MapField.newMapField(
+                    FloatArrayFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+              floatArrayFeature__ = input.readMessage(
+                  FloatArrayFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              floatArrayFeature_.getMutableMap().put(
+                  floatArrayFeature__.getKey(), floatArrayFeature__.getValue());
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                doubleArrayFeature_ = com.google.protobuf.MapField.newMapField(
+                    DoubleArrayFeatureDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+              doubleArrayFeature__ = input.readMessage(
+                  DoubleArrayFeatureDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              doubleArrayFeature_.getMutableMap().put(
+                  doubleArrayFeature__.getKey(), doubleArrayFeature__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetStringFeature();
+        case 2:
+          return internalGetIntFeature();
+        case 3:
+          return internalGetFloatFeature();
+        case 4:
+          return internalGetDoubleFeature();
+        case 5:
+          return internalGetStringArrayFeature();
+        case 6:
+          return internalGetIntArrayFeature();
+        case 7:
+          return internalGetFloatArrayFeature();
+        case 8:
+          return internalGetDoubleArrayFeature();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.class, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder.class);
+    }
+
+    public static final int STRINGFEATURE_FIELD_NUMBER = 1;
+    private static final class StringFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> stringFeature_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetStringFeature() {
+      if (stringFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            StringFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return stringFeature_;
+    }
+
+    public int getStringFeatureCount() {
+      return internalGetStringFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsStringFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetStringFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getStringFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getStringFeature() {
+      return getStringFeatureMap();
+    }
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getStringFeatureMap() {
+      return internalGetStringFeature().getMap();
+    }
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getStringFeatureOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetStringFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * string feature
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getStringFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetStringFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int INTFEATURE_FIELD_NUMBER = 2;
+    private static final class IntFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Long>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Long> intFeature_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetIntFeature() {
+      if (intFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IntFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return intFeature_;
+    }
+
+    public int getIntFeatureCount() {
+      return internalGetIntFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsIntFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIntFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getIntFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getIntFeature() {
+      return getIntFeatureMap();
+    }
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Long> getIntFeatureMap() {
+      return internalGetIntFeature().getMap();
+    }
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    @java.lang.Override
+
+    public long getIntFeatureOrDefault(
+        java.lang.String key,
+        long defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetIntFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * int feature
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+     */
+    @java.lang.Override
+
+    public long getIntFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetIntFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int FLOATFEATURE_FIELD_NUMBER = 3;
+    private static final class FloatFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Float> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Float>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.FLOAT,
+                  0F);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Float> floatFeature_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+    internalGetFloatFeature() {
+      if (floatFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FloatFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return floatFeature_;
+    }
+
+    public int getFloatFeatureCount() {
+      return internalGetFloatFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsFloatFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetFloatFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFloatFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Float> getFloatFeature() {
+      return getFloatFeatureMap();
+    }
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Float> getFloatFeatureMap() {
+      return internalGetFloatFeature().getMap();
+    }
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    @java.lang.Override
+
+    public float getFloatFeatureOrDefault(
+        java.lang.String key,
+        float defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Float> map =
+          internalGetFloatFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * float feature
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+     */
+    @java.lang.Override
+
+    public float getFloatFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Float> map =
+          internalGetFloatFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DOUBLEFEATURE_FIELD_NUMBER = 4;
+    private static final class DoubleFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Double> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Double>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                  0D);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Double> doubleFeature_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+    internalGetDoubleFeature() {
+      if (doubleFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DoubleFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return doubleFeature_;
+    }
+
+    public int getDoubleFeatureCount() {
+      return internalGetDoubleFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsDoubleFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetDoubleFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDoubleFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getDoubleFeature() {
+      return getDoubleFeatureMap();
+    }
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Double> getDoubleFeatureMap() {
+      return internalGetDoubleFeature().getMap();
+    }
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    @java.lang.Override
+
+    public double getDoubleFeatureOrDefault(
+        java.lang.String key,
+        double defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Double> map =
+          internalGetDoubleFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * double feature
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+     */
+    @java.lang.Override
+
+    public double getDoubleFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Double> map =
+          internalGetDoubleFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int STRINGARRAYFEATURE_FIELD_NUMBER = 5;
+    private static final class StringArrayFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> stringArrayFeature_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    internalGetStringArrayFeature() {
+      if (stringArrayFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            StringArrayFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return stringArrayFeature_;
+    }
+
+    public int getStringArrayFeatureCount() {
+      return internalGetStringArrayFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsStringArrayFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetStringArrayFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getStringArrayFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFeature() {
+      return getStringArrayFeatureMap();
+    }
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFeatureMap() {
+      return internalGetStringArrayFeature().getMap();
+    }
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+          internalGetStringArrayFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * string array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+          internalGetStringArrayFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int INTARRAYFEATURE_FIELD_NUMBER = 6;
+    private static final class IntArrayFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> intArrayFeature_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    internalGetIntArrayFeature() {
+      if (intArrayFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IntArrayFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return intArrayFeature_;
+    }
+
+    public int getIntArrayFeatureCount() {
+      return internalGetIntArrayFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsIntArrayFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIntArrayFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getIntArrayFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFeature() {
+      return getIntArrayFeatureMap();
+    }
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFeatureMap() {
+      return internalGetIntArrayFeature().getMap();
+    }
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+          internalGetIntArrayFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * int array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+          internalGetIntArrayFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int FLOATARRAYFEATURE_FIELD_NUMBER = 7;
+    private static final class FloatArrayFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> floatArrayFeature_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    internalGetFloatArrayFeature() {
+      if (floatArrayFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FloatArrayFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return floatArrayFeature_;
+    }
+
+    public int getFloatArrayFeatureCount() {
+      return internalGetFloatArrayFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsFloatArrayFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetFloatArrayFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFloatArrayFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFeature() {
+      return getFloatArrayFeatureMap();
+    }
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFeatureMap() {
+      return internalGetFloatArrayFeature().getMap();
+    }
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+          internalGetFloatArrayFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * float array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+          internalGetFloatArrayFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DOUBLEARRAYFEATURE_FIELD_NUMBER = 8;
+    private static final class DoubleArrayFeatureDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> doubleArrayFeature_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    internalGetDoubleArrayFeature() {
+      if (doubleArrayFeature_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DoubleArrayFeatureDefaultEntryHolder.defaultEntry);
+      }
+      return doubleArrayFeature_;
+    }
+
+    public int getDoubleArrayFeatureCount() {
+      return internalGetDoubleArrayFeature().getMap().size();
+    }
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsDoubleArrayFeature(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetDoubleArrayFeature().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDoubleArrayFeatureMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFeature() {
+      return getDoubleArrayFeatureMap();
+    }
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFeatureMap() {
+      return internalGetDoubleArrayFeature().getMap();
+    }
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+          internalGetDoubleArrayFeature().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * double array feature
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+          internalGetDoubleArrayFeature().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetStringFeature(),
+          StringFeatureDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetIntFeature(),
+          IntFeatureDefaultEntryHolder.defaultEntry,
+          2);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetFloatFeature(),
+          FloatFeatureDefaultEntryHolder.defaultEntry,
+          3);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetDoubleFeature(),
+          DoubleFeatureDefaultEntryHolder.defaultEntry,
+          4);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetStringArrayFeature(),
+          StringArrayFeatureDefaultEntryHolder.defaultEntry,
+          5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetIntArrayFeature(),
+          IntArrayFeatureDefaultEntryHolder.defaultEntry,
+          6);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetFloatArrayFeature(),
+          FloatArrayFeatureDefaultEntryHolder.defaultEntry,
+          7);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetDoubleArrayFeature(),
+          DoubleArrayFeatureDefaultEntryHolder.defaultEntry,
+          8);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetStringFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        stringFeature__ = StringFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, stringFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+           : internalGetIntFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+        intFeature__ = IntFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, intFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Float> entry
+           : internalGetFloatFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Float>
+        floatFeature__ = FloatFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, floatFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+           : internalGetDoubleFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+        doubleFeature__ = DoubleFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, doubleFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> entry
+           : internalGetStringArrayFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+        stringArrayFeature__ = StringArrayFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, stringArrayFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> entry
+           : internalGetIntArrayFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+        intArrayFeature__ = IntArrayFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, intArrayFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> entry
+           : internalGetFloatArrayFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+        floatArrayFeature__ = FloatArrayFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(7, floatArrayFeature__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> entry
+           : internalGetDoubleArrayFeature().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+        doubleArrayFeature__ = DoubleArrayFeatureDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(8, doubleArrayFeature__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature other = (byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature) obj;
+
+      if (!internalGetStringFeature().equals(
+          other.internalGetStringFeature())) return false;
+      if (!internalGetIntFeature().equals(
+          other.internalGetIntFeature())) return false;
+      if (!internalGetFloatFeature().equals(
+          other.internalGetFloatFeature())) return false;
+      if (!internalGetDoubleFeature().equals(
+          other.internalGetDoubleFeature())) return false;
+      if (!internalGetStringArrayFeature().equals(
+          other.internalGetStringArrayFeature())) return false;
+      if (!internalGetIntArrayFeature().equals(
+          other.internalGetIntArrayFeature())) return false;
+      if (!internalGetFloatArrayFeature().equals(
+          other.internalGetFloatArrayFeature())) return false;
+      if (!internalGetDoubleArrayFeature().equals(
+          other.internalGetDoubleArrayFeature())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetStringFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + STRINGFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetStringFeature().hashCode();
+      }
+      if (!internalGetIntFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + INTFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetIntFeature().hashCode();
+      }
+      if (!internalGetFloatFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + FLOATFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFloatFeature().hashCode();
+      }
+      if (!internalGetDoubleFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + DOUBLEFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDoubleFeature().hashCode();
+      }
+      if (!internalGetStringArrayFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + STRINGARRAYFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetStringArrayFeature().hashCode();
+      }
+      if (!internalGetIntArrayFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + INTARRAYFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetIntArrayFeature().hashCode();
+      }
+      if (!internalGetFloatArrayFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + FLOATARRAYFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFloatArrayFeature().hashCode();
+      }
+      if (!internalGetDoubleArrayFeature().getMap().isEmpty()) {
+        hash = (37 * hash) + DOUBLEARRAYFEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDoubleArrayFeature().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.PredictFeature}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.PredictFeature)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeatureOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetStringFeature();
+          case 2:
+            return internalGetIntFeature();
+          case 3:
+            return internalGetFloatFeature();
+          case 4:
+            return internalGetDoubleFeature();
+          case 5:
+            return internalGetStringArrayFeature();
+          case 6:
+            return internalGetIntArrayFeature();
+          case 7:
+            return internalGetFloatArrayFeature();
+          case 8:
+            return internalGetDoubleArrayFeature();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableStringFeature();
+          case 2:
+            return internalGetMutableIntFeature();
+          case 3:
+            return internalGetMutableFloatFeature();
+          case 4:
+            return internalGetMutableDoubleFeature();
+          case 5:
+            return internalGetMutableStringArrayFeature();
+          case 6:
+            return internalGetMutableIntArrayFeature();
+          case 7:
+            return internalGetMutableFloatArrayFeature();
+          case 8:
+            return internalGetMutableDoubleArrayFeature();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.class, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableStringFeature().clear();
+        internalGetMutableIntFeature().clear();
+        internalGetMutableFloatFeature().clear();
+        internalGetMutableDoubleFeature().clear();
+        internalGetMutableStringArrayFeature().clear();
+        internalGetMutableIntArrayFeature().clear();
+        internalGetMutableFloatArrayFeature().clear();
+        internalGetMutableDoubleArrayFeature().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature result = new byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature(this);
+        int from_bitField0_ = bitField0_;
+        result.stringFeature_ = internalGetStringFeature();
+        result.stringFeature_.makeImmutable();
+        result.intFeature_ = internalGetIntFeature();
+        result.intFeature_.makeImmutable();
+        result.floatFeature_ = internalGetFloatFeature();
+        result.floatFeature_.makeImmutable();
+        result.doubleFeature_ = internalGetDoubleFeature();
+        result.doubleFeature_.makeImmutable();
+        result.stringArrayFeature_ = internalGetStringArrayFeature();
+        result.stringArrayFeature_.makeImmutable();
+        result.intArrayFeature_ = internalGetIntArrayFeature();
+        result.intArrayFeature_.makeImmutable();
+        result.floatArrayFeature_ = internalGetFloatArrayFeature();
+        result.floatArrayFeature_.makeImmutable();
+        result.doubleArrayFeature_ = internalGetDoubleArrayFeature();
+        result.doubleArrayFeature_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature.getDefaultInstance()) return this;
+        internalGetMutableStringFeature().mergeFrom(
+            other.internalGetStringFeature());
+        internalGetMutableIntFeature().mergeFrom(
+            other.internalGetIntFeature());
+        internalGetMutableFloatFeature().mergeFrom(
+            other.internalGetFloatFeature());
+        internalGetMutableDoubleFeature().mergeFrom(
+            other.internalGetDoubleFeature());
+        internalGetMutableStringArrayFeature().mergeFrom(
+            other.internalGetStringArrayFeature());
+        internalGetMutableIntArrayFeature().mergeFrom(
+            other.internalGetIntArrayFeature());
+        internalGetMutableFloatArrayFeature().mergeFrom(
+            other.internalGetFloatArrayFeature());
+        internalGetMutableDoubleArrayFeature().mergeFrom(
+            other.internalGetDoubleArrayFeature());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> stringFeature_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetStringFeature() {
+        if (stringFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              StringFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return stringFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableStringFeature() {
+        onChanged();;
+        if (stringFeature_ == null) {
+          stringFeature_ = com.google.protobuf.MapField.newMapField(
+              StringFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!stringFeature_.isMutable()) {
+          stringFeature_ = stringFeature_.copy();
+        }
+        return stringFeature_;
+      }
+
+      public int getStringFeatureCount() {
+        return internalGetStringFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsStringFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetStringFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getStringFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getStringFeature() {
+        return getStringFeatureMap();
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getStringFeatureMap() {
+        return internalGetStringFeature().getMap();
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getStringFeatureOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetStringFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getStringFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetStringFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearStringFeature() {
+        internalGetMutableStringFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+
+      public Builder removeStringFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableStringFeature() {
+        return internalGetMutableStringFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+      public Builder putStringFeature(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * string feature
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFeature = 1;</code>
+       */
+
+      public Builder putAllStringFeature(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableStringFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Long> intFeature_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetIntFeature() {
+        if (intFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              IntFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return intFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetMutableIntFeature() {
+        onChanged();;
+        if (intFeature_ == null) {
+          intFeature_ = com.google.protobuf.MapField.newMapField(
+              IntFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!intFeature_.isMutable()) {
+          intFeature_ = intFeature_.copy();
+        }
+        return intFeature_;
+      }
+
+      public int getIntFeatureCount() {
+        return internalGetIntFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsIntFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetIntFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getIntFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long> getIntFeature() {
+        return getIntFeatureMap();
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Long> getIntFeatureMap() {
+        return internalGetIntFeature().getMap();
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+      @java.lang.Override
+
+      public long getIntFeatureOrDefault(
+          java.lang.String key,
+          long defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetIntFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+      @java.lang.Override
+
+      public long getIntFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetIntFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearIntFeature() {
+        internalGetMutableIntFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+
+      public Builder removeIntFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long>
+      getMutableIntFeature() {
+        return internalGetMutableIntFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+      public Builder putIntFeature(
+          java.lang.String key,
+          long value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableIntFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * int feature
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFeature = 2;</code>
+       */
+
+      public Builder putAllIntFeature(
+          java.util.Map<java.lang.String, java.lang.Long> values) {
+        internalGetMutableIntFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Float> floatFeature_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+      internalGetFloatFeature() {
+        if (floatFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FloatFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return floatFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+      internalGetMutableFloatFeature() {
+        onChanged();;
+        if (floatFeature_ == null) {
+          floatFeature_ = com.google.protobuf.MapField.newMapField(
+              FloatFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!floatFeature_.isMutable()) {
+          floatFeature_ = floatFeature_.copy();
+        }
+        return floatFeature_;
+      }
+
+      public int getFloatFeatureCount() {
+        return internalGetFloatFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsFloatFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetFloatFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getFloatFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getFloatFeature() {
+        return getFloatFeatureMap();
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Float> getFloatFeatureMap() {
+        return internalGetFloatFeature().getMap();
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+      @java.lang.Override
+
+      public float getFloatFeatureOrDefault(
+          java.lang.String key,
+          float defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Float> map =
+            internalGetFloatFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+      @java.lang.Override
+
+      public float getFloatFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Float> map =
+            internalGetFloatFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFloatFeature() {
+        internalGetMutableFloatFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+
+      public Builder removeFloatFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float>
+      getMutableFloatFeature() {
+        return internalGetMutableFloatFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+      public Builder putFloatFeature(
+          java.lang.String key,
+          float value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableFloatFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * float feature
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFeature = 3;</code>
+       */
+
+      public Builder putAllFloatFeature(
+          java.util.Map<java.lang.String, java.lang.Float> values) {
+        internalGetMutableFloatFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> doubleFeature_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetDoubleFeature() {
+        if (doubleFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DoubleFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return doubleFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetMutableDoubleFeature() {
+        onChanged();;
+        if (doubleFeature_ == null) {
+          doubleFeature_ = com.google.protobuf.MapField.newMapField(
+              DoubleFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!doubleFeature_.isMutable()) {
+          doubleFeature_ = doubleFeature_.copy();
+        }
+        return doubleFeature_;
+      }
+
+      public int getDoubleFeatureCount() {
+        return internalGetDoubleFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsDoubleFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetDoubleFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDoubleFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getDoubleFeature() {
+        return getDoubleFeatureMap();
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Double> getDoubleFeatureMap() {
+        return internalGetDoubleFeature().getMap();
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+      @java.lang.Override
+
+      public double getDoubleFeatureOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetDoubleFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+      @java.lang.Override
+
+      public double getDoubleFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetDoubleFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDoubleFeature() {
+        internalGetMutableDoubleFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+
+      public Builder removeDoubleFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double>
+      getMutableDoubleFeature() {
+        return internalGetMutableDoubleFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+      public Builder putDoubleFeature(
+          java.lang.String key,
+          double value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableDoubleFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * double feature
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFeature = 4;</code>
+       */
+
+      public Builder putAllDoubleFeature(
+          java.util.Map<java.lang.String, java.lang.Double> values) {
+        internalGetMutableDoubleFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> stringArrayFeature_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      internalGetStringArrayFeature() {
+        if (stringArrayFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              StringArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return stringArrayFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      internalGetMutableStringArrayFeature() {
+        onChanged();;
+        if (stringArrayFeature_ == null) {
+          stringArrayFeature_ = com.google.protobuf.MapField.newMapField(
+              StringArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!stringArrayFeature_.isMutable()) {
+          stringArrayFeature_ = stringArrayFeature_.copy();
+        }
+        return stringArrayFeature_;
+      }
+
+      public int getStringArrayFeatureCount() {
+        return internalGetStringArrayFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsStringArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetStringArrayFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getStringArrayFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFeature() {
+        return getStringArrayFeatureMap();
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFeatureMap() {
+        return internalGetStringArrayFeature().getMap();
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+            internalGetStringArrayFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+            internalGetStringArrayFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearStringArrayFeature() {
+        internalGetMutableStringArrayFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+
+      public Builder removeStringArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringArrayFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      getMutableStringArrayFeature() {
+        return internalGetMutableStringArrayFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+      public Builder putStringArrayFeature(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringArrayFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * string array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFeature = 5;</code>
+       */
+
+      public Builder putAllStringArrayFeature(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> values) {
+        internalGetMutableStringArrayFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> intArrayFeature_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      internalGetIntArrayFeature() {
+        if (intArrayFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              IntArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return intArrayFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      internalGetMutableIntArrayFeature() {
+        onChanged();;
+        if (intArrayFeature_ == null) {
+          intArrayFeature_ = com.google.protobuf.MapField.newMapField(
+              IntArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!intArrayFeature_.isMutable()) {
+          intArrayFeature_ = intArrayFeature_.copy();
+        }
+        return intArrayFeature_;
+      }
+
+      public int getIntArrayFeatureCount() {
+        return internalGetIntArrayFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsIntArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetIntArrayFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getIntArrayFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFeature() {
+        return getIntArrayFeatureMap();
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFeatureMap() {
+        return internalGetIntArrayFeature().getMap();
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+            internalGetIntArrayFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+            internalGetIntArrayFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearIntArrayFeature() {
+        internalGetMutableIntArrayFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+
+      public Builder removeIntArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntArrayFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      getMutableIntArrayFeature() {
+        return internalGetMutableIntArrayFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+      public Builder putIntArrayFeature(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntArrayFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * int array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFeature = 6;</code>
+       */
+
+      public Builder putAllIntArrayFeature(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> values) {
+        internalGetMutableIntArrayFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> floatArrayFeature_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      internalGetFloatArrayFeature() {
+        if (floatArrayFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FloatArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return floatArrayFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      internalGetMutableFloatArrayFeature() {
+        onChanged();;
+        if (floatArrayFeature_ == null) {
+          floatArrayFeature_ = com.google.protobuf.MapField.newMapField(
+              FloatArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!floatArrayFeature_.isMutable()) {
+          floatArrayFeature_ = floatArrayFeature_.copy();
+        }
+        return floatArrayFeature_;
+      }
+
+      public int getFloatArrayFeatureCount() {
+        return internalGetFloatArrayFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsFloatArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetFloatArrayFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getFloatArrayFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFeature() {
+        return getFloatArrayFeatureMap();
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFeatureMap() {
+        return internalGetFloatArrayFeature().getMap();
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+            internalGetFloatArrayFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+            internalGetFloatArrayFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFloatArrayFeature() {
+        internalGetMutableFloatArrayFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+
+      public Builder removeFloatArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatArrayFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      getMutableFloatArrayFeature() {
+        return internalGetMutableFloatArrayFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+      public Builder putFloatArrayFeature(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatArrayFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * float array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFeature = 7;</code>
+       */
+
+      public Builder putAllFloatArrayFeature(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> values) {
+        internalGetMutableFloatArrayFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> doubleArrayFeature_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      internalGetDoubleArrayFeature() {
+        if (doubleArrayFeature_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DoubleArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        return doubleArrayFeature_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      internalGetMutableDoubleArrayFeature() {
+        onChanged();;
+        if (doubleArrayFeature_ == null) {
+          doubleArrayFeature_ = com.google.protobuf.MapField.newMapField(
+              DoubleArrayFeatureDefaultEntryHolder.defaultEntry);
+        }
+        if (!doubleArrayFeature_.isMutable()) {
+          doubleArrayFeature_ = doubleArrayFeature_.copy();
+        }
+        return doubleArrayFeature_;
+      }
+
+      public int getDoubleArrayFeatureCount() {
+        return internalGetDoubleArrayFeature().getMap().size();
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsDoubleArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetDoubleArrayFeature().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDoubleArrayFeatureMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFeature() {
+        return getDoubleArrayFeatureMap();
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFeatureMap() {
+        return internalGetDoubleArrayFeature().getMap();
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+            internalGetDoubleArrayFeature().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFeatureOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+            internalGetDoubleArrayFeature().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDoubleArrayFeature() {
+        internalGetMutableDoubleArrayFeature().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+
+      public Builder removeDoubleArrayFeature(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleArrayFeature().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      getMutableDoubleArrayFeature() {
+        return internalGetMutableDoubleArrayFeature().getMutableMap();
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+      public Builder putDoubleArrayFeature(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleArrayFeature().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * double array feature
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFeature = 8;</code>
+       */
+
+      public Builder putAllDoubleArrayFeature(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> values) {
+        internalGetMutableDoubleArrayFeature().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.PredictFeature)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.PredictFeature)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PredictFeature>
+        PARSER = new com.google.protobuf.AbstractParser<PredictFeature>() {
+      @java.lang.Override
+      public PredictFeature parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PredictFeature(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PredictFeature> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PredictFeature> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFeature getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PredictFilterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.PredictFilter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    int getStringFilterCount();
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    boolean containsStringFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getStringFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getStringFilter();
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getStringFilterMap();
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+
+    java.lang.String getStringFilterOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+
+    java.lang.String getStringFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    int getIntFilterCount();
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    boolean containsIntFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getIntFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Long>
+    getIntFilter();
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Long>
+    getIntFilterMap();
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+
+    long getIntFilterOrDefault(
+        java.lang.String key,
+        long defaultValue);
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+
+    long getIntFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    int getFloatFilterCount();
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    boolean containsFloatFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getFloatFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Float>
+    getFloatFilter();
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Float>
+    getFloatFilterMap();
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+
+    float getFloatFilterOrDefault(
+        java.lang.String key,
+        float defaultValue);
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+
+    float getFloatFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    int getDoubleFilterCount();
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    boolean containsDoubleFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getDoubleFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Double>
+    getDoubleFilter();
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Double>
+    getDoubleFilterMap();
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+
+    double getDoubleFilterOrDefault(
+        java.lang.String key,
+        double defaultValue);
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+
+    double getDoubleFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    int getStringArrayFilterCount();
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    boolean containsStringArrayFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getStringArrayFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    getStringArrayFilter();
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    getStringArrayFilterMap();
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue);
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    int getIntArrayFilterCount();
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    boolean containsIntArrayFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getIntArrayFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    getIntArrayFilter();
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    getIntArrayFilterMap();
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue);
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    int getFloatArrayFilterCount();
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    boolean containsFloatArrayFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getFloatArrayFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    getFloatArrayFilter();
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    getFloatArrayFilterMap();
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue);
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    int getDoubleArrayFilterCount();
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    boolean containsDoubleArrayFilter(
+        java.lang.String key);
+    /**
+     * Use {@link #getDoubleArrayFilterMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    getDoubleArrayFilter();
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    getDoubleArrayFilterMap();
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue);
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+
+    byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.PredictFilter}
+   */
+  public static final class PredictFilter extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.PredictFilter)
+      PredictFilterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PredictFilter.newBuilder() to construct.
+    private PredictFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PredictFilter() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PredictFilter();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PredictFilter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stringFilter_ = com.google.protobuf.MapField.newMapField(
+                    StringFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              stringFilter__ = input.readMessage(
+                  StringFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              stringFilter_.getMutableMap().put(
+                  stringFilter__.getKey(), stringFilter__.getValue());
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                intFilter_ = com.google.protobuf.MapField.newMapField(
+                    IntFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+              intFilter__ = input.readMessage(
+                  IntFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              intFilter_.getMutableMap().put(
+                  intFilter__.getKey(), intFilter__.getValue());
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                floatFilter_ = com.google.protobuf.MapField.newMapField(
+                    FloatFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Float>
+              floatFilter__ = input.readMessage(
+                  FloatFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              floatFilter_.getMutableMap().put(
+                  floatFilter__.getKey(), floatFilter__.getValue());
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                doubleFilter_ = com.google.protobuf.MapField.newMapField(
+                    DoubleFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+              doubleFilter__ = input.readMessage(
+                  DoubleFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              doubleFilter_.getMutableMap().put(
+                  doubleFilter__.getKey(), doubleFilter__.getValue());
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                stringArrayFilter_ = com.google.protobuf.MapField.newMapField(
+                    StringArrayFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+              stringArrayFilter__ = input.readMessage(
+                  StringArrayFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              stringArrayFilter_.getMutableMap().put(
+                  stringArrayFilter__.getKey(), stringArrayFilter__.getValue());
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                intArrayFilter_ = com.google.protobuf.MapField.newMapField(
+                    IntArrayFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+              intArrayFilter__ = input.readMessage(
+                  IntArrayFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              intArrayFilter_.getMutableMap().put(
+                  intArrayFilter__.getKey(), intArrayFilter__.getValue());
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                floatArrayFilter_ = com.google.protobuf.MapField.newMapField(
+                    FloatArrayFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+              floatArrayFilter__ = input.readMessage(
+                  FloatArrayFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              floatArrayFilter_.getMutableMap().put(
+                  floatArrayFilter__.getKey(), floatArrayFilter__.getValue());
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                doubleArrayFilter_ = com.google.protobuf.MapField.newMapField(
+                    DoubleArrayFilterDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+              doubleArrayFilter__ = input.readMessage(
+                  DoubleArrayFilterDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              doubleArrayFilter_.getMutableMap().put(
+                  doubleArrayFilter__.getKey(), doubleArrayFilter__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetStringFilter();
+        case 2:
+          return internalGetIntFilter();
+        case 3:
+          return internalGetFloatFilter();
+        case 4:
+          return internalGetDoubleFilter();
+        case 5:
+          return internalGetStringArrayFilter();
+        case 6:
+          return internalGetIntArrayFilter();
+        case 7:
+          return internalGetFloatArrayFilter();
+        case 8:
+          return internalGetDoubleArrayFilter();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.class, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder.class);
+    }
+
+    public static final int STRINGFILTER_FIELD_NUMBER = 1;
+    private static final class StringFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> stringFilter_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetStringFilter() {
+      if (stringFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            StringFilterDefaultEntryHolder.defaultEntry);
+      }
+      return stringFilter_;
+    }
+
+    public int getStringFilterCount() {
+      return internalGetStringFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsStringFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetStringFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getStringFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getStringFilter() {
+      return getStringFilterMap();
+    }
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getStringFilterMap() {
+      return internalGetStringFilter().getMap();
+    }
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getStringFilterOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetStringFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * string filter
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getStringFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetStringFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int INTFILTER_FIELD_NUMBER = 2;
+    private static final class IntFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Long>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Long> intFilter_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetIntFilter() {
+      if (intFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IntFilterDefaultEntryHolder.defaultEntry);
+      }
+      return intFilter_;
+    }
+
+    public int getIntFilterCount() {
+      return internalGetIntFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsIntFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIntFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getIntFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getIntFilter() {
+      return getIntFilterMap();
+    }
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Long> getIntFilterMap() {
+      return internalGetIntFilter().getMap();
+    }
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    @java.lang.Override
+
+    public long getIntFilterOrDefault(
+        java.lang.String key,
+        long defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetIntFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * int filter
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+     */
+    @java.lang.Override
+
+    public long getIntFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetIntFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int FLOATFILTER_FIELD_NUMBER = 3;
+    private static final class FloatFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Float> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Float>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.FLOAT,
+                  0F);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Float> floatFilter_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+    internalGetFloatFilter() {
+      if (floatFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FloatFilterDefaultEntryHolder.defaultEntry);
+      }
+      return floatFilter_;
+    }
+
+    public int getFloatFilterCount() {
+      return internalGetFloatFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsFloatFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetFloatFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFloatFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Float> getFloatFilter() {
+      return getFloatFilterMap();
+    }
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Float> getFloatFilterMap() {
+      return internalGetFloatFilter().getMap();
+    }
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    @java.lang.Override
+
+    public float getFloatFilterOrDefault(
+        java.lang.String key,
+        float defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Float> map =
+          internalGetFloatFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * float filter
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+     */
+    @java.lang.Override
+
+    public float getFloatFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Float> map =
+          internalGetFloatFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DOUBLEFILTER_FIELD_NUMBER = 4;
+    private static final class DoubleFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Double> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Double>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                  0D);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Double> doubleFilter_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+    internalGetDoubleFilter() {
+      if (doubleFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DoubleFilterDefaultEntryHolder.defaultEntry);
+      }
+      return doubleFilter_;
+    }
+
+    public int getDoubleFilterCount() {
+      return internalGetDoubleFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsDoubleFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetDoubleFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDoubleFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getDoubleFilter() {
+      return getDoubleFilterMap();
+    }
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Double> getDoubleFilterMap() {
+      return internalGetDoubleFilter().getMap();
+    }
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    @java.lang.Override
+
+    public double getDoubleFilterOrDefault(
+        java.lang.String key,
+        double defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Double> map =
+          internalGetDoubleFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * double filter
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+     */
+    @java.lang.Override
+
+    public double getDoubleFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Double> map =
+          internalGetDoubleFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int STRINGARRAYFILTER_FIELD_NUMBER = 5;
+    private static final class StringArrayFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> stringArrayFilter_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+    internalGetStringArrayFilter() {
+      if (stringArrayFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            StringArrayFilterDefaultEntryHolder.defaultEntry);
+      }
+      return stringArrayFilter_;
+    }
+
+    public int getStringArrayFilterCount() {
+      return internalGetStringArrayFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsStringArrayFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetStringArrayFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getStringArrayFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFilter() {
+      return getStringArrayFilterMap();
+    }
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFilterMap() {
+      return internalGetStringArrayFilter().getMap();
+    }
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+          internalGetStringArrayFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * string array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+          internalGetStringArrayFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int INTARRAYFILTER_FIELD_NUMBER = 6;
+    private static final class IntArrayFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> intArrayFilter_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+    internalGetIntArrayFilter() {
+      if (intArrayFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IntArrayFilterDefaultEntryHolder.defaultEntry);
+      }
+      return intArrayFilter_;
+    }
+
+    public int getIntArrayFilterCount() {
+      return internalGetIntArrayFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsIntArrayFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIntArrayFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getIntArrayFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFilter() {
+      return getIntArrayFilterMap();
+    }
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFilterMap() {
+      return internalGetIntArrayFilter().getMap();
+    }
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+          internalGetIntArrayFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * int array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+          internalGetIntArrayFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int FLOATARRAYFILTER_FIELD_NUMBER = 7;
+    private static final class FloatArrayFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> floatArrayFilter_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+    internalGetFloatArrayFilter() {
+      if (floatArrayFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FloatArrayFilterDefaultEntryHolder.defaultEntry);
+      }
+      return floatArrayFilter_;
+    }
+
+    public int getFloatArrayFilterCount() {
+      return internalGetFloatArrayFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsFloatArrayFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetFloatArrayFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFloatArrayFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFilter() {
+      return getFloatArrayFilterMap();
+    }
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFilterMap() {
+      return internalGetFloatArrayFilter().getMap();
+    }
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+          internalGetFloatArrayFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * float array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+          internalGetFloatArrayFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int DOUBLEARRAYFILTER_FIELD_NUMBER = 8;
+    private static final class DoubleArrayFilterDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>newDefaultInstance(
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> doubleArrayFilter_;
+    private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+    internalGetDoubleArrayFilter() {
+      if (doubleArrayFilter_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DoubleArrayFilterDefaultEntryHolder.defaultEntry);
+      }
+      return doubleArrayFilter_;
+    }
+
+    public int getDoubleArrayFilterCount() {
+      return internalGetDoubleArrayFilter().getMap().size();
+    }
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsDoubleArrayFilter(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetDoubleArrayFilter().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDoubleArrayFilterMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFilter() {
+      return getDoubleArrayFilterMap();
+    }
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFilterMap() {
+      return internalGetDoubleArrayFilter().getMap();
+    }
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrDefault(
+        java.lang.String key,
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+          internalGetDoubleArrayFilter().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * double array filter
+     * </pre>
+     *
+     * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+     */
+    @java.lang.Override
+
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+          internalGetDoubleArrayFilter().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetStringFilter(),
+          StringFilterDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetIntFilter(),
+          IntFilterDefaultEntryHolder.defaultEntry,
+          2);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetFloatFilter(),
+          FloatFilterDefaultEntryHolder.defaultEntry,
+          3);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetDoubleFilter(),
+          DoubleFilterDefaultEntryHolder.defaultEntry,
+          4);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetStringArrayFilter(),
+          StringArrayFilterDefaultEntryHolder.defaultEntry,
+          5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetIntArrayFilter(),
+          IntArrayFilterDefaultEntryHolder.defaultEntry,
+          6);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetFloatArrayFilter(),
+          FloatArrayFilterDefaultEntryHolder.defaultEntry,
+          7);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetDoubleArrayFilter(),
+          DoubleArrayFilterDefaultEntryHolder.defaultEntry,
+          8);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetStringFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        stringFilter__ = StringFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, stringFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+           : internalGetIntFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+        intFilter__ = IntFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, intFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Float> entry
+           : internalGetFloatFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Float>
+        floatFilter__ = FloatFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, floatFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+           : internalGetDoubleFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+        doubleFilter__ = DoubleFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, doubleFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> entry
+           : internalGetStringArrayFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+        stringArrayFilter__ = StringArrayFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, stringArrayFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> entry
+           : internalGetIntArrayFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+        intArrayFilter__ = IntArrayFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, intArrayFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> entry
+           : internalGetFloatArrayFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+        floatArrayFilter__ = FloatArrayFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(7, floatArrayFilter__);
+      }
+      for (java.util.Map.Entry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> entry
+           : internalGetDoubleArrayFilter().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+        doubleArrayFilter__ = DoubleArrayFilterDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(8, doubleArrayFilter__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter other = (byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter) obj;
+
+      if (!internalGetStringFilter().equals(
+          other.internalGetStringFilter())) return false;
+      if (!internalGetIntFilter().equals(
+          other.internalGetIntFilter())) return false;
+      if (!internalGetFloatFilter().equals(
+          other.internalGetFloatFilter())) return false;
+      if (!internalGetDoubleFilter().equals(
+          other.internalGetDoubleFilter())) return false;
+      if (!internalGetStringArrayFilter().equals(
+          other.internalGetStringArrayFilter())) return false;
+      if (!internalGetIntArrayFilter().equals(
+          other.internalGetIntArrayFilter())) return false;
+      if (!internalGetFloatArrayFilter().equals(
+          other.internalGetFloatArrayFilter())) return false;
+      if (!internalGetDoubleArrayFilter().equals(
+          other.internalGetDoubleArrayFilter())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetStringFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + STRINGFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetStringFilter().hashCode();
+      }
+      if (!internalGetIntFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + INTFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetIntFilter().hashCode();
+      }
+      if (!internalGetFloatFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + FLOATFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFloatFilter().hashCode();
+      }
+      if (!internalGetDoubleFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + DOUBLEFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDoubleFilter().hashCode();
+      }
+      if (!internalGetStringArrayFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + STRINGARRAYFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetStringArrayFilter().hashCode();
+      }
+      if (!internalGetIntArrayFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + INTARRAYFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetIntArrayFilter().hashCode();
+      }
+      if (!internalGetFloatArrayFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + FLOATARRAYFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFloatArrayFilter().hashCode();
+      }
+      if (!internalGetDoubleArrayFilter().getMap().isEmpty()) {
+        hash = (37 * hash) + DOUBLEARRAYFILTER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDoubleArrayFilter().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.PredictFilter}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.PredictFilter)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetStringFilter();
+          case 2:
+            return internalGetIntFilter();
+          case 3:
+            return internalGetFloatFilter();
+          case 4:
+            return internalGetDoubleFilter();
+          case 5:
+            return internalGetStringArrayFilter();
+          case 6:
+            return internalGetIntArrayFilter();
+          case 7:
+            return internalGetFloatArrayFilter();
+          case 8:
+            return internalGetDoubleArrayFilter();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableStringFilter();
+          case 2:
+            return internalGetMutableIntFilter();
+          case 3:
+            return internalGetMutableFloatFilter();
+          case 4:
+            return internalGetMutableDoubleFilter();
+          case 5:
+            return internalGetMutableStringArrayFilter();
+          case 6:
+            return internalGetMutableIntArrayFilter();
+          case 7:
+            return internalGetMutableFloatArrayFilter();
+          case 8:
+            return internalGetMutableDoubleArrayFilter();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.class, byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableStringFilter().clear();
+        internalGetMutableIntFilter().clear();
+        internalGetMutableFloatFilter().clear();
+        internalGetMutableDoubleFilter().clear();
+        internalGetMutableStringArrayFilter().clear();
+        internalGetMutableIntArrayFilter().clear();
+        internalGetMutableFloatArrayFilter().clear();
+        internalGetMutableDoubleArrayFilter().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter result = new byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter(this);
+        int from_bitField0_ = bitField0_;
+        result.stringFilter_ = internalGetStringFilter();
+        result.stringFilter_.makeImmutable();
+        result.intFilter_ = internalGetIntFilter();
+        result.intFilter_.makeImmutable();
+        result.floatFilter_ = internalGetFloatFilter();
+        result.floatFilter_.makeImmutable();
+        result.doubleFilter_ = internalGetDoubleFilter();
+        result.doubleFilter_.makeImmutable();
+        result.stringArrayFilter_ = internalGetStringArrayFilter();
+        result.stringArrayFilter_.makeImmutable();
+        result.intArrayFilter_ = internalGetIntArrayFilter();
+        result.intArrayFilter_.makeImmutable();
+        result.floatArrayFilter_ = internalGetFloatArrayFilter();
+        result.floatArrayFilter_.makeImmutable();
+        result.doubleArrayFilter_ = internalGetDoubleArrayFilter();
+        result.doubleArrayFilter_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter.getDefaultInstance()) return this;
+        internalGetMutableStringFilter().mergeFrom(
+            other.internalGetStringFilter());
+        internalGetMutableIntFilter().mergeFrom(
+            other.internalGetIntFilter());
+        internalGetMutableFloatFilter().mergeFrom(
+            other.internalGetFloatFilter());
+        internalGetMutableDoubleFilter().mergeFrom(
+            other.internalGetDoubleFilter());
+        internalGetMutableStringArrayFilter().mergeFrom(
+            other.internalGetStringArrayFilter());
+        internalGetMutableIntArrayFilter().mergeFrom(
+            other.internalGetIntArrayFilter());
+        internalGetMutableFloatArrayFilter().mergeFrom(
+            other.internalGetFloatArrayFilter());
+        internalGetMutableDoubleArrayFilter().mergeFrom(
+            other.internalGetDoubleArrayFilter());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> stringFilter_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetStringFilter() {
+        if (stringFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              StringFilterDefaultEntryHolder.defaultEntry);
+        }
+        return stringFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableStringFilter() {
+        onChanged();;
+        if (stringFilter_ == null) {
+          stringFilter_ = com.google.protobuf.MapField.newMapField(
+              StringFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!stringFilter_.isMutable()) {
+          stringFilter_ = stringFilter_.copy();
+        }
+        return stringFilter_;
+      }
+
+      public int getStringFilterCount() {
+        return internalGetStringFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsStringFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetStringFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getStringFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getStringFilter() {
+        return getStringFilterMap();
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getStringFilterMap() {
+        return internalGetStringFilter().getMap();
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getStringFilterOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetStringFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getStringFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetStringFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearStringFilter() {
+        internalGetMutableStringFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+
+      public Builder removeStringFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableStringFilter() {
+        return internalGetMutableStringFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+      public Builder putStringFilter(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * string filter
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; stringFilter = 1;</code>
+       */
+
+      public Builder putAllStringFilter(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableStringFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Long> intFilter_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetIntFilter() {
+        if (intFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              IntFilterDefaultEntryHolder.defaultEntry);
+        }
+        return intFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetMutableIntFilter() {
+        onChanged();;
+        if (intFilter_ == null) {
+          intFilter_ = com.google.protobuf.MapField.newMapField(
+              IntFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!intFilter_.isMutable()) {
+          intFilter_ = intFilter_.copy();
+        }
+        return intFilter_;
+      }
+
+      public int getIntFilterCount() {
+        return internalGetIntFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsIntFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetIntFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getIntFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long> getIntFilter() {
+        return getIntFilterMap();
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Long> getIntFilterMap() {
+        return internalGetIntFilter().getMap();
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+      @java.lang.Override
+
+      public long getIntFilterOrDefault(
+          java.lang.String key,
+          long defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetIntFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+      @java.lang.Override
+
+      public long getIntFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetIntFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearIntFilter() {
+        internalGetMutableIntFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+
+      public Builder removeIntFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long>
+      getMutableIntFilter() {
+        return internalGetMutableIntFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+      public Builder putIntFilter(
+          java.lang.String key,
+          long value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableIntFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * int filter
+       * </pre>
+       *
+       * <code>map&lt;string, int64&gt; intFilter = 2;</code>
+       */
+
+      public Builder putAllIntFilter(
+          java.util.Map<java.lang.String, java.lang.Long> values) {
+        internalGetMutableIntFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Float> floatFilter_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+      internalGetFloatFilter() {
+        if (floatFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FloatFilterDefaultEntryHolder.defaultEntry);
+        }
+        return floatFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+      internalGetMutableFloatFilter() {
+        onChanged();;
+        if (floatFilter_ == null) {
+          floatFilter_ = com.google.protobuf.MapField.newMapField(
+              FloatFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!floatFilter_.isMutable()) {
+          floatFilter_ = floatFilter_.copy();
+        }
+        return floatFilter_;
+      }
+
+      public int getFloatFilterCount() {
+        return internalGetFloatFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsFloatFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetFloatFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getFloatFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getFloatFilter() {
+        return getFloatFilterMap();
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Float> getFloatFilterMap() {
+        return internalGetFloatFilter().getMap();
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+      @java.lang.Override
+
+      public float getFloatFilterOrDefault(
+          java.lang.String key,
+          float defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Float> map =
+            internalGetFloatFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+      @java.lang.Override
+
+      public float getFloatFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Float> map =
+            internalGetFloatFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFloatFilter() {
+        internalGetMutableFloatFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+
+      public Builder removeFloatFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float>
+      getMutableFloatFilter() {
+        return internalGetMutableFloatFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+      public Builder putFloatFilter(
+          java.lang.String key,
+          float value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableFloatFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * float filter
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; floatFilter = 3;</code>
+       */
+
+      public Builder putAllFloatFilter(
+          java.util.Map<java.lang.String, java.lang.Float> values) {
+        internalGetMutableFloatFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> doubleFilter_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetDoubleFilter() {
+        if (doubleFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DoubleFilterDefaultEntryHolder.defaultEntry);
+        }
+        return doubleFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetMutableDoubleFilter() {
+        onChanged();;
+        if (doubleFilter_ == null) {
+          doubleFilter_ = com.google.protobuf.MapField.newMapField(
+              DoubleFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!doubleFilter_.isMutable()) {
+          doubleFilter_ = doubleFilter_.copy();
+        }
+        return doubleFilter_;
+      }
+
+      public int getDoubleFilterCount() {
+        return internalGetDoubleFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsDoubleFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetDoubleFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDoubleFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getDoubleFilter() {
+        return getDoubleFilterMap();
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Double> getDoubleFilterMap() {
+        return internalGetDoubleFilter().getMap();
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+      @java.lang.Override
+
+      public double getDoubleFilterOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetDoubleFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+      @java.lang.Override
+
+      public double getDoubleFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetDoubleFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDoubleFilter() {
+        internalGetMutableDoubleFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+
+      public Builder removeDoubleFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double>
+      getMutableDoubleFilter() {
+        return internalGetMutableDoubleFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+      public Builder putDoubleFilter(
+          java.lang.String key,
+          double value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableDoubleFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * double filter
+       * </pre>
+       *
+       * <code>map&lt;string, double&gt; doubleFilter = 4;</code>
+       */
+
+      public Builder putAllDoubleFilter(
+          java.util.Map<java.lang.String, java.lang.Double> values) {
+        internalGetMutableDoubleFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> stringArrayFilter_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      internalGetStringArrayFilter() {
+        if (stringArrayFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              StringArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        return stringArrayFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      internalGetMutableStringArrayFilter() {
+        onChanged();;
+        if (stringArrayFilter_ == null) {
+          stringArrayFilter_ = com.google.protobuf.MapField.newMapField(
+              StringArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!stringArrayFilter_.isMutable()) {
+          stringArrayFilter_ = stringArrayFilter_.copy();
+        }
+        return stringArrayFilter_;
+      }
+
+      public int getStringArrayFilterCount() {
+        return internalGetStringArrayFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsStringArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetStringArrayFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getStringArrayFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFilter() {
+        return getStringArrayFilterMap();
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> getStringArrayFilterMap() {
+        return internalGetStringArrayFilter().getMap();
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+            internalGetStringArrayFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getStringArrayFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> map =
+            internalGetStringArrayFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearStringArrayFilter() {
+        internalGetMutableStringArrayFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+
+      public Builder removeStringArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringArrayFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray>
+      getMutableStringArrayFilter() {
+        return internalGetMutableStringArrayFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+      public Builder putStringArrayFilter(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStringArrayFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * string array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.StringArray&gt; stringArrayFilter = 5;</code>
+       */
+
+      public Builder putAllStringArrayFilter(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray> values) {
+        internalGetMutableStringArrayFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> intArrayFilter_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      internalGetIntArrayFilter() {
+        if (intArrayFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              IntArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        return intArrayFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      internalGetMutableIntArrayFilter() {
+        onChanged();;
+        if (intArrayFilter_ == null) {
+          intArrayFilter_ = com.google.protobuf.MapField.newMapField(
+              IntArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!intArrayFilter_.isMutable()) {
+          intArrayFilter_ = intArrayFilter_.copy();
+        }
+        return intArrayFilter_;
+      }
+
+      public int getIntArrayFilterCount() {
+        return internalGetIntArrayFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsIntArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetIntArrayFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getIntArrayFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFilter() {
+        return getIntArrayFilterMap();
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> getIntArrayFilterMap() {
+        return internalGetIntArrayFilter().getMap();
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+            internalGetIntArrayFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getIntArrayFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> map =
+            internalGetIntArrayFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearIntArrayFilter() {
+        internalGetMutableIntArrayFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+
+      public Builder removeIntArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntArrayFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray>
+      getMutableIntArrayFilter() {
+        return internalGetMutableIntArrayFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+      public Builder putIntArrayFilter(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableIntArrayFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * int array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.IntArray&gt; intArrayFilter = 6;</code>
+       */
+
+      public Builder putAllIntArrayFilter(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray> values) {
+        internalGetMutableIntArrayFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> floatArrayFilter_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      internalGetFloatArrayFilter() {
+        if (floatArrayFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FloatArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        return floatArrayFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      internalGetMutableFloatArrayFilter() {
+        onChanged();;
+        if (floatArrayFilter_ == null) {
+          floatArrayFilter_ = com.google.protobuf.MapField.newMapField(
+              FloatArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!floatArrayFilter_.isMutable()) {
+          floatArrayFilter_ = floatArrayFilter_.copy();
+        }
+        return floatArrayFilter_;
+      }
+
+      public int getFloatArrayFilterCount() {
+        return internalGetFloatArrayFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsFloatArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetFloatArrayFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getFloatArrayFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFilter() {
+        return getFloatArrayFilterMap();
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> getFloatArrayFilterMap() {
+        return internalGetFloatArrayFilter().getMap();
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+            internalGetFloatArrayFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getFloatArrayFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> map =
+            internalGetFloatArrayFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFloatArrayFilter() {
+        internalGetMutableFloatArrayFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+
+      public Builder removeFloatArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatArrayFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray>
+      getMutableFloatArrayFilter() {
+        return internalGetMutableFloatArrayFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+      public Builder putFloatArrayFilter(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableFloatArrayFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * float array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.FloatArray&gt; floatArrayFilter = 7;</code>
+       */
+
+      public Builder putAllFloatArrayFilter(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray> values) {
+        internalGetMutableFloatArrayFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> doubleArrayFilter_;
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      internalGetDoubleArrayFilter() {
+        if (doubleArrayFilter_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DoubleArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        return doubleArrayFilter_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      internalGetMutableDoubleArrayFilter() {
+        onChanged();;
+        if (doubleArrayFilter_ == null) {
+          doubleArrayFilter_ = com.google.protobuf.MapField.newMapField(
+              DoubleArrayFilterDefaultEntryHolder.defaultEntry);
+        }
+        if (!doubleArrayFilter_.isMutable()) {
+          doubleArrayFilter_ = doubleArrayFilter_.copy();
+        }
+        return doubleArrayFilter_;
+      }
+
+      public int getDoubleArrayFilterCount() {
+        return internalGetDoubleArrayFilter().getMap().size();
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsDoubleArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetDoubleArrayFilter().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDoubleArrayFilterMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFilter() {
+        return getDoubleArrayFilterMap();
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> getDoubleArrayFilterMap() {
+        return internalGetDoubleArrayFilter().getMap();
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrDefault(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+            internalGetDoubleArrayFilter().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+      @java.lang.Override
+
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDoubleArrayFilterOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> map =
+            internalGetDoubleArrayFilter().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDoubleArrayFilter() {
+        internalGetMutableDoubleArrayFilter().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+
+      public Builder removeDoubleArrayFilter(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleArrayFilter().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray>
+      getMutableDoubleArrayFilter() {
+        return internalGetMutableDoubleArrayFilter().getMutableMap();
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+      public Builder putDoubleArrayFilter(
+          java.lang.String key,
+          byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableDoubleArrayFilter().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * double array filter
+       * </pre>
+       *
+       * <code>map&lt;string, .bytedance.byteplus.byteair.DoubleArray&gt; doubleArrayFilter = 8;</code>
+       */
+
+      public Builder putAllDoubleArrayFilter(
+          java.util.Map<java.lang.String, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray> values) {
+        internalGetMutableDoubleArrayFilter().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.PredictFilter)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.PredictFilter)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PredictFilter>
+        PARSER = new com.google.protobuf.AbstractParser<PredictFilter>() {
+      @java.lang.Override
+      public PredictFilter parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PredictFilter(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PredictFilter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PredictFilter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.PredictFilter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18843,654 +25915,6 @@ public final class ByteplusByteair {
 
     @java.lang.Override
     public byteplus.sdk.byteair.protocol.ByteplusByteair.SearchInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface StringArrayOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.StringArray)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated string values = 1;</code>
-     * @return A list containing the values.
-     */
-    java.util.List<java.lang.String>
-        getValuesList();
-    /**
-     * <code>repeated string values = 1;</code>
-     * @return The count of values.
-     */
-    int getValuesCount();
-    /**
-     * <code>repeated string values = 1;</code>
-     * @param index The index of the element to return.
-     * @return The values at the given index.
-     */
-    java.lang.String getValues(int index);
-    /**
-     * <code>repeated string values = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the values at the given index.
-     */
-    com.google.protobuf.ByteString
-        getValuesBytes(int index);
-  }
-  /**
-   * <pre>
-   * Protobuf does not support array type as map's value,
-   * so we wrap array as a object, which can be value of map
-   * </pre>
-   *
-   * Protobuf type {@code bytedance.byteplus.byteair.StringArray}
-   */
-  public static final class StringArray extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.StringArray)
-      StringArrayOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StringArray.newBuilder() to construct.
-    private StringArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StringArray() {
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StringArray();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private StringArray(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              values_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = values_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.Builder.class);
-    }
-
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList values_;
-    /**
-     * <code>repeated string values = 1;</code>
-     * @return A list containing the values.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getValuesList() {
-      return values_;
-    }
-    /**
-     * <code>repeated string values = 1;</code>
-     * @return The count of values.
-     */
-    public int getValuesCount() {
-      return values_.size();
-    }
-    /**
-     * <code>repeated string values = 1;</code>
-     * @param index The index of the element to return.
-     * @return The values at the given index.
-     */
-    public java.lang.String getValues(int index) {
-      return values_.get(index);
-    }
-    /**
-     * <code>repeated string values = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the values at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getValuesBytes(int index) {
-      return values_.getByteString(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < values_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < values_.size(); i++) {
-          dataSize += computeStringSizeNoTag(values_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getValuesList().size();
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray)) {
-        return super.equals(obj);
-      }
-      byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray other = (byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) obj;
-
-      if (!getValuesList()
-          .equals(other.getValuesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Protobuf does not support array type as map's value,
-     * so we wrap array as a object, which can be value of map
-     * </pre>
-     *
-     * Protobuf type {@code bytedance.byteplus.byteair.StringArray}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.StringArray)
-        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArrayOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.Builder.class);
-      }
-
-      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstanceForType() {
-        return byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray build() {
-        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray buildPartial() {
-        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray result = new byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          values_ = values_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.values_ = values_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) {
-          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray other) {
-        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance()) return this;
-        if (!other.values_.isEmpty()) {
-          if (values_.isEmpty()) {
-            values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureValuesIsMutable();
-            values_.addAll(other.values_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringList values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          values_ = new com.google.protobuf.LazyStringArrayList(values_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @return A list containing the values.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getValuesList() {
-        return values_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @return The count of values.
-       */
-      public int getValuesCount() {
-        return values_.size();
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param index The index of the element to return.
-       * @return The values at the given index.
-       */
-      public java.lang.String getValues(int index) {
-        return values_.get(index);
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the values at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getValuesBytes(int index) {
-        return values_.getByteString(index);
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The values to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValues(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValuesIsMutable();
-        values_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param value The values to add.
-       * @return This builder for chaining.
-       */
-      public Builder addValues(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValuesIsMutable();
-        values_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param values The values to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllValues(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureValuesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, values_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValues() {
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string values = 1;</code>
-       * @param value The bytes of the values to add.
-       * @return This builder for chaining.
-       */
-      public Builder addValuesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureValuesIsMutable();
-        values_.add(value);
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.StringArray)
-    }
-
-    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.StringArray)
-    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray();
-    }
-
-    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StringArray>
-        PARSER = new com.google.protobuf.AbstractParser<StringArray>() {
-      @java.lang.Override
-      public StringArray parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StringArray(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StringArray> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StringArray> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -31502,6 +37926,2493 @@ public final class ByteplusByteair {
 
   }
 
+  public interface StringArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.StringArray)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string values = 1;</code>
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.String>
+        getValuesList();
+    /**
+     * <code>repeated string values = 1;</code>
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated string values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    java.lang.String getValues(int index);
+    /**
+     * <code>repeated string values = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
+     */
+    com.google.protobuf.ByteString
+        getValuesBytes(int index);
+  }
+  /**
+   * <pre>
+   * Protobuf does not support array type as map's value,
+   * so we wrap array as a object, which can be value of map
+   * </pre>
+   *
+   * Protobuf type {@code bytedance.byteplus.byteair.StringArray}
+   */
+  public static final class StringArray extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.StringArray)
+      StringArrayOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StringArray.newBuilder() to construct.
+    private StringArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StringArray() {
+      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StringArray();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StringArray(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_ = values_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList values_;
+    /**
+     * <code>repeated string values = 1;</code>
+     * @return A list containing the values.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public java.lang.String getValues(int index) {
+      return values_.get(index);
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getValuesBytes(int index) {
+      return values_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < values_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += computeStringSizeNoTag(values_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray other = (byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Protobuf does not support array type as map's value,
+     * so we wrap array as a object, which can be value of map
+     * </pre>
+     *
+     * Protobuf type {@code bytedance.byteplus.byteair.StringArray}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.StringArray)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray result = new byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_ = values_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = new com.google.protobuf.LazyStringArrayList(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return A list containing the values.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getValuesList() {
+        return values_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       * @param value The bytes of the values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValuesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.StringArray)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.StringArray)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StringArray>
+        PARSER = new com.google.protobuf.AbstractParser<StringArray>() {
+      @java.lang.Override
+      public StringArray parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StringArray(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StringArray> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StringArray> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.StringArray getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface IntArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.IntArray)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.Long> getValuesList();
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    long getValues(int index);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.IntArray}
+   */
+  public static final class IntArray extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.IntArray)
+      IntArrayOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use IntArray.newBuilder() to construct.
+    private IntArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private IntArray() {
+      values_ = emptyLongList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IntArray();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IntArray(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addLong(input.readInt64());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_IntArray_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_IntArray_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.LongList values_;
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @return A list containing the values.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Long>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated int64 values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public long getValues(int index) {
+      return values_.getLong(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeInt64NoTag(values_.getLong(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(values_.getLong(i));
+        }
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray other = (byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.IntArray}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.IntArray)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_IntArray_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_IntArray_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_IntArray_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray result = new byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.LongList values_ = emptyLongList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @return A list containing the values.
+       */
+      public java.util.List<java.lang.Long>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public long getValues(int index) {
+        return values_.getLong(index);
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(
+          int index, long value) {
+        ensureValuesIsMutable();
+        values_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(long value) {
+        ensureValuesIsMutable();
+        values_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.IntArray)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.IntArray)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IntArray>
+        PARSER = new com.google.protobuf.AbstractParser<IntArray>() {
+      @java.lang.Override
+      public IntArray parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IntArray(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IntArray> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IntArray> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.IntArray getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FloatArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.FloatArray)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated float values = 1;</code>
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.Float> getValuesList();
+    /**
+     * <code>repeated float values = 1;</code>
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated float values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    float getValues(int index);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.FloatArray}
+   */
+  public static final class FloatArray extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.FloatArray)
+      FloatArrayOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FloatArray.newBuilder() to construct.
+    private FloatArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FloatArray() {
+      values_ = emptyFloatList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FloatArray();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FloatArray(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addFloat(input.readFloat());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addFloat(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_FloatArray_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_FloatArray_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.FloatList values_;
+    /**
+     * <code>repeated float values = 1;</code>
+     * @return A list containing the values.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Float>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated float values = 1;</code>
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated float values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public float getValues(int index) {
+      return values_.getFloat(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeFloatNoTag(values_.getFloat(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 4 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray other = (byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.FloatArray}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.FloatArray)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_FloatArray_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_FloatArray_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_FloatArray_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray result = new byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @return A list containing the values.
+       */
+      public java.util.List<java.lang.Float>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public float getValues(int index) {
+        return values_.getFloat(index);
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(
+          int index, float value) {
+        ensureValuesIsMutable();
+        values_.setFloat(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(float value) {
+        ensureValuesIsMutable();
+        values_.addFloat(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.FloatArray)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.FloatArray)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FloatArray>
+        PARSER = new com.google.protobuf.AbstractParser<FloatArray>() {
+      @java.lang.Override
+      public FloatArray parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FloatArray(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FloatArray> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FloatArray> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.FloatArray getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DoubleArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bytedance.byteplus.byteair.DoubleArray)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated double values = 1;</code>
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.Double> getValuesList();
+    /**
+     * <code>repeated double values = 1;</code>
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated double values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    double getValues(int index);
+  }
+  /**
+   * Protobuf type {@code bytedance.byteplus.byteair.DoubleArray}
+   */
+  public static final class DoubleArray extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bytedance.byteplus.byteair.DoubleArray)
+      DoubleArrayOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DoubleArray.newBuilder() to construct.
+    private DoubleArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DoubleArray() {
+      values_ = emptyDoubleList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DoubleArray();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DoubleArray(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addDouble(input.readDouble());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addDouble(input.readDouble());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoubleArray_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.DoubleList values_;
+    /**
+     * <code>repeated double values = 1;</code>
+     * @return A list containing the values.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Double>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated double values = 1;</code>
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated double values = 1;</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public double getValues(int index) {
+      return values_.getDouble(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeDoubleNoTag(values_.getDouble(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 8 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray)) {
+        return super.equals(obj);
+      }
+      byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray other = (byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bytedance.byteplus.byteair.DoubleArray}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bytedance.byteplus.byteair.DoubleArray)
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoubleArray_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.class, byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.Builder.class);
+      }
+
+      // Construct using byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDefaultInstanceForType() {
+        return byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray build() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray buildPartial() {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray result = new byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray) {
+          return mergeFrom((byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray other) {
+        if (other == byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.DoubleList values_ = emptyDoubleList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @return A list containing the values.
+       */
+      public java.util.List<java.lang.Double>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public double getValues(int index) {
+        return values_.getDouble(index);
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(
+          int index, double value) {
+        ensureValuesIsMutable();
+        values_.setDouble(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(double value) {
+        ensureValuesIsMutable();
+        values_.addDouble(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Double> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bytedance.byteplus.byteair.DoubleArray)
+    }
+
+    // @@protoc_insertion_point(class_scope:bytedance.byteplus.byteair.DoubleArray)
+    private static final byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray();
+    }
+
+    public static byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DoubleArray>
+        PARSER = new com.google.protobuf.AbstractParser<DoubleArray>() {
+      @java.lang.Override
+      public DoubleArray parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DoubleArray(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DoubleArray> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DoubleArray> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public byteplus.sdk.byteair.protocol.ByteplusByteair.DoubleArray getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_byteair_DataError_descriptor;
   private static final 
@@ -31548,6 +40459,96 @@ public final class ByteplusByteair {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_byteair_PredictContext_ExtraEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -31592,11 +40593,6 @@ public final class ByteplusByteair {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_byteair_SearchInfo_FilterOutEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_byteair_SearchGoods_descriptor;
   private static final 
@@ -31677,6 +40673,26 @@ public final class ByteplusByteair {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_byteair_CallbackResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_StringArray_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_IntArray_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_IntArray_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_FloatArray_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_FloatArray_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_byteair_DoubleArray_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -31723,90 +40739,161 @@ public final class ByteplusByteair {
       "deviceModel\030\004 \001(\t\022\030\n\020deviceResolution\030\005 " +
       "\001(\t\022\025\n\rclientVersion\030\006 \001(\t\022\021\n\tosVersion\030" +
       "\007 \001(\t\022\023\n\013networkType\030\010 \001(\t\022\017\n\007carrier\030\t " +
-      "\001(\t\"\265\001\n\016PredictContext\022\013\n\003spm\030\001 \001(\t\022\"\n\032c" +
-      "losePersonalizedRecommend\030\002 \001(\010\022D\n\005extra" +
+      "\001(\t\"\255\002\n\016PredictContext\022\013\n\003spm\030\001 \001(\t\022\"\n\032c" +
+      "losePersonalizedRecommend\030\002 \001(\010\022;\n\007featu" +
+      "re\030\003 \001(\0132*.bytedance.byteplus.byteair.Pr" +
+      "edictFeature\0229\n\006filter\030\004 \001(\0132).bytedance" +
+      ".byteplus.byteair.PredictFilter\022D\n\005extra" +
       "\030d \003(\01325.bytedance.byteplus.byteair.Pred" +
       "ictContext.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\001\n\024PredictC" +
-      "andidateItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022" +
-      "\r\n\005price\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005ex" +
-      "tra\030d \003(\0132;.bytedance.byteplus.byteair.P" +
-      "redictCandidateItem.ExtraEntry\032,\n\nExtraE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n" +
-      "\014PredictExtra\022\021\n\tinnerTest\030\001 \001(\010\022B\n\005extr" +
-      "a\030e \003(\01323.bytedance.byteplus.byteair.Pre" +
-      "dictExtra.ExtraEntry\032,\n\nExtraEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\001\n\022PredictRe" +
-      "latedItem\022\n\n\002id\030\001 \001(\t\022H\n\005extra\030d \003(\01329.b" +
-      "ytedance.byteplus.byteair.PredictRelated" +
-      "Item.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\363\003\n\nSearchInfo\022\r\n\005" +
-      "start\030\001 \001(\005\022\022\n\nsearchType\030\002 \001(\005\022\020\n\010sortM" +
-      "ode\030\003 \001(\005\022\020\n\010sortType\030\004 \001(\005\022\017\n\007content\030\005" +
-      " \001(\t\022\r\n\005query\030\006 \001(\t\022D\n\007filters\030\007 \003(\01323.b" +
-      "ytedance.byteplus.byteair.SearchInfo.Fil" +
-      "tersEntry\022H\n\tfilterOut\030\010 \003(\01325.bytedance" +
-      ".byteplus.byteair.SearchInfo.FilterOutEn" +
-      "try\022:\n\tgoodsList\030\t \003(\0132\'.bytedance.bytep" +
-      "lus.byteair.SearchGoods\032W\n\014FiltersEntry\022" +
-      "\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance." +
-      "byteplus.byteair.StringArray:\0028\001\032Y\n\016Filt" +
-      "erOutEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'" +
-      ".bytedance.byteplus.byteair.StringArray:" +
-      "\0028\001\"\035\n\013StringArray\022\016\n\006values\030\001 \003(\t\"X\n\013Se" +
-      "archGoods\022\023\n\007goodsId\030\001 \001(\003B\002\030\001\022\022\n\ngoodsI" +
-      "dStr\030\002 \001(\t\022\r\n\005price\030\003 \001(\002\022\021\n\tboostCeof\030\004" +
-      " \001(\002\"\226\001\n\021PredictParentItem\022\n\n\002id\030\001 \001(\t\022G" +
-      "\n\005extra\030d \003(\01328.bytedance.byteplus.bytea" +
-      "ir.PredictParentItem.ExtraEntry\032,\n\nExtra" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\226\001" +
-      "\n\021PredictFilterItem\022\n\n\002id\030\001 \001(\t\022G\n\005extra" +
-      "\030d \003(\01328.bytedance.byteplus.byteair.Pred" +
-      "ictFilterItem.ExtraEntry\032,\n\nExtraEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\017Predic" +
-      "tResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
-      "\0228\n\005value\030\003 \001(\0132).bytedance.byteplus.byt" +
-      "eair.PredictResult\022\022\n\nrequest_id\030\004 \001(\t\"\316" +
-      "\001\n\rPredictResult\0226\n\005items\030\001 \003(\0132\'.byteda" +
-      "nce.byteplus.byteair.PredictItem\022C\n\005extr" +
-      "a\030\002 \003(\01324.bytedance.byteplus.byteair.Pre" +
-      "dictResult.ExtraEntry\022\022\n\ntotalCount\030\003 \001(" +
-      "\005\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\"\253\001\n\013PredictItem\022\n\n\002id\030\001 \001(\t\022\014\n\004r" +
-      "ank\030\003 \001(\005\022\021\n\ttransData\030\004 \001(\t\022A\n\005extra\030\005 " +
-      "\003(\01322.bytedance.byteplus.byteair.Predict" +
-      "Item.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\265\002\n\017CallbackReques" +
-      "t\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005items\030\003" +
-      " \003(\0132(.bytedance.byteplus.byteair.Callba" +
-      "ckItem\022\032\n\022predict_request_id\030\004 \001(\t\022<\n\007co" +
-      "ntext\030\005 \001(\0132+.bytedance.byteplus.byteair" +
-      ".CallbackContext\022E\n\005extra\030d \003(\01326.byteda" +
-      "nce.byteplus.byteair.CallbackRequest.Ext" +
-      "raEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"6\n\014CallbackItem\022\n\n\002id\030\001 \001(" +
-      "\t\022\013\n\003pos\030\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\322\001\n\017Callba" +
-      "ckContext\022\013\n\003spm\030\001 \001(\t\022=\n\010req_type\030\002 \001(\016" +
-      "2+.bytedance.byteplus.byteair.CallbackRe" +
-      "qType\022E\n\005extra\030d \003(\01326.bytedance.byteplu" +
-      "s.byteair.CallbackContext.ExtraEntry\032,\n\n" +
-      "ExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"1\n\020CallbackResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007" +
-      "message\030\002 \001(\t*C\n\017CallbackReqType\022\016\n\nbyte" +
-      "_scene\020\000\022\022\n\016not_byte_scene\020\001\022\014\n\010behavior" +
-      "\020\0022\203\003\n\026ByteplusGeneralService\022L\n\tWriteDa" +
-      "ta\022\024.google.protobuf.Any\032).bytedance.byt" +
-      "eplus.byteair.WriteResponse\022P\n\nImportDat" +
-      "a\022\024.google.protobuf.Any\032,.bytedance.byte" +
-      "plus.common.OperationResponse\022b\n\007Predict" +
-      "\022*.bytedance.byteplus.byteair.PredictReq" +
-      "uest\032+.bytedance.byteplus.byteair.Predic" +
-      "tResponse\022e\n\010Callback\022+.bytedance.bytepl" +
-      "us.byteair.CallbackRequest\032,.bytedance.b" +
-      "yteplus.byteair.CallbackResponseBP\n\035byte" +
-      "plus.sdk.byteair.protocolZ/github.com/by" +
-      "teplus-sdk/sdk-go/byteair/protocolb\006prot" +
-      "o3"
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\264\n\n\016PredictF" +
+      "eature\022T\n\rstringFeature\030\001 \003(\0132=.bytedanc" +
+      "e.byteplus.byteair.PredictFeature.String" +
+      "FeatureEntry\022N\n\nintFeature\030\002 \003(\0132:.byted" +
+      "ance.byteplus.byteair.PredictFeature.Int" +
+      "FeatureEntry\022R\n\014floatFeature\030\003 \003(\0132<.byt" +
+      "edance.byteplus.byteair.PredictFeature.F" +
+      "loatFeatureEntry\022T\n\rdoubleFeature\030\004 \003(\0132" +
+      "=.bytedance.byteplus.byteair.PredictFeat" +
+      "ure.DoubleFeatureEntry\022^\n\022stringArrayFea" +
+      "ture\030\005 \003(\0132B.bytedance.byteplus.byteair." +
+      "PredictFeature.StringArrayFeatureEntry\022X" +
+      "\n\017intArrayFeature\030\006 \003(\0132?.bytedance.byte" +
+      "plus.byteair.PredictFeature.IntArrayFeat" +
+      "ureEntry\022\\\n\021floatArrayFeature\030\007 \003(\0132A.by" +
+      "tedance.byteplus.byteair.PredictFeature." +
+      "FloatArrayFeatureEntry\022^\n\022doubleArrayFea" +
+      "ture\030\010 \003(\0132B.bytedance.byteplus.byteair." +
+      "PredictFeature.DoubleArrayFeatureEntry\0324" +
+      "\n\022StringFeatureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\0321\n\017IntFeatureEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0323\n\021FloatFeatureE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001\0324\n\022" +
+      "DoubleFeatureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\001:\0028\001\032b\n\027StringArrayFeatureEntry\022\013\n" +
+      "\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.by" +
+      "teplus.byteair.StringArray:\0028\001\032\\\n\024IntArr" +
+      "ayFeatureEntry\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001" +
+      "(\0132$.bytedance.byteplus.byteair.IntArray" +
+      ":\0028\001\032`\n\026FloatArrayFeatureEntry\022\013\n\003key\030\001 " +
+      "\001(\t\0225\n\005value\030\002 \001(\0132&.bytedance.byteplus." +
+      "byteair.FloatArray:\0028\001\032b\n\027DoubleArrayFea" +
+      "tureEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'." +
+      "bytedance.byteplus.byteair.DoubleArray:\002" +
+      "8\001\"\223\n\n\rPredictFilter\022Q\n\014stringFilter\030\001 \003" +
+      "(\0132;.bytedance.byteplus.byteair.PredictF" +
+      "ilter.StringFilterEntry\022K\n\tintFilter\030\002 \003" +
+      "(\01328.bytedance.byteplus.byteair.PredictF" +
+      "ilter.IntFilterEntry\022O\n\013floatFilter\030\003 \003(" +
+      "\0132:.bytedance.byteplus.byteair.PredictFi" +
+      "lter.FloatFilterEntry\022Q\n\014doubleFilter\030\004 " +
+      "\003(\0132;.bytedance.byteplus.byteair.Predict" +
+      "Filter.DoubleFilterEntry\022[\n\021stringArrayF" +
+      "ilter\030\005 \003(\0132@.bytedance.byteplus.byteair" +
+      ".PredictFilter.StringArrayFilterEntry\022U\n" +
+      "\016intArrayFilter\030\006 \003(\0132=.bytedance.bytepl" +
+      "us.byteair.PredictFilter.IntArrayFilterE" +
+      "ntry\022Y\n\020floatArrayFilter\030\007 \003(\0132?.bytedan" +
+      "ce.byteplus.byteair.PredictFilter.FloatA" +
+      "rrayFilterEntry\022[\n\021doubleArrayFilter\030\010 \003" +
+      "(\0132@.bytedance.byteplus.byteair.PredictF" +
+      "ilter.DoubleArrayFilterEntry\0323\n\021StringFi" +
+      "lterEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\0320\n\016IntFilterEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\003:\0028\001\0322\n\020FloatFilterEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001\0323\n\021DoubleFilterE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\032a\n\026" +
+      "StringArrayFilterEntry\022\013\n\003key\030\001 \001(\t\0226\n\005v" +
+      "alue\030\002 \001(\0132\'.bytedance.byteplus.byteair." +
+      "StringArray:\0028\001\032[\n\023IntArrayFilterEntry\022\013" +
+      "\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.bytedance.b" +
+      "yteplus.byteair.IntArray:\0028\001\032_\n\025FloatArr" +
+      "ayFilterEntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(" +
+      "\0132&.bytedance.byteplus.byteair.FloatArra" +
+      "y:\0028\001\032a\n\026DoubleArrayFilterEntry\022\013\n\003key\030\001" +
+      " \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.byteplus" +
+      ".byteair.DoubleArray:\0028\001\"\316\001\n\024PredictCand" +
+      "idateItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005" +
+      "price\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra" +
+      "\030d \003(\0132;.bytedance.byteplus.byteair.Pred" +
+      "ictCandidateItem.ExtraEntry\032,\n\nExtraEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\014Pr" +
+      "edictExtra\022\021\n\tinnerTest\030\001 \001(\010\022B\n\005extra\030e" +
+      " \003(\01323.bytedance.byteplus.byteair.Predic" +
+      "tExtra.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\001\n\022PredictRelat" +
+      "edItem\022\n\n\002id\030\001 \001(\t\022H\n\005extra\030d \003(\01329.byte" +
+      "dance.byteplus.byteair.PredictRelatedIte" +
+      "m.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"\363\003\n\nSearchInfo\022\r\n\005sta" +
+      "rt\030\001 \001(\005\022\022\n\nsearchType\030\002 \001(\005\022\020\n\010sortMode" +
+      "\030\003 \001(\005\022\020\n\010sortType\030\004 \001(\005\022\017\n\007content\030\005 \001(" +
+      "\t\022\r\n\005query\030\006 \001(\t\022D\n\007filters\030\007 \003(\01323.byte" +
+      "dance.byteplus.byteair.SearchInfo.Filter" +
+      "sEntry\022H\n\tfilterOut\030\010 \003(\01325.bytedance.by" +
+      "teplus.byteair.SearchInfo.FilterOutEntry" +
+      "\022:\n\tgoodsList\030\t \003(\0132\'.bytedance.byteplus" +
+      ".byteair.SearchGoods\032W\n\014FiltersEntry\022\013\n\003" +
+      "key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.byt" +
+      "eplus.byteair.StringArray:\0028\001\032Y\n\016FilterO" +
+      "utEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.by" +
+      "tedance.byteplus.byteair.StringArray:\0028\001" +
+      "\"X\n\013SearchGoods\022\023\n\007goodsId\030\001 \001(\003B\002\030\001\022\022\n\n" +
+      "goodsIdStr\030\002 \001(\t\022\r\n\005price\030\003 \001(\002\022\021\n\tboost" +
+      "Ceof\030\004 \001(\002\"\226\001\n\021PredictParentItem\022\n\n\002id\030\001" +
+      " \001(\t\022G\n\005extra\030d \003(\01328.bytedance.byteplus" +
+      ".byteair.PredictParentItem.ExtraEntry\032,\n" +
+      "\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"\226\001\n\021PredictFilterItem\022\n\n\002id\030\001 \001(\t\022G\n" +
+      "\005extra\030d \003(\01328.bytedance.byteplus.byteai" +
+      "r.PredictFilterItem.ExtraEntry\032,\n\nExtraE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\017" +
+      "PredictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message" +
+      "\030\002 \001(\t\0228\n\005value\030\003 \001(\0132).bytedance.bytepl" +
+      "us.byteair.PredictResult\022\022\n\nrequest_id\030\004" +
+      " \001(\t\"\316\001\n\rPredictResult\0226\n\005items\030\001 \003(\0132\'." +
+      "bytedance.byteplus.byteair.PredictItem\022C" +
+      "\n\005extra\030\002 \003(\01324.bytedance.byteplus.bytea" +
+      "ir.PredictResult.ExtraEntry\022\022\n\ntotalCoun" +
+      "t\030\003 \001(\005\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"\253\001\n\013PredictItem\022\n\n\002id\030\001 \001(" +
+      "\t\022\014\n\004rank\030\003 \001(\005\022\021\n\ttransData\030\004 \001(\t\022A\n\005ex" +
+      "tra\030\005 \003(\01322.bytedance.byteplus.byteair.P" +
+      "redictItem.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\265\002\n\017Callback" +
+      "Request\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005i" +
+      "tems\030\003 \003(\0132(.bytedance.byteplus.byteair." +
+      "CallbackItem\022\032\n\022predict_request_id\030\004 \001(\t" +
+      "\022<\n\007context\030\005 \001(\0132+.bytedance.byteplus.b" +
+      "yteair.CallbackContext\022E\n\005extra\030d \003(\01326." +
+      "bytedance.byteplus.byteair.CallbackReque" +
+      "st.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"6\n\014CallbackItem\022\n\n\002i" +
+      "d\030\001 \001(\t\022\013\n\003pos\030\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\322\001\n\017" +
+      "CallbackContext\022\013\n\003spm\030\001 \001(\t\022=\n\010req_type" +
+      "\030\002 \001(\0162+.bytedance.byteplus.byteair.Call" +
+      "backReqType\022E\n\005extra\030d \003(\01326.bytedance.b" +
+      "yteplus.byteair.CallbackContext.ExtraEnt" +
+      "ry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"1\n\020CallbackResponse\022\014\n\004code\030\001 \001" +
+      "(\005\022\017\n\007message\030\002 \001(\t\"\035\n\013StringArray\022\016\n\006va" +
+      "lues\030\001 \003(\t\"\032\n\010IntArray\022\016\n\006values\030\001 \003(\003\"\034" +
+      "\n\nFloatArray\022\016\n\006values\030\001 \003(\002\"\035\n\013DoubleAr" +
+      "ray\022\016\n\006values\030\001 \003(\001*C\n\017CallbackReqType\022\016" +
+      "\n\nbyte_scene\020\000\022\022\n\016not_byte_scene\020\001\022\014\n\010be" +
+      "havior\020\0022\203\003\n\026ByteplusGeneralService\022L\n\tW" +
+      "riteData\022\024.google.protobuf.Any\032).bytedan" +
+      "ce.byteplus.byteair.WriteResponse\022P\n\nImp" +
+      "ortData\022\024.google.protobuf.Any\032,.bytedanc" +
+      "e.byteplus.common.OperationResponse\022b\n\007P" +
+      "redict\022*.bytedance.byteplus.byteair.Pred" +
+      "ictRequest\032+.bytedance.byteplus.byteair." +
+      "PredictResponse\022e\n\010Callback\022+.bytedance." +
+      "byteplus.byteair.CallbackRequest\032,.byted" +
+      "ance.byteplus.byteair.CallbackResponseBP" +
+      "\n\035byteplus.sdk.byteair.protocolZ/github." +
+      "com/byteplus-sdk/sdk-go/byteair/protocol" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -31861,15 +40948,123 @@ public final class ByteplusByteair {
     internal_static_bytedance_byteplus_byteair_PredictContext_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictContext_descriptor,
-        new java.lang.String[] { "Spm", "ClosePersonalizedRecommend", "Extra", });
+        new java.lang.String[] { "Spm", "ClosePersonalizedRecommend", "Feature", "Filter", "Extra", });
     internal_static_bytedance_byteplus_byteair_PredictContext_ExtraEntry_descriptor =
       internal_static_bytedance_byteplus_byteair_PredictContext_descriptor.getNestedTypes().get(0);
     internal_static_bytedance_byteplus_byteair_PredictContext_ExtraEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictContext_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor =
+    internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor,
+        new java.lang.String[] { "StringFeature", "IntFeature", "FloatFeature", "DoubleFeature", "StringArrayFeature", "IntArrayFeature", "FloatArrayFeature", "DoubleArrayFeature", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_StringFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(1);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_IntFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(2);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_FloatFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(3);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(4);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_StringArrayFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(5);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_IntArrayFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(6);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_FloatArrayFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFeature_descriptor.getNestedTypes().get(7);
+    internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFeature_DoubleArrayFeatureEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor,
+        new java.lang.String[] { "StringFilter", "IntFilter", "FloatFilter", "DoubleFilter", "StringArrayFilter", "IntArrayFilter", "FloatArrayFilter", "DoubleArrayFilter", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_StringFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(1);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_IntFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(2);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_FloatFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(3);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(4);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_StringArrayFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(5);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_IntArrayFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(6);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_FloatArrayFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_descriptor =
+      internal_static_bytedance_byteplus_byteair_PredictFilter_descriptor.getNestedTypes().get(7);
+    internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_PredictFilter_DoubleArrayFilterEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_bytedance_byteplus_byteair_PredictCandidateItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictCandidateItem_descriptor,
@@ -31881,7 +41076,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictCandidateItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictExtra_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_bytedance_byteplus_byteair_PredictExtra_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictExtra_descriptor,
@@ -31893,7 +41088,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictExtra_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictRelatedItem_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_bytedance_byteplus_byteair_PredictRelatedItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictRelatedItem_descriptor,
@@ -31905,7 +41100,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictRelatedItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_SearchInfo_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_bytedance_byteplus_byteair_SearchInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_SearchInfo_descriptor,
@@ -31922,20 +41117,14 @@ public final class ByteplusByteair {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_SearchInfo_FilterOutEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_bytedance_byteplus_byteair_StringArray_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bytedance_byteplus_byteair_StringArray_descriptor,
-        new java.lang.String[] { "Values", });
     internal_static_bytedance_byteplus_byteair_SearchGoods_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_bytedance_byteplus_byteair_SearchGoods_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_SearchGoods_descriptor,
         new java.lang.String[] { "GoodsId", "GoodsIdStr", "Price", "BoostCeof", });
     internal_static_bytedance_byteplus_byteair_PredictParentItem_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_bytedance_byteplus_byteair_PredictParentItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictParentItem_descriptor,
@@ -31947,7 +41136,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictParentItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictFilterItem_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_bytedance_byteplus_byteair_PredictFilterItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictFilterItem_descriptor,
@@ -31959,13 +41148,13 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictFilterItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_bytedance_byteplus_byteair_PredictResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictResponse_descriptor,
         new java.lang.String[] { "Code", "Message", "Value", "RequestId", });
     internal_static_bytedance_byteplus_byteair_PredictResult_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_bytedance_byteplus_byteair_PredictResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictResult_descriptor,
@@ -31977,7 +41166,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictResult_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_PredictItem_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_bytedance_byteplus_byteair_PredictItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictItem_descriptor,
@@ -31989,7 +41178,7 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_PredictItem_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_CallbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_bytedance_byteplus_byteair_CallbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackRequest_descriptor,
@@ -32001,13 +41190,13 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_CallbackRequest_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_CallbackItem_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_bytedance_byteplus_byteair_CallbackItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackItem_descriptor,
         new java.lang.String[] { "Id", "Pos", "Extra", });
     internal_static_bytedance_byteplus_byteair_CallbackContext_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_bytedance_byteplus_byteair_CallbackContext_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackContext_descriptor,
@@ -32019,11 +41208,35 @@ public final class ByteplusByteair {
         internal_static_bytedance_byteplus_byteair_CallbackContext_ExtraEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_byteair_CallbackResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_bytedance_byteplus_byteair_CallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_CallbackResponse_descriptor,
         new java.lang.String[] { "Code", "Message", });
+    internal_static_bytedance_byteplus_byteair_StringArray_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_bytedance_byteplus_byteair_StringArray_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_StringArray_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_bytedance_byteplus_byteair_IntArray_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_bytedance_byteplus_byteair_IntArray_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_IntArray_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_bytedance_byteplus_byteair_FloatArray_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_bytedance_byteplus_byteair_FloatArray_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_FloatArray_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_bytedance_byteplus_byteair_DoubleArray_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_byteair_DoubleArray_descriptor,
+        new java.lang.String[] { "Values", });
     byteplus.sdk.common.protocol.ByteplusCommon.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
   }
