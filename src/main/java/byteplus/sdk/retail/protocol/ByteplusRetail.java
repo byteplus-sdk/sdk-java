@@ -997,16 +997,16 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
+        if (!getCountryBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, country_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
+        if (!getCityBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, city_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(districtOrArea_)) {
+        if (!getDistrictOrAreaBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, districtOrArea_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postcode_)) {
+        if (!getPostcodeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, postcode_);
         }
         unknownFields.writeTo(output);
@@ -1018,16 +1018,16 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
+        if (!getCountryBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, country_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
+        if (!getCityBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, city_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(districtOrArea_)) {
+        if (!getDistrictOrAreaBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, districtOrArea_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postcode_)) {
+        if (!getPostcodeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, postcode_);
         }
         size += unknownFields.getSerializedSize();
@@ -2419,22 +2419,22 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+      if (!getGenderBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gender_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(age_)) {
+      if (!getAgeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, age_);
       }
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activationChannel_)) {
+      if (!getActivationChannelBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, activationChannel_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipLevel_)) {
+      if (!getMembershipLevelBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, membershipLevel_);
       }
       if (registrationTimestamp_ != 0L) {
@@ -2458,13 +2458,13 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+      if (!getGenderBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gender_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(age_)) {
+      if (!getAgeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, age_);
       }
       {
@@ -2475,10 +2475,10 @@ public final class ByteplusRetail {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activationChannel_)) {
+      if (!getActivationChannelBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, activationChannel_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipLevel_)) {
+      if (!getMembershipLevelBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, membershipLevel_);
       }
       if (registrationTimestamp_ != 0L) {
@@ -4227,7 +4227,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4239,7 +4239,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4250,7 +4250,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4261,7 +4261,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4273,7 +4273,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4472,7 +4472,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4486,7 +4486,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4501,7 +4501,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4515,7 +4515,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -4529,7 +4529,7 @@ public final class ByteplusRetail {
      * <pre>
      * Required.
      * A list of users to write.
-     * The max # of users allowed is 100, otherwise a standard 400 error is
+     * The max # of users allowed is 2000, otherwise a standard 400 error is
      * returned.
      * </pre>
      *
@@ -5057,7 +5057,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5074,7 +5074,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5091,7 +5091,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5108,7 +5108,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5132,7 +5132,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5153,7 +5153,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5176,7 +5176,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5200,7 +5200,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5221,7 +5221,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5242,7 +5242,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5264,7 +5264,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5284,7 +5284,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5304,7 +5304,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5318,7 +5318,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5335,7 +5335,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5353,7 +5353,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5367,7 +5367,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5382,7 +5382,7 @@ public final class ByteplusRetail {
        * <pre>
        * Required.
        * A list of users to write.
-       * The max # of users allowed is 100, otherwise a standard 400 error is
+       * The max # of users allowed is 2000, otherwise a standard 400 error is
        * returned.
        * </pre>
        *
@@ -5889,7 +5889,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       if (user_ != null) {
@@ -5904,7 +5904,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       if (user_ != null) {
@@ -9768,7 +9768,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+      if (!getDateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, date_);
       }
       if (isEnd_ != false) {
@@ -9783,7 +9783,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+      if (!getDateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, date_);
       }
       if (isEnd_ != false) {
@@ -15166,7 +15166,7 @@ public final class ByteplusRetail {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idOrName_)) {
+          if (!getIdOrNameBytes().isEmpty()) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 1, idOrName_);
           }
           unknownFields.writeTo(output);
@@ -15178,7 +15178,7 @@ public final class ByteplusRetail {
           if (size != -1) return size;
 
           size = 0;
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idOrName_)) {
+          if (!getIdOrNameBytes().isEmpty()) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, idOrName_);
           }
           size += unknownFields.getSerializedSize();
@@ -16713,7 +16713,7 @@ public final class ByteplusRetail {
         if (brandDepth_ != 0) {
           output.writeInt32(1, brandDepth_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idOrName_)) {
+        if (!getIdOrNameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, idOrName_);
         }
         unknownFields.writeTo(output);
@@ -16729,7 +16729,7 @@ public final class ByteplusRetail {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(1, brandDepth_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idOrName_)) {
+        if (!getIdOrNameBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, idOrName_);
         }
         size += unknownFields.getSerializedSize();
@@ -18392,10 +18392,10 @@ public final class ByteplusRetail {
         for (int i = 0; i < detailPageDisplayTags_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, detailPageDisplayTags_.getRaw(i));
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listingPageDisplayType_)) {
+        if (!getListingPageDisplayTypeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, listingPageDisplayType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverMultimediaUrl_)) {
+        if (!getCoverMultimediaUrlBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, coverMultimediaUrl_);
         }
         unknownFields.writeTo(output);
@@ -18423,10 +18423,10 @@ public final class ByteplusRetail {
           size += dataSize;
           size += 1 * getDetailPageDisplayTagsList().size();
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listingPageDisplayType_)) {
+        if (!getListingPageDisplayTypeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, listingPageDisplayType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverMultimediaUrl_)) {
+        if (!getCoverMultimediaUrlBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, coverMultimediaUrl_);
         }
         size += unknownFields.getSerializedSize();
@@ -19760,7 +19760,7 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productGroupId_)) {
+        if (!getProductGroupIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productGroupId_);
         }
         if (userRating_ != 0D) {
@@ -19769,7 +19769,7 @@ public final class ByteplusRetail {
         if (commentCount_ != 0) {
           output.writeInt32(3, commentCount_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
+        if (!getSourceBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, source_);
         }
         if (publishTimestamp_ != 0L) {
@@ -19784,7 +19784,7 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productGroupId_)) {
+        if (!getProductGroupIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productGroupId_);
         }
         if (userRating_ != 0D) {
@@ -19795,7 +19795,7 @@ public final class ByteplusRetail {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(3, commentCount_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
+        if (!getSourceBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, source_);
         }
         if (publishTimestamp_ != 0L) {
@@ -20841,10 +20841,10 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        if (!getIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sellerLevel_)) {
+        if (!getSellerLevelBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sellerLevel_);
         }
         if (sellerRating_ != 0D) {
@@ -20859,10 +20859,10 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        if (!getIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sellerLevel_)) {
+        if (!getSellerLevelBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sellerLevel_);
         }
         if (sellerRating_ != 0D) {
@@ -22256,7 +22256,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      if (!getProductIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
       }
       for (int i = 0; i < categories_.size(); i++) {
@@ -22271,7 +22271,7 @@ public final class ByteplusRetail {
       if (isRecommendable_ != false) {
         output.writeBool(5, isRecommendable_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, title_);
       }
       if (qualityScore_ != 0D) {
@@ -22304,7 +22304,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      if (!getProductIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
       }
       for (int i = 0; i < categories_.size(); i++) {
@@ -22323,7 +22323,7 @@ public final class ByteplusRetail {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, isRecommendable_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, title_);
       }
       if (qualityScore_ != 0D) {
@@ -25498,7 +25498,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25508,7 +25508,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25517,7 +25517,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25526,7 +25526,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25536,7 +25536,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25733,7 +25733,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25745,7 +25745,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25758,7 +25758,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25770,7 +25770,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -25782,7 +25782,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required.
-     * A list of product to write. The max is 100 items.
+     * A list of product to write. The max is 2000 items.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26308,7 +26308,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26323,7 +26323,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26338,7 +26338,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26353,7 +26353,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26375,7 +26375,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26394,7 +26394,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26415,7 +26415,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26437,7 +26437,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26456,7 +26456,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26475,7 +26475,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26495,7 +26495,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26513,7 +26513,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26531,7 +26531,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26543,7 +26543,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26558,7 +26558,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26574,7 +26574,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26586,7 +26586,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -26599,7 +26599,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required.
-       * A list of product to write. The max is 100 items.
+       * A list of product to write. The max is 2000 items.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.Product products = 1;</code>
@@ -27105,7 +27105,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       if (product_ != null) {
@@ -27120,7 +27120,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       if (product_ != null) {
@@ -34622,7 +34622,7 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneName_)) {
+        if (!getSceneNameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sceneName_);
         }
         if (pageNumber_ != 0) {
@@ -34640,7 +34640,7 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneName_)) {
+        if (!getSceneNameBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sceneName_);
         }
         if (pageNumber_ != 0) {
@@ -36140,31 +36140,31 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+        if (!getPlatformBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, platform_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osType_)) {
+        if (!getOsTypeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, osType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appVersion_)) {
+        if (!getAppVersionBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appVersion_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceModel_)) {
+        if (!getDeviceModelBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceModel_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceBrand_)) {
+        if (!getDeviceBrandBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deviceBrand_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osVersion_)) {
+        if (!getOsVersionBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 6, osVersion_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(browserType_)) {
+        if (!getBrowserTypeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 7, browserType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
+        if (!getUserAgentBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userAgent_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        if (!getNetworkBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, network_);
         }
         unknownFields.writeTo(output);
@@ -36176,31 +36176,31 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+        if (!getPlatformBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, platform_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osType_)) {
+        if (!getOsTypeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, osType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appVersion_)) {
+        if (!getAppVersionBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appVersion_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceModel_)) {
+        if (!getDeviceModelBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceModel_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceBrand_)) {
+        if (!getDeviceBrandBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deviceBrand_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osVersion_)) {
+        if (!getOsVersionBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, osVersion_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(browserType_)) {
+        if (!getBrowserTypeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, browserType_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
+        if (!getUserAgentBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userAgent_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        if (!getNetworkBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, network_);
         }
         size += unknownFields.getSerializedSize();
@@ -37936,10 +37936,10 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+        if (!getQueryBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootProductId_)) {
+        if (!getRootProductIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rootProductId_);
         }
         unknownFields.writeTo(output);
@@ -37951,10 +37951,10 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+        if (!getQueryBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootProductId_)) {
+        if (!getRootProductIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rootProductId_);
         }
         size += unknownFields.getSerializedSize();
@@ -39168,10 +39168,10 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
+      if (!getEventTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, eventType_);
       }
       if (eventTimestamp_ != 0L) {
@@ -39180,7 +39180,7 @@ public final class ByteplusRetail {
       if (scene_ != null) {
         output.writeMessage(4, getScene());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      if (!getProductIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, productId_);
       }
       if (device_ != null) {
@@ -39189,13 +39189,13 @@ public final class ByteplusRetail {
       if (context_ != null) {
         output.writeMessage(7, getContext());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
+      if (!getAttributionTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, attributionToken_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recInfo_)) {
+      if (!getRecInfoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, recInfo_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficSource_)) {
+      if (!getTrafficSourceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, trafficSource_);
       }
       if (purchaseCount_ != 0) {
@@ -39219,10 +39219,10 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
+      if (!getEventTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, eventType_);
       }
       if (eventTimestamp_ != 0L) {
@@ -39233,7 +39233,7 @@ public final class ByteplusRetail {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getScene());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      if (!getProductIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, productId_);
       }
       if (device_ != null) {
@@ -39244,13 +39244,13 @@ public final class ByteplusRetail {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getContext());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
+      if (!getAttributionTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, attributionToken_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recInfo_)) {
+      if (!getRecInfoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, recInfo_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficSource_)) {
+      if (!getTrafficSourceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, trafficSource_);
       }
       if (purchaseCount_ != 0) {
@@ -41420,7 +41420,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41430,7 +41430,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41439,7 +41439,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41448,7 +41448,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41458,7 +41458,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41655,7 +41655,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41667,7 +41667,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41680,7 +41680,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41692,7 +41692,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -41704,7 +41704,7 @@ public final class ByteplusRetail {
     /**
      * <pre>
      * Required. A list of user events to write.
-     * The max # of events allowed is 100.
+     * The max # of events allowed is 2000.
      * </pre>
      *
      * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42230,7 +42230,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42245,7 +42245,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42260,7 +42260,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42275,7 +42275,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42297,7 +42297,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42316,7 +42316,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42337,7 +42337,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42359,7 +42359,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42378,7 +42378,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42397,7 +42397,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42417,7 +42417,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42435,7 +42435,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42453,7 +42453,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42465,7 +42465,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42480,7 +42480,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42496,7 +42496,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42508,7 +42508,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -42521,7 +42521,7 @@ public final class ByteplusRetail {
       /**
        * <pre>
        * Required. A list of user events to write.
-       * The max # of events allowed is 100.
+       * The max # of events allowed is 2000.
        * </pre>
        *
        * <code>repeated .bytedance.byteplus.retail.UserEvent user_events = 1;</code>
@@ -43027,7 +43027,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       if (userEvent_ != null) {
@@ -43042,7 +43042,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       if (userEvent_ != null) {
@@ -51534,7 +51534,7 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       if (size_ != 0) {
@@ -51561,7 +51561,7 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       if (size_ != 0) {
@@ -53438,7 +53438,7 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        if (!getProductIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
         }
         if (rank_ != 0) {
@@ -53450,7 +53450,7 @@ public final class ByteplusRetail {
         if (pcvr_ != 0D) {
           output.writeDouble(4, pcvr_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recInfo_)) {
+        if (!getRecInfoBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, recInfo_);
         }
         com.google.protobuf.GeneratedMessageV3
@@ -53468,7 +53468,7 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        if (!getProductIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
         }
         if (rank_ != 0) {
@@ -53483,7 +53483,7 @@ public final class ByteplusRetail {
           size += com.google.protobuf.CodedOutputStream
             .computeDoubleSize(4, pcvr_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recInfo_)) {
+        if (!getRecInfoBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, recInfo_);
         }
         for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -55871,7 +55871,7 @@ public final class ByteplusRetail {
       if (status_ != null) {
         output.writeMessage(1, getStatus());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      if (!getRequestIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
       }
       if (value_ != null) {
@@ -55890,7 +55890,7 @@ public final class ByteplusRetail {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getStatus());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      if (!getRequestIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
       }
       if (value_ != null) {
@@ -57053,6 +57053,70 @@ public final class ByteplusRetail {
        * @return The rank.
        */
       int getRank();
+
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      int getExtraCount();
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      boolean containsExtra(
+          java.lang.String key);
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getExtra();
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getExtraMap();
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+
+      java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue);
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+
+      java.lang.String getExtraOrThrow(
+          java.lang.String key);
     }
     /**
      * <pre>
@@ -57095,6 +57159,7 @@ public final class ByteplusRetail {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -57122,6 +57187,19 @@ public final class ByteplusRetail {
                 rank_ = input.readInt32();
                 break;
               }
+              case 810: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  extra_ = com.google.protobuf.MapField.newMapField(
+                      ExtraDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                extra__ = input.readMessage(
+                    ExtraDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                extra_.getMutableMap().put(
+                    extra__.getKey(), extra__.getValue());
+                break;
+              }
               default: {
                 if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -57146,6 +57224,18 @@ public final class ByteplusRetail {
         return byteplus.sdk.retail.protocol.ByteplusRetail.internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 101:
+            return internalGetExtra();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -57275,6 +57365,111 @@ public final class ByteplusRetail {
         return rank_;
       }
 
+      public static final int EXTRA_FIELD_NUMBER = 101;
+      private static final class ExtraDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    byteplus.sdk.retail.protocol.ByteplusRetail.internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> extra_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExtra() {
+        if (extra_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtraDefaultEntryHolder.defaultEntry);
+        }
+        return extra_;
+      }
+
+      public int getExtraCount() {
+        return internalGetExtra().getMap().size();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsExtra(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExtra().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtraMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+        return getExtraMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+        return internalGetExtra().getMap();
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Optional.
+       * This is a catch-all field to pass all the additional information.
+       * Please provide as much information as possible.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; extra = 101;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getExtraOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExtra().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -57289,15 +57484,21 @@ public final class ByteplusRetail {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        if (!getProductIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alteredReason_)) {
+        if (!getAlteredReasonBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, alteredReason_);
         }
         if (rank_ != 0) {
           output.writeInt32(3, rank_);
         }
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetExtra(),
+            ExtraDefaultEntryHolder.defaultEntry,
+            101);
         unknownFields.writeTo(output);
       }
 
@@ -57307,15 +57508,25 @@ public final class ByteplusRetail {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        if (!getProductIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alteredReason_)) {
+        if (!getAlteredReasonBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, alteredReason_);
         }
         if (rank_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(3, rank_);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetExtra().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          extra__ = ExtraDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(101, extra__);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -57338,6 +57549,8 @@ public final class ByteplusRetail {
             .equals(other.getAlteredReason())) return false;
         if (getRank()
             != other.getRank()) return false;
+        if (!internalGetExtra().equals(
+            other.internalGetExtra())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -57355,6 +57568,10 @@ public final class ByteplusRetail {
         hash = (53 * hash) + getAlteredReason().hashCode();
         hash = (37 * hash) + RANK_FIELD_NUMBER;
         hash = (53 * hash) + getRank();
+        if (!internalGetExtra().getMap().isEmpty()) {
+          hash = (37 * hash) + EXTRA_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetExtra().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -57466,6 +57683,28 @@ public final class ByteplusRetail {
           return byteplus.sdk.retail.protocol.ByteplusRetail.internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_descriptor;
         }
 
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 101:
+              return internalGetExtra();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 101:
+              return internalGetMutableExtra();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
@@ -57498,6 +57737,7 @@ public final class ByteplusRetail {
 
           rank_ = 0;
 
+          internalGetMutableExtra().clear();
           return this;
         }
 
@@ -57524,9 +57764,12 @@ public final class ByteplusRetail {
         @java.lang.Override
         public byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest.AlteredProduct buildPartial() {
           byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest.AlteredProduct result = new byteplus.sdk.retail.protocol.ByteplusRetail.AckServerImpressionsRequest.AlteredProduct(this);
+          int from_bitField0_ = bitField0_;
           result.productId_ = productId_;
           result.alteredReason_ = alteredReason_;
           result.rank_ = rank_;
+          result.extra_ = internalGetExtra();
+          result.extra_.makeImmutable();
           onBuilt();
           return result;
         }
@@ -57586,6 +57829,8 @@ public final class ByteplusRetail {
           if (other.getRank() != 0) {
             setRank(other.getRank());
           }
+          internalGetMutableExtra().mergeFrom(
+              other.internalGetExtra());
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -57614,6 +57859,7 @@ public final class ByteplusRetail {
           }
           return this;
         }
+        private int bitField0_;
 
         private java.lang.Object productId_ = "";
         /**
@@ -57883,6 +58129,176 @@ public final class ByteplusRetail {
           
           rank_ = 0;
           onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> extra_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetExtra() {
+          if (extra_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ExtraDefaultEntryHolder.defaultEntry);
+          }
+          return extra_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableExtra() {
+          onChanged();;
+          if (extra_ == null) {
+            extra_ = com.google.protobuf.MapField.newMapField(
+                ExtraDefaultEntryHolder.defaultEntry);
+          }
+          if (!extra_.isMutable()) {
+            extra_ = extra_.copy();
+          }
+          return extra_;
+        }
+
+        public int getExtraCount() {
+          return internalGetExtra().getMap().size();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsExtra(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetExtra().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getExtraMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getExtra() {
+          return getExtraMap();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getExtraMap() {
+          return internalGetExtra().getMap();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getExtraOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetExtra().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getExtraOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetExtra().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearExtra() {
+          internalGetMutableExtra().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+
+        public Builder removeExtra(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableExtra().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableExtra() {
+          return internalGetMutableExtra().getMutableMap();
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+        public Builder putExtra(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (value == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableExtra().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * Optional.
+         * This is a catch-all field to pass all the additional information.
+         * Please provide as much information as possible.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; extra = 101;</code>
+         */
+
+        public Builder putAllExtra(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableExtra().getMutableMap()
+              .putAll(values);
           return this;
         }
         @java.lang.Override
@@ -58209,13 +58625,13 @@ public final class ByteplusRetail {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictRequestId_)) {
+      if (!getPredictRequestIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, predictRequestId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficSource_)) {
+      if (!getTrafficSourceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trafficSource_);
       }
       if (scene_ != null) {
@@ -58233,13 +58649,13 @@ public final class ByteplusRetail {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictRequestId_)) {
+      if (!getPredictRequestIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, predictRequestId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficSource_)) {
+      if (!getTrafficSourceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trafficSource_);
       }
       if (scene_ != null) {
@@ -60475,6 +60891,11 @@ public final class ByteplusRetail {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bytedance_byteplus_retail_AckServerImpressionsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -60661,42 +61082,46 @@ public final class ByteplusRetail {
       "redictResponse\0221\n\006status\030\001 \001(\0132!.bytedan" +
       "ce.byteplus.common.Status\022\022\n\nrequest_id\030" +
       "\002 \001(\t\0227\n\005value\030\003 \001(\0132(.bytedance.byteplu" +
-      "s.retail.PredictResult\"\312\002\n\033AckServerImpr" +
+      "s.retail.PredictResult\"\332\003\n\033AckServerImpr" +
       "essionsRequest\022\032\n\022predict_request_id\030\001 \001" +
       "(\t\022\017\n\007user_id\030\002 \001(\t\022\026\n\016traffic_source\030\003 " +
       "\001(\t\0229\n\005scene\030\004 \001(\0132*.bytedance.byteplus." +
       "retail.UserEvent.Scene\022_\n\020altered_produc" +
       "ts\030\005 \003(\0132E.bytedance.byteplus.retail.Ack" +
       "ServerImpressionsRequest.AlteredProduct\032" +
-      "J\n\016AlteredProduct\022\022\n\nproduct_id\030\001 \001(\t\022\026\n" +
-      "\016altered_reason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005\"Q\n\034A" +
-      "ckServerImpressionsResponse\0221\n\006status\030\001 " +
-      "\001(\0132!.bytedance.byteplus.common.Status2\260" +
-      "\007\n\025ByteplusRetailService\022i\n\nWriteUsers\022," +
-      ".bytedance.byteplus.retail.WriteUsersReq" +
-      "uest\032-.bytedance.byteplus.retail.WriteUs" +
-      "ersResponse\022j\n\013ImportUsers\022-.bytedance.b" +
-      "yteplus.retail.ImportUsersRequest\032,.byte" +
-      "dance.byteplus.common.OperationResponse\022" +
-      "r\n\rWriteProducts\022/.bytedance.byteplus.re" +
-      "tail.WriteProductsRequest\0320.bytedance.by" +
-      "teplus.retail.WriteProductsResponse\022p\n\016I" +
-      "mportProducts\0220.bytedance.byteplus.retai" +
-      "l.ImportProductsRequest\032,.bytedance.byte" +
-      "plus.common.OperationResponse\022x\n\017WriteUs" +
-      "erEvents\0221.bytedance.byteplus.retail.Wri" +
-      "teUserEventsRequest\0322.bytedance.byteplus" +
-      ".retail.WriteUserEventsResponse\022t\n\020Impor" +
-      "tUserEvents\0222.bytedance.byteplus.retail." +
-      "ImportUserEventsRequest\032,.bytedance.byte" +
-      "plus.common.OperationResponse\022`\n\007Predict" +
-      "\022).bytedance.byteplus.retail.PredictRequ" +
-      "est\032*.bytedance.byteplus.retail.PredictR" +
-      "esponse\022\207\001\n\024AckServerImpressions\0226.byted" +
+      "\331\001\n\016AlteredProduct\022\022\n\nproduct_id\030\001 \001(\t\022\026" +
+      "\n\016altered_reason\030\002 \001(\t\022\014\n\004rank\030\003 \001(\005\022_\n\005" +
+      "extra\030e \003(\0132P.bytedance.byteplus.retail." +
+      "AckServerImpressionsRequest.AlteredProdu" +
+      "ct.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"Q\n\034AckServerImpressi" +
+      "onsResponse\0221\n\006status\030\001 \001(\0132!.bytedance." +
+      "byteplus.common.Status2\260\007\n\025ByteplusRetai" +
+      "lService\022i\n\nWriteUsers\022,.bytedance.bytep" +
+      "lus.retail.WriteUsersRequest\032-.bytedance" +
+      ".byteplus.retail.WriteUsersResponse\022j\n\013I" +
+      "mportUsers\022-.bytedance.byteplus.retail.I" +
+      "mportUsersRequest\032,.bytedance.byteplus.c" +
+      "ommon.OperationResponse\022r\n\rWriteProducts" +
+      "\022/.bytedance.byteplus.retail.WriteProduc" +
+      "tsRequest\0320.bytedance.byteplus.retail.Wr" +
+      "iteProductsResponse\022p\n\016ImportProducts\0220." +
+      "bytedance.byteplus.retail.ImportProducts" +
+      "Request\032,.bytedance.byteplus.common.Oper" +
+      "ationResponse\022x\n\017WriteUserEvents\0221.byted" +
+      "ance.byteplus.retail.WriteUserEventsRequ" +
+      "est\0322.bytedance.byteplus.retail.WriteUse" +
+      "rEventsResponse\022t\n\020ImportUserEvents\0222.by" +
+      "tedance.byteplus.retail.ImportUserEvents" +
+      "Request\032,.bytedance.byteplus.common.Oper" +
+      "ationResponse\022`\n\007Predict\022).bytedance.byt" +
+      "eplus.retail.PredictRequest\032*.bytedance." +
+      "byteplus.retail.PredictResponse\022\207\001\n\024AckS" +
+      "erverImpressions\0226.bytedance.byteplus.re" +
+      "tail.AckServerImpressionsRequest\0327.byted" +
       "ance.byteplus.retail.AckServerImpression" +
-      "sRequest\0327.bytedance.byteplus.retail.Ack" +
-      "ServerImpressionsResponseB\036\n\034byteplus.sd" +
-      "k.retail.protocolb\006proto3"
+      "sResponseB\036\n\034byteplus.sdk.retail.protoco" +
+      "lb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -61038,7 +61463,13 @@ public final class ByteplusRetail {
     internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_descriptor,
-        new java.lang.String[] { "ProductId", "AlteredReason", "Rank", });
+        new java.lang.String[] { "ProductId", "AlteredReason", "Rank", "Extra", });
+    internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_descriptor =
+      internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_descriptor.getNestedTypes().get(0);
+    internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bytedance_byteplus_retail_AckServerImpressionsRequest_AlteredProduct_ExtraEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_bytedance_byteplus_retail_AckServerImpressionsResponse_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_bytedance_byteplus_retail_AckServerImpressionsResponse_fieldAccessorTable = new
