@@ -58,11 +58,11 @@ public class HostAvailabler {
                 .newBuilder()
                 .callTimeout(config.getPingTimeout())
                 .build();
+        currentHost = context.getHosts().get(0);
         if (context.getHosts().size() <= 1) {
             return;
         }
         availableHosts = context.getHosts();
-        currentHost = context.getHosts().get(0);
         hostWindowMap = new HashMap<>(context.getHosts().size());
         for (String host : context.getHosts()) {
             hostWindowMap.put(host, new Window(config.getWindowSize()));
@@ -72,6 +72,9 @@ public class HostAvailabler {
     }
 
     private Config fillDefaultConfig(Config config) {
+        if (Objects.isNull(config)) {
+            config = new Config();
+        }
         config = config.toBuilder().build();
         if (Objects.isNull(config.pingURLFormat)) {
             config.pingURLFormat = DEFAULT_PING_URL_FORMAT;

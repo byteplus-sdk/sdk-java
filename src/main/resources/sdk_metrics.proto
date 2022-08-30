@@ -1,7 +1,7 @@
 syntax = "proto3";
 package metric;
 
-option go_package = "code.byted.org/3rd_rec/air_api_protocol/metric";
+option go_package = "github.com/byteplus-sdk/sdk-go/core/metrics/protocol";
 option java_package = "byteplus.sdk.core.metrics.protocol";
 
 message Metric {

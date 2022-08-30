@@ -3763,9 +3763,9 @@ public final class SdkMetrics {
       "etricLog\022\n\n\002id\030\001 \001(\t\022\r\n\005level\030\002 \001(\t\022\021\n\tt" +
       "imestamp\030\003 \001(\003\022\017\n\007message\030\004 \001(\t\":\n\020Metri" +
       "cLogMessage\022&\n\013metric_logs\030\001 \003(\0132\021.metri" +
-      "c.MetricLogBT\n\"byteplus.sdk.core.metrics" +
-      ".protocolZ.code.byted.org/3rd_rec/air_ap" +
-      "i_protocol/metricb\006proto3"
+      "c.MetricLogBZ\n\"byteplus.sdk.core.metrics" +
+      ".protocolZ4github.com/byteplus-sdk/sdk-g" +
+      "o/core/metrics/protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
