@@ -1,3 +1,6 @@
+gen_sdk_metrics:
+	protoc --java_out=src/main/java -I=src/main/resources src/main/resources/sdk_metrics.proto
+
 gen_byteair:
 	protoc --java_out=src/main/java -I=src/main/resources src/main/resources/byteplus_byteair.proto
 

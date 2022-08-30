@@ -1,5 +1,6 @@
 package byteplus.sdk.core;
 
+import byteplus.sdk.core.metrics.MetricsCollector.MetricsCfg;
 import byteplus.sdk.core.volcAuth.Credential;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,6 +43,12 @@ public class Context {
     // Customer-defined http headers, all requests will include these headers
     private Map<String, String> customerHeaders = Collections.emptyMap();
 
+    // Metrics cfg.
+    private MetricsCfg metricsCfg;
+
+    // HostAvailablerConfig
+    private HostAvailabler.Config hostAvailablerConfig;
+
     @Slf4j
     @Accessors(chain = true)
     @Setter
@@ -65,6 +72,12 @@ public class Context {
         private Map<String, String> headers;
 
         private Region region;
+
+        // Metrics cfg.
+        private MetricsCfg metricsCfg;
+
+        // HostAvailablerConfig
+        private HostAvailabler.Config hostAvailablerConfig;
     }
 
     public Context(Param param) {
@@ -72,6 +85,8 @@ public class Context {
         this.tenant = param.tenant;
         this.tenantId = param.tenantId;
         this.token = param.token;
+        this.metricsCfg = param.metricsCfg;
+        this.hostAvailablerConfig = param.hostAvailablerConfig;
         fillHosts(param);
         fillVolcCredential(param);
 

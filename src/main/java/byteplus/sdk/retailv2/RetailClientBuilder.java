@@ -1,7 +1,9 @@
 package byteplus.sdk.retailv2;
 
+import byteplus.sdk.core.HostAvailabler;
 import byteplus.sdk.core.Region;
 import byteplus.sdk.core.Context.Param;
+import byteplus.sdk.core.metrics.MetricsCollector.MetricsCfg;
 
 import java.util.List;
 import java.util.Map;
@@ -45,6 +47,16 @@ public final class RetailClientBuilder {
 
     public RetailClientBuilder region(Region region) {
         this.param.setRegion(region);
+        return this;
+    }
+
+    public RetailClientBuilder metricsConfig(MetricsCfg metricsCfg) {
+        this.param.setMetricsCfg(metricsCfg);
+        return this;
+    }
+
+    public RetailClientBuilder hostAvailablerConfig(HostAvailabler.Config config) {
+        this.param.setHostAvailablerConfig(config);
         return this;
     }
 

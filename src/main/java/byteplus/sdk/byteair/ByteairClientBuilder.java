@@ -1,7 +1,9 @@
 package byteplus.sdk.byteair;
 
 import byteplus.sdk.core.Context;
+import byteplus.sdk.core.HostAvailabler;
 import byteplus.sdk.core.Region;
+import byteplus.sdk.core.metrics.MetricsCollector;
 
 import java.util.List;
 import java.util.Map;
@@ -60,6 +62,16 @@ public class ByteairClientBuilder {
 
     public ByteairClientBuilder useAirAuth() {
         this.param.setUseAirAuth(true);
+        return this;
+    }
+
+    public ByteairClientBuilder metricsConfig(MetricsCollector.MetricsCfg metricsCfg) {
+        this.param.setMetricsCfg(metricsCfg);
+        return this;
+    }
+
+    public ByteairClientBuilder hostAvailablerConfig(HostAvailabler.Config config) {
+        this.param.setHostAvailablerConfig(config);
         return this;
     }
 

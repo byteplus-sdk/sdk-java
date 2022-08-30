@@ -1,7 +1,7 @@
 package byteplus.sdk.core.metrics;
 
+import java.time.Duration;
 import java.util.Objects;
-import static byteplus.sdk.core.metrics.Constant.DEFAULT_HTTP_TIMEOUT_MS;
 
 public interface MetricsOption {
     void fill(MetricsCollector.MetricsCfg options);
@@ -28,27 +28,32 @@ public interface MetricsOption {
         };
     }
 
-    //if not set, will not print metrics log
-    static MetricsOption withMetricsLog() {
+    //if not set, will not report metrics.
+    static MetricsOption enableMetrics() {
         return options -> {
-            options.setPrintLog(true);
+            options.setEnableMetrics(true);
+        };
+    }
+
+    //if not set, will not report metrics logs.
+    static MetricsOption enableMetricsLog() {
+        return options -> {
+            options.setEnableMetricsLog(true);
         };
     }
 
     //set the interval of reporting metrics
-    static MetricsOption withFlushIntervalMs(long flushIntervalMs) {
+    static MetricsOption withReportInterval(Duration reportInterval) {
         return options -> {
-            if (flushIntervalMs > 5000) { // flushInterval should not be too small
-                options.setFlushIntervalMs(flushIntervalMs);
+            if (reportInterval.toMillis() > 1000) { // reportInterval should not be too small
+                options.setReportInterval(reportInterval);
             }
         };
     }
 
-    static MetricsOption withMetricsTimeout(long timeoutMs) {
+    static MetricsOption withMetricsTimeout(Duration timeout) {
         return options -> {
-            if (timeoutMs > DEFAULT_HTTP_TIMEOUT_MS)
-                options.setHttpTimeoutMs(timeoutMs);
+            options.setHttpTimeout(timeout);
         };
     }
-
 }
