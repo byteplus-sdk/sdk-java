@@ -25,7 +25,7 @@ public class HostAvailabler {
 
     private static final int DEFAULT_WINDOW_SIZE = 60;
 
-    private static final String DEFAULT_PING_URL_FORMAT = "%s://%s/predict/api/ping";
+    private static final String DEFAULT_PING_URL_FORMAT = "{}://%s/predict/api/ping";
 
     private static final Duration DEFAULT_PING_TIMEOUT = Duration.ofMillis(300);
 
