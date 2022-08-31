@@ -37,10 +37,31 @@ public class MetricsCollector {
         if (initialed.get()) {
             return;
         }
+        metricsConfig = fillDefaultConfig(metricsConfig);
+        doInit(metricsConfig, hostAvailabler);
+    }
+
+    private static MetricsCfg fillDefaultConfig(MetricsCfg metricsConfig) {
         if (Objects.isNull(metricsConfig)) {
             metricsConfig = new MetricsCfg();
         }
-        doInit(metricsConfig, hostAvailabler);
+        metricsConfig = metricsConfig.toBuilder().build();
+        if (Objects.isNull(metricsConfig.httpSchema) || metricsConfig.httpSchema.isEmpty()) {
+            metricsConfig.httpSchema = DEFAULT_METRICS_HTTP_SCHEMA;
+        }
+        if (Objects.isNull(metricsConfig.domain) || metricsConfig.domain.isEmpty()) {
+            metricsConfig.domain = DEFAULT_METRICS_DOMAIN;
+        }
+        if (Objects.isNull(metricsConfig.prefix) || metricsConfig.prefix.isEmpty()) {
+            metricsConfig.prefix = DEFAULT_METRICS_PREFIX;
+        }
+        if (Objects.isNull(metricsConfig.reportInterval) || metricsConfig.reportInterval.isZero()) {
+            metricsConfig.reportInterval = DEFAULT_REPORT_INTERVAL;
+        }
+        if (Objects.isNull(metricsConfig.httpTimeout) || metricsConfig.httpTimeout.isZero()) {
+            metricsConfig.httpTimeout = DEFAULT_HTTP_TIMEOUT;
+        }
+        return metricsConfig;
     }
 
     public static void Init(MetricsOption... opts) {

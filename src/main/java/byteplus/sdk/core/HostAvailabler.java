@@ -136,7 +136,9 @@ public class HostAvailabler {
         String url = String.format(REAL_PING_URL_FORMAT, host);
         String reqID = "ping_" + UUID.randomUUID().toString();
         Headers headers = customerHeaders().newBuilder()
-                .set("Request-Id", reqID).build();
+                .set("Request-Id", reqID)
+                .set("Tenant", context.getTenant())
+                .build();
         Request httpReq = new Request.Builder()
                 .url(url)
                 .headers(headers)
