@@ -1,5 +1,10 @@
 package byteplus.sdk.core;
 
+import byteplus.sdk.core.metrics.MetricsLog;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Call;
 import okhttp3.Headers;
@@ -8,42 +13,33 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-
-import static byteplus.sdk.core.Constant.METRICS_KEY_PING_SUCCESS;
-import static byteplus.sdk.core.Constant.METRICS_KEY_PING_ERROR;
+import static byteplus.sdk.core.Constant.METRICS_KEY_COMMON_ERROR;
 
 @Slf4j
 public class HostAvailabler {
-    private static final Duration INTERVAL = Duration.ofMillis(1000);
-
-    private static final int WINDOW_SIZE = 60;
-
     private static final float FAILURE_RATE_THRESHOLD = (float) 0.1;
 
-    private static final String PING_URL_FORMAT = "{}://%s/predict/api/ping";
+    private static final int DEFAULT_WINDOW_SIZE = 60;
 
-    private static final Duration PING_TIMEOUT = Duration.ofMillis(300);
+    private static final String DEFAULT_PING_URL_FORMAT = "{}://%s/predict/api/ping";
 
-    private static final OkHttpClient httpCli = new OkHttpClient()
-            .newBuilder()
-            .callTimeout(PING_TIMEOUT)
-            .build();
+    private static final Duration DEFAULT_PING_TIMEOUT = Duration.ofMillis(300);
+
+    private static final Duration DEFAULT_PING_INTERVAL = Duration.ofSeconds(1);
+
+    private final OkHttpClient httpCli;
 
     private Map<String, Window> hostWindowMap;
 
     private String currentHost;
 
     private List<String> availableHosts;
+
+    private final Config config;
 
     private final URLCenter urlCenter;
 
@@ -56,18 +52,43 @@ public class HostAvailabler {
     public HostAvailabler(Context context, URLCenter urlCenter) {
         this.urlCenter = urlCenter;
         this.context = context;
-        this.REAL_PING_URL_FORMAT = PING_URL_FORMAT.replace("{}", context.getSchema());
+        this.config = fillDefaultConfig(context.getHostAvailablerConfig());
+        this.REAL_PING_URL_FORMAT = config.getPingURLFormat().replace("{}", context.getSchema());
+        this.httpCli = new OkHttpClient()
+                .newBuilder()
+                .callTimeout(config.getPingTimeout())
+                .build();
+        currentHost = context.getHosts().get(0);
         if (context.getHosts().size() <= 1) {
             return;
         }
         availableHosts = context.getHosts();
-        currentHost = context.getHosts().get(0);
         hostWindowMap = new HashMap<>(context.getHosts().size());
         for (String host : context.getHosts()) {
-            hostWindowMap.put(host, new Window(WINDOW_SIZE));
+            hostWindowMap.put(host, new Window(config.getWindowSize()));
         }
         executor = Executors.newSingleThreadScheduledExecutor();
-        executor.scheduleAtFixedRate(this::checkHost, 0, INTERVAL.toMillis(), TimeUnit.MILLISECONDS);
+        executor.scheduleAtFixedRate(this::checkHost, 0, config.pingInterval.toMillis(), TimeUnit.MILLISECONDS);
+    }
+
+    private Config fillDefaultConfig(Config config) {
+        if (Objects.isNull(config)) {
+            config = new Config();
+        }
+        config = config.toBuilder().build();
+        if (Objects.isNull(config.pingURLFormat)) {
+            config.pingURLFormat = DEFAULT_PING_URL_FORMAT;
+        }
+        if (Objects.isNull(config.pingTimeout) || config.pingTimeout.isZero()) {
+            config.pingTimeout = DEFAULT_PING_TIMEOUT;
+        }
+        if (config.windowSize <= 0) {
+            config.windowSize = DEFAULT_WINDOW_SIZE;
+        }
+        if (Objects.isNull(config.pingInterval) || config.pingInterval.isZero()) {
+            config.pingInterval = DEFAULT_PING_INTERVAL;
+        }
+        return config;
     }
 
     public void shutdown() {
@@ -113,22 +134,31 @@ public class HostAvailabler {
 
     private boolean doPing(String host) {
         String url = String.format(REAL_PING_URL_FORMAT, host);
+        String reqID = "ping_" + UUID.randomUUID().toString();
+        Headers headers = customerHeaders().newBuilder()
+                .set("Request-Id", reqID)
+                .set("Tenant", context.getTenant())
+                .build();
         Request httpReq = new Request.Builder()
                 .url(url)
-                .headers(customerHeaders())
+                .headers(headers)
                 .get()
                 .build();
         Call httpCall = httpCli.newCall(httpReq);
         long start = System.currentTimeMillis();
         try (Response httpRsp = httpCall.execute()) {
+            long cost = System.currentTimeMillis() - start;
             if (httpRsp.code() != 200) {
-                Helper.reportRequestError(METRICS_KEY_PING_ERROR, url, start, httpRsp.code(), "ping-fail");
+                MetricsLog.warn(reqID, "[ByteplusSDK] ping fail, tenant:%s, host:%s, cost:%dms, status:%d",
+                        context.getTenant() ,Helper.escapeMetricsTagValue(host), cost, httpRsp.code());
             } else {
-                Helper.reportRequestSuccess(METRICS_KEY_PING_SUCCESS, url, start);
+                MetricsLog.info(reqID, "[ByteplusSDK] ping success, tenant:%s, host:%s, cost:%dms",
+                        context.getTenant(), Helper.escapeMetricsTagValue(host), cost);
             }
             return httpRsp.code() == 200;
         } catch (Throwable e) {
-            Helper.reportRequestException(METRICS_KEY_PING_ERROR, url, start, e);
+            MetricsLog.warn(reqID, "[ByteplusSDK] ping find err, tenant:%s, host:%s, err:%s",
+                    context.getTenant(), Helper.escapeMetricsTagValue(host), e.getMessage());
             log.warn("[ByteplusSDK] ping find err, host:{} err:{}", host, e.getMessage());
             return false;
         } finally {
@@ -155,6 +185,24 @@ public class HostAvailabler {
             currentHost = newHost;
             urlCenter.refresh(currentHost);
         }
+    }
+
+    public String getHost() {
+        return currentHost;
+    }
+
+    @Getter
+    @Builder(toBuilder = true)
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Config {
+        private String pingURLFormat;
+
+        private Duration pingTimeout;
+
+        private Duration pingInterval;
+
+        private int windowSize;
     }
 
     private static class Window {

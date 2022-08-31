@@ -8,6 +8,7 @@ import byteplus.sdk.core.HTTPCaller;
 import byteplus.sdk.core.NetException;
 import byteplus.sdk.core.Option;
 import byteplus.sdk.core.URLCenter;
+import byteplus.sdk.core.metrics.MetricsCollector;
 import com.google.protobuf.Parser;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,6 +32,7 @@ public abstract class CommonClientImpl implements CommonClient, URLCenter {
         this.httpCaller = new HTTPCaller(context);
         this.commonURL = new CommonURL(context);
         this.hostAvailabler = new HostAvailabler(context, this);
+        MetricsCollector.Init(this.context.getMetricsCfg(), this.hostAvailabler);
     }
 
     @Override

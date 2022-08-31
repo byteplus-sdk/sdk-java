@@ -1,7 +1,9 @@
 package byteplus.sdk.general;
 
 import byteplus.sdk.core.Context;
+import byteplus.sdk.core.HostAvailabler;
 import byteplus.sdk.core.Region;
+import byteplus.sdk.core.metrics.MetricsCollector;
 
 import java.util.List;
 import java.util.Map;
@@ -45,6 +47,16 @@ public class GeneralClientBuilder {
 
     public GeneralClientBuilder region(Region region) {
         this.param.setRegion(region);
+        return this;
+    }
+
+    public GeneralClientBuilder metricsConfig(MetricsCollector.MetricsCfg metricsCfg) {
+        this.param.setMetricsCfg(metricsCfg);
+        return this;
+    }
+
+    public GeneralClientBuilder hostAvailablerConfig(HostAvailabler.Config config) {
+        this.param.setHostAvailablerConfig(config);
         return this;
     }
 

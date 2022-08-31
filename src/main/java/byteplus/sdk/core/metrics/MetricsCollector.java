@@ -1,320 +1,301 @@
 package byteplus.sdk.core.metrics;
 
 import byteplus.sdk.core.BizException;
-import lombok.Data;
+import byteplus.sdk.core.HostAvailabler;
+import byteplus.sdk.core.metrics.protocol.SdkMetrics.Metric;
+import byteplus.sdk.core.metrics.protocol.SdkMetrics.MetricMessage;
+import byteplus.sdk.core.metrics.protocol.SdkMetrics.MetricLog;
+import byteplus.sdk.core.metrics.protocol.SdkMetrics.MetricLogMessage;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.OkHttpClient;
 
+import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicLong;
 
 import static byteplus.sdk.core.metrics.Constant.*;
-import static byteplus.sdk.core.metrics.Helper.*;
 
 
 @Slf4j
 public class MetricsCollector {
     private static MetricsCfg metricsCfg;
-    private static Map<MetricsType, Map<String, MetricValue>> metricsCollector;
-    private static OkHttpClient httpCli;
+    private static MetricsReporter metricsReporter;
+    private static Queue<Metric> metricsCollector;
+    private static Queue<MetricLog> metricsLogCollector;
+    private static volatile boolean cleaningMetricsCollector;
+    private static volatile boolean cleaningMetricsLogCollector;
     // init func can only exec once
     private static final AtomicBoolean initialed = new AtomicBoolean(false);
-    private static ScheduledExecutorService executor;
-    // timer stat names to be reported
-    private static final String[] timerStatMetrics = new String[]{
-            "max", "min", "avg", "pct75", "pct90", "pct95", "pct99", "pct999"};
+    private static ScheduledExecutorService reportExecutor;
+    private static volatile HostAvailabler hostAvailabler;
 
+    public static void Init(MetricsCfg metricsConfig, HostAvailabler hostAvailabler) {
+        if (initialed.get()) {
+            return;
+        }
+        metricsConfig = fillDefaultConfig(metricsConfig);
+        doInit(metricsConfig, hostAvailabler);
+    }
+
+    private static MetricsCfg fillDefaultConfig(MetricsCfg metricsConfig) {
+        if (Objects.isNull(metricsConfig)) {
+            metricsConfig = new MetricsCfg();
+        }
+        metricsConfig = metricsConfig.toBuilder().build();
+        if (Objects.isNull(metricsConfig.httpSchema) || metricsConfig.httpSchema.isEmpty()) {
+            metricsConfig.httpSchema = DEFAULT_METRICS_HTTP_SCHEMA;
+        }
+        if (Objects.isNull(metricsConfig.domain) || metricsConfig.domain.isEmpty()) {
+            metricsConfig.domain = DEFAULT_METRICS_DOMAIN;
+        }
+        if (Objects.isNull(metricsConfig.prefix) || metricsConfig.prefix.isEmpty()) {
+            metricsConfig.prefix = DEFAULT_METRICS_PREFIX;
+        }
+        if (Objects.isNull(metricsConfig.reportInterval) || metricsConfig.reportInterval.isZero()) {
+            metricsConfig.reportInterval = DEFAULT_REPORT_INTERVAL;
+        }
+        if (Objects.isNull(metricsConfig.httpTimeout) || metricsConfig.httpTimeout.isZero()) {
+            metricsConfig.httpTimeout = DEFAULT_HTTP_TIMEOUT;
+        }
+        return metricsConfig;
+    }
 
     public static void Init(MetricsOption... opts) {
-        metricsCfg = new MetricsCfg();
+        if (initialed.get()) {
+            return;
+        }
+        MetricsCfg metricsConfig = new MetricsCfg();
         // apply options
         for (MetricsOption opt : opts) {
-            opt.fill((metricsCfg));
+            opt.fill((metricsConfig));
         }
+        doInit(metricsConfig, null);
+    }
 
-        metricsCollector = new HashMap<>();
-        metricsCollector.put(MetricsType.metricsTypeStore, new HashMap<>());
-        metricsCollector.put(MetricsType.metricsTypeCounter, new HashMap<>());
-        metricsCollector.put(MetricsType.metricsTypeTimer, new HashMap<>());
+    private static synchronized void doInit(MetricsCfg metricsConfig, HostAvailabler hostAvailabler) {
+        if (initialed.get()) {
+            return;
+        }
+        metricsCfg = metricsConfig;
+        MetricsCollector.hostAvailabler = hostAvailabler;
+        // initialize metrics reporter
+        metricsReporter = new MetricsReporter(metricsCfg);
+        // initialize metrics collector
+        metricsCollector = new ConcurrentLinkedQueue<>();
+        metricsLogCollector = new ConcurrentLinkedQueue<>();
 
-        httpCli = new OkHttpClient.Builder()
-                .connectTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
-                .writeTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
-                .readTimeout(metricsCfg.httpTimeoutMs, TimeUnit.MILLISECONDS)
-                .retryOnConnectionFailure(true)
-                .build();
-
-        if (!initialed.get()) {
+        if (!isEnableMetrics() && !isEnableMetricsLog()) {
             initialed.set(true);
-            executor = Executors.newSingleThreadScheduledExecutor();
-            executor.scheduleAtFixedRate(MetricsCollector::report, DEFAULT_FLUSH_INTERVAL_MS,
-                    DEFAULT_FLUSH_INTERVAL_MS, TimeUnit.MILLISECONDS);
+            return;
         }
+        reportExecutor = Executors.newSingleThreadScheduledExecutor();
+        reportExecutor.scheduleAtFixedRate(MetricsCollector::report, metricsCfg.reportInterval.toMillis(),
+                metricsCfg.reportInterval.toMillis(), TimeUnit.MILLISECONDS);
+        initialed.set(true);
     }
 
-    public static OkHttpClient getHttpCli() {
-        return httpCli;
-    }
-
-    static boolean isEnableMetrics() {
+    public static boolean isEnableMetrics() {
         if (Objects.isNull(metricsCfg)) {
             return false;
         }
         return metricsCfg.isEnableMetrics();
     }
 
-    static boolean isEnablePrintLog() {
+    public static boolean isEnableMetricsLog() {
         if (Objects.isNull(metricsCfg)) {
             return false;
         }
-        return metricsCfg.isPrintLog();
+        return metricsCfg.isEnableMetricsLog();
     }
 
-    public static void emitStore(String name, long value, String... tagKvs) {
+    public static void emitMetric(String type, String name, long value, String... tagKvs) {
         if (!isEnableMetrics()) {
             return;
         }
-        String collectKey = buildCollectKey(name, tagKvs);
-        updateMetric(MetricsType.metricsTypeStore, collectKey, value);
-    }
-
-    public static void emitCounter(String name, long value, String... tagKvs) {
-        if (!isEnableMetrics()) {
-            return;
-        }
-        String collectKey = buildCollectKey(name, tagKvs);
-        updateMetric(MetricsType.metricsTypeCounter, collectKey, value);
-    }
-
-    public static void emitTimer(String name, long value, String... tagKvs) {
-        if (!isEnableMetrics()) {
-            return;
-        }
-        String collectKey = buildCollectKey(name, tagKvs);
-        updateMetric(MetricsType.metricsTypeTimer, collectKey, value);
-    }
-
-    private static void updateMetric(MetricsType metricsType, String collectKey, long value) {
-        MetricValue metric = getOrCreateMetric(metricsType, collectKey);
-        switch (metricsType) {
-            case metricsTypeStore:
-                metric.value = value;
-                break;
-            case metricsTypeCounter:
-                ((AtomicLong) metric.value).addAndGet(value);
-                break;
-            case metricsTypeTimer:
-                ((Sample) metric.value).update(value);
-                break;
-        }
-        metric.updated = true;
-    }
-
-    private static MetricValue getOrCreateMetric(MetricsType metricsType, String collectKey) {
-        if (Objects.nonNull(metricsCollector.get(metricsType).get(collectKey))) {
-            return metricsCollector.get(metricsType).get(collectKey);
-        }
-        synchronized (metricsType) {
-            if (Objects.nonNull(metricsCollector.get(metricsType).get(collectKey))) {
-                return metricsCollector.get(metricsType).get(collectKey);
+        // spin when cleaning collector
+        int tryTimes = 0;
+        while (cleaningMetricsCollector) {
+            try {
+                if (tryTimes >= MAX_SPIN_TIMES) {
+                    return;
+                }
+                Thread.sleep(5);
+                tryTimes += 1;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            metricsCollector.get(metricsType).put(collectKey, buildDefaultMetric(metricsType));
-            return metricsCollector.get(metricsType).get(collectKey);
         }
+        if (metricsCollector.size() > MAX_METRICS_SIZE) {
+            log.debug("[MetricsCollector]: The number of metrics exceeds the limit, the metrics write is rejected");
+            return;
+        }
+        String metricName = name;
+        if (metricsCfg.getPrefix().length() > 0) {
+            metricName = metricsCfg.getPrefix() + "." + metricName;
+        }
+        Metric metric = Metric.newBuilder()
+                .setType(type)
+                .setName(metricName)
+                .setValue(value)
+                .setTimestamp(System.currentTimeMillis())
+                .putAllTags(recoverTags(tagKvs))
+                .build();
+        metricsCollector.add(metric);
     }
 
-    private static MetricValue buildDefaultMetric(MetricsType metricsType) {
-        switch (metricsType) {
-            case metricsTypeTimer:
-                return new MetricValue(new Sample(RESERVOIR_SIZE), null);
-            case metricsTypeCounter:
-                return new MetricValue(new AtomicLong(0), new AtomicLong(0));
+    // recover tagString to origin Tags map
+    public static Map<String, String> recoverTags(String... tagKvs) {
+        Map<String, String> tags = new HashMap<>();
+        for (String tagKv : tagKvs) {
+            String[] keyValue = tagKv.split(":", 2);
+            if (keyValue.length < 2) {
+                continue;
+            }
+            tags.put(keyValue[0], keyValue[1]);
         }
-        return new MetricValue((long) 0, (long) 0);
+        return tags;
+    }
+
+    public static void emitLog(String logID, String message, String logLevel, Long timestamp) {
+        if (!isEnableMetricsLog()) {
+            return;
+        }
+        // spin when cleaning collector
+        int tryTimes = 0;
+        while (cleaningMetricsLogCollector) {
+            try {
+                if (tryTimes >= MAX_SPIN_TIMES) {
+                    return;
+                }
+                Thread.sleep(5);
+                tryTimes += 1;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if (metricsLogCollector.size() > MAX_METRICS_LOG_SIZE) {
+            log.debug("[MetricsCollector]: The number of metrics logs exceeds the limit, the metrics log write is rejected");
+            return;
+        }
+        MetricLog metricLog = MetricLog.newBuilder()
+                .setId(logID)
+                .setMessage(message)
+                .setLevel(logLevel)
+                .setTimestamp(timestamp)
+                .build();
+        metricsLogCollector.add(metricLog);
     }
 
     private static void report() {
-        if (!isEnableMetrics()) {
+        if (isEnableMetrics()) {
+            reportMetrics();
+        }
+        if (isEnableMetricsLog()) {
+            reportMetricsLog();
+        }
+    }
+
+    private static void reportMetrics() {
+        if (metricsCollector.size() == 0) {
             return;
         }
-        flushStore();
-        flushCounter();
-        flushTimer();
-    }
-
-    private static void flushStore() {
-        ArrayList<Metrics.Metric> metricsRequests = new ArrayList<>();
-        metricsCollector.get(MetricsType.metricsTypeStore).forEach((collectKey, metric) -> {
-            if (metric.updated) {
-                metric.updated = false;
-                List<String> nameAndTags = parseNameAndTags(collectKey);
-                if (Objects.isNull(nameAndTags)) {
-                    return;
-                }
-                String name = nameAndTags.get(0);
-                Map<String, String> tagKvs = recoverTags(nameAndTags.get(1));
-                Metrics.Metric metricsRequest = Metrics.Metric.newBuilder().
-                        setMetric(metricsCfg.getPrefix() + "." + name).
-                        putAllTags(tagKvs).
-                        setValue((long) metric.value).
-                        setTimestamp(System.currentTimeMillis() / 1000).
-                        build();
-                metricsRequests.add(metricsRequest);
+        List<Metric> metrics = new ArrayList<>();
+        cleaningMetricsCollector = true;
+        while (true) {
+            Metric metric = metricsCollector.poll();
+            if (Objects.isNull(metric)) {
+                break;
             }
-        });
-        if (metricsRequests.size() > 0) {
-            String url = String.format(OTHER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
-            sendMetrics(metricsRequests, url);
+            metrics.add(metric);
         }
+        cleaningMetricsCollector = false;
+        doReportMetrics(metrics);
     }
 
-    private static void flushCounter() {
-        ArrayList<Metrics.Metric> metricsRequests = new ArrayList<>();
-        metricsCollector.get(MetricsType.metricsTypeCounter).forEach((collectKey, metric) -> {
-            if (metric.updated) {
-                metric.updated = false;
-                List<String> nameAndTags = parseNameAndTags(collectKey);
-                if (Objects.isNull(nameAndTags)) {
-                    return;
-                }
-                String name = nameAndTags.get(0);
-                Map<String, String> tagKvs = recoverTags(nameAndTags.get(1));
-                double valueCopy = ((AtomicLong) metric.value).doubleValue();
-                Metrics.Metric metricsRequest = Metrics.Metric.newBuilder().
-                        setMetric(metricsCfg.getPrefix() + "." + name).
-                        putAllTags(tagKvs).
-                        setValue(valueCopy - ((AtomicLong) (metric.flushedValue)).doubleValue()).
-                        setTimestamp(System.currentTimeMillis() / 1000).
-                        build();
-                metricsRequests.add(metricsRequest);
-                // after each flushInterval of the counter is reported, the accumulated metric needs to be cleared
-                ((AtomicLong) metric.flushedValue).set((long) valueCopy);
-                // if the value is too large, reset it
-                if ((long) valueCopy >= Long.MAX_VALUE / 2) {
-                    ((AtomicLong) metric.value).set(0);
-                    ((AtomicLong) metric.flushedValue).set(0);
-                }
-            }
-        });
-        if (metricsRequests.size() > 0) {
-            String url = String.format(COUNTER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
-            sendMetrics(metricsRequests, url);
-        }
-    }
-
-    private static void flushTimer() {
-        ArrayList<Metrics.Metric> metricsRequests = new ArrayList<>();
-        metricsCollector.get(MetricsType.metricsTypeTimer).forEach((collectKey, metric) -> {
-            if (metric.updated) {
-                metric.updated = false;
-                Sample.SampleSnapshot snapshot = ((Sample) metric.value).getSnapshot();
-                // clear sample every sample period
-                ((Sample) metric.value).clear();
-                List<String> nameAndTags = parseNameAndTags(collectKey);
-                if (Objects.isNull(nameAndTags)) {
-                    return;
-                }
-                String name = nameAndTags.get(0);
-                Map<String, String> tagKvs = recoverTags(nameAndTags.get(1));
-                metricsRequests.addAll(buildStatMetrics(snapshot, name, tagKvs));
-            }
-        });
-        if (metricsRequests.size() > 0) {
-            String url = String.format(OTHER_URL_FORMAT, metricsCfg.getHttpSchema(), metricsCfg.getDomain());
-            sendMetrics(metricsRequests, url);
-        }
-    }
-
-    private static void sendMetrics(ArrayList<Metrics.Metric> metricsRequests, String url) {
-        Metrics.MetricMessage request = Metrics.MetricMessage.newBuilder().addAllMetrics(metricsRequests).build();
+    private static void doReportMetrics(List<Metric> metrics) {
+        String url = String.format(METRICS_URL_FORMAT, metricsCfg.getHttpSchema(), getDomain());
+        MetricMessage metricMessage = MetricMessage
+                .newBuilder()
+                .addAllMetrics(metrics)
+                .build();
         try {
-            MetricsRequest.send(request, url);
-            if (isEnablePrintLog()) {
-                log.debug("[BytePlusSDK][Metrics] send metrics success, url:{}, metricsRequests:{}", url, metricsRequests);
-            }
+            metricsReporter.report(metricMessage, url);
         } catch (BizException e) {
-            log.error("[BytePlusSDK][Metrics] send metrics exception, msg:{}, url:{}, metricsRequests:{}", e.getMessage(),
-                    url, metricsRequests);
+            log.error("[BytePlusSDK][Metrics] report metrics exception, msg:{}, url:{}", e.getMessage(), url);
         }
     }
 
-    private static List<Metrics.Metric> buildStatMetrics(Sample.SampleSnapshot snapshot,
-                                                         String name, Map<String, String> tagKvs) {
-        long timestamp = System.currentTimeMillis() / 1000;
-        ArrayList<Metrics.Metric> metricsRequests = new ArrayList<>();
-        for (String statName : timerStatMetrics) {
-            double value = getStatValue(statName, snapshot);
-            if (value < 0) {
-                continue;
+    private static String getDomain() {
+        if (Objects.nonNull(hostAvailabler)) {
+            return hostAvailabler.getHost();
+        }
+        return metricsCfg.getDomain();
+    }
+
+
+    private static void reportMetricsLog() {
+        if (metricsLogCollector.size() == 0) {
+            return;
+        }
+        List<MetricLog> metricLogs = new ArrayList<>();
+        cleaningMetricsLogCollector = true;
+        while (true) {
+            MetricLog metricLog = metricsLogCollector.poll();
+            if (Objects.isNull(metricLog)) {
+                break;
             }
-            metricsRequests.add(Metrics.Metric.newBuilder().
-                    setMetric(metricsCfg.getPrefix() + "." + name + "." + statName).
-                    putAllTags(tagKvs).
-                    setValue(value).
-                    setTimestamp(timestamp).
-                    build());
+            metricLogs.add(metricLog);
         }
-        return metricsRequests;
+        cleaningMetricsLogCollector = false;
+        doReportMetricsLogs(metricLogs);
     }
 
-    private static double getStatValue(String statName, Sample.SampleSnapshot snapshot) {
-        switch (statName) {
-            case "max":
-                return snapshot.getMax();
-            case "min":
-                return snapshot.getMin();
-            case "avg":
-                return snapshot.getMean();
-            case "pct75":
-                return snapshot.getValue(0.75D);
-            case "pct90":
-                return snapshot.getValue(0.90D);
-            case "pct95":
-                return snapshot.getValue(0.95D);
-            case "pct99":
-                return snapshot.getValue(0.99D);
-            case "pct999":
-                return snapshot.getValue(0.999D);
+    private static void doReportMetricsLogs(List<MetricLog> metricsLogs) {
+        String url = String.format(METRICS_LOG_URL_FORMAT, metricsCfg.getHttpSchema(), getDomain());
+        MetricLogMessage metricLogMessage = MetricLogMessage.
+                newBuilder().
+                addAllMetricLogs(metricsLogs).
+                build();
+        try {
+            metricsReporter.report(metricLogMessage, url);
+        } catch (BizException e) {
+            log.error("[BytePlusSDK][Metrics] report metrics log exception, msg:{}, url:{}", e.getMessage(), url);
         }
-        return -1;
     }
 
-    @Data
-    static class MetricsCfg {
+    @Getter
+    @Setter
+    @Builder(toBuilder = true)
+    @AllArgsConstructor
+    public static class MetricsCfg {
+        // When metrics are enabled, monitoring metrics will be reported to the byteplus server during use.
         private boolean enableMetrics;
+        // When metrics log is enabled, the log will be reported to the byteplus server during use.
+        private boolean enableMetricsLog;
+        // The address of the byteplus metrics service, will be consistent with the host maintained by hostAvailabler.
         private String domain;
+        // The prefix of the Metrics indicator, the default is byteplus.rec.sdk, do not modify.
         private String prefix;
+        // Use this httpSchema to report metrics to byteplus server, default is https.
         private String httpSchema;
-        private boolean printLog;
-        private long flushIntervalMs;
-        private long httpTimeoutMs;
+        // The reporting interval, the default is 15s, if the QPS is high, the reporting interval can be reduced to prevent data loss.
+        private Duration reportInterval;
+        // Timeout for request reporting.
+        private Duration httpTimeout;
 
         // build default metricsCfg
         public MetricsCfg() {
-            this.setEnableMetrics(true);
+            this.setEnableMetrics(false);
+            this.setEnableMetricsLog(false);
             this.setDomain(DEFAULT_METRICS_DOMAIN);
             this.setPrefix(DEFAULT_METRICS_PREFIX);
             this.setHttpSchema(DEFAULT_METRICS_HTTP_SCHEMA);
-            this.setFlushIntervalMs(DEFAULT_FLUSH_INTERVAL_MS);
-            this.setHttpTimeoutMs(DEFAULT_HTTP_TIMEOUT_MS);
-        }
-    }
-
-    @Data
-    static class MetricValue {
-        private Object value;
-        private Object flushedValue;
-        private boolean updated;
-
-        MetricValue(Object value, Object flushedValue) {
-            if (Objects.nonNull(value)) {
-                this.value = value;
-            }
-            if (Objects.nonNull(flushedValue)) {
-                this.flushedValue = flushedValue;
-            }
+            this.setReportInterval(DEFAULT_REPORT_INTERVAL);
+            this.setHttpTimeout(DEFAULT_HTTP_TIMEOUT);
         }
     }
 }

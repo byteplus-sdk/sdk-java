@@ -2,9 +2,6 @@ package byteplus.sdk.core;
 
 import java.util.Objects;
 
-import static byteplus.sdk.core.metrics.Helper.Counter;
-import static byteplus.sdk.core.metrics.Helper.Latency;
-
 
 public final class Helper {
     public static String bytes2Hex(byte[] bts) {
@@ -18,45 +15,6 @@ public final class Helper {
             sb.append(hex);
         }
         return sb.toString();
-    }
-
-    //report success request
-    public static void reportRequestSuccess(String metricsPrefix, String url, long begin) {
-        String[] urlTag = buildUrlTags(url);
-        Latency(buildLatencyKey(metricsPrefix), begin, urlTag);
-        Counter(buildCountKey(metricsPrefix), 1, urlTag);
-    }
-
-    //report fail request
-    public static void reportRequestError(String metricsPrefix, String url, long begin, int code, String message) {
-        String[] urlTag = buildUrlTags(url);
-        String[] tagKvs = appendTags(urlTag, "code:" + code, "message:" + message);
-        Latency(buildLatencyKey(metricsPrefix), begin, tagKvs);
-        Counter(buildCountKey(metricsPrefix), 1, tagKvs);
-    }
-
-    // report exception
-    public static void reportRequestException(String metricsPrefix, String url, long begin, Throwable e) {
-        String[] tagKvs = withExceptionTags(buildUrlTags(url), e);
-        Latency(buildLatencyKey(metricsPrefix), begin, tagKvs);
-        Counter(buildCountKey(metricsPrefix), 1, tagKvs);
-    }
-
-    public static String[] withExceptionTags(String[] tagKvs, Throwable e) {
-        String msgTag;
-        String msg = e.getMessage().toLowerCase();
-        if (msg.contains("time") && msg.contains("out")) {
-            if (msg.contains("connect")) {
-                msgTag = "message:connect-timeout";
-            } else if (msg.contains("read")) {
-                msgTag = "message:read-timeout";
-            } else {
-                msgTag = "message:timeout";
-            }
-        } else {
-            msgTag = "message:other";
-        }
-        return appendTags(tagKvs, msgTag);
     }
 
 
@@ -76,15 +34,16 @@ public final class Helper {
         return url.replaceAll("=", "_is_");
     }
 
-    private static String[] appendTags(String[] oldTags, String... tags) {
-        if (Objects.isNull(tags) || tags.length == 0) {
-            return oldTags;
-        }
-        String[] newTags = new String[oldTags.length + tags.length];
-        System.arraycopy(oldTags, 0, newTags, 0, oldTags.length);
-        System.arraycopy(tags, 0, newTags, oldTags.length, tags.length);
-        return newTags;
+    // The recommended platform only supports the following strings.
+    // ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_/:
+    // If there are ?, & and = in the query, replace them all
+    public static String escapeMetricsTagValue(String value) {
+        value = value.replace("?", "-qu-");
+        value = value.replace("&", "-and-");
+        value = value.replace("=", "-eq-");
+        return value;
     }
+
 
     private static String parseReqType(String url) {
         if (url.contains("ping")) {

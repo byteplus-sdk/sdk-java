@@ -39,12 +39,8 @@ public final class Constant {
 
     public final static String VOLC_AUTH_SERVICE = "air";
 
-
-    // metric name for  byteplus sdk
-    public static final String METRICS_KEY_INVOKE_SUCCESS = "invoke.success";
-    public static final String METRICS_KEY_INVOKE_ERROR = "invoke.error";
-
-    public static final String METRICS_KEY_PING_SUCCESS = "ping.success";
-    public static final String METRICS_KEY_PING_ERROR = "ping.error";
-
+    // Metrics Key
+    public final static String METRICS_KEY_COMMON_ERROR = "common.err";
+    public final static String METRICS_KEY_REQUEST_TOTAL_COST = "request.total.cost";
+    public final static String METRICS_KEY_REQUEST_COST = "request.cost";
 }
