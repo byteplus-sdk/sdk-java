@@ -9870,6 +9870,26 @@ public final class ByteplusByteair {
      */
     com.google.protobuf.ByteString
         getCarrierBytes();
+
+    /**
+     * <pre>
+     * Optional
+     * </pre>
+     *
+     * <code>string os_type = 10;</code>
+     * @return The osType.
+     */
+    java.lang.String getOsType();
+    /**
+     * <pre>
+     * Optional
+     * </pre>
+     *
+     * <code>string os_type = 10;</code>
+     * @return The bytes for osType.
+     */
+    com.google.protobuf.ByteString
+        getOsTypeBytes();
   }
   /**
    * Protobuf type {@code bytedance.byteplus.byteair.PredictDevice}
@@ -9893,6 +9913,7 @@ public final class ByteplusByteair {
       osVersion_ = "";
       networkType_ = "";
       carrier_ = "";
+      osType_ = "";
     }
 
     @java.lang.Override
@@ -9977,6 +9998,12 @@ public final class ByteplusByteair {
               java.lang.String s = input.readStringRequireUtf8();
 
               carrier_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osType_ = s;
               break;
             }
             default: {
@@ -10457,6 +10484,52 @@ public final class ByteplusByteair {
       }
     }
 
+    public static final int OS_TYPE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object osType_;
+    /**
+     * <pre>
+     * Optional
+     * </pre>
+     *
+     * <code>string os_type = 10;</code>
+     * @return The osType.
+     */
+    @java.lang.Override
+    public java.lang.String getOsType() {
+      java.lang.Object ref = osType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Optional
+     * </pre>
+     *
+     * <code>string os_type = 10;</code>
+     * @return The bytes for osType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOsTypeBytes() {
+      java.lang.Object ref = osType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10498,6 +10571,9 @@ public final class ByteplusByteair {
       if (!getCarrierBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, carrier_);
       }
+      if (!getOsTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, osType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10534,6 +10610,9 @@ public final class ByteplusByteair {
       if (!getCarrierBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, carrier_);
       }
+      if (!getOsTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, osType_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10567,6 +10646,8 @@ public final class ByteplusByteair {
           .equals(other.getNetworkType())) return false;
       if (!getCarrier()
           .equals(other.getCarrier())) return false;
+      if (!getOsType()
+          .equals(other.getOsType())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10596,6 +10677,8 @@ public final class ByteplusByteair {
       hash = (53 * hash) + getNetworkType().hashCode();
       hash = (37 * hash) + CARRIER_FIELD_NUMBER;
       hash = (53 * hash) + getCarrier().hashCode();
+      hash = (37 * hash) + OS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getOsType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10747,6 +10830,8 @@ public final class ByteplusByteair {
 
         carrier_ = "";
 
+        osType_ = "";
+
         return this;
       }
 
@@ -10782,6 +10867,7 @@ public final class ByteplusByteair {
         result.osVersion_ = osVersion_;
         result.networkType_ = networkType_;
         result.carrier_ = carrier_;
+        result.osType_ = osType_;
         onBuilt();
         return result;
       }
@@ -10864,6 +10950,10 @@ public final class ByteplusByteair {
         }
         if (!other.getCarrier().isEmpty()) {
           carrier_ = other.carrier_;
+          onChanged();
+        }
+        if (!other.getOsType().isEmpty()) {
+          osType_ = other.osType_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -11835,6 +11925,102 @@ public final class ByteplusByteair {
   checkByteStringIsUtf8(value);
         
         carrier_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osType_ = "";
+      /**
+       * <pre>
+       * Optional
+       * </pre>
+       *
+       * <code>string os_type = 10;</code>
+       * @return The osType.
+       */
+      public java.lang.String getOsType() {
+        java.lang.Object ref = osType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional
+       * </pre>
+       *
+       * <code>string os_type = 10;</code>
+       * @return The bytes for osType.
+       */
+      public com.google.protobuf.ByteString
+          getOsTypeBytes() {
+        java.lang.Object ref = osType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional
+       * </pre>
+       *
+       * <code>string os_type = 10;</code>
+       * @param value The osType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional
+       * </pre>
+       *
+       * <code>string os_type = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOsType() {
+        
+        osType_ = getDefaultInstance().getOsType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional
+       * </pre>
+       *
+       * <code>string os_type = 10;</code>
+       * @param value The bytes for osType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osType_ = value;
         onChanged();
         return this;
       }
@@ -40734,166 +40920,166 @@ public final class ByteplusByteair {
       "y\030\n \001(\t\022A\n\005extra\030d \003(\01322.bytedance.bytep" +
       "lus.byteair.PredictUser.ExtraEntry\032,\n\nEx" +
       "traEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"\310\001\n\rPredictDevice\022\020\n\010deviceId\030\001 \001(\t\022\020\n\010" +
+      "\"\331\001\n\rPredictDevice\022\020\n\010deviceId\030\001 \001(\t\022\020\n\010" +
       "platform\030\002 \001(\t\022\024\n\014deviceVendor\030\003 \001(\t\022\023\n\013" +
       "deviceModel\030\004 \001(\t\022\030\n\020deviceResolution\030\005 " +
       "\001(\t\022\025\n\rclientVersion\030\006 \001(\t\022\021\n\tosVersion\030" +
       "\007 \001(\t\022\023\n\013networkType\030\010 \001(\t\022\017\n\007carrier\030\t " +
-      "\001(\t\"\255\002\n\016PredictContext\022\013\n\003spm\030\001 \001(\t\022\"\n\032c" +
-      "losePersonalizedRecommend\030\002 \001(\010\022;\n\007featu" +
-      "re\030\003 \001(\0132*.bytedance.byteplus.byteair.Pr" +
-      "edictFeature\0229\n\006filter\030\004 \001(\0132).bytedance" +
-      ".byteplus.byteair.PredictFilter\022D\n\005extra" +
-      "\030d \003(\01325.bytedance.byteplus.byteair.Pred" +
-      "ictContext.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\264\n\n\016PredictF" +
-      "eature\022T\n\rstringFeature\030\001 \003(\0132=.bytedanc" +
-      "e.byteplus.byteair.PredictFeature.String" +
-      "FeatureEntry\022N\n\nintFeature\030\002 \003(\0132:.byted" +
-      "ance.byteplus.byteair.PredictFeature.Int" +
-      "FeatureEntry\022R\n\014floatFeature\030\003 \003(\0132<.byt" +
-      "edance.byteplus.byteair.PredictFeature.F" +
-      "loatFeatureEntry\022T\n\rdoubleFeature\030\004 \003(\0132" +
-      "=.bytedance.byteplus.byteair.PredictFeat" +
-      "ure.DoubleFeatureEntry\022^\n\022stringArrayFea" +
-      "ture\030\005 \003(\0132B.bytedance.byteplus.byteair." +
-      "PredictFeature.StringArrayFeatureEntry\022X" +
-      "\n\017intArrayFeature\030\006 \003(\0132?.bytedance.byte" +
-      "plus.byteair.PredictFeature.IntArrayFeat" +
-      "ureEntry\022\\\n\021floatArrayFeature\030\007 \003(\0132A.by" +
-      "tedance.byteplus.byteair.PredictFeature." +
-      "FloatArrayFeatureEntry\022^\n\022doubleArrayFea" +
-      "ture\030\010 \003(\0132B.bytedance.byteplus.byteair." +
-      "PredictFeature.DoubleArrayFeatureEntry\0324" +
-      "\n\022StringFeatureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\0321\n\017IntFeatureEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0323\n\021FloatFeatureE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001\0324\n\022" +
-      "DoubleFeatureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\001:\0028\001\032b\n\027StringArrayFeatureEntry\022\013\n" +
-      "\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.by" +
-      "teplus.byteair.StringArray:\0028\001\032\\\n\024IntArr" +
-      "ayFeatureEntry\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001" +
-      "(\0132$.bytedance.byteplus.byteair.IntArray" +
-      ":\0028\001\032`\n\026FloatArrayFeatureEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\017\n\007os_type\030\n \001(\t\"\255\002\n\016PredictContext\022" +
+      "\013\n\003spm\030\001 \001(\t\022\"\n\032closePersonalizedRecomme" +
+      "nd\030\002 \001(\010\022;\n\007feature\030\003 \001(\0132*.bytedance.by" +
+      "teplus.byteair.PredictFeature\0229\n\006filter\030" +
+      "\004 \001(\0132).bytedance.byteplus.byteair.Predi" +
+      "ctFilter\022D\n\005extra\030d \003(\01325.bytedance.byte" +
+      "plus.byteair.PredictContext.ExtraEntry\032," +
+      "\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"\264\n\n\016PredictFeature\022T\n\rstringFeature" +
+      "\030\001 \003(\0132=.bytedance.byteplus.byteair.Pred" +
+      "ictFeature.StringFeatureEntry\022N\n\nintFeat" +
+      "ure\030\002 \003(\0132:.bytedance.byteplus.byteair.P" +
+      "redictFeature.IntFeatureEntry\022R\n\014floatFe" +
+      "ature\030\003 \003(\0132<.bytedance.byteplus.byteair" +
+      ".PredictFeature.FloatFeatureEntry\022T\n\rdou" +
+      "bleFeature\030\004 \003(\0132=.bytedance.byteplus.by" +
+      "teair.PredictFeature.DoubleFeatureEntry\022" +
+      "^\n\022stringArrayFeature\030\005 \003(\0132B.bytedance." +
+      "byteplus.byteair.PredictFeature.StringAr" +
+      "rayFeatureEntry\022X\n\017intArrayFeature\030\006 \003(\013" +
+      "2?.bytedance.byteplus.byteair.PredictFea" +
+      "ture.IntArrayFeatureEntry\022\\\n\021floatArrayF" +
+      "eature\030\007 \003(\0132A.bytedance.byteplus.byteai" +
+      "r.PredictFeature.FloatArrayFeatureEntry\022" +
+      "^\n\022doubleArrayFeature\030\010 \003(\0132B.bytedance." +
+      "byteplus.byteair.PredictFeature.DoubleAr" +
+      "rayFeatureEntry\0324\n\022StringFeatureEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017IntFeat" +
+      "ureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001" +
+      "\0323\n\021FloatFeatureEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\002:\0028\001\0324\n\022DoubleFeatureEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\032b\n\027StringArr" +
+      "ayFeatureEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001" +
+      "(\0132\'.bytedance.byteplus.byteair.StringAr" +
+      "ray:\0028\001\032\\\n\024IntArrayFeatureEntry\022\013\n\003key\030\001" +
+      " \001(\t\0223\n\005value\030\002 \001(\0132$.bytedance.byteplus" +
+      ".byteair.IntArray:\0028\001\032`\n\026FloatArrayFeatu" +
+      "reEntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.by" +
+      "tedance.byteplus.byteair.FloatArray:\0028\001\032" +
+      "b\n\027DoubleArrayFeatureEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "6\n\005value\030\002 \001(\0132\'.bytedance.byteplus.byte" +
+      "air.DoubleArray:\0028\001\"\223\n\n\rPredictFilter\022Q\n" +
+      "\014stringFilter\030\001 \003(\0132;.bytedance.byteplus" +
+      ".byteair.PredictFilter.StringFilterEntry" +
+      "\022K\n\tintFilter\030\002 \003(\01328.bytedance.byteplus" +
+      ".byteair.PredictFilter.IntFilterEntry\022O\n" +
+      "\013floatFilter\030\003 \003(\0132:.bytedance.byteplus." +
+      "byteair.PredictFilter.FloatFilterEntry\022Q" +
+      "\n\014doubleFilter\030\004 \003(\0132;.bytedance.byteplu" +
+      "s.byteair.PredictFilter.DoubleFilterEntr" +
+      "y\022[\n\021stringArrayFilter\030\005 \003(\0132@.bytedance" +
+      ".byteplus.byteair.PredictFilter.StringAr" +
+      "rayFilterEntry\022U\n\016intArrayFilter\030\006 \003(\0132=" +
+      ".bytedance.byteplus.byteair.PredictFilte" +
+      "r.IntArrayFilterEntry\022Y\n\020floatArrayFilte" +
+      "r\030\007 \003(\0132?.bytedance.byteplus.byteair.Pre" +
+      "dictFilter.FloatArrayFilterEntry\022[\n\021doub" +
+      "leArrayFilter\030\010 \003(\0132@.bytedance.byteplus" +
+      ".byteair.PredictFilter.DoubleArrayFilter" +
+      "Entry\0323\n\021StringFilterEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\0320\n\016IntFilterEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0322\n\020FloatFil" +
+      "terEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001" +
+      "\0323\n\021DoubleFilterEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\001:\0028\001\032a\n\026StringArrayFilterEntry\022" +
+      "\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance." +
+      "byteplus.byteair.StringArray:\0028\001\032[\n\023IntA" +
+      "rrayFilterEntry\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 " +
+      "\001(\0132$.bytedance.byteplus.byteair.IntArra" +
+      "y:\0028\001\032_\n\025FloatArrayFilterEntry\022\013\n\003key\030\001 " +
       "\001(\t\0225\n\005value\030\002 \001(\0132&.bytedance.byteplus." +
-      "byteair.FloatArray:\0028\001\032b\n\027DoubleArrayFea" +
-      "tureEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'." +
-      "bytedance.byteplus.byteair.DoubleArray:\002" +
-      "8\001\"\223\n\n\rPredictFilter\022Q\n\014stringFilter\030\001 \003" +
-      "(\0132;.bytedance.byteplus.byteair.PredictF" +
-      "ilter.StringFilterEntry\022K\n\tintFilter\030\002 \003" +
-      "(\01328.bytedance.byteplus.byteair.PredictF" +
-      "ilter.IntFilterEntry\022O\n\013floatFilter\030\003 \003(" +
-      "\0132:.bytedance.byteplus.byteair.PredictFi" +
-      "lter.FloatFilterEntry\022Q\n\014doubleFilter\030\004 " +
-      "\003(\0132;.bytedance.byteplus.byteair.Predict" +
-      "Filter.DoubleFilterEntry\022[\n\021stringArrayF" +
-      "ilter\030\005 \003(\0132@.bytedance.byteplus.byteair" +
-      ".PredictFilter.StringArrayFilterEntry\022U\n" +
-      "\016intArrayFilter\030\006 \003(\0132=.bytedance.bytepl" +
-      "us.byteair.PredictFilter.IntArrayFilterE" +
-      "ntry\022Y\n\020floatArrayFilter\030\007 \003(\0132?.bytedan" +
-      "ce.byteplus.byteair.PredictFilter.FloatA" +
-      "rrayFilterEntry\022[\n\021doubleArrayFilter\030\010 \003" +
-      "(\0132@.bytedance.byteplus.byteair.PredictF" +
-      "ilter.DoubleArrayFilterEntry\0323\n\021StringFi" +
-      "lterEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\0320\n\016IntFilterEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\003:\0028\001\0322\n\020FloatFilterEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001\0323\n\021DoubleFilterE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\032a\n\026" +
-      "StringArrayFilterEntry\022\013\n\003key\030\001 \001(\t\0226\n\005v" +
-      "alue\030\002 \001(\0132\'.bytedance.byteplus.byteair." +
-      "StringArray:\0028\001\032[\n\023IntArrayFilterEntry\022\013" +
-      "\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.bytedance.b" +
-      "yteplus.byteair.IntArray:\0028\001\032_\n\025FloatArr" +
-      "ayFilterEntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(" +
-      "\0132&.bytedance.byteplus.byteair.FloatArra" +
-      "y:\0028\001\032a\n\026DoubleArrayFilterEntry\022\013\n\003key\030\001" +
-      " \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.byteplus" +
-      ".byteair.DoubleArray:\0028\001\"\316\001\n\024PredictCand" +
-      "idateItem\022\n\n\002id\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\r\n\005" +
-      "price\030\003 \001(\001\022\022\n\nboost_coef\030\004 \001(\001\022J\n\005extra" +
-      "\030d \003(\0132;.bytedance.byteplus.byteair.Pred" +
-      "ictCandidateItem.ExtraEntry\032,\n\nExtraEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\014Pr" +
-      "edictExtra\022\021\n\tinnerTest\030\001 \001(\010\022B\n\005extra\030e" +
-      " \003(\01323.bytedance.byteplus.byteair.Predic" +
-      "tExtra.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\230\001\n\022PredictRelat" +
-      "edItem\022\n\n\002id\030\001 \001(\t\022H\n\005extra\030d \003(\01329.byte" +
-      "dance.byteplus.byteair.PredictRelatedIte" +
-      "m.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001\"\363\003\n\nSearchInfo\022\r\n\005sta" +
-      "rt\030\001 \001(\005\022\022\n\nsearchType\030\002 \001(\005\022\020\n\010sortMode" +
-      "\030\003 \001(\005\022\020\n\010sortType\030\004 \001(\005\022\017\n\007content\030\005 \001(" +
-      "\t\022\r\n\005query\030\006 \001(\t\022D\n\007filters\030\007 \003(\01323.byte" +
-      "dance.byteplus.byteair.SearchInfo.Filter" +
-      "sEntry\022H\n\tfilterOut\030\010 \003(\01325.bytedance.by" +
-      "teplus.byteair.SearchInfo.FilterOutEntry" +
-      "\022:\n\tgoodsList\030\t \003(\0132\'.bytedance.byteplus" +
-      ".byteair.SearchGoods\032W\n\014FiltersEntry\022\013\n\003" +
-      "key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.bytedance.byt" +
-      "eplus.byteair.StringArray:\0028\001\032Y\n\016FilterO" +
-      "utEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.by" +
-      "tedance.byteplus.byteair.StringArray:\0028\001" +
-      "\"X\n\013SearchGoods\022\023\n\007goodsId\030\001 \001(\003B\002\030\001\022\022\n\n" +
-      "goodsIdStr\030\002 \001(\t\022\r\n\005price\030\003 \001(\002\022\021\n\tboost" +
-      "Ceof\030\004 \001(\002\"\226\001\n\021PredictParentItem\022\n\n\002id\030\001" +
-      " \001(\t\022G\n\005extra\030d \003(\01328.bytedance.byteplus" +
-      ".byteair.PredictParentItem.ExtraEntry\032,\n" +
-      "\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"\226\001\n\021PredictFilterItem\022\n\n\002id\030\001 \001(\t\022G\n" +
-      "\005extra\030d \003(\01328.bytedance.byteplus.byteai" +
-      "r.PredictFilterItem.ExtraEntry\032,\n\nExtraE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\017" +
-      "PredictResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message" +
-      "\030\002 \001(\t\0228\n\005value\030\003 \001(\0132).bytedance.bytepl" +
-      "us.byteair.PredictResult\022\022\n\nrequest_id\030\004" +
-      " \001(\t\"\316\001\n\rPredictResult\0226\n\005items\030\001 \003(\0132\'." +
-      "bytedance.byteplus.byteair.PredictItem\022C" +
-      "\n\005extra\030\002 \003(\01324.bytedance.byteplus.bytea" +
-      "ir.PredictResult.ExtraEntry\022\022\n\ntotalCoun" +
-      "t\030\003 \001(\005\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"\253\001\n\013PredictItem\022\n\n\002id\030\001 \001(" +
-      "\t\022\014\n\004rank\030\003 \001(\005\022\021\n\ttransData\030\004 \001(\t\022A\n\005ex" +
-      "tra\030\005 \003(\01322.bytedance.byteplus.byteair.P" +
-      "redictItem.ExtraEntry\032,\n\nExtraEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\265\002\n\017Callback" +
-      "Request\022\013\n\003uid\030\001 \001(\t\022\r\n\005scene\030\002 \001(\t\0227\n\005i" +
-      "tems\030\003 \003(\0132(.bytedance.byteplus.byteair." +
-      "CallbackItem\022\032\n\022predict_request_id\030\004 \001(\t" +
-      "\022<\n\007context\030\005 \001(\0132+.bytedance.byteplus.b" +
-      "yteair.CallbackContext\022E\n\005extra\030d \003(\01326." +
-      "bytedance.byteplus.byteair.CallbackReque" +
-      "st.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"6\n\014CallbackItem\022\n\n\002i" +
-      "d\030\001 \001(\t\022\013\n\003pos\030\002 \001(\t\022\r\n\005extra\030\003 \001(\t\"\322\001\n\017" +
-      "CallbackContext\022\013\n\003spm\030\001 \001(\t\022=\n\010req_type" +
-      "\030\002 \001(\0162+.bytedance.byteplus.byteair.Call" +
-      "backReqType\022E\n\005extra\030d \003(\01326.bytedance.b" +
-      "yteplus.byteair.CallbackContext.ExtraEnt" +
-      "ry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"1\n\020CallbackResponse\022\014\n\004code\030\001 \001" +
-      "(\005\022\017\n\007message\030\002 \001(\t\"\035\n\013StringArray\022\016\n\006va" +
-      "lues\030\001 \003(\t\"\032\n\010IntArray\022\016\n\006values\030\001 \003(\003\"\034" +
-      "\n\nFloatArray\022\016\n\006values\030\001 \003(\002\"\035\n\013DoubleAr" +
-      "ray\022\016\n\006values\030\001 \003(\001*C\n\017CallbackReqType\022\016" +
-      "\n\nbyte_scene\020\000\022\022\n\016not_byte_scene\020\001\022\014\n\010be" +
-      "havior\020\0022\203\003\n\026ByteplusGeneralService\022L\n\tW" +
-      "riteData\022\024.google.protobuf.Any\032).bytedan" +
-      "ce.byteplus.byteair.WriteResponse\022P\n\nImp" +
-      "ortData\022\024.google.protobuf.Any\032,.bytedanc" +
-      "e.byteplus.common.OperationResponse\022b\n\007P" +
-      "redict\022*.bytedance.byteplus.byteair.Pred" +
-      "ictRequest\032+.bytedance.byteplus.byteair." +
-      "PredictResponse\022e\n\010Callback\022+.bytedance." +
-      "byteplus.byteair.CallbackRequest\032,.byted" +
-      "ance.byteplus.byteair.CallbackResponseBP" +
-      "\n\035byteplus.sdk.byteair.protocolZ/github." +
-      "com/byteplus-sdk/sdk-go/byteair/protocol" +
-      "b\006proto3"
+      "byteair.FloatArray:\0028\001\032a\n\026DoubleArrayFil" +
+      "terEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.b" +
+      "ytedance.byteplus.byteair.DoubleArray:\0028" +
+      "\001\"\316\001\n\024PredictCandidateItem\022\n\n\002id\030\001 \001(\t\022\r" +
+      "\n\005score\030\002 \001(\001\022\r\n\005price\030\003 \001(\001\022\022\n\nboost_co" +
+      "ef\030\004 \001(\001\022J\n\005extra\030d \003(\0132;.bytedance.byte" +
+      "plus.byteair.PredictCandidateItem.ExtraE" +
+      "ntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"\223\001\n\014PredictExtra\022\021\n\tinnerTest" +
+      "\030\001 \001(\010\022B\n\005extra\030e \003(\01323.bytedance.bytepl" +
+      "us.byteair.PredictExtra.ExtraEntry\032,\n\nEx" +
+      "traEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"\230\001\n\022PredictRelatedItem\022\n\n\002id\030\001 \001(\t\022H\n\005e" +
+      "xtra\030d \003(\01329.bytedance.byteplus.byteair." +
+      "PredictRelatedItem.ExtraEntry\032,\n\nExtraEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\363\003\n\n" +
+      "SearchInfo\022\r\n\005start\030\001 \001(\005\022\022\n\nsearchType\030" +
+      "\002 \001(\005\022\020\n\010sortMode\030\003 \001(\005\022\020\n\010sortType\030\004 \001(" +
+      "\005\022\017\n\007content\030\005 \001(\t\022\r\n\005query\030\006 \001(\t\022D\n\007fil" +
+      "ters\030\007 \003(\01323.bytedance.byteplus.byteair." +
+      "SearchInfo.FiltersEntry\022H\n\tfilterOut\030\010 \003" +
+      "(\01325.bytedance.byteplus.byteair.SearchIn" +
+      "fo.FilterOutEntry\022:\n\tgoodsList\030\t \003(\0132\'.b" +
+      "ytedance.byteplus.byteair.SearchGoods\032W\n" +
+      "\014FiltersEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(" +
+      "\0132\'.bytedance.byteplus.byteair.StringArr" +
+      "ay:\0028\001\032Y\n\016FilterOutEntry\022\013\n\003key\030\001 \001(\t\0226\n" +
+      "\005value\030\002 \001(\0132\'.bytedance.byteplus.byteai" +
+      "r.StringArray:\0028\001\"X\n\013SearchGoods\022\023\n\007good" +
+      "sId\030\001 \001(\003B\002\030\001\022\022\n\ngoodsIdStr\030\002 \001(\t\022\r\n\005pri" +
+      "ce\030\003 \001(\002\022\021\n\tboostCeof\030\004 \001(\002\"\226\001\n\021PredictP" +
+      "arentItem\022\n\n\002id\030\001 \001(\t\022G\n\005extra\030d \003(\01328.b" +
+      "ytedance.byteplus.byteair.PredictParentI" +
+      "tem.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\226\001\n\021PredictFilterIt" +
+      "em\022\n\n\002id\030\001 \001(\t\022G\n\005extra\030d \003(\01328.bytedanc" +
+      "e.byteplus.byteair.PredictFilterItem.Ext" +
+      "raEntry\032,\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"~\n\017PredictResponse\022\014\n\004code" +
+      "\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\0228\n\005value\030\003 \001(\0132)" +
+      ".bytedance.byteplus.byteair.PredictResul" +
+      "t\022\022\n\nrequest_id\030\004 \001(\t\"\316\001\n\rPredictResult\022" +
+      "6\n\005items\030\001 \003(\0132\'.bytedance.byteplus.byte" +
+      "air.PredictItem\022C\n\005extra\030\002 \003(\01324.bytedan" +
+      "ce.byteplus.byteair.PredictResult.ExtraE" +
+      "ntry\022\022\n\ntotalCount\030\003 \001(\005\032,\n\nExtraEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\253\001\n\013Predi" +
+      "ctItem\022\n\n\002id\030\001 \001(\t\022\014\n\004rank\030\003 \001(\005\022\021\n\ttran" +
+      "sData\030\004 \001(\t\022A\n\005extra\030\005 \003(\01322.bytedance.b" +
+      "yteplus.byteair.PredictItem.ExtraEntry\032," +
+      "\n\nExtraEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"\265\002\n\017CallbackRequest\022\013\n\003uid\030\001 \001(\t\022\r\n" +
+      "\005scene\030\002 \001(\t\0227\n\005items\030\003 \003(\0132(.bytedance." +
+      "byteplus.byteair.CallbackItem\022\032\n\022predict" +
+      "_request_id\030\004 \001(\t\022<\n\007context\030\005 \001(\0132+.byt" +
+      "edance.byteplus.byteair.CallbackContext\022" +
+      "E\n\005extra\030d \003(\01326.bytedance.byteplus.byte" +
+      "air.CallbackRequest.ExtraEntry\032,\n\nExtraE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"6\n\014" +
+      "CallbackItem\022\n\n\002id\030\001 \001(\t\022\013\n\003pos\030\002 \001(\t\022\r\n" +
+      "\005extra\030\003 \001(\t\"\322\001\n\017CallbackContext\022\013\n\003spm\030" +
+      "\001 \001(\t\022=\n\010req_type\030\002 \001(\0162+.bytedance.byte" +
+      "plus.byteair.CallbackReqType\022E\n\005extra\030d " +
+      "\003(\01326.bytedance.byteplus.byteair.Callbac" +
+      "kContext.ExtraEntry\032,\n\nExtraEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"1\n\020CallbackRes" +
+      "ponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\"\035\n\013" +
+      "StringArray\022\016\n\006values\030\001 \003(\t\"\032\n\010IntArray\022" +
+      "\016\n\006values\030\001 \003(\003\"\034\n\nFloatArray\022\016\n\006values\030" +
+      "\001 \003(\002\"\035\n\013DoubleArray\022\016\n\006values\030\001 \003(\001*C\n\017" +
+      "CallbackReqType\022\016\n\nbyte_scene\020\000\022\022\n\016not_b" +
+      "yte_scene\020\001\022\014\n\010behavior\020\0022\203\003\n\026ByteplusGe" +
+      "neralService\022L\n\tWriteData\022\024.google.proto" +
+      "buf.Any\032).bytedance.byteplus.byteair.Wri" +
+      "teResponse\022P\n\nImportData\022\024.google.protob" +
+      "uf.Any\032,.bytedance.byteplus.common.Opera" +
+      "tionResponse\022b\n\007Predict\022*.bytedance.byte" +
+      "plus.byteair.PredictRequest\032+.bytedance." +
+      "byteplus.byteair.PredictResponse\022e\n\010Call" +
+      "back\022+.bytedance.byteplus.byteair.Callba" +
+      "ckRequest\032,.bytedance.byteplus.byteair.C" +
+      "allbackResponseBP\n\035byteplus.sdk.byteair." +
+      "protocolZ/github.com/byteplus-sdk/sdk-go" +
+      "/byteair/protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -40942,7 +41128,7 @@ public final class ByteplusByteair {
     internal_static_bytedance_byteplus_byteair_PredictDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bytedance_byteplus_byteair_PredictDevice_descriptor,
-        new java.lang.String[] { "DeviceId", "Platform", "DeviceVendor", "DeviceModel", "DeviceResolution", "ClientVersion", "OsVersion", "NetworkType", "Carrier", });
+        new java.lang.String[] { "DeviceId", "Platform", "DeviceVendor", "DeviceModel", "DeviceResolution", "ClientVersion", "OsVersion", "NetworkType", "Carrier", "OsType", });
     internal_static_bytedance_byteplus_byteair_PredictContext_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_bytedance_byteplus_byteair_PredictContext_fieldAccessorTable = new
