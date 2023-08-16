@@ -7,10 +7,6 @@ public enum Region {
     US,
     // sg
     SG,
-    // byteair cn
-    AIR_CN,
-    // byteair sg
-    AIR_SG,
     // bytePlus as a uniq region
     SAAS_SG
 }
