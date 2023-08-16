@@ -10,15 +10,11 @@ public final class Constant {
 
     public final static int MAX_IMPORT_ITEM_COUNT = 10000;
 
-    final static List<String> CN_HOSTS = Arrays.asList("rec-b.volcengineapi.com", "rec.volcengineapi.com");
+    final static List<String> CN_HOSTS = Arrays.asList("rec.volcengineapi.com", "rec-b.volcengineapi.com");
 
-    final static List<String> SG_HOSTS = Collections.singletonList("rec-ap-singapore-1.byteplusapi.com");
+    final static List<String> SG_HOSTS = Arrays.asList("rec-ap-singapore-1.byteplusapi.com", "rec-b-ap-singapore-1.byteplusapi.com");
 
-    final static List<String> US_HOSTS = Collections.singletonList("rec-us-east-1.byteplusapi.com");
-
-    final static List<String> AIR_CN_HOSTS = Collections.singletonList("byteair-api-cn1.snssdk.com");
-
-    final static List<String> AIR_SG_HOSTS = Collections.singletonList("byteair-api-sg1.byteintlapi.com");
+    final static List<String> US_HOSTS = Arrays.asList("rec-us-east-1.byteplusapi.com", "rec-b-us-east-1.byteplusapi.com");
 
     final static List<String> SAAS_SG_HOSTS = Collections.singletonList("byteair-api-sg1.recplusapi.com");
 
